@@ -1,0 +1,43 @@
+
+<div id="content-header">
+  <h1>Reset employee leaves.
+</h1>
+  <h3>Reset Employee Leave</h3>
+  <div id="app-back-button">
+      <%= link_to image_tag("buttons/back.png",:border => 0), :back  %>
+  </div>
+<div><%= image_tag("underline.jpg",width: "100%")%></div>
+</div>
+
+<div id="page-yield">
+  
+    <table align="center" class="table table-hover table-bordered" style="width:800px">
+      <tr>
+        <td><%= 'Leave Types'%></td>
+        <td><%= 'Available Leave'%></td>
+        <td><%= 'Leave Taken'%></td>
+         <td><%= 'Last Reset Date' %></td>
+      </tr>
+      <% @leave_count.each do |e| %>
+        <%  leave_type =EmployeeLeaveType.find_by_id(e.employee_leave_type_id)%>
+        
+          <tr>
+            <td class="col-3"><%=leave_type.name %></td>
+            <td class="col-3"><%=e.leave_count %></td>
+            <td class="col-3"><%=e.leave_taken %></td>
+             <%unless e.reset_date.nil? %>
+              <td class="col-3"><%= I18n.l(e.reset_date, :format=>"%d / %m / %Y") %></td>
+            <%else%>
+              <td class="col-3">-</td>
+            <%end%>
+
+         </tr>
+        <%end%>
+     
+    </table>
+
+     <div><%= link_to "►Reset_Leave",employee_attendances_employee_wise_leave_reset_path(id:@employee.id),class: "btn btn-primary" %></div>
+    <div>
+ 
+    </div>
+  </div>
