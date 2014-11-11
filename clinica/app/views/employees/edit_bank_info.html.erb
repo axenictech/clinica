@@ -1,0 +1,45 @@
+<div id="content-header">
+   <hr class="fancy-line"></hr>
+  <h1>Addmission</h1>
+  <h3>Employee Details Update<br />
+  <small><font color="red">Fields Marked with * must be filled</font></small></h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("buttons/back.png",:border => 0), "" %>
+  </div>
+ <div><%= image_tag("underline.jpg",width: "100%")%></div>
+</div><br/><br/>
+
+<div id="page-yield">
+  
+<table align="center" class="table table-hover" style="width:1000px">
+<%= form_for :bank_details ,url:{action:'update_bank_details',format:@employee.id},method: :patch do |f| %>
+
+     <% if @employee.errors.any? %>
+        <div class="alert alert-danger" style="width:500px" >
+          <h3>Error prohibited to from being saved:</h3>
+          <ul>
+           <% @employee.errors.full_messages.each do |msg| %>
+              <li style="width:500px" align="left"><%= msg %></li>
+            <% end %>
+          </ul>
+          <% end %>
+      </div>
+ </div>
+    <tbody>
+         
+  <% @bank_info.each do |b| %>
+   <tr>
+     
+        <td class="col-2"><%= b.bank_field.name %></td>
+        <td class="col-2"><%= text_field_tag "banks[#{b.id}][bank_info]",b.bank_info%>
+        </td>
+   
+    </tr>
+    <% end %>
+    
+     <tr><td colspan="4"><%=f.submit "Update",class: "btn btn-success" %></td></tr>
+
+<%end%>
+</tbody>
+</table>
+  </div>
