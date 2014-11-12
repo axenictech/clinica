@@ -643,8 +643,38 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
-
 #PHARMACY#
+
+
+
+#BLOODBANK#
+get 'bloodbanks/new_rhd_master'
+post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
+patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
+delete 'bloodbanks/:id/delete_rhd_master',to: 'bloodbanks#delete_rhd_master',as: 'delete_rhd_master'
+
+get 'bloodbanks/new_blood_group'
+post 'bloodbanks/create_blood_group',to: 'bloodbanks#create_blood_group',as: 'create_blood_group'
+patch 'bloodbanks/:id/update_blood_group',to: 'bloodbanks#update_blood_group',as: 'update_blood_group'
+delete 'bloodbanks/:id/delete_blood_group',to: 'bloodbanks#delete_blood_group',as: 'delete_blood_group'
+
+get 'bloodbanks/new_hospital_master'
+post 'bloodbanks/create_hospital_master',to: 'bloodbanks#create_hospital_master',as: 'create_hospital_master'
+patch 'bloodbanks/:id/update_hospital_master',to: 'bloodbanks#update_hospital_master',as: 'update_hospital_master'
+delete 'bloodbanks/:id/delete_hospital_master',to: 'bloodbanks#delete_hospital_master',as: 'delete_hospital_master'
+
+get 'bloodbanks/new_relative_group_master'
+post 'bloodbanks/create_relative_group_master',to: 'bloodbanks#create_relative_group_master',as: 'create_relative_group_master'
+patch 'bloodbanks/:id/update_relative_group_master',to: 'bloodbanks#update_relative_group_master',as: 'update_relative_group_master'
+delete 'bloodbanks/:id/delete_relative_group_master',to: 'bloodbanks#delete_relative_group_master',as: 'delete_relative_group_master'
+
+get 'bloodbanks/new_hospital_type_master'
+post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_type_master',as: 'create_relative_group_master'
+patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospital_type_master',as: 'update_hospital_type_master'
+delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
+
+#BLOODBANK#
+
 
 
 resources :home
