@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hr_no: 1
+  date_time: 
+  BP_level_min: 1
+  BP_level_max: 1
+  bmi: MyString
+  follow_up_date: 
+  remark: MyString
+
+two:
+  hr_no: 1
+  date_time: 
+  BP_level_min: 1
+  BP_level_max: 1
+  bmi: MyString
+  follow_up_date: 
+  remark: MyString

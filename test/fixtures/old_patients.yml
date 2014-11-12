@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  HR_no: 1
+  OPD_no: 1
+  appointment_no: 1
+  patient_name: MyString
+  gender: MyString
+  marital_status: MyString
+  care_of: MyString
+  address: MyString
+  pin_no: 1
+  contact_no: 1
+  remark: MyString
+  date_time: 
+  date_of_birth: 2014-11-12
+  height: 9.99
+  weight: 9.99
+  religion: MyString
+  card_no: MyString
+  serial_no: 
+  validity: 2014-11-12
+  image_patient: 
+  image_pre_treatment: 
+  image_post_treatment: 
+  FamilyMaster_id: 
+  ShiftMaster_id: 
+  DignosisMaster_id: 
+  OccupationMaster_id: 
+
+two:
+  HR_no: 1
+  OPD_no: 1
+  appointment_no: 1
+  patient_name: MyString
+  gender: MyString
+  marital_status: MyString
+  care_of: MyString
+  address: MyString
+  pin_no: 1
+  contact_no: 1
+  remark: MyString
+  date_time: 
+  date_of_birth: 2014-11-12
+  height: 9.99
+  weight: 9.99
+  religion: MyString
+  card_no: MyString
+  serial_no: 
+  validity: 2014-11-12
+  image_patient: 
+  image_pre_treatment: 
+  image_post_treatment: 
+  FamilyMaster_id: 
+  ShiftMaster_id: 
+  DignosisMaster_id: 
+  OccupationMaster_id: 

@@ -316,6 +316,7 @@ get 'employees/contact_profile_archived'
 get 'employees/bank_info_archived'
 post 'employees/emp_search_result_pdf'
 get 'employees/select_month'
+
 get 'employees/payslip_revert'
 post 'employees/one_click_payslip_revert'
 
@@ -520,6 +521,7 @@ get 'masters/doctor_master'
 get 'masters/add_doctor_master'
 root 'home#dashboard'
  
+
 
 #INDOOR#
 get 'indoor/new_registration'

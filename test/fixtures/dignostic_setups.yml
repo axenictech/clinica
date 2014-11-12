@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discount: 9.99
+  perticular: MyString
+  doctor_master_id: 
+
+two:
+  discount: 9.99
+  perticular: MyString
+  doctor_master_id: 

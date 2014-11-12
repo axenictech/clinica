@@ -776,7 +776,15 @@ end
   
     b=MonthlyPayslip.where(employee_id:@employee.id,salary_date:@salary_date).pluck(:salary_date)
      if b[0].present?  
+
+
         if b[0]==@salary_date.strftime("%b")
+
+        if b[0].strftime("%b")==@salary_date.strftime("%b")
+
+
+        if b[0]==@salary_date.strftime("%b")
+
          flash[:notice]="Payslip of "+@employee.first_name+" is already generated"
       end
        else 
@@ -815,6 +823,7 @@ end
       
   end
 
+
   def select_month
         @salary_dates = MonthlyPayslip.all
         @department=params[:view_payslip][:id]
@@ -835,6 +844,15 @@ end
       end
     end
     redirect_to employees_payslip_path
+
+
+
+  def select_month
+        @salary_dates = MonthlyPayslip.all
+        @department=params[:view_payslip][:id]
+        
+
+
   end
   
   def view_payslip

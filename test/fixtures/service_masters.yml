@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_date: 2014-11-12
+  name: MyString
+  is_active: false
+  charge: 9.99
+  service_charge: 9.99
+  luxury_tax: 9.99
+
+two:
+  service_date: 2014-11-12
+  name: MyString
+  is_active: false
+  charge: 9.99
+  service_charge: 9.99
+  luxury_tax: 9.99

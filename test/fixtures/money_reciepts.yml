@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reciept_no: 1
+  hr_no: 1
+  OPD_no: 1
+  patient_name: MyString
+  phone_no: 1
+  charge: 9.99
+  amount: 9.99
+  discount: 9.99
+  due_amount: 9.99
+  grand_total: 9.99
+  received_amount: 9.99
+  net_amount: 9.99
+  pay_mode: MyString
+  cheque_card_no: MyString
+  cheque_date: 2014-11-12
+  remark: MyString
+  DepartmentMaster_id: 
+  DoctorMaster_id: 
+  ServiceMaster_id: 
+
+two:
+  reciept_no: 1
+  hr_no: 1
+  OPD_no: 1
+  patient_name: MyString
+  phone_no: 1
+  charge: 9.99
+  amount: 9.99
+  discount: 9.99
+  due_amount: 9.99
+  grand_total: 9.99
+  received_amount: 9.99
+  net_amount: 9.99
+  pay_mode: MyString
+  cheque_card_no: MyString
+  cheque_date: 2014-11-12
+  remark: MyString
+  DepartmentMaster_id: 
+  DoctorMaster_id: 
+  ServiceMaster_id: 

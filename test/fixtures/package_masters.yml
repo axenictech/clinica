@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package_name: MyString
+  package_rate: MyString
+  rate: MyString
+  test_master_id: 
+
+two:
+  package_name: MyString
+  package_rate: MyString
+  rate: MyString
+  test_master_id: 
