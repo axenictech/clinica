@@ -520,6 +520,86 @@ get 'masters/doctor_master'
 get 'masters/add_doctor_master'
 root 'home#dashboard'
  
+
+#INDOOR#
+get 'indoor/new_registration'
+post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
+patch 'indoor/:id/create_registration',to: 'indoor#create_registration',as: 'create_registration'
+delete 'indoor/:id/delete_registration',to: 'indoor#delete_registration',as: 'delete_registration'
+
+get 'indoor/new_advance_booking'
+post 'indoor/create_advance_booking',to: 'indoor#create_advance_booking',as: 'create_advance_booking'
+patch 'indoor/:id/update_advance_booking',to: 'indoor#update_advance_booking',as: 'update_advance_booking'
+delete 'indoor/:id/delete_advance_booking',to: 'indoor#delete_advance_booking',as: 'delete_advance_booking'
+
+get 'indoor/new_other_service'
+post 'indoor/create_other_service',to: 'indoor#create_other_service',as: 'create_other_service'
+patch 'indoor/:id/update_other_service',to: 'indoor#update_other_service',as: 'update_other_service'
+delete 'indoor/:id/delete_other_service',to: 'indoor#delete_other_service',as: 'delete_other_service'
+
+get 'indoor/new_doctor_visit_details'
+post 'indoor/create_doctor_visit_details',to: 'indoor#create_doctor_visit_details',as: 'create_doctor_visit_details'
+patch 'indoor/:id/update_doctor_visit_details',to: 'indoor#update_doctor_visit_details',as: 'update_doctor_visit_details'
+delete 'indoor/:id/delete_doctor_visit_details',to: 'indoor#delete_doctor_visit_details',as: 'delete_doctor_visit_details'
+
+get 'indoor/new_bed_transfer'
+post 'indoor/create_bed_transfer',to: 'indoor#create_bed_transfer',as: 'create_bed_transfer'
+patch 'indoor/:id/update_bed_transfer',to: 'indoor#update_bed_transfer',as: 'update_bed_transfer'
+delete 'indoor/:id/delete_bed_transfer',to: 'indoor#delete_bed_transfer',as: 'delete_bed_transfer'
+
+get 'indoor/new_ot_billing'
+post 'indoor/create_ot_billing',to: 'indoor#create_ot_billing',as: 'create_ot_billing'
+patch 'indoor/:id/update_ot_billing',to: 'indoor#update_ot_billing',as: 'update_ot_billing'
+delete 'indoor/:id/delete_ot_billing',to: 'indoor#delete_ot_billing',as: 'delete_ot_billing'
+
+get 'indoor/new_money_reciept'
+post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
+patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
+delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
+
+get 'indoor/new_discharge'
+post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
+patch 'indoor/:id/update_discharge',to: 'indoor#update_discharge',as: 'update_discharge'
+delete 'indoor/:id/delete_discharge',to: 'indoor#delete_discharge',as: 'delete_discharge'
+
+get 'indoor/new_final_bill'
+post 'indoor/create_final_bill',to: 'indoor#create_final_bill',as: 'create_final_bill'
+patch 'indoor/:id/update_final_bill',to: 'indoor#update_final_bill',as: 'update_final_bill'
+delete 'indoor/:id/delete_final_bill',to: 'indoor#delete_final_bill',as: 'delete_final_bill'
+
+get 'indoor/new_ipd_clinical_report'
+post 'indoor/create_ipd_clinical_report',to: 'indoor#create_ipd_clinical_report',as: 'create_ipd_clinical_report'
+patch 'indoor/:id/update_ipd_clinical_report',to: 'indoor#update_ipd_clinical_report',as: 'update_ipd_clinical_report'
+delete 'indoor/:id/delete_ipd_clinical_report',to: 'indoor#delete_ipd_clinical_report',as: 'delete_ipd_clinical_report'
+
+get 'indoor/new_ipd_admission'
+post 'indoor/create_ipd_admission',to: 'indoor#create_ipd_admission',as: 'create_ipd_admission'
+patch 'indoor/:id/update_ipd_admission',to: 'indoor#update_ipd_admission',as: 'update_ipd_admission'
+delete 'indoor/:id/delete_ipd_admission',to: 'indoor#delete_ipd_admission',as: 'delete_ipd_admission'
+
+get 'indoor/new_birth_certificate'
+post 'indoor/create_birth_certificate',to: 'indoor#create_birth_certificate',as: 'create_birth_certificate'
+patch 'indoor/:id/update_birth_certificate',to: 'indoor#update_birth_certificate',as: 'update_birth_certificate'
+delete 'indoor/:id/delete_birth_certificate',to: 'indoor#delete_birth_certificate',as: 'delete_birth_certificate'
+
+get 'indoor/new_death_certificate'
+post 'indoor/create_death_certificate',to: 'indoor#create_death_certificate',as: 'create_death_certificate'
+patch 'indoor/:id/update_death_certificate',to: 'indoor#update_death_certificate',as: 'update_death_certificate'
+delete 'indoor/:id/delete_death_certificate',to: 'indoor#delete_death_certificate',as: 'delete_death_certificate'
+
+get 'indoor/new_nurse_master'
+post 'indoor/create_nurse_master',to: 'indoor#create_nurse_master',as: 'create_nurse_master'
+patch 'indoor/:id/update_nurse_master',to: 'indoor#update_nurse_master',as: 'update_nurse_master'
+delete 'indoor/:id/delete_nurse_master',to: 'indoor#delete_nurse_master',as: 'delete_nurse_master'
+
+get 'indoor/new_nurseing_counter_entry'
+post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_entry',as: 'create_nurseing_counter_entry'
+patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
+delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
+#INDOOR#
+
+
+
 resources :home
 resources :setting
 resources :categories
