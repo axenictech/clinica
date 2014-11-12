@@ -599,6 +599,51 @@ delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_co
 #INDOOR#
 
 
+#PHARMACY#
+get 'pharmacy/new_credit_note'
+post 'pharmacy/create_credit_note',to: 'pharmacy#create_credit_note',as: 'create_credit_note'
+patch 'pharmacy/:id/update_credit_note',to: 'pharmacy#update_credit_note',as: 'update_credit_note'
+delete 'pharmacy/:id/delete_credit_note',to: 'pharmacy#delete_credit_note',as: 'delete_credit_note'
+
+get 'pharmacy/new_debit_note'
+post 'pharmacy/create_debit_note',to: 'pharmacy#create_debit_note',as: 'create_debit_note'
+patch 'pharmacy/:id/update_debit_note',to: 'pharmacy#update_debit_note',as: 'update_debit_note'
+delete 'pharmacy/:id/delete_debit_note',to: 'pharmacy#delete_debit_note',as: 'delete_debit_note'
+
+get 'pharmacy/new_expiray_report'
+post 'pharmacy/create_expiray_report',to: 'pharmacy#create_expiray_report',as: 'create_expiray_report'
+patch 'pharmacy/:id/update_expiray_report',to: 'pharmacy#update_expiray_report',as: 'update_expiray_report'
+delete 'pharmacy/:id/delete_expiray_report',to: 'pharmacy#delete_expiray_report',as: 'delete_expiray_report'
+
+get 'pharmacy/new_purchase_challan'
+post 'pharmacy/create_purchase_challan',to: 'pharmacy#create_purchase_challan',as: 'create_purchase_challan'
+patch 'pharmacy/:id/update_purchase_challan',to: 'pharmacy#update_purchase_challan',as: 'update_purchase_challan'
+delete 'pharmacy/:id/delete_purchase_challan',to: 'pharmacy#delete_purchase_challan',as: 'delete_purchase_challan'
+
+get 'pharmacy/new_purchase_master'
+post 'pharmacy/create_purchase_master',to: 'pharmacy#create_purchase_master',as: 'create_purchase_master'
+patch 'pharmacy/:id/update_purchase_master',to: 'pharmacy#update_purchase_master',as: 'update_purchase_master'
+delete 'pharmacy/:id/delete_purchase_master',to: 'pharmacy#delete_purchase_master',as: 'delete_purchase_master'
+
+
+get 'pharmacy/new_pharmacy_sales_master'
+post 'pharmacy/create_pharmacy_sales_master',to: 'pharmacy#create_pharmacy_sales_master',as: 'create_pharmacy_sales_master'
+patch 'pharmacy/:id/update_pharmacy_sales_master',to: 'pharmacy#update_pharmacy_sales_master',as: 'update_pharmacy_sales_master'
+delete 'pharmacy/:id/delete_pharmacy_sales_master',to: 'pharmacy#delete_pharmacy_sales_master',as: 'delete_pharmacy_sales_master'
+
+get 'pharmacy/new_stock_transfer_godown_sale'
+post 'pharmacy/create_stock_transfer_godown_sale',to: 'pharmacy#create_stock_transfer_godown_sale',as: 'create_stock_transfer_godown_sale'
+patch 'pharmacy/:id/update_stock_transfer_godown_sale',to: 'pharmacy#update_stock_transfer_godown_sale',as: 'update_stock_transfer_godown_sale'
+delete 'pharmacy/:id/delete_stock_transfer_godown_sale',to: 'pharmacy#delete_stock_transfer_godown_sale',as: 'delete_stock_transfer_godown_sale'
+
+get 'pharmacy/new_sale_return'
+post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create_sale_return'
+patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
+delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
+
+
+#PHARMACY#
+
 
 resources :home
 resources :setting

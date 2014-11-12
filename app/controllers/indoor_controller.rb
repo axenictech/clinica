@@ -486,6 +486,4 @@ class IndoorController < ApplicationController
  		params.require(:nurseing_counter_entry).permit!
 	end
 
-
-
 end
