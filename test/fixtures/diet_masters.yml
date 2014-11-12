@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_time: 
+  to_time: 
+  advice: MyString
+  remark: MyString
+
+two:
+  form_time: 
+  to_time: 
+  advice: MyString
+  remark: MyString

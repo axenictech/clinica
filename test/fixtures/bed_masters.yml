@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bed_no: 1
+  is_active: false
+  bed_rent: 1
+  total_bed_change: 1
+  increase: 1
+  leave_time: 1
+  l_tax: 1
+  s_tax: 
+  link_service: MyString
+  is_bed_repair: false
+  floor_master_id: 
+  ward_master_id: 
+
+two:
+  bed_no: 1
+  is_active: false
+  bed_rent: 1
+  total_bed_change: 1
+  increase: 1
+  leave_time: 1
+  l_tax: 1
+  s_tax: 
+  link_service: MyString
+  is_bed_repair: false
+  floor_master_id: 
+  ward_master_id: 
