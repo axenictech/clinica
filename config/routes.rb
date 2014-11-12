@@ -515,6 +515,9 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
+get 'masters/common_master'
+get 'masters/doctor_master'
+get 'masters/add_doctor_master'
 root 'home#dashboard'
  
 resources :home
@@ -584,4 +587,5 @@ resources :online_exams
 resources :employees
 resources :employee_attendances
 resources :finance
+resources :masters
 end
