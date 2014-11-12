@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  product_unit: 1
+  minimum_quantity: 1
+  maximum_quantity: 1
+  reorder_quantity: 1
+  drug_form: MyString
+  is_ot_items: MyString
+  ot_item_category: MyString
+  information: MyString
+  uses_master_id: 
+  composition_master_id: 
+  company_master: 
+  pack_master_id: 
+  purchase_tax_master_id: 
+  sales_tax_master_id: 
+
+two:
+  item_name: MyString
+  product_unit: 1
+  minimum_quantity: 1
+  maximum_quantity: 1
+  reorder_quantity: 1
+  drug_form: MyString
+  is_ot_items: MyString
+  ot_item_category: MyString
+  information: MyString
+  uses_master_id: 
+  composition_master_id: 
+  company_master: 
+  pack_master_id: 
+  purchase_tax_master_id: 
+  sales_tax_master_id: 

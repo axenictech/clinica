@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_property: MyString
+  unit_of_measure: MyString
+  named_value: MyString
+  test_master_id: 
+
+two:
+  test_property: MyString
+  unit_of_measure: MyString
+  named_value: MyString
+  test_master_id: 
