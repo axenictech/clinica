@@ -515,9 +515,15 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
+<<<<<<< HEAD
 
 get 'outdoors/index'
 get 'outdoors/newpatient_registration'
+=======
+get 'masters/common_master'
+get 'masters/doctor_master'
+get 'masters/add_doctor_master'
+>>>>>>> c23fc9e09b975eb58e5cdb4ac927564659370721
 root 'home#dashboard'
  
 resources :home
@@ -587,6 +593,10 @@ resources :online_exams
 resources :employees
 resources :employee_attendances
 resources :finance
+<<<<<<< HEAD
 
 resources :outdoors
+=======
+resources :masters
+>>>>>>> c23fc9e09b975eb58e5cdb4ac927564659370721
 end
