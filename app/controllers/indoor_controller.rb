@@ -1,14 +1,16 @@
 class IndoorController < ApplicationController
 
 	def new_registration
-	@new_registration#=IpdRegistration.new
+	@new_registration=IpdRegistration.new
+	@doctor_masters= DoctorMaster.all
+	@city=City.all
 	end
 
 	def create_registration
 		@ipd_registration=IpdRegistration.new(params_create_registration)
 		if @ipd_registration.save
 			flash[:notice]="Patient Registered successfully"
-			redirect_to new_registration_path
+			redirect_to indoor_new_registration_path
 		else
 			render 'new_registration'
 		end
@@ -18,7 +20,7 @@ class IndoorController < ApplicationController
 		@ipd_registration=IpdRegistration.find(params[:id])
 		if @ipd_registration.update(params_create_registration)
 			flash[:notice]="Patient Updated successfully"
-			redirect_to new_registration_path
+			redirect_to indoor_new_registration_path
 		else
 			render 'new_registration'
 		end
@@ -27,7 +29,7 @@ class IndoorController < ApplicationController
 	@ipd_registration=IpdRegistration.find(params[:id])
 		if @ipd_registration.destroy
 			flash[:notice]="Patient deleted successfully"
-			redirect_to new_registration_path
+			redirect_to indoor_new_registration_path
 		else
 			render 'new_registration'
 		end
@@ -433,7 +435,7 @@ class IndoorController < ApplicationController
 #parameters to permit
 	private 
 	def params_create_registration
- 		params.require(:registration).permit!
+ 		params.require(:ipd_registration).permit!
 	end
 
 	def params_advance_booking
