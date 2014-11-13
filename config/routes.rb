@@ -991,6 +991,8 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
+get 'pharmacy/new_opening_stock'
+
 #PHARMACY#
 #STORES#
 get 'stores/new_common_opening_stock'
@@ -1037,10 +1039,7 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
-<<<<<<< HEAD
 
-=======
->>>>>>> 70b092c8c6d03d279148cc18d3fe00365c53fef6
 
 resources :home
 resources :setting
@@ -1112,11 +1111,6 @@ resources :finance
 resources :outdoors
 resources :masters
 resources :stores
-<<<<<<< HEAD
 resources :common_master
-=======
-
-resources :common_master
-
->>>>>>> 70b092c8c6d03d279148cc18d3fe00365c53fef6
+resources :pharmacy
 end
