@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141223103471) do
+=======
+ActiveRecord::Schema.define(version: 20141223103477) do
+>>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -465,6 +469,15 @@ ActiveRecord::Schema.define(version: 20141223103471) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "department_master_stores", force: true do |t|
+    t.string   "department_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
   create_table "department_masters", force: true do |t|
     t.string   "department_name"
     t.datetime "created_at"
@@ -1048,6 +1061,15 @@ ActiveRecord::Schema.define(version: 20141223103471) do
   add_index "group_batches", ["batch_group_id"], name: "index_group_batches_on_batch_group_id", using: :btree
   add_index "group_batches", ["batch_id"], name: "index_group_batches_on_batch_id", using: :btree
 
+<<<<<<< HEAD
+=======
+  create_table "group_master_stores", force: true do |t|
+    t.string   "group"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
   create_table "group_masters", force: true do |t|
     t.string   "group"
     t.datetime "created_at"
@@ -1361,6 +1383,13 @@ ActiveRecord::Schema.define(version: 20141223103471) do
     t.datetime "updated_at"
   end
 
+  create_table "pack_master_stores", force: true do |t|
+    t.string   "pack_name"
+    t.decimal  "sale_in_percentage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pack_masters", force: true do |t|
     t.string   "pack_name"
     t.decimal  "sale_in_percentage"
@@ -1457,6 +1486,16 @@ ActiveRecord::Schema.define(version: 20141223103471) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "purchase_master_stores", force: true do |t|
+    t.string   "name"
+    t.integer  "percentage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
   create_table "purchase_tax_masters", force: true do |t|
     t.string   "name"
     t.integer  "percentage"
@@ -1500,6 +1539,13 @@ ActiveRecord::Schema.define(version: 20141223103471) do
 
   create_table "religion_masters", force: true do |t|
     t.string   "Religion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sales_master_stores", force: true do |t|
+    t.string   "name"
+    t.decimal  "tax"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1681,6 +1727,22 @@ ActiveRecord::Schema.define(version: 20141223103471) do
   add_index "subjects", ["batch_id"], name: "index_subjects_on_batch_id", using: :btree
   add_index "subjects", ["elective_group_id"], name: "index_subjects_on_elective_group_id", using: :btree
 
+<<<<<<< HEAD
+=======
+  create_table "supplier_master_stores", force: true do |t|
+    t.string   "supplier_name"
+    t.string   "address"
+    t.integer  "phone_no"
+    t.integer  "tin_no"
+    t.integer  "DL_no"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "supplier_master_stores", ["city_id"], name: "index_supplier_master_stores_on_city_id", using: :btree
+
+>>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
   create_table "supplier_masters", force: true do |t|
     t.string   "supplier_name"
     t.string   "address"

@@ -1,3 +1,2 @@
 class MastersController < ApplicationController
-	
 end

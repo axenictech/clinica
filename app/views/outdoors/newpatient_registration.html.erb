@@ -1,0 +1,47 @@
+<div id="content-header">
+   <hr class="fancy-line"></hr>
+  <h1>New patient Registartion</h1>
+  <h3>Step 1 - Patient details<br />
+  <small><font color="red">Fields Marked with * must be filled</font></small></h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("buttons/back.png",:border => 0), :back %>
+  </div>
+ <div><%= image_tag("underline.jpg",width: "100%")%></div>
+</div><br/><br/>
+<div id="page-yield">
+<table align="center" class="table table-hover" style="width:1000px">
+<%= form_for :patient do |f| %>
+
+
+<tbody>
+     <tr>
+         <td class="col-2"><%=f.label :'H._R._Number'%><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=f.text_field :no%></td>
+          <td class="col-2"><%=f.label :"Date" %><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=f.date_field :admission_date ,:value => Time.now.strftime('%Y-%m-%d')%></td>
+     </tr>
+
+     <tr>
+         <td class="col-2"><%=f.label :"OPD No."%><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=f.text_field :opd_no%></td>
+          <td class="col-2"><%=f.label :"Shift" %><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=f.text_field :shift%></td>
+     </tr>
+
+
+     <tr>
+         <td class="col-2"><%=f.label :"App. No."%><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=select_tag :app_no,options_for_select([["No","no"],["Yes","yes"]])%><%=f.text_field :app%></td>
+          <td class="col-2"><%=f.label :"Diagnosis" %><span class="necessary-field">*</span></td>
+          <td class="col-2"><%=f.text_field :diagnosis%></td>
+     </tr>
+
+     
+ 
+   
+     <tr><td colspan="4"><%=f.submit "Save",class: "btn btn-primary" %></td></tr>
+
+<%end%>
+</tbody>
+</table>
+  </div>

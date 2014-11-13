@@ -517,14 +517,359 @@ get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
+#common master#
+#doctor master
+get 'common_master/new_doctor_master'
+post 'common_master/create_doctor_master'
+get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
+patch 'common_master/:id/update_doctor_master',to: 'common_master#update_doctor_master',as:'common_master_update_doctor_master'
+delete 'common_master/:id/delete_doctor_master',to: 'common_master#delete_doctor_master',as:'common_master_delete_doctor_master'
 
-#---------------Master-----------------------
+#referred doctor master
+get 'common_master/new_referred_doctor_master'
+post 'common_master/create_referred_doctor_master'
+get 'common_master/:id/edit_referred_doctor_master',to: 'common_master#edit_referred_doctor_master',as:'common_master_edit_referred_doctor_master'
+patch 'common_master/:id/update_referred_doctor_master',to: 'common_master#update_referred_doctor_master',as:'common_master_update_referred_doctor_master'
+delete 'common_master/:id/delete_referred_doctor_master',to: 'common_master#delete_referred_doctor_master',as:'common_master_delete_referred_doctor_master'
+
+#specialized master
+get 'common_master/new_specialized_master'
+post 'common_master/create_specialized_master'
+get 'common_master/:id/edit_specialized_master',to: 'common_master#edit_specialized_master',as:'common_master_edit_specialized_master'
+patch 'common_master/:id/update_specialized_master',to: 'common_master#update_specialized_master',as:'common_master_update_specialized_master'
+delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
+
+#shift master
+get 'common_master/new_shift_master'
+post 'common_master/create_shift_master'
+get 'common_master/:id/edit_shift_master',to: 'common_master#edit_shift_master',as:'common_master_edit_shift_master'
+patch 'common_master/:id/update_shift_master',to: 'common_master#update_shift_master',as:'common_master_update_shift_master'
+delete 'common_master/:id/delete_shift_master',to: 'common_master#delete_shift_master',as:'common_master_delete_shift_master'
+
+#doctor commission
+get 'common_master/new_doctor_commission'
+post 'common_master/create_doctor_commission'
+get 'common_master/:id/edit_doctor_commission',to: 'common_master#edit_doctor_commission',as:'common_master_edit_doctor_commission'
+patch 'common_master/:id/update_doctor_commission',to: 'common_master#update_doctor_commission',as:'common_master_update_doctor_commission'
+delete 'common_master/:id/delete_doctor_commission',to: 'common_master#delete_doctor_commission',as:'common_master_delete_doctor_commission'
+
+#state master
+get 'common_master/new_state_master'
+post 'common_master/create_state_master'
+get 'common_master/:id/edit_state_master',to: 'common_master#edit_state_master',as:'common_master_edit_state_master'
+patch 'common_master/:id/update_state_master',to: 'common_master#update_state_master',as:'common_master_update_state_master'
+delete 'common_master/:id/delete_state_master',to: 'common_master#delete_state_master',as:'common_master_delete_state_master'
+
+#city master
+get 'common_master/new_city_master'
+post 'common_master/create_city_master'
+get 'common_master/:id/edit_city_master',to: 'common_master#edit_city_master',as:'common_master_edit_city_master'
+patch 'common_master/:id/update_city_master',to: 'common_master#update_city_master',as:'common_master_update_city_master'
+delete 'common_master/:id/delete_city_master',to: 'common_master#delete_city_master',as:'common_master_delete_city_master'
+
+#family master
+get 'common_master/new_family_master'
+post 'common_master/create_family_master'
+get 'common_master/:id/edit_family_master',to: 'common_master#edit_family_master',as:'common_master_edit_family_master'
+patch 'common_master/:id/update_family_master',to: 'common_master#update_family_master',as:'common_master_update_family_master'
+delete 'common_master/:id/delete_family_master',to: 'common_master#delete_family_master',as:'common_master_delete_family_master'
+
+#ocupation master
+get 'common_master/new_ocupation_master'
+post 'common_master/create_ocupation_master'
+get 'common_master/:id/edit_ocupation_master',to: 'common_master#edit_ocupation_master',as:'common_master_edit_ocupation_master'
+patch 'common_master/:id/update_ocupation_master',to: 'common_master#update_ocupation_master',as:'common_master_update_ocupation_master'
+delete 'common_master/:id/delete_ocupation_master',to: 'common_master#delete_ocupation_master',as:'common_master_delete_ocupation_master'
+
+#religion master
+get 'common_master/new_religion_master'
+post 'common_master/create_religion_master'
+get 'common_master/:id/edit_religion_master',to: 'common_master#edit_religion_master',as:'common_master_edit_religion_master'
+patch 'common_master/:id/update_religion_master',to: 'common_master#update_religion_master',as:'common_master_update_religion_master'
+delete 'common_master/:id/delete_religion_master',to: 'common_master#delete_religion_master',as:'common_master_delete_religion_master'
+
+#bank master
+get 'common_master/new_bank_master'
+post 'common_master/create_bank_master'
+get 'common_master/:id/edit_bank_master',to: 'common_master#edit_bank_master',as:'common_master_edit_bank_master'
+patch 'common_master/:id/update_bank_master',to: 'common_master#update_bank_master',as:'common_master_update_bank_master'
+delete 'common_master/:id/delete_bank_master',to: 'common_master#delete_bank_master',as:'common_master_delete_bank_master'
+
+#company master
+get 'common_master/new_company_master'
+post 'common_master/create_company_master'
+get 'common_master/:id/edit_company_master',to: 'common_master#edit_company_master',as:'common_master_edit_company_master'
+patch 'common_master/:id/update_company_master',to: 'common_master#update_company_master',as:'common_master_update_company_master'
+delete 'common_master/:id/delete_company_master',to: 'common_master#delete_company_master',as:'common_master_delete_company_master'
+
+#diagnosis master
+get 'common_master/new_diagnosis_master'
+post 'common_master/create_diagnosis_master'
+get 'common_master/:id/edit_diagnosis_master',to: 'common_master#edit_diagnosis_master',as:'common_master_edit_diagnosis_master'
+patch 'common_master/:id/update_diagnosis_master',to: 'common_master#update_diagnosis_master',as:'common_master_update_diagnosis_master'
+delete 'common_master/:id/delete_diagnosis_master',to: 'common_master#delete_diagnosis_master',as:'common_master_delete_diagnosis_master'
+
+#group master
+get 'common_master/new_group_master'
+post 'common_master/create_group_master'
+get 'common_master/:id/edit_group_master',to: 'common_master#edit_group_master',as:'common_master_edit_group_master'
+patch 'common_master/:id/update_group_master',to: 'common_master#update_group_master',as:'common_master_update_group_master'
+delete 'common_master/:id/delete_group_master',to: 'common_master#delete_group_master',as:'common_master_delete_group_master'
+
+#service master
+get 'common_master/new_service_master'
+post 'common_master/create_service_master'
+get 'common_master/:id/edit_service_master',to: 'common_master#edit_service_master',as:'common_master_edit_service_master'
+patch 'common_master/:id/update_service_master',to: 'common_master#update_service_master',as:'common_master_update_service_master'
+delete 'common_master/:id/delete_service_master',to: 'common_master#delete_service_master',as:'common_master_delete_service_master'
+
+#dose master
+get 'common_master/new_dose_master'
+post 'common_master/create_dose_master'
+get 'common_master/:id/edit_dose_master',to: 'common_master#edit_dose_master',as:'common_master_edit_dose_master'
+patch 'common_master/:id/update_dose_master',to: 'common_master#update_dose_master',as:'common_master_update_dose_master'
+delete 'common_master/:id/delete_dose_master',to: 'common_master#delete_dose_master',as:'common_master_delete_dose_master'
+
+#age group master
+get 'common_master/new_age_group_master'
+post 'common_master/create_age_group_master'
+get 'common_master/:id/edit_age_group_master',to: 'common_master#edit_age_group_master',as:'common_master_edit_age_group_master'
+patch 'common_master/:id/update_age_group_master',to: 'common_master#update_age_group_master',as:'common_master_update_age_group_master'
+delete 'common_master/:id/delete_age_group_master',to: 'common_master#delete_age_group_master',as:'common_master_delete_age_group_master'
+
+#vaccines master
+get 'common_master/new_vaccines_master'
+post 'common_master/create_vaccines_master'
+get 'common_master/:id/edit_vaccines_master',to: 'common_master#edit_vaccines_master',as:'common_master_edit_vaccines_master'
+patch 'common_master/:id/update_vaccines_master',to: 'common_master#update_vaccines_master',as:'common_master_update_vaccines_master'
+delete 'common_master/:id/delete_vaccines_master',to: 'common_master#delete_vaccines_master',as:'common_master_delete_vaccines_master'
+
+#floor master
+get 'common_master/new_floor_master'
+post 'common_master/create_floor_master'
+get 'common_master/:id/edit_floor_master',to: 'common_master#edit_floor_master',as:'common_master_edit_floor_master'
+patch 'common_master/:id/update_floor_master',to: 'common_master#update_floor_master',as:'common_master_update_floor_master'
+delete 'common_master/:id/delete_floor_master',to: 'common_master#delete_floor_master',as:'common_master_delete_floor_master'
+
+#ward master
+get 'common_master/new_ward_master'
+post 'common_master/create_ward_master'
+get 'common_master/:id/edit_ward_master',to: 'common_master#edit_ward_master',as:'common_master_edit_ward_master'
+patch 'common_master/:id/update_ward_master',to: 'common_master#update_ward_master',as:'common_master_update_ward_master'
+delete 'common_master/:id/delete_ward_master',to: 'common_master#delete_ward_master',as:'common_master_delete_ward_master'
+
+#bed master
+get 'common_master/new_bed_master'
+post 'common_master/create_bed_master'
+get 'common_master/:id/edit_bed_master',to: 'common_master#edit_bed_master',as:'common_master_edit_bed_master'
+patch 'common_master/:id/update_bed_master',to: 'common_master#update_bed_master',as:'common_master_update_bed_master'
+delete 'common_master/:id/delete_bed_master',to: 'common_master#delete_bed_master',as:'common_master_delete_bed_master'
+
+#ot master
+get 'common_master/new_ot_master'
+post 'common_master/create_ot_master'
+get 'common_master/:id/edit_ot_master',to: 'common_master#edit_ot_master',as:'common_master_edit_ot_master'
+patch 'common_master/:id/update_ot_master',to: 'common_master#update_ot_master',as:'common_master_update_ot_master'
+delete 'common_master/:id/delete_ot_master',to: 'common_master#delete_ot_master',as:'common_master_delete_ot_master'
+
+#ot slot master
+get 'common_master/new_ot_slot_master'
+post 'common_master/create_ot_slot_master'
+get 'common_master/:id/edit_ot_slot_master',to: 'common_master#edit_ot_slot_master',as:'common_master_edit_ot_slot_master'
+patch 'common_master/:id/update_ot_slot_master',to: 'common_master#update_ot_slot_master',as:'common_master_update_ot_slot_master'
+delete 'common_master/:id/delete_ot_slot_master',to: 'common_master#delete_ot_slot_master',as:'common_master_delete_ot_slot_master'
+
+#ot type master
+get 'common_master/new_ot_type_master'
+post 'common_master/create_ot_type_master'
+get 'common_master/:id/edit_ot_type_master',to: 'common_master#edit_ot_type_master',as:'common_master_edit_ot_type_master'
+patch 'common_master/:id/update_ot_type_master',to: 'common_master#update_ot_type_master',as:'common_master_update_ot_type_master'
+delete 'common_master/:id/delete_ot_type_master',to: 'common_master#delete_ot_type_master',as:'common_master_delete_ot_type_master'
+
+#opd department type master
+get 'common_master/new_opd_department_type_master'
+post 'common_master/create_opd_department_type_master'
+get 'common_master/:id/edit_opd_department_type_master',to: 'common_master#edit_opd_department_type_master',as:'common_master_edit_opd_department_type_master'
+patch 'common_master/:id/update_opd_department_type_master',to: 'common_master#update_opd_department_type_master',as:'common_master_update_opd_department_type_master'
+delete 'common_master/:id/delete_opd_department_type_master',to: 'common_master#delete_opd_department_type_master',as:'common_master_delete_opd_department_type_master'
+
+#diet master
+get 'common_master/new_diet_master'
+post 'common_master/create_diet_master'
+get 'common_master/:id/edit_diet_master',to: 'common_master#edit_diet_master',as:'common_master_edit_diet_master'
+patch 'common_master/:id/update_diet_master',to: 'common_master#update_diet_master',as:'common_master_update_diet_master'
+delete 'common_master/:id/delete_diet_master',to: 'common_master#delete_diet_master',as:'common_master_delete_diet_master'
+
+#pharmacy master#
+#purchase tax master
+get 'pharmacy_master/new_purchase_tax_master'
+post 'pharmacy_master/create_purchase_tax_master'
+get 'pharmacy_master/:id/edit_purchase_tax_master',to: 'pharmacy_master#edit_purchase_tax_master',as:'pharmacy_master_edit_purchase_tax_master'
+patch 'pharmacy_master/:id/update_purchase_tax_master',to: 'pharmacy_master#update_purchase_tax_master',as:'pharmacy_master_update_purchase_tax_master'
+delete 'pharmacy_master/:id/delete_purchase_tax_master',to: 'pharmacy_master#delete_purchase_tax_master',as:'pharmacy_master_delete_purchase_tax_master'
+
+#supplier master
+get 'pharmacy_master/new_supplier_master'
+post 'pharmacy_master/create_supplier_master'
+get 'pharmacy_master/:id/edit_supplier_master',to: 'pharmacy_master#edit_supplier_master',as:'pharmacy_master_edit_supplier_master'
+patch 'pharmacy_master/:id/update_supplier_master',to: 'pharmacy_master#update_supplier_master',as:'pharmacy_master_update_supplier_master'
+delete 'pharmacy_master/:id/delete_supplier_master',to: 'pharmacy_master#delete_supplier_master',as:'pharmacy_master_delete_supplier_master'
+
+#uses master
+get 'pharmacy_master/new_uses_master'
+post 'pharmacy_master/create_uses_master'
+get 'pharmacy_master/:id/edit_uses_master',to: 'pharmacy_master#edit_uses_master',as:'pharmacy_master_edit_uses_master'
+patch 'pharmacy_master/:id/update_uses_master',to: 'pharmacy_master#update_uses_master',as:'pharmacy_master_update_uses_master'
+delete 'pharmacy_master/:id/delete_uses_master',to: 'pharmacy_master#delete_uses_master',as:'pharmacy_master_delete_uses_master'
+
+#pack master
+get 'pharmacy_master/new_pack_master'
+post 'pharmacy_master/create_pack_master'
+get 'pharmacy_master/:id/edit_pack_master',to: 'pharmacy_master#edit_pack_master',as:'pharmacy_master_edit_pack_master'
+patch 'pharmacy_master/:id/update_pack_master',to: 'pharmacy_master#update_pack_master',as:'pharmacy_master_update_pack_master'
+delete 'pharmacy_master/:id/delete_pack_master',to: 'pharmacy_master#delete_pack_master',as:'pharmacy_master_delete_pack_master'
+
+#composition master
+get 'pharmacy_master/new_composition_master'
+post 'pharmacy_master/create_composition_master'
+get 'pharmacy_master/:id/edit_composition_master',to: 'pharmacy_master#edit_composition_master',as:'pharmacy_master_edit_composition_master'
+patch 'pharmacy_master/:id/update_composition_master',to: 'pharmacy_master#update_composition_master',as:'pharmacy_master_update_composition_master'
+delete 'pharmacy_master/:id/delete_composition_master',to: 'pharmacy_master#delete_composition_master',as:'pharmacy_master_delete_composition_master'
+
+#sales tax master
+get 'pharmacy_master/new_sales_tax_master'
+post 'pharmacy_master/create_sales_tax_master'
+get 'pharmacy_master/:id/edit_sales_tax_master',to: 'pharmacy_master#edit_sales_tax_master',as:'pharmacy_master_edit_sales_tax_master'
+patch 'pharmacy_master/:id/update_sales_tax_master',to: 'pharmacy_master#update_sales_tax_master',as:'pharmacy_master_update_sales_tax_master'
+delete 'pharmacy_master/:id/delete_sales_tax_master',to: 'pharmacy_master#delete_sales_tax_master',as:'pharmacy_master_delete_sales_tax_master'
+
+#item master
+get 'pharmacy_master/new_item_master'
+post 'pharmacy_master/create_item_master'
+get 'pharmacy_master/:id/edit_item_master',to: 'pharmacy_master#edit_item_master',as:'pharmacy_master_edit_item_master'
+patch 'pharmacy_master/:id/update_item_master',to: 'pharmacy_master#update_item_master',as:'pharmacy_master_update_item_master'
+delete 'pharmacy_master/:id/delete_item_master',to: 'pharmacy_master#delete_item_master',as:'pharmacy_master_delete_item_master'
+
+#ledger master
+get 'pharmacy_master/new_ledger_master'
+post 'pharmacy_master/create_ledger_master'
+get 'pharmacy_master/:id/edit_ledger_master',to: 'pharmacy_master#edit_ledger_master',as:'pharmacy_master_edit_ledger_master'
+patch 'pharmacy_master/:id/update_ledger_master',to: 'pharmacy_master#update_ledger_master',as:'pharmacy_master_update_ledger_master'
+delete 'pharmacy_master/:id/delete_ledger_master',to: 'pharmacy_master#delete_ledger_master',as:'pharmacy_master_delete_ledger_master'
+
+#godown master
+get 'pharmacy_master/new_godown_master'
+post 'pharmacy_master/create_godown_master'
+get 'pharmacy_master/:id/edit_godown_master',to: 'pharmacy_master#edit_godown_master',as:'pharmacy_master_edit_godown_master'
+patch 'pharmacy_master/:id/update_godown_master',to: 'pharmacy_master#update_godown_master',as:'pharmacy_master_update_godown_master'
+delete 'pharmacy_master/:id/delete_godown_master',to: 'pharmacy_master#delete_godown_master',as:'pharmacy_master_delete_godown_master'
+
+#series master
+get 'pharmacy_master/new_series_master'
+post 'pharmacy_master/create_series_master'
+get 'pharmacy_master/:id/edit_series_master',to: 'pharmacy_master#edit_series_master',as:'pharmacy_master_edit_series_master'
+patch 'pharmacy_master/:id/update_series_master',to: 'pharmacy_master#update_series_master',as:'pharmacy_master_update_series_master'
+delete 'pharmacy_master/:id/delete_series_master',to: 'pharmacy_master#delete_series_master',as:'pharmacy_master_delete_series_master'
+
+#diagnostic master#
+#department master
+get 'diagnostic_master/new_department_master'
+post 'diagnostic_master/create_department_master'
+get 'diagnostic_master/:id/edit_department_master',to: 'diagnostic_master#edit_department_master',as:'diagnostic_master_edit_department_master'
+patch 'diagnostic_master/:id/update_department_master',to: 'diagnostic_master#update_department_master',as:'diagnostic_master_update_department_master'
+delete 'diagnostic_master/:id/delete_department_master',to: 'diagnostic_master#delete_department_master',as:'diagnostic_master_delete_department_master'
+
+#sub department master
+get 'diagnostic_master/new_sub_department_master'
+post 'diagnostic_master/create_sub_department_master'
+get 'diagnostic_master/:id/edit_sub_department_master',to: 'diagnostic_master#edit_sub_department_master',as:'diagnostic_master_edit_sub_department_master'
+patch 'diagnostic_master/:id/update_sub_department_master',to: 'diagnostic_master#update_sub_department_master',as:'diagnostic_master_update_sub_department_master'
+delete 'diagnostic_master/:id/delete_sub_department_master',to: 'diagnostic_master#delete_sub_department_master',as:'diagnostic_master_delete_sub_department_master'
+
+#test master
+get 'diagnostic_master/new_test_master'
+post 'diagnostic_master/create_test_master'
+get 'diagnostic_master/:id/edit_test_master',to: 'diagnostic_master#edit_test_master',as:'diagnostic_master_edit_test_master'
+patch 'diagnostic_master/:id/update_test_master',to: 'diagnostic_master#update_test_master',as:'diagnostic_master_update_test_master'
+delete 'diagnostic_master/:id/delete_test_master',to: 'diagnostic_master#delete_test_master',as:'diagnostic_master_delete_test_master'
+
+#test property
+get 'diagnostic_master/new_test_property'
+post 'diagnostic_master/create_test_property'
+get 'diagnostic_master/:id/edit_test_property',to: 'diagnostic_master#edit_test_property',as:'diagnostic_master_edit_test_property'
+patch 'diagnostic_master/:id/update_test_property',to: 'diagnostic_master#update_test_property',as:'diagnostic_master_update_test_property'
+delete 'diagnostic_master/:id/delete_test_property',to: 'diagnostic_master#delete_test_property',as:'diagnostic_master_delete_test_property'
+
+#package master
+get 'diagnostic_master/new_package_master'
+post 'diagnostic_master/create_package_master'
+get 'diagnostic_master/:id/edit_package_master',to: 'diagnostic_master#edit_package_master',as:'diagnostic_master_edit_package_master'
+patch 'diagnostic_master/:id/update_package_master',to: 'diagnostic_master#update_package_master',as:'diagnostic_master_update_package_master'
+delete 'diagnostic_master/:id/delete_package_master',to: 'diagnostic_master#delete_package_master',as:'diagnostic_master_delete_package_master'
+
+#company test rate master
+get 'diagnostic_master/new_company_test_rate_master'
+post 'diagnostic_master/create_company_test_rate_master'
+get 'diagnostic_master/:id/edit_company_test_rate_master',to: 'diagnostic_master#edit_company_test_rate_master',as:'diagnostic_master_edit_company_test_rate_master'
+patch 'diagnostic_master/:id/update_company_test_rate_master',to: 'diagnostic_master#update_company_test_rate_master',as:'diagnostic_master_update_company_test_rate_master'
+delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_master#delete_company_test_rate_master',as:'diagnostic_master_delete_company_test_rate_master'
 
 
+get 'outdoors/new'
+post 'outdoors/new_registration_create'
+get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
+patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
+delete 'outdoors/:id/destroy_patient',to:'outdoors#destroy_patient',as:'outdoors_destroy_patient'  
 
-root 'home#dashboard'
- 
+get 'outdoors/old_registration'
+post 'outdoors/old_registration_create'
+get 'outdoors/:id/edit_registration_old',to:'outdoors#edit_registration_old',as:'outdoors_edit_registration_old'
+patch 'outdoors/:id/update_registration_old',to:'outdoors#update_registration_old',as:'outdoors_update_registration_old' 
+delete 'outdoors/:id/destroy_patient_old',to:'outdoors#destroy_patient_old',as:'outdoors_destroy_patient_old'  
 
+get 'outdoors/before_patient_entry'
+post 'outdoors/before_patient_entry_create'
+get 'outdoors/:id/edit_before_patient_entry',to:'outdoors#edit_before_patient_entry',as:'outdoors_edit_before_patient_entry'
+patch 'outdoors/:id/update_before_patient_entry',to:'outdoors#update_before_patient_entry',as:'outdoors_update_before_patient_entry' 
+delete 'outdoors/:id/destroy_before_patient_entry',to:'outdoors#destroy_before_patient_entry',as:'outdoors_destroy_before_patient_entry'  
+
+get 'outdoors/clinical_report'
+post 'outdoors/clinical_report_create'
+get 'outdoors/:id/edit_clinical_report',to:'outdoors#edit_clinical_report',as:'outdoors_edit_clinical_report'
+patch 'outdoors/:id/update_clinical_report',to:'outdoors#update_clinical_report',as:'outdoors_update_clinical_report' 
+delete 'outdoors/:id/destroy_clinical_report',to:'outdoors#destroy_clinical_report',as:'outdoors_destroy_clinical_report'  
+
+
+get 'outdoors/money_receipt'
+post 'outdoors/money_receipt_create'
+get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdoors_edit_money_receipt'
+patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
+delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
+
+get 'outdoors/appitment'
+post 'outdoors/appitment_create'
+get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
+patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
+delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+
+get 'outdoors/prescription'
+post 'outdoors/prescription_create'
+get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoors_edit_prescription'
+patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
+delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
+
+
+get 'labs/new'
+post 'labs/lab_case_create'
+get 'labs/:id/edit_lab_case',to:'labs#edit_lab_case',as:'labs_edit_lab_case'
+patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_lab_case' 
+delete 'labs/:id/destroy_lab_case',to:'labs#destroy_lab_case',as:'labs_destroy_lab_case'   
+
+get 'labs/test_cancellation'
+post 'labs/test_cancellation_create'
+get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_edit_test_cancellation'
+patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
+delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
 #INDOOR#
 get 'indoor/new_registration'
@@ -647,8 +992,24 @@ patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'u
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
 #PHARMACY#
+<<<<<<< HEAD
+#STORES#
+get 'stores/new_common_opening_stock'
+post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
+patch 'stores/:id/update_common_opening_stock',to: 'stores#update_common_opening_stock',as: 'stores_update_common_opening_stock'
+delete 'stores/:id/delete_common_opening_stock',to: 'stores#delete_common_opening_stock',as: 'stores_delete_common_opening_stock'
 
+get 'stores/new_purchase_master_store'
+post 'stores/create_purchase_master_store',to: 'stores#create_purchase_master_store',as: 'stores_create_purchase_master_store'
+patch 'stores/:id/update_purchase_master_store',to: 'stores#update_purchase_master_store',as: 'stores_update_purchase_master_store'
+delete 'stores/:id/delete_purchase_master_store',to: 'stores#delete_purchase_master_store',as: 'stores_delete_purchase_master_store'
 
+get 'stores/new_issue_counter'
+post 'stores/create_issue_counter',to: 'stores#create_issue_counter',as: 'stores_create_issue_counter'
+patch 'stores/:id/update_issue_counter',to: 'stores#update_issue_counter',as: 'stores_update_issue_counter'
+delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: 'stores_delete_issue_counter'
+#stores#
+=======
 
 #BLOODBANK#
 get 'bloodbanks/new_rhd_master'
@@ -676,9 +1037,8 @@ post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_ty
 patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospital_type_master',as: 'update_hospital_type_master'
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
-#BLOODBANK#
-
-
+root 'home#dashboard'
+>>>>>>> b2132193794c90f3806ae3cb42e52cfe0cfd3095
 
 resources :home
 resources :setting
@@ -747,5 +1107,11 @@ resources :online_exams
 resources :employees
 resources :employee_attendances
 resources :finance
+resources :outdoors
 resources :masters
+<<<<<<< HEAD
+resources :stores
+=======
+resources :common_master
+>>>>>>> b2132193794c90f3806ae3cb42e52cfe0cfd3095
 end
