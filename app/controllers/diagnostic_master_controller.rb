@@ -216,6 +216,186 @@ class DiagnosticMasterController < ApplicationController
    		end			
 	end
 
+	def new_pathologist_master
+		@pathologist_master=PathologistMaster.new
+	end
+
+	def create_pathologist_master
+		@pathologist_master=PathologistMaster.new(params_pathologist_master)
+		if @pathologist_master.save
+		    flash[:notice] = 'Pathologist master created successfully'
+	      	redirect_to diagnostic_master_new_pathologist_master_path
+    	else
+      		render 'new_pathologist_master'
+    	end
+	end
+
+	def edit_pathologist_master
+		@pathologist_master=PathologistMaster.find(params[:id])
+	end
+
+	def update_pathologist_master
+		@pathologist_master=PathologistMaster.find(params[:id])
+		if @pathologist_master.update(params_pathologist_master)
+		 	flash[:notice] = 'Pathologist master updated successfully'
+	      	redirect_to diagnostic_master_new_pathologist_master_path
+    	else
+      		render 'edit_pathologist_master'
+    	end
+	end
+
+	def delete_pathologist_master
+		@pathologist_master=PathologistMaster.find(params[:id])
+		if @pathologist_master.destroy
+		   flash[:notice] = 'Pathologist master deleted successfully!'
+   		   redirect_to diagnostic_master_new_pathologist_master_path
+   		end			
+	end
+
+	def new_diagnostic_doctor_commission_setup
+		@diagnostic_doctor_commission_setup=DiagnosticDoctorCommissionSetup.new
+	end
+
+	def create_diagnostic_doctor_commission_setup
+		@diagnostic_doctor_commission_setup=DiagnosticDoctorCommissionSetup.new(params_diagnostic_doctor_commission_setup)
+		if @diagnostic_doctor_commission_setup.save
+		    flash[:notice] = 'Diagnostic Doctor Commission Setup created successfully'
+	      	redirect_to diagnostic_master_new_diagnostic_doctor_commission_setup_path
+    	else
+      		render 'new_diagnostic_doctor_commission_setup'
+    	end
+	end
+
+	def edit_diagnostic_doctor_commission_setup
+		@diagnostic_doctor_commission_setup=DiagnosticDoctorCommissionSetup.find(params[:id])
+	end
+
+	def update_diagnostic_doctor_commission_setup
+		@diagnostic_doctor_commission_setup=DiagnosticDoctorCommissionSetup.find(params[:id])
+		if @diagnostic_doctor_commission_setup.update(params_diagnostic_doctor_commission_setup)
+		 	flash[:notice] = 'Diagnostic Doctor Commission Setup updated successfully'
+	      	redirect_to diagnostic_master_new_diagnostic_doctor_commission_setup_path
+    	else
+      		render 'edit_diagnostic_doctor_commission_setup'
+    	end
+	end
+
+	def delete_diagnostic_doctor_commission_setup
+		@diagnostic_doctor_commission_setup=DiagnosticDoctorCommissionSetup.find(params[:id])
+		if @diagnostic_doctor_commission_setup.destroy
+		   flash[:notice] = 'Diagnostic Doctor Commission Setup deleted successfully!'
+   		   redirect_to diagnostic_master_new_diagnostic_doctor_commission_setup_path
+   		end			
+	end
+	
+	def new_sample_center_master
+		@sample_center_master=SampleCenterMaster.new
+	end
+
+	def create_sample_center_master
+		@sample_center_master=SampleCenterMaster.new(params_sample_center_master)
+		if @sample_center_master.save
+		    flash[:notice] = 'Sample center master created successfully'
+	      	redirect_to diagnostic_master_new_sample_center_master_path
+    	else
+      		render 'new_sample_center_master'
+    	end
+	end
+
+	def edit_sample_center_master
+		@sample_center_master=SampleCenterMaster.find(params[:id])
+	end
+
+	def update_sample_center_master
+		@sample_center_master=SampleCenterMaster.find(params[:id])
+		if @sample_center_master.update(params_sample_center_master)
+		 	flash[:notice] = 'Sample center master updated successfully'
+	      	redirect_to diagnostic_master_new_sample_center_master_path
+    	else
+      		render 'edit_sample_center_master'
+    	end
+	end
+
+	def delete_sample_center_master
+		@sample_center_master=SampleCenterMaster.find(params[:id])
+		if @sample_center_master.destroy
+		   flash[:notice] = 'Sample center master deleted successfully!'
+   		   redirect_to diagnostic_master_new_sample_center_master_path
+   		end			
+	end
+
+	def new_material_master
+		@material_master=MaterialMaster.new
+	end
+
+	def create_material_master
+		@material_master=MaterialMaster.new(params_material_master)
+		if @material_master.save
+		    flash[:notice] = 'Material master created successfully'
+	      	redirect_to diagnostic_master_new_material_master_path
+    	else
+      		render 'new_material_master'
+    	end
+	end
+
+	def edit_material_master
+		@material_master=MaterialMaster.find(params[:id])
+	end
+
+	def update_material_master
+		@material_master=MaterialMaster.find(params[:id])
+		if @material_master.update(params_material_master)
+		 	flash[:notice] = 'Material master updated successfully'
+	      	redirect_to diagnostic_master_new_material_master_path
+    	else
+      		render 'edit_material_master'
+    	end
+	end
+
+	def delete_material_master
+		@material_master=MaterialMaster.find(params[:id])
+		if @material_master.destroy
+		   flash[:notice] = 'Material master deleted successfully!'
+   		   redirect_to diagnostic_master_new_material_master_path
+   		end			
+	end
+
+	def new_prescription_special_instruction
+		@prescription_special_instruction=PrescriptionSpecialInstruction.new
+	end
+
+	def create_prescription_special_instruction
+		@prescription_special_instruction=PrescriptionSpecialInstruction.new(params_prescription_special_instruction)
+		if @prescription_special_instruction.save
+		    flash[:notice] = 'Prescription special instruction created successfully'
+	      	redirect_to diagnostic_master_new_prescription_special_instruction_path
+    	else
+      		render 'new_prescription_special_instruction'
+    	end
+	end
+
+	def edit_prescription_special_instruction
+		@prescription_special_instruction=PrescriptionSpecialInstruction.find(params[:id])
+	end
+
+	def update_prescription_special_instruction
+		@prescription_special_instruction=PrescriptionSpecialInstruction.find(params[:id])
+		if @prescription_special_instruction.update(params_prescription_special_instruction)
+		 	flash[:notice] = 'Prescription special instruction updated successfully'
+	      	redirect_to diagnostic_master_new_prescription_special_instruction_path
+    	else
+      		render 'edit_prescription_special_instruction'
+    	end
+	end
+
+	def delete_prescription_special_instruction
+		@prescription_special_instruction=PrescriptionSpecialInstruction.find(params[:id])
+		if @prescription_special_instruction.destroy
+		   flash[:notice] = 'Prescription special instruction deleted successfully!'
+   		   redirect_to diagnostic_master_new_prescription_special_instruction_path
+   		end			
+	end
+	
 	private
 	def params_department_master
 		params.require(:department_master).permit!
@@ -234,5 +414,20 @@ class DiagnosticMasterController < ApplicationController
 	end
 	def params_company_test_rate_master
 		params.require(:company_test_rate_master).permit!
+	end
+	def params_pathologist_master
+		params.require(:pathologist_master).permit!
+	end
+	def params_diagnostic_doctor_commission_setup
+		params.require(:diagnostic_doctor_commission_setup).permit!
+	end
+	def params_sample_center_master
+		params.require(:sample_center_master).permit!
+	end
+	def params_material_master
+		params.require(:material_master).permit!
+	end
+	def params_prescription_special_instruction
+		params.require(:prescription_special_instruction).permit!
 	end
 end
