@@ -12,9 +12,10 @@
   </ol>
 </div>
 </div>
+
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%=form_for :@new_patient,url:{action:'new_registration_create'}  do |c| %>
 
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
@@ -36,9 +37,9 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">H.R.No:</label>
-                <div class="col-sm-6"><%= c.text_field :'hr_no',
+                <div class="col-sm-6"><%= c.text_field :HR_no,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Doctor name",
+                     class: "form-control input-group",placeholder: "H.R.No",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -51,7 +52,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">OPD NO:</label>
-                <div class="col-sm-6"><%= c.text_field :opd_no,
+                <div class="col-sm-6"><%= c.text_field :OPD_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Specailized",
                       required: true,
@@ -69,7 +70,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">App.No:</label>
-                  <div class="col-sm-6"><%= c.select :app_no,['No','Yes'],
+                  <div class="col-sm-6"><%= c.select :appointment_no,['No','Yes'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "App.No",
                       required: true,
@@ -103,7 +104,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">Dr.Name:</label>
-                  <div class="col-sm-6"><%= c.text_field :dr_name,
+                  <div class="col-sm-6"><%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},prompt:true,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Dr.Name",
                       required: true,
@@ -120,7 +121,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">C/O:</label>
-                  <div class="col-sm-6"><%= c.text_field :co,
+                  <div class="col-sm-6"><%= c.text_field :care_of,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "C/O",
                       required: true,
@@ -148,7 +149,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Marital Status:</label>
-                  <div class="col-sm-3"><%= c.select :status,['M','U','W'],
+                  <div class="col-sm-3"><%= c.select :marital_status,['M','U','W'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Marital Status",
                       required: true,
@@ -180,7 +181,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-6"><%= c.select :city,[]
+                <div class="col-sm-6"><%= c.select :city,['Kolhapur','Pune','Delhi','Mumbai'],prompt:true
                 
                      
                       %>  
@@ -191,7 +192,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">State:</label>
-                <div class="col-sm-6"><%= c.select :state,[] %>  
+                <div class="col-sm-6"><%= c.select :state,['Maharashtra','Karanataka','Goa','Zharkhand'],prompt:true %>  
                   </div>     
                 </div>
             </div> 
@@ -199,7 +200,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Mobile Number:</label>
-                <div class="col-sm-6"><%= c.text_field :mobile_no,
+                <div class="col-sm-6"><%= c.text_field :contact_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "mobile number",
                       required: true,
@@ -211,26 +212,12 @@
                 </div>
             </div> 
             <br>
-            <div class="row">
-              <div class="form-group">
-               <label class="col-sm-2 control-label">Phone Number:</label>
-                <div class="col-sm-6"><%= c.text_field :phone_no,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Phone number",
-                      required: true,
-                      :"data-content"=>"Enter Phone Number Here",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>     
-                </div>
-            </div> 
-            <br>
+            
 
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">PIN No:</label>
-                <div class="col-sm-6"><%= c.text_field :pin,
+                <div class="col-sm-6"><%= c.text_field :pin_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "pin",
                       required: true,
@@ -262,7 +249,7 @@
              <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Dignosis :</label>
-                <div class="col-sm-6"><%= c.text_field :dignosis,
+                <div class="col-sm-6"><%= c.select :dignosis_master_id,DignosisMaster.all.collect {|b| [b.dignosis,b.id]},prompt:true,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Dignosis",
                       required: true,
@@ -278,7 +265,7 @@
              <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Occupation :</label>
-                <div class="col-sm-6"><%= c.text_field :Occupation,
+                <div class="col-sm-6"><%= c.select :occupation_master_id,OccupationMaster.all.collect {|b| [b.occupation,b.id]},prompt:true,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Occupation",
                       required: true,
@@ -369,15 +356,7 @@
                       %>  
                   </div> 
 
-                  <label class="col-sm-2 control-label">Time:</label>
-                  <div class="col-sm-3"><%=c.time_select :time,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Time",
-                      required: true,
-                      :"data-content"=>"Select Time",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>  
+                 
 
                 </div>
               </div>              
@@ -386,7 +365,7 @@
              <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Family :</label>
-                <div class="col-sm-6"><%= c.text_field :family,
+                <div class="col-sm-6"><%= c.select :family_master_id,FamilyMaster.all.collect {|b| [b.family,b.id]},prompt:true,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Family",
                       required: true,
@@ -402,7 +381,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Ref.Dr :</label>
-                <div class="col-sm-6"><%= c.text_field :ref_dr,
+                <div class="col-sm-6"><%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},prompt:true,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Ref dr",
                       required: true,
@@ -434,7 +413,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Validity Date :</label>
-                <div class="col-sm-6"><%= c.date_field :validity_date,
+                <div class="col-sm-6"><%= c.date_field :validity,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Validity date",
                       required: true,

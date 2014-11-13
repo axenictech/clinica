@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-#Ravikiran indoor module
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
@@ -533,8 +519,6 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
-
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
@@ -542,10 +526,15 @@ get 'masters/phar'
 
 #----------OutDoors------------------------------------#
 get 'outdoors/new_registration'
-=======
 
 #common master#
-
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
 
 get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
@@ -905,7 +894,6 @@ delete 'masters/:id/delete_company_expence_master',to: 'masters#delete_company_e
 
 #outdoors#
 get 'outdoors/new'
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
@@ -967,13 +955,10 @@ get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
-<<<<<<< HEAD
 
 #---------------Master-----------------------
 
 
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
@@ -1139,12 +1124,7 @@ post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_ty
 patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospital_type_master',as: 'update_hospital_type_master'
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
-root 'home#dashboard'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 resources :home
 resources :setting
 resources :categories

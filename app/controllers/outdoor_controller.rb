@@ -2,7 +2,14 @@ class OutdoorController < ApplicationController
 	
 	def new_registration
 		 @new_patient=NewPatient.new
-	end
+		 if NewPatient.first.nil?
+             @new_patient.HR_no=1
+             flash[:notice] = "Hr No of first patient is #{@new_patient.HR_no}" 
+         else
+             @last_patient=NewPatient.last
+             @new_patient.HR_no=@last_patient.HR_no.next
+             flash[:notice] = "HR_no of last Patient is #{@last_patient.HR_no}" 
+	    end
 
 	def new_registration_create
 	     @new_patient=NewPatient.new(new_patient_params)
