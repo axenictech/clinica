@@ -1,7 +1,27 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+#Ravikiran indoor module
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
+>>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
+
+root 'home#dashboard'
+
 get 'setting/course_batch'
 get 'general_settings/all'
 get 'general_settings/none'
@@ -516,10 +536,24 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
+<<<<<<< HEAD
+
+get 'masters/common_master'
+get 'masters/doctor_master'
+get 'masters/add_doctor_master'
+get 'masters/phar'
+
+#----------OutDoors------------------------------------#
+get 'outdoors/new_registration'
+=======
 
 #common master#
 
+<<<<<<< HEAD
 get 'masters/outdoor_patient_master'
+=======
+
+>>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
 get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
 get 'masters/store_master'
@@ -531,6 +565,11 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
+
+get 'common_master/outdoor_patient_master'
+
+
+get 'common_master/view_doctor_master'
 
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
@@ -832,6 +871,7 @@ delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_m
 
 
 get 'outdoors/new'
+>>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
@@ -862,11 +902,17 @@ get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdo
 patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
 delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
 
-get 'outdoors/appitment'
-post 'outdoors/appitment_create'
-get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
-patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
-delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+get 'outdoors/appoitment'
+post 'outdoors/appoitment_create'
+get 'outdoors/:id/edit_appoitment',to:'outdoors#edit_appoitment',as:'outdoors_edit_appoitment'
+patch 'outdoors/:id/update_appoitment',to:'outdoors#update_appoitment',as:'outdoors_update_appoitment' 
+delete 'outdoors/:id/destroy_appoitment',to:'outdoors#destroy_appoitment',as:'outdoors_destroy_appoitment' 
+
+get 'outdoors/immunization_schedule'
+post 'outdoors/immunization_schedule_create'
+get 'outdoors/:id/edit_immunization_schedule',to:'outdoors#edit_immunization_schedule',as:'outdoors_edit_immunization_schedule'
+patch 'outdoors/:id/update_immunization_schedule',to:'outdoors#update_immunization_schedule',as:'outdoors_update_immunization_schedule' 
+delete 'outdoors/:id/destroy_immunization_schedule',to:'outdoors#destroy_immunization_scheduleimmunization_schedule',as:'outdoors_destroy_immunization_schedule'   
 
 get 'outdoors/prescription'
 post 'outdoors/prescription_create'
@@ -874,7 +920,7 @@ get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoor
 patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
 delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
 
-
+#-------------------Labs------------------------#
 get 'labs/new'
 post 'labs/lab_case_create'
 get 'labs/:id/edit_lab_case',to:'labs#edit_lab_case',as:'labs_edit_lab_case'
@@ -887,6 +933,13 @@ get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
+<<<<<<< HEAD
+
+#---------------Master-----------------------
+
+
+=======
+>>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -1007,6 +1060,8 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
+get 'pharmacy/new_opening_stock'
+
 #PHARMACY#
 #STORES#
 get 'stores/new_common_opening_stock'
@@ -1054,6 +1109,14 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 root 'home#dashboard'
 
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
+>>>>>>> 4bc40dc4ccdf5a3a718667d390ea5f644d32cffd
 resources :home
 resources :setting
 resources :categories
@@ -1124,7 +1187,6 @@ resources :finance
 resources :outdoors
 resources :masters
 resources :stores
-
 resources :common_master
-
+resources :pharmacy
 end

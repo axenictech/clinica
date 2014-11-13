@@ -293,8 +293,8 @@
 
               <div class="row">
               <div class="form-group">
-                <label class="col-sm-2 control-label">Relative Name:</label>
-                  <div class="col-sm-4"><%= c.text_field :relative_name,
+                <label class="col-sm-2 control-label">Pay Type:</label>
+                  <div class="col-sm-4"><%= c.select :pay_type,["Cash","Debit Card","Credit Card"],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -308,8 +308,8 @@
 
               <div class="row">
               <div class="form-group">
-                <label class="col-sm-2 control-label">Comp/Agent:</label>
-                  <div class="col-sm-4"><%= c.text_field :comp_agent,
+                <label class="col-sm-2 control-label">Bank Name:</label>
+                  <div class="col-sm-4"><%= c.text_field :Bank_name,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -323,8 +323,8 @@
 
               <div class="row">
               <div class="form-group">
-                <label class="col-sm-2 control-label">Phone Number:</label>
-                  <div class="col-sm-4"><%= c.text_field :phone_number,
+                <label class="col-sm-2 control-label">Cheque/Card Number:</label>
+                  <div class="col-sm-4"><%= c.text_field :cheque_number,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -336,116 +336,24 @@
               </div>      
               <br>
 
-              <font color="blue">Other Details</font>
+              <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Remarks:</label>
+                  <div class="col-sm-4"><%= c.text_field :remark,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>      
+              <br>
+
+              <font color="blue">Recieved By</font>
               <hr class="hr-normal">
               <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Bed Number:</label>
-                  <div class="col-sm-4"><%= c.text_field :bed_number,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>  
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ward Name:</label>
-                  <div class="col-sm-4"><%= c.text_field :ward_name,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">1.Under Doctor:</label>
-                  <div class="col-sm-4"><%= c.text_field :under_doctor_one,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">2.Under Doctor:</label>
-                  <div class="col-sm-4"><%= c.text_field :under_doctor_two,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Reference Doctor:</label>
-                  <div class="col-sm-4"><%= c.text_field :ref_doctor,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Shift:</label>
-                  <div class="col-sm-4"><%= c.text_field :shift,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Disease:</label>
-                  <div class="col-sm-4"><%= c.text_field :disease,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <font color="blue">Admit By</font>
-            <hr class="hr-normal">
-            <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Previous User:</label>
                 <div class="col-sm-2"><%= c.text_field :prev_user,

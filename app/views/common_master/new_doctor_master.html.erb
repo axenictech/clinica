@@ -3,7 +3,7 @@
     <h1 class="pull-left">
       <i class="icon-gears"></i>
               <span><%= t('Doctor Master')%></span>
-              <small><%= t('New')%></small>
+              <small><%= t('new')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -26,9 +26,9 @@
         </ul>
       </div>
 </div>
+
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -42,9 +42,18 @@
                         </a>
       </div>
     </div>
+
     <div class="box-content box-double-padding">
-      <form class="form-horizontal" style="margin-bottom: 0;">
+     <%= form_for @doctor_master,url:{action: 'create_doctor_master'}  do |c| %>
         <fieldset>
+        <% if @doctor_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @doctor_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+        <%end%>
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Doctor Name:</label>
@@ -61,9 +70,9 @@
           </div>
           <br>
           <div class="row">
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label class="col-sm-2 control-label">Specailized:</label>
-                <div class="col-sm-6"><%= c.text_field :specialization,
+                <div class="col-sm-6"><%#= c.text_field :specialization,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Specailized",
                       required: true,
@@ -72,7 +81,7 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>     
-                </div>
+                </div> -->
             </div>
 
 
@@ -81,14 +90,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">Gender:</label>
-                  <div class="col-sm-6"><%= c.select :gender,['Male','Female'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "D.O.B",
-                      required: true,
-                      :"data-content"=>"Select Gender",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                  <div class="col-sm-6"><%= c.select :gender,['Male','Female'],{prompt:"Select gender"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
                   </div> 
                 </div>
             </div>
@@ -124,7 +126,7 @@
              <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Address:</label>
-                <div class="col-sm-6"><%= c.text_field :address,
+                <div class="col-sm-6"><%= c.text_area :address,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Address",
                       required: true,
@@ -139,10 +141,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-6"><%= c.select :city,[]
-                
-                     
-                      %>  
+                <div class="col-sm-6"><%= c.select :city,[]%>  
                   </div>     
                 </div>
             </div> 
@@ -269,8 +268,8 @@
 
 
           </fieldset>
-        </form>
-        </div>
-        </div>
-        </div>
         <%end%>
+        </div>
+        </div>
+        </div>
+     

@@ -1,0 +1,213 @@
+<div class="page-header page-header-with-buttons">
+	<h1 class="pull-left">
+	  <i class="icon-medkit"></i>
+	  <span>Stock Transfer Gowdan to shop </span>
+	</h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href=""></a>
+      </li>
+  </ol>
+</div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for :stock_transfer  do |o| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-medkit"></i>
+                Stock Transfer Gowdan to shop        
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+    <div class="box-content box-double-padding">
+  
+        <fieldset>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                Transfer No:</label>
+                <div class="col-sm-6"><%= o.text_field :transfer_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Transfer No",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+           <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                Transfer Date:</label>
+                <div class="col-sm-6"><%= o.date_field :transfer_date,:value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "",
+                      required: true,
+                      :"data-content"=>"",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">From:</label>
+                <div class="col-sm-6"><%= o.text_field  :from,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "From",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+        <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">To:</label>
+                <div class="col-sm-6"><%= o.text_field  :to,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "To",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+        <br>
+        <br>
+           <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+    
+
+        <thead>
+          <tr role="row">
+          <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Items_Name
+            </th>
+          
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Pack
+            </th>
+
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+            Batch No
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Stock
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Qty
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Exp.Date
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              Pur Rate
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              MRP
+            </th>
+             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">Sale RATE</th>
+
+
+            </tr>
+            
+        </thead>
+        
+      <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+      <tr class="<%= cycle('odd', 'even')%>">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+     
+      </tr>
+
+  </tbody>
+
+</table>  
+<br>
+<br>
+<div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Previous User:</label>
+                <div class="col-sm-4"><%= o.text_field  :previous_user,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Previous User",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                
+          
+       <label class="col-sm-2 control-label">Current User:</label>
+                <div class="col-sm-4"><%= o.text_field  :current_user,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Current User ",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+              
+          </div>
+      </div>
+        <br>
+        <br>  
+  
+          <div class="col-sm-12">
+               <div class="col-sm-4"></div>
+               <div class="col-sm-2">
+                <%= o.submit 'Save', class: "btn btn-group btn-primary btn-lg"%></div>
+                <div class="col-sm-6"></div>
+
+          </div> 
+          </fieldset>
+  
+        </div>
+        </div>
+        </div>
+        <%end%>
