@@ -3,15 +3,26 @@
 	  <i class="icon-medkit"></i>
 	  <span>Opening Stock </span>
 	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
-</div>
+     <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-medkit"></i>
+          <%= t('debit_note')%></li>
+        </ul>
+      </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
 <%= form_for :opening_stock  do |o| %>
@@ -51,9 +62,9 @@
               <label class="col-sm-2 control-label">Date:</label>
                 <div class="col-sm-6"><%= o.date_field :date,:value => Time.now.strftime('%Y-%m-%d'),
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Shift Name",
+                     class: "form-control input-group",
                       required: true,
-                      :"data-content"=>"Special characters not allowed",
+                    
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -68,7 +79,7 @@
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
-                      :"data-content"=>"Special characters not allowed",
+                   
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  

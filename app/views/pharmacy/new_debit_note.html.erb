@@ -3,15 +3,27 @@
 	  <i class="icon-medkit"></i>
 	  <span>Debit Note</span>
 	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
-</div>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-medkit"></i>
+          <%= t('debit_note')%></li>
+        </ul>
+      </div>
+
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
 <%= form_for :debit_note  do |o| %>
@@ -68,7 +80,34 @@
           </div>
       </div>
         <br>
-        <br>
+        <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">From:</label>
+                <div class="col-sm-4"><%= o.date_field  :from,
+                 :value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "From",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        
+              <label class="col-sm-2 control-label">To:</label>
+                <div class="col-sm-4"><%= o.date_field  :to,
+                 :value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "To",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
            <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
     
 
@@ -77,24 +116,29 @@
           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              Items_Name
+              R.From
             </th>
           
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              Pack
+              ItemName
             </th>
 
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-            Batch No
+            Pack
             </th>
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              Stock
+              Batch
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+             ExpDate
             </th>
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
@@ -104,17 +148,12 @@
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              Exp.Date
+              free
             </th>
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              Pur Rate
-            </th>
-                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
-              Name
-            : activate to sort column descending" style="width: 50px;">
-              MRP
+             T.Qty
             </th>
              <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">Sale RATE</th>
 
@@ -143,7 +182,99 @@
 </table>  
 <br>
 <br>
+
 <div class="row">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Gross  Amt:</label>
+               
+          <label class="col-sm-2 control-label">Tot Disc:</label>
+        <label class="col-sm-2 control-label">Tot TAX:</label>
+                <label class="col-sm-2 control-label">Misc:</label>
+                 <label class="col-sm-2 control-label">Round off:</label>
+                   <label class="col-sm-2 control-label">Net Amount:</label>
+                </div>
+          </div>
+          <br> 
+
+  <div class="row">
+      <div class="form-group">
+          <div class="col-sm-2"><%= o.text_field :gross_amt,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                     
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        
+       
+     
+                <div class="col-sm-2"><%= o.text_field  :total_discount,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                    <div class="col-sm-2"><%= o.text_field  :tot_disc,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                    <div class="col-sm-2"><%= o.text_field  :tot_tax,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                    <div class="col-sm-2"><%= o.text_field  :round_off,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+          
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>
+                     <div class="col-sm-2"><%= o.text_field  :net_amount,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+                </div>
+          </div>
+          <br> 
+           <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Remarks:</label>
+                <div class="col-sm-9"><%= o.text_field  :remarks,
+                
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "remarks",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        </div>
+      </div>
+    </br>
+          <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Previous User:</label>
                 <div class="col-sm-4"><%= o.text_field  :previous_user,
@@ -171,7 +302,6 @@
           </div>
       </div>
         <br>
-        <br>  
   
           <div class="col-sm-12">
                <div class="col-sm-4"></div>
