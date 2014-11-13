@@ -1,7 +1,7 @@
 class IndoorController < ApplicationController
 
 	def new_registration
-	@new_registration=IpdRegistration.new
+	@new_registration#=IpdRegistration.new
 	end
 
 	def create_registration
@@ -407,7 +407,6 @@ class IndoorController < ApplicationController
 			render 'new_nurseing_counter_entry'
 		end
 	end
-	end
 	def update_nurseing_counter_entry
 	@nursingcounter=NursingCounter.find(params[:id])
 		if  @nursingcounter.update(params_nurseing_counter_entry)
@@ -486,4 +485,4 @@ class IndoorController < ApplicationController
  		params.require(:nurseing_counter_entry).permit!
 	end
 
-end
+
