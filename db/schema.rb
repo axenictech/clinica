@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20141223103471) do
+
 ActiveRecord::Schema.define(version: 20141223103413) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "age_group_masters", force: true do |t|
+    t.string   "age_group"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
 
   create_table "apply_leaves", force: true do |t|
     t.integer  "employee_id"
@@ -32,6 +44,24 @@ ActiveRecord::Schema.define(version: 20141223103413) do
 
   add_index "apply_leaves", ["employee_id"], name: "index_apply_leaves_on_employee_id", using: :btree
   add_index "apply_leaves", ["employee_leave_types_id"], name: "index_apply_leaves_on_employee_leave_types_id", using: :btree
+
+  create_table "appointments", force: true do |t|
+    t.date     "date_time"
+    t.string   "hr_no"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "address"
+    t.integer  "pin_no"
+    t.integer  "phone_no"
+    t.integer  "DoctorMaster_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "appointments", ["DoctorMaster_id"], name: "index_appointments_on_DoctorMaster_id", using: :btree
+  add_index "appointments", ["city_id"], name: "index_appointments_on_city_id", using: :btree
 
   create_table "archived_employees", force: true do |t|
     t.integer  "employee_category_id"
@@ -168,6 +198,17 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "updated_at"
   end
 
+
+  create_table "bank_masters", force: true do |t|
+    t.integer  "bank_no"
+    t.string   "bank_name"
+    t.string   "address"
+    t.integer  "phon_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
   create_table "batch_events", force: true do |t|
     t.integer  "batch_id"
     t.integer  "event_id"
@@ -188,6 +229,10 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "batch_groups", force: true do |t|
     t.string   "name"
     t.integer  "course_id"
@@ -231,22 +276,149 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "batches_online_exams", ["batch_id"], name: "index_batches_online_exams_on_batch_id", using: :btree
   add_index "batches_online_exams", ["online_exam_id"], name: "index_batches_online_exams_on_online_exam_id", using: :btree
 
+<<<<<<< HEAD
   create_table "books", force: true do |t|
     t.integer  "book_no"
     t.string   "title"
     t.string   "author"
     t.string   "barcode_no"
     t.string   "status"
+=======
+
+  create_table "bed_masters", force: true do |t|
+    t.integer  "bed_no"
+    t.boolean  "is_active"
+    t.integer  "bed_rent"
+    t.integer  "total_bed_change"
+    t.integer  "increase"
+    t.integer  "leave_time"
+    t.integer  "l_tax"
+    t.integer  "s_tax"
+    t.string   "link_service"
+    t.boolean  "is_bed_repair"
+    t.integer  "floor_master_id"
+    t.integer  "ward_master_id"
+
+  create_table "book_more_details", force: true do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.boolean  "is_mandatory"
+    t.string   "input_method"
+    t.boolean  "is_active"
+    t.integer  "serial_no"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "books_tags", force: true do |t|
     t.integer  "book_id"
     t.integer  "tag_id"
+=======
+
+  add_index "bed_masters", ["floor_master_id"], name: "index_bed_masters_on_floor_master_id", using: :btree
+  add_index "bed_masters", ["ward_master_id"], name: "index_bed_masters_on_ward_master_id", using: :btree
+
+  create_table "before_patient_entries", force: true do |t|
+    t.integer  "HR_no"
+    t.integer  "OPD_no"
+    t.integer  "appointment_no"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "care_of"
+    t.string   "address"
+    t.integer  "pin_no"
+    t.integer  "contact_no"
+    t.string   "remark"
+    t.date     "date"
+    t.date     "date_of_birth"
+    t.decimal  "height"
+    t.decimal  "weight"
+    t.string   "religion"
+    t.string   "card_no"
+    t.integer  "serial_no"
+    t.date     "validity"
+    t.binary   "image_patient"
+    t.binary   "image_pre_treatment"
+    t.binary   "image_post_treatment"
+    t.integer  "FamilyMaster_id"
+    t.integer  "ShiftMaster_id"
+    t.integer  "DignosisMaster_id"
+    t.integer  "OccupationMaster_id"
+
+  create_table "book_more_fields", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "book_more_detail_id"
+    t.string   "value"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+<<<<<<< HEAD
+  add_index "books_tags", ["book_id"], name: "index_books_tags_on_book_id", using: :btree
+  add_index "books_tags", ["tag_id"], name: "index_books_tags_on_tag_id", using: :btree
+=======
+
+  add_index "before_patient_entries", ["DignosisMaster_id"], name: "index_before_patient_entries_on_DignosisMaster_id", using: :btree
+  add_index "before_patient_entries", ["FamilyMaster_id"], name: "index_before_patient_entries_on_FamilyMaster_id", using: :btree
+  add_index "before_patient_entries", ["OccupationMaster_id"], name: "index_before_patient_entries_on_OccupationMaster_id", using: :btree
+  add_index "before_patient_entries", ["ShiftMaster_id"], name: "index_before_patient_entries_on_ShiftMaster_id", using: :btree
+
+  create_table "bill_of_materials", force: true do |t|
+    t.integer  "quantity"
+    t.integer  "test_master_id"
+
+  add_index "book_more_fields", ["book_id"], name: "index_book_more_fields_on_book_id", using: :btree
+  add_index "book_more_fields", ["book_more_detail_id"], name: "index_book_more_fields_on_book_more_detail_id", using: :btree
+
+  create_table "book_more_values", force: true do |t|
+    t.integer  "book_more_detail_id"
+    t.string   "value"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
+  add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+
+  add_index "book_more_values", ["book_more_detail_id"], name: "index_book_more_values_on_book_more_detail_id", using: :btree
+
+  create_table "books", force: true do |t|
+    t.integer  "book_no"
+    t.string   "title"
+    t.string   "author"
+    t.string   "barcode_no"
+    t.string   "status"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
+  create_table "cities", force: true do |t|
+    t.string   "city_name"
+    t.integer  "state_id"
+
+  create_table "books_tags", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "tag_id"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
 
   add_index "books_tags", ["book_id"], name: "index_books_tags_on_book_id", using: :btree
   add_index "books_tags", ["tag_id"], name: "index_books_tags_on_tag_id", using: :btree
@@ -256,6 +428,7 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 
   create_table "class_designations", force: true do |t|
     t.string   "name"
@@ -280,6 +453,28 @@ ActiveRecord::Schema.define(version: 20141223103413) do
 
   add_index "class_timings", ["batch_id"], name: "index_class_timings_on_batch_id", using: :btree
 
+  create_table "clinical_reports", force: true do |t|
+    t.integer  "hr_no"
+    t.integer  "opd_no"
+    t.date     "date_time"
+    t.string   "remark"
+    t.string   "operation_note"
+    t.string   "history_examination"
+    t.string   "summary"
+    t.string   "treatement_given"
+    t.string   "treatement_advice"
+    t.string   "medicine_advice"
+    t.string   "description"
+    t.integer  "DignosisMaster_id"
+    t.string   "investigation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "clinical_reports", ["DignosisMaster_id"], name: "index_clinical_reports_on_DignosisMaster_id", using: :btree
+
+
+
   create_table "comments", force: true do |t|
     t.text     "statement"
     t.integer  "newscast_id"
@@ -288,6 +483,66 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   end
 
   add_index "comments", ["newscast_id"], name: "index_comments_on_newscast_id", using: :btree
+
+
+  create_table "common_item_masters", force: true do |t|
+    t.string   "item_name"
+    t.string   "print_name"
+    t.integer  "minimum_quantity"
+    t.integer  "maximum_quantity"
+    t.integer  "pre_order_quantity"
+    t.integer  "company_master_id"
+    t.integer  "pack_master_id"
+    t.integer  "purchase_tax_master_id"
+    t.integer  "sales_tax_master_id"
+    t.integer  "group_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "common_item_masters", ["company_master_id"], name: "index_common_item_masters_on_company_master_id", using: :btree
+  add_index "common_item_masters", ["group_master_id"], name: "index_common_item_masters_on_group_master_id", using: :btree
+  add_index "common_item_masters", ["pack_master_id"], name: "index_common_item_masters_on_pack_master_id", using: :btree
+  add_index "common_item_masters", ["purchase_tax_master_id"], name: "index_common_item_masters_on_purchase_tax_master_id", using: :btree
+  add_index "common_item_masters", ["sales_tax_master_id"], name: "index_common_item_masters_on_sales_tax_master_id", using: :btree
+
+  create_table "company_expense_mastes", force: true do |t|
+    t.string   "expense_name"
+    t.string   "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_masters", force: true do |t|
+    t.string   "company_name"
+    t.string   "address"
+    t.integer  "phone_no"
+    t.string   "email_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "company_masters", ["city_id"], name: "index_company_masters_on_city_id", using: :btree
+
+  create_table "company_test_rate_masters", force: true do |t|
+    t.decimal  "com_rate"
+    t.decimal  "cust_rate"
+    t.integer  "test_master_id"
+    t.integer  "company_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "company_test_rate_masters", ["company_master_id"], name: "index_company_test_rate_masters_on_company_master_id", using: :btree
+  add_index "company_test_rate_masters", ["test_master_id"], name: "index_company_test_rate_masters_on_test_master_id", using: :btree
+
+  create_table "composition_masters", force: true do |t|
+    t.string   "composition_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -304,6 +559,70 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "department_masters", force: true do |t|
+    t.string   "department_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "diet_masters", force: true do |t|
+    t.date     "form_time"
+    t.date     "to_time"
+    t.string   "advice"
+    t.string   "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dignosis_masters", force: true do |t|
+    t.string   "dignosis"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dignostic_setups", force: true do |t|
+    t.decimal  "discount"
+    t.string   "perticular"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dignostic_setups", ["doctor_master_id"], name: "index_dignostic_setups_on_doctor_master_id", using: :btree
+
+  create_table "doctor_masters", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.string   "address"
+    t.string   "mobile_no"
+    t.integer  "phone_no"
+    t.string   "email_id"
+    t.integer  "room_no"
+    t.string   "is_rmo"
+    t.integer  "vistit_rate"
+    t.integer  "visit_limit"
+    t.boolean  "is_refered"
+    t.integer  "city_id"
+    t.integer  "shift_master_id"
+    t.integer  "specialization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "doctor_masters", ["city_id"], name: "index_doctor_masters_on_city_id", using: :btree
+  add_index "doctor_masters", ["shift_master_id"], name: "index_doctor_masters_on_shift_master_id", using: :btree
+  add_index "doctor_masters", ["specialization_id"], name: "index_doctor_masters_on_specialization_id", using: :btree
+
+  create_table "dose_masters", force: true do |t|
+    t.string   "dose_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "elective_groups", force: true do |t|
     t.string   "name"
@@ -559,6 +878,29 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "exams", ["grading_level_id"], name: "index_exams_on_grading_level_id", using: :btree
   add_index "exams", ["subject_id"], name: "index_exams_on_subject_id", using: :btree
 
+
+  create_table "family_masters", force: true do |t|
+    t.string   "family"
+    t.boolean  "allow_discount"
+    t.integer  "discount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fee_collection_discounts", force: true do |t|
+    t.string   "type"
+    t.string   "name"
+    t.integer  "receiver_id"
+    t.integer  "finance_fee_collection_id"
+<<<<<<< HEAD
+    t.decimal  "discount"
+    t.boolean  "is_amount",                 default: false
+=======
+    t.integer  "category_id"
+    t.string   "admission_no"
+    t.integer  "batch_id"
+    t.boolean  "is_deleted",                default: false
+
   create_table "fee_collection_discounts", force: true do |t|
     t.string   "type"
     t.string   "name"
@@ -566,12 +908,24 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.integer  "finance_fee_collection_id"
     t.decimal  "discount"
     t.boolean  "is_amount",                 default: false
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  add_index "fee_collection_discounts", ["batch_id"], name: "index_fee_collection_discounts_on_batch_id", using: :btree
+  add_index "fee_collection_discounts", ["category_id"], name: "index_fee_collection_discounts_on_category_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   add_index "fee_collection_discounts", ["finance_fee_collection_id"], name: "index_fee_collection_discounts_on_finance_fee_collection_id", using: :btree
   add_index "fee_collection_discounts", ["receiver_id"], name: "index_fee_collection_discounts_on_receiver_id", using: :btree
+
+  add_index "fee_collection_discounts", ["finance_fee_collection_id"], name: "index_fee_collection_discounts_on_finance_fee_collection_id", using: :btree
+  add_index "fee_collection_discounts", ["receiver_id"], name: "index_fee_collection_discounts_on_receiver_id", using: :btree
+
 
   create_table "fee_collection_discounts_students", force: true do |t|
     t.integer  "student_id"
@@ -590,15 +944,33 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.integer  "finance_fee_collection_id"
     t.integer  "category_id"
     t.string   "admission_no"
+<<<<<<< HEAD
     t.integer  "student_id"
+=======
+
+    t.integer  "batch_id"
+
+    t.integer  "student_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.boolean  "is_deleted",                default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  add_index "fee_collection_particulars", ["batch_id"], name: "index_fee_collection_particulars_on_batch_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   add_index "fee_collection_particulars", ["category_id"], name: "index_fee_collection_particulars_on_category_id", using: :btree
   add_index "fee_collection_particulars", ["finance_fee_collection_id"], name: "index_fee_collection_particulars_on_finance_fee_collection_id", using: :btree
   add_index "fee_collection_particulars", ["student_id"], name: "index_fee_collection_particulars_on_student_id", using: :btree
+
+  add_index "fee_collection_particulars", ["category_id"], name: "index_fee_collection_particulars_on_category_id", using: :btree
+  add_index "fee_collection_particulars", ["finance_fee_collection_id"], name: "index_fee_collection_particulars_on_finance_fee_collection_id", using: :btree
+  add_index "fee_collection_particulars", ["student_id"], name: "index_fee_collection_particulars_on_student_id", using: :btree
+
 
   create_table "fee_collection_particulars_students", force: true do |t|
     t.integer  "student_id"
@@ -613,25 +985,65 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   create_table "fee_discounts", force: true do |t|
     t.string   "type"
     t.string   "name"
+<<<<<<< HEAD
     t.integer  "receiver_id"
     t.integer  "finance_fee_category_id"
     t.decimal  "discount"
     t.boolean  "is_amount",               default: false
+=======
+
+    t.decimal  "discount"
+    t.integer  "finance_fee_category_id"
+    t.integer  "category_id"
+    t.string   "admission_no"
+    t.integer  "batch_id"
+    t.boolean  "is_deleted",              default: false
+
+    t.integer  "receiver_id"
+    t.integer  "finance_fee_category_id"
+    t.decimal  "discount"
+    t.boolean  "is_amount",               default: false
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  add_index "fee_discounts", ["batch_id"], name: "index_fee_discounts_on_batch_id", using: :btree
+  add_index "fee_discounts", ["category_id"], name: "index_fee_discounts_on_category_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   add_index "fee_discounts", ["finance_fee_category_id"], name: "index_fee_discounts_on_finance_fee_category_id", using: :btree
   add_index "fee_discounts", ["receiver_id"], name: "index_fee_discounts_on_receiver_id", using: :btree
+
+  add_index "fee_discounts", ["finance_fee_category_id"], name: "index_fee_discounts_on_finance_fee_category_id", using: :btree
+  add_index "fee_discounts", ["receiver_id"], name: "index_fee_discounts_on_receiver_id", using: :btree
+
 
   create_table "finance_donations", force: true do |t|
     t.string   "donor"
     t.string   "description"
     t.decimal  "amount"
+<<<<<<< HEAD
     t.integer  "finance_transaction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "transaction_date"
+=======
+
+    t.date     "transaction_date"
+    t.integer  "finance_transaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+
+    t.integer  "finance_transaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "transaction_date"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   end
 
   add_index "finance_donations", ["finance_transaction_id"], name: "index_finance_donations_on_finance_transaction_id", using: :btree
@@ -639,31 +1051,70 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   create_table "finance_fee_categories", force: true do |t|
     t.string   "name"
     t.text     "description"
+<<<<<<< HEAD
+=======
+
+    t.boolean  "is_deleted",  default: false
+    t.boolean  "is_master",   default: false
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.integer  "batch_id"
     t.integer  "fee_collection_id"
     t.boolean  "is_deleted",        default: false
     t.boolean  "is_master",         default: false
+<<<<<<< HEAD
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "finance_fee_categories", ["batch_id"], name: "index_finance_fee_categories_on_batch_id", using: :btree
   add_index "finance_fee_categories", ["fee_collection_id"], name: "index_finance_fee_categories_on_fee_collection_id", using: :btree
 
+=======
+
+  add_index "finance_fee_categories", ["batch_id"], name: "index_finance_fee_categories_on_batch_id", using: :btree
+  add_index "finance_fee_categories", ["fee_collection_id"], name: "index_finance_fee_categories_on_fee_collection_id", using: :btree
+
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "finance_fee_collections", force: true do |t|
     t.string   "name"
     t.date     "start_date"
     t.date     "end_date"
     t.date     "due_date"
+<<<<<<< HEAD
     t.integer  "fee_category_id"
     t.integer  "batch_id"
     t.boolean  "is_deleted",      default: false
+=======
+
+    t.integer  "finance_fee_category_id"
+    t.integer  "batch_id"
+    t.boolean  "is_deleted",              default: false
+
+    t.integer  "fee_category_id"
+    t.integer  "batch_id"
+    t.boolean  "is_deleted",      default: false
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "finance_fee_collections", ["batch_id"], name: "index_finance_fee_collections_on_batch_id", using: :btree
+<<<<<<< HEAD
   add_index "finance_fee_collections", ["fee_category_id"], name: "index_finance_fee_collections_on_fee_category_id", using: :btree
+=======
+
+  add_index "finance_fee_collections", ["finance_fee_category_id"], name: "index_finance_fee_collections_on_finance_fee_category_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
+
+  add_index "finance_fee_collections", ["fee_category_id"], name: "index_finance_fee_collections_on_fee_category_id", using: :btree
+
 
   create_table "finance_fee_particulars", force: true do |t|
     t.string   "name"
@@ -672,15 +1123,33 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.integer  "finance_fee_category_id"
     t.integer  "category_id"
     t.string   "admission_no"
+<<<<<<< HEAD
     t.integer  "student_id"
+=======
+
+    t.integer  "batch_id"
+
+    t.integer  "student_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.boolean  "is_deleted",              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  add_index "finance_fee_particulars", ["batch_id"], name: "index_finance_fee_particulars_on_batch_id", using: :btree
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   add_index "finance_fee_particulars", ["category_id"], name: "index_finance_fee_particulars_on_category_id", using: :btree
   add_index "finance_fee_particulars", ["finance_fee_category_id"], name: "index_finance_fee_particulars_on_finance_fee_category_id", using: :btree
   add_index "finance_fee_particulars", ["student_id"], name: "index_finance_fee_particulars_on_student_id", using: :btree
+
+  add_index "finance_fee_particulars", ["category_id"], name: "index_finance_fee_particulars_on_category_id", using: :btree
+  add_index "finance_fee_particulars", ["finance_fee_category_id"], name: "index_finance_fee_particulars_on_finance_fee_category_id", using: :btree
+  add_index "finance_fee_particulars", ["student_id"], name: "index_finance_fee_particulars_on_student_id", using: :btree
+
 
   create_table "finance_fee_structure_elements", force: true do |t|
     t.decimal  "amount"
@@ -702,14 +1171,35 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "finance_fee_structure_elements", ["student_id"], name: "index_finance_fee_structure_elements_on_student_id", using: :btree
 
   create_table "finance_fees", force: true do |t|
+<<<<<<< HEAD
     t.integer  "fee_collection_id"
     t.string   "transaction_id"
     t.integer  "student_id"
+=======
+
+    t.integer  "finance_fee_collection_id"
+    t.integer  "student_id"
+    t.string   "receipt_no"
+    t.boolean  "is_paid"
+
+    t.integer  "fee_collection_id"
+    t.string   "transaction_id"
+    t.integer  "student_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "finance_fees", ["fee_collection_id"], name: "index_finance_fees_on_fee_collection_id", using: :btree
+=======
+
+  add_index "finance_fees", ["finance_fee_collection_id"], name: "index_finance_fees_on_finance_fee_collection_id", using: :btree
+
+  add_index "finance_fees", ["fee_collection_id"], name: "index_finance_fees_on_fee_collection_id", using: :btree
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   add_index "finance_fees", ["student_id"], name: "index_finance_fees_on_student_id", using: :btree
 
   create_table "finance_fines", force: true do |t|
@@ -732,12 +1222,27 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   end
 
   create_table "finance_transaction_triggers", force: true do |t|
+<<<<<<< HEAD
+    t.decimal  "percentage"
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+<<<<<<< HEAD
+    t.integer  "category_id"
+=======
+
     t.decimal  "percentage"
     t.string   "title"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   end
 
   add_index "finance_transaction_triggers", ["category_id"], name: "index_finance_transaction_triggers_on_category_id", using: :btree
@@ -746,13 +1251,45 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.string   "title"
     t.string   "description"
     t.decimal  "amount"
+<<<<<<< HEAD
     t.boolean  "fine_included",   default: false
     t.integer  "category_id"
     t.integer  "student_id"
     t.integer  "finance_fees_id"
+=======
+
+    t.date     "transaction_date"
+    t.boolean  "fine_included",                   default: false
+    t.integer  "student_id"
+    t.integer  "finance_fee_id"
+    t.integer  "finance_transaction_category_id"
+
+    t.boolean  "fine_included",   default: false
+    t.integer  "category_id"
+    t.integer  "student_id"
+    t.integer  "finance_fees_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+<<<<<<< HEAD
+  add_index "finance_transactions", ["category_id"], name: "index_finance_transactions_on_category_id", using: :btree
+  add_index "finance_transactions", ["finance_fees_id"], name: "index_finance_transactions_on_finance_fees_id", using: :btree
+  add_index "finance_transactions", ["student_id"], name: "index_finance_transactions_on_student_id", using: :btree
+
+  create_table "fines", force: true do |t|
+    t.integer  "issue_book_id"
+    t.decimal  "amount"
+=======
+
+  add_index "finance_transactions", ["finance_fee_id"], name: "index_finance_transactions_on_finance_fee_id", using: :btree
+  add_index "finance_transactions", ["finance_transaction_category_id"], name: "index_finance_transactions_on_finance_transaction_category_id", using: :btree
+  add_index "finance_transactions", ["student_id"], name: "index_finance_transactions_on_student_id", using: :btree
+
+  create_table "floor_masters", force: true do |t|
+    t.string   "floor_name"
 
   add_index "finance_transactions", ["category_id"], name: "index_finance_transactions_on_category_id", using: :btree
   add_index "finance_transactions", ["finance_fees_id"], name: "index_finance_transactions_on_finance_fees_id", using: :btree
@@ -761,12 +1298,21 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   create_table "fines", force: true do |t|
     t.integer  "issue_book_id"
     t.decimal  "amount"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "fines", ["issue_book_id"], name: "index_fines_on_issue_book_id", using: :btree
 
+=======
+
+  add_index "fines", ["issue_book_id"], name: "index_fines_on_issue_book_id", using: :btree
+
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "general_settings", force: true do |t|
     t.string   "school_or_college_name"
     t.string   "school_or_college_address"
@@ -788,6 +1334,14 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "godown_masters", force: true do |t|
+    t.string   "godown_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "grading_levels", force: true do |t|
     t.string   "name"
@@ -811,6 +1365,14 @@ ActiveRecord::Schema.define(version: 20141223103413) do
 
   add_index "group_batches", ["batch_group_id"], name: "index_group_batches_on_batch_group_id", using: :btree
   add_index "group_batches", ["batch_id"], name: "index_group_batches_on_batch_id", using: :btree
+
+
+  create_table "group_masters", force: true do |t|
+    t.string   "group"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "grouped_exam_reports", force: true do |t|
     t.integer  "batch_id"
@@ -853,6 +1415,30 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "guardians", ["country_id"], name: "index_guardians_on_country_id", using: :btree
   add_index "guardians", ["student_id"], name: "index_guardians_on_student_id", using: :btree
 
+
+  create_table "hospital_users", force: true do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.decimal  "max_discount"
+    t.boolean  "is_deactive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hospitals", force: true do |t|
+    t.string   "company_name"
+    t.string   "short_name"
+    t.string   "address"
+    t.string   "phone_no"
+    t.integer  "fax_no"
+    t.string   "email"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
   create_table "individual_payslip_categories", force: true do |t|
     t.integer  "employee_id"
     t.date     "salary_date"
@@ -866,6 +1452,36 @@ ActiveRecord::Schema.define(version: 20141223103413) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
+<<<<<<< HEAD
+=======
+
+  create_table "item_masters", force: true do |t|
+    t.string   "item_name"
+    t.integer  "product_unit"
+    t.integer  "minimum_quantity"
+    t.integer  "maximum_quantity"
+    t.integer  "reorder_quantity"
+    t.string   "drug_form"
+    t.string   "is_ot_items"
+    t.string   "ot_item_category"
+    t.string   "information"
+    t.integer  "uses_master_id"
+    t.integer  "composition_master_id"
+    t.integer  "company_master_id"
+    t.integer  "pack_master_id"
+    t.integer  "purchase_tax_master_id"
+    t.integer  "sales_tax_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_masters", ["composition_master_id"], name: "index_item_masters_on_composition_master_id", using: :btree
+  add_index "item_masters", ["pack_master_id"], name: "index_item_masters_on_pack_master_id", using: :btree
+  add_index "item_masters", ["purchase_tax_master_id"], name: "index_item_masters_on_purchase_tax_master_id", using: :btree
+  add_index "item_masters", ["sales_tax_master_id"], name: "index_item_masters_on_sales_tax_master_id", using: :btree
+  add_index "item_masters", ["uses_master_id"], name: "index_item_masters_on_uses_master_id", using: :btree
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "issue_books", force: true do |t|
     t.integer  "book_id"
     t.integer  "student_id"
@@ -883,11 +1499,29 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "issue_books", ["employee_id"], name: "index_issue_books_on_employee_id", using: :btree
   add_index "issue_books", ["student_id"], name: "index_issue_books_on_student_id", using: :btree
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "languages", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "ledger_masters", force: true do |t|
+    t.string   "ledger_name"
+    t.string   "address"
+    t.integer  "phone_no"
+    t.integer  "opaning_balance"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ledger_masters", ["city_id"], name: "index_ledger_masters_on_city_id", using: :btree
+
 
   create_table "liabilities", force: true do |t|
     t.string   "title"
@@ -899,18 +1533,59 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  create_table "money_reciepts", force: true do |t|
+    t.integer  "reciept_no"
+    t.integer  "hr_no"
+    t.integer  "OPD_no"
+    t.string   "patient_name"
+    t.integer  "phone_no"
+    t.decimal  "charge"
+    t.decimal  "amount"
+    t.decimal  "discount"
+    t.decimal  "due_amount"
+    t.decimal  "grand_total"
+    t.decimal  "received_amount"
+    t.decimal  "net_amount"
+    t.string   "pay_mode"
+    t.string   "cheque_card_no"
+    t.date     "cheque_date"
+    t.string   "remark"
+    t.integer  "DepartmentMaster_id"
+    t.integer  "DoctorMaster_id"
+    t.integer  "ServiceMaster_id"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "library_card_settings", force: true do |t|
     t.integer  "course_id"
     t.integer  "category_id"
     t.integer  "books_issuable"
     t.integer  "time_period"
+<<<<<<< HEAD
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "library_card_settings", ["category_id"], name: "index_library_card_settings_on_category_id", using: :btree
   add_index "library_card_settings", ["course_id"], name: "index_library_card_settings_on_course_id", using: :btree
 
+=======
+
+  add_index "money_reciepts", ["DepartmentMaster_id"], name: "index_money_reciepts_on_DepartmentMaster_id", using: :btree
+  add_index "money_reciepts", ["DoctorMaster_id"], name: "index_money_reciepts_on_DoctorMaster_id", using: :btree
+  add_index "money_reciepts", ["ServiceMaster_id"], name: "index_money_reciepts_on_ServiceMaster_id", using: :btree
+
+  add_index "library_card_settings", ["category_id"], name: "index_library_card_settings_on_category_id", using: :btree
+  add_index "library_card_settings", ["course_id"], name: "index_library_card_settings_on_course_id", using: :btree
+
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "monthly_payslips", force: true do |t|
     t.date     "salary_date"
     t.integer  "employee_id"
@@ -926,12 +1601,94 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "monthly_payslips", ["employee_id"], name: "index_monthly_payslips_on_employee_id", using: :btree
   add_index "monthly_payslips", ["payroll_category_id"], name: "index_monthly_payslips_on_payroll_category_id", using: :btree
 
+
+  create_table "new_patients", force: true do |t|
+    t.integer  "HR_no"
+    t.integer  "OPD_no"
+    t.integer  "appointment_no"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "care_of"
+    t.string   "address"
+    t.integer  "pin_no"
+    t.integer  "contact_no"
+    t.string   "remark"
+    t.date     "date_time"
+    t.date     "date_of_birth"
+    t.decimal  "height"
+    t.decimal  "weight"
+    t.string   "religion"
+    t.string   "card_no"
+    t.integer  "serial_no"
+    t.date     "validity"
+    t.binary   "image_patient"
+    t.binary   "image_pre_treatment"
+    t.binary   "image_post_treatment"
+    t.integer  "FamilyMaster_id"
+    t.integer  "ShiftMaster_id"
+    t.integer  "DignosisMaster_id"
+    t.integer  "OccupationMaster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "new_patients", ["DignosisMaster_id"], name: "index_new_patients_on_DignosisMaster_id", using: :btree
+  add_index "new_patients", ["FamilyMaster_id"], name: "index_new_patients_on_FamilyMaster_id", using: :btree
+  add_index "new_patients", ["OccupationMaster_id"], name: "index_new_patients_on_OccupationMaster_id", using: :btree
+  add_index "new_patients", ["ShiftMaster_id"], name: "index_new_patients_on_ShiftMaster_id", using: :btree
+
+
   create_table "newscasts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "occupation_masters", force: true do |t|
+    t.string   "occupation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "old_patients", force: true do |t|
+    t.integer  "HR_no"
+    t.integer  "OPD_no"
+    t.integer  "appointment_no"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "care_of"
+    t.string   "address"
+    t.integer  "pin_no"
+    t.integer  "contact_no"
+    t.string   "remark"
+    t.date     "date"
+    t.date     "date_of_birth"
+    t.decimal  "height"
+    t.decimal  "weight"
+    t.string   "religion"
+    t.string   "card_no"
+    t.integer  "serial_no"
+    t.date     "validity"
+    t.binary   "image_patient"
+    t.binary   "image_pre_treatment"
+    t.binary   "image_post_treatment"
+    t.integer  "FamilyMaster_id"
+    t.integer  "ShiftMaster_id"
+    t.integer  "DignosisMaster_id"
+    t.integer  "OccupationMaster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "old_patients", ["DignosisMaster_id"], name: "index_old_patients_on_DignosisMaster_id", using: :btree
+  add_index "old_patients", ["FamilyMaster_id"], name: "index_old_patients_on_FamilyMaster_id", using: :btree
+  add_index "old_patients", ["OccupationMaster_id"], name: "index_old_patients_on_OccupationMaster_id", using: :btree
+  add_index "old_patients", ["ShiftMaster_id"], name: "index_old_patients_on_ShiftMaster_id", using: :btree
+
 
   create_table "online_exam_questions", force: true do |t|
     t.integer  "online_exam_id"
@@ -956,13 +1713,104 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "other_library_settings", force: true do |t|
     t.decimal  "fine_per_day"
     t.integer  "times_renew_book"
+=======
+
+  create_table "opd_department_masters", force: true do |t|
+    t.string   "department_name"
+
+  create_table "other_library_settings", force: true do |t|
+    t.decimal  "fine_per_day"
+    t.integer  "times_renew_book"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "ot_masters", force: true do |t|
+    t.string   "Ot_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ot_slot_masters", force: true do |t|
+    t.string   "Ot_master_name"
+    t.integer  "rate"
+    t.integer  "ot_master_id"
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+<<<<<<< HEAD
+=======
+  create_table "ot_type_masters", force: true do |t|
+    t.string   "ot_type_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pack_masters", force: true do |t|
+    t.string   "pack_name"
+    t.decimal  "sale_in_percentage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "package_masters", force: true do |t|
+    t.string   "package_name"
+    t.string   "package_rate"
+    t.string   "rate"
+    t.integer  "test_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "package_masters", ["test_master_id"], name: "index_package_masters_on_test_master_id", using: :btree
+
+  create_table "pathologist_masters", force: true do |t|
+    t.string   "pathologist_name"
+    t.integer  "age"
+    t.string   "gender"
+    t.date     "date_of_birth"
+    t.string   "address"
+    t.string   "mobile_no"
+    t.integer  "phone_no"
+    t.string   "email_id"
+    t.integer  "room_no"
+    t.integer  "visit_rate"
+    t.boolean  "is_rmo"
+    t.integer  "city_id"
+    t.integer  "specialization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pathologist_masters", ["city_id"], name: "index_pathologist_masters_on_city_id", using: :btree
+  add_index "pathologist_masters", ["specialization_id"], name: "index_pathologist_masters_on_specialization_id", using: :btree
+
+  create_table "patient_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.string   "advance_booking"
+    t.boolean  "is_advance"
+    t.date     "date_time"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.decimal  "age"
+    t.string   "address"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patient_registrations", ["city_id"], name: "index_patient_registrations_on_city_id", using: :btree
+
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "payroll_categories", force: true do |t|
     t.string   "name"
     t.float    "percentage"
@@ -975,15 +1823,45 @@ ActiveRecord::Schema.define(version: 20141223103413) do
 
   add_index "payroll_categories", ["payroll_category_id"], name: "index_payroll_categories_on_payroll_category_id", using: :btree
 
+<<<<<<< HEAD
   create_table "per_day_fine_details", force: true do |t|
     t.decimal  "fine_per_day"
+=======
+
+  create_table "prescription_instructions", force: true do |t|
+    t.string   "instruction"
+    t.boolean  "is_dose"
+    t.boolean  "is_diet"
+    t.boolean  "is_specialized_instruction"
+
+  create_table "per_day_fine_details", force: true do |t|
+    t.decimal  "fine_per_day"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "privilege_tags", force: true do |t|
     t.string   "name_tag"
     t.integer  "priority"
+=======
+
+  create_table "prescriptions", force: true do |t|
+    t.integer  "hr_no"
+    t.date     "date_time"
+    t.integer  "BP_level_min"
+    t.integer  "BP_level_max"
+    t.string   "bmi"
+    t.date     "follow_up_date"
+    t.string   "remark"
+
+  create_table "privilege_tags", force: true do |t|
+    t.string   "name_tag"
+    t.integer  "priority"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -995,16 +1873,34 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+
+  create_table "purchase_tax_masters", force: true do |t|
+    t.string   "name"
+    t.integer  "percentage"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "privileges_users", force: true do |t|
     t.integer  "school_id"
     t.integer  "user_id"
     t.integer  "privilege_id_id"
     t.integer  "course_id"
+<<<<<<< HEAD
+=======
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "privileges_users", ["course_id"], name: "index_privileges_users_on_course_id", using: :btree
+=======
+
+  add_index "privileges_users", ["course_id"], name: "index_privileges_users_on_course_id", using: :btree
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
 
   create_table "ranking_levels", force: true do |t|
     t.string   "name"
@@ -1021,6 +1917,90 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   end
 
   add_index "ranking_levels", ["course_id"], name: "index_ranking_levels_on_course_id", using: :btree
+
+
+  create_table "refunds", force: true do |t|
+    t.date     "date_time"
+    t.string   "hr_no"
+    t.string   "patient_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "address"
+    t.integer  "pin_no"
+    t.integer  "phone_no"
+    t.integer  "DoctorMaster_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "refunds", ["DoctorMaster_id"], name: "index_refunds_on_DoctorMaster_id", using: :btree
+  add_index "refunds", ["city_id"], name: "index_refunds_on_city_id", using: :btree
+
+  create_table "religion_masters", force: true do |t|
+    t.string   "Religion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sales_tax_masters", force: true do |t|
+    t.string   "name"
+    t.decimal  "tax"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sample_center_masters", force: true do |t|
+    t.string   "sample_center_name"
+    t.string   "address"
+    t.integer  "phon_no"
+    t.integer  "comission"
+    t.string   "email_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sample_center_masters", ["city_id"], name: "index_sample_center_masters_on_city_id", using: :btree
+
+  create_table "series_masters", force: true do |t|
+    t.string   "series_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "service_masters", force: true do |t|
+    t.date     "service_date"
+    t.string   "name"
+    t.boolean  "is_active"
+    t.decimal  "charge"
+    t.decimal  "service_charge"
+    t.decimal  "luxury_tax"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shift_masters", force: true do |t|
+    t.integer  "shift_code"
+    t.string   "shift_name"
+    t.integer  "time_form"
+    t.integer  "time_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specializations", force: true do |t|
+    t.string   "specialized"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "state_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "student_category_fee_collection_discounts", force: true do |t|
     t.datetime "created_at"
@@ -1117,6 +2097,17 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "students", ["batch_id"], name: "index_students_on_batch_id", using: :btree
   add_index "students", ["category_id"], name: "index_students_on_category_id", using: :btree
 
+
+  create_table "sub_department_masters", force: true do |t|
+    t.string   "sub_department_name"
+    t.integer  "department_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sub_department_masters", ["department_master_id"], name: "index_sub_department_masters_on_department_master_id", using: :btree
+
+
   create_table "subjects", force: true do |t|
     t.string   "name"
     t.string   "code"
@@ -1132,12 +2123,58 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "subjects", ["batch_id"], name: "index_subjects_on_batch_id", using: :btree
   add_index "subjects", ["elective_group_id"], name: "index_subjects_on_elective_group_id", using: :btree
 
+<<<<<<< HEAD
   create_table "tags", force: true do |t|
     t.string   "name"
+=======
+
+  create_table "supplier_masters", force: true do |t|
+    t.string   "supplier_name"
+    t.string   "address"
+    t.integer  "phone_no"
+    t.integer  "tin_no"
+    t.integer  "DL_no"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "supplier_masters", ["city_id"], name: "index_supplier_masters_on_city_id", using: :btree
+
+  create_table "test_masters", force: true do |t|
+    t.string   "test_name"
+    t.string   "reporting_name"
+    t.string   "method"
+    t.integer  "rate"
+    t.integer  "dilivery"
+    t.integer  "sub_department_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "test_masters", ["sub_department_master_id"], name: "index_test_masters_on_sub_department_master_id", using: :btree
+
+  create_table "test_property_masters", force: true do |t|
+    t.string   "test_property"
+    t.string   "unit_of_measure"
+    t.string   "named_value"
+    t.integer  "test_master_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+<<<<<<< HEAD
+=======
+
+  add_index "test_property_masters", ["test_master_id"], name: "index_test_property_masters_on_test_master_id", using: :btree
+
+
+>>>>>>> be3ea0b31bd408d46bf3882456c987e2f542cf4b
   create_table "time_table_entries", force: true do |t|
     t.integer  "batch_id"
     t.integer  "weekday_id"
@@ -1163,6 +2200,13 @@ ActiveRecord::Schema.define(version: 20141223103413) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "tmps", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -1198,6 +2242,31 @@ ActiveRecord::Schema.define(version: 20141223103413) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+
+
+  create_table "uses_masters", force: true do |t|
+    t.string   "uses"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vaccines_masters", force: true do |t|
+    t.string   "vaccines"
+    t.integer  "dueon"
+    t.integer  "age_group_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vaccines_masters", ["age_group_master_id"], name: "index_vaccines_masters_on_age_group_master_id", using: :btree
+
+  create_table "ward_masters", force: true do |t|
+    t.string   "ward_name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "weekdays", force: true do |t|
     t.integer  "batch_id"

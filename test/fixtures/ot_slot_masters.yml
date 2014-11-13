@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Ot_master_name: MyString
+  rate: 1
+  ot_master: 
+
+two:
+  Ot_master_name: MyString
+  rate: 1
+  ot_master: 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_name: MyString
+  reporting_name: MyString
+  method: MyString
+  rate: 1
+  dilivery: 1
+  sub_department_master_id: 
+
+two:
+  test_name: MyString
+  reporting_name: MyString
+  method: MyString
+  rate: 1
+  dilivery: 1
+  sub_department_master_id: 
