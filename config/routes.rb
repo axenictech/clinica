@@ -1,23 +1,7 @@
 Rails.application.routes.draw do
-#Ravikiran indoor module
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
-
-root 'home#dashboard'
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -533,7 +517,6 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
 
 get 'masters/common_master'
 get 'masters/doctor_master'
@@ -542,7 +525,6 @@ get 'masters/phar'
 
 #----------OutDoors------------------------------------#
 get 'outdoors/new_registration'
-=======
 
 #common master#
 
@@ -905,7 +887,6 @@ delete 'masters/:id/delete_company_expence_master',to: 'masters#delete_company_e
 
 #outdoors#
 get 'outdoors/new'
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
@@ -967,13 +948,8 @@ get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
-<<<<<<< HEAD
-
 #---------------Master-----------------------
 
-
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
@@ -1050,7 +1026,21 @@ post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_
 patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
 delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
 #INDOOR#
-
+#INDOORS#
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
+#INDOORS#
 
 #PHARMACY#
 get 'pharmacy/new_credit_note'
@@ -1094,7 +1084,7 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
-#PHARMACY#
+#PHARMACY#+
 #STORES#
 get 'stores/new_common_opening_stock'
 post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
@@ -1141,10 +1131,6 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 root 'home#dashboard'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
 resources :home
 resources :setting
 resources :categories
