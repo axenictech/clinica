@@ -1,0 +1,2 @@
+module DiagnosticMasterHelper
+end
