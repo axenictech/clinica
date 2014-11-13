@@ -969,10 +969,12 @@ post 'indoor/create_ot_billing',to: 'indoor#create_ot_billing',as: 'create_ot_bi
 patch 'indoor/:id/update_ot_billing',to: 'indoor#update_ot_billing',as: 'update_ot_billing'
 delete 'indoor/:id/delete_ot_billing',to: 'indoor#delete_ot_billing',as: 'delete_ot_billing'
 
+
 get 'indoor/new_money_reciept'
 post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
 patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
 delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
+get 'indoor/:id/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
 
 get 'indoor/new_discharge'
 post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
