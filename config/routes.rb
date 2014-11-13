@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
+
+root 'home#dashboard'
+
 get 'setting/course_batch'
 get 'general_settings/all'
 get 'general_settings/none'
@@ -516,13 +519,14 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
+
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
 get 'masters/phar'
 
-get 'outdoors/new'
+#----------OutDoors------------------------------------#
+get 'outdoors/new_registration'
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
@@ -553,11 +557,17 @@ get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdo
 patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
 delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
 
-get 'outdoors/appitment'
-post 'outdoors/appitment_create'
-get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
-patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
-delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+get 'outdoors/appoitment'
+post 'outdoors/appoitment_create'
+get 'outdoors/:id/edit_appoitment',to:'outdoors#edit_appoitment',as:'outdoors_edit_appoitment'
+patch 'outdoors/:id/update_appoitment',to:'outdoors#update_appoitment',as:'outdoors_update_appoitment' 
+delete 'outdoors/:id/destroy_appoitment',to:'outdoors#destroy_appoitment',as:'outdoors_destroy_appoitment' 
+
+get 'outdoors/immunization_schedule'
+post 'outdoors/immunization_schedule_create'
+get 'outdoors/:id/edit_immunization_schedule',to:'outdoors#edit_immunization_schedule',as:'outdoors_edit_immunization_schedule'
+patch 'outdoors/:id/update_immunization_schedule',to:'outdoors#update_immunization_schedule',as:'outdoors_update_immunization_schedule' 
+delete 'outdoors/:id/destroy_immunization_schedule',to:'outdoors#destroy_immunization_scheduleimmunization_schedule',as:'outdoors_destroy_immunization_schedule'   
 
 get 'outdoors/prescription'
 post 'outdoors/prescription_create'
@@ -565,7 +575,7 @@ get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoor
 patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
 delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
 
-
+#-------------------Labs------------------------#
 get 'labs/new'
 post 'labs/lab_case_create'
 get 'labs/:id/edit_lab_case',to:'labs#edit_lab_case',as:'labs_edit_lab_case'
@@ -577,20 +587,11 @@ post 'labs/test_cancellation_create'
 get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_edit_test_cancellation'
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
-=======
 
 
 #---------------Master-----------------------
 
->>>>>>> 777791370c779c5e11c6b2544ee2c9456dae26a1
 
-
-root 'home#dashboard'
- 
-
-
-<<<<<<< HEAD
-=======
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
@@ -745,7 +746,7 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 
 
->>>>>>> 777791370c779c5e11c6b2544ee2c9456dae26a1
+
 resources :home
 resources :setting
 resources :categories

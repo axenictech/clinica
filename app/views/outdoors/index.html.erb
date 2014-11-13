@@ -1,187 +1,294 @@
-<div id="content-header">
-  <h1>Outdoors</h1>
-  <h3>manage outdoor</h3>
-  <div id="app-back-button">
-    <%= link_to image_tag("buttons/back.png",:border => 0), :back %>
-  </div>
-    <div><%= image_tag("underline.jpg",width: "100%")%></div>
-</div><br/><br/>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "New Registration",'outdoors/newpatient_registration' ,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Add new patient
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Old Registration",style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          old registration
-          </div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= 'OutDoor'%></span>
+              <small><%= 'OutDoor home'%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('setting')%></li>
+        </ul>
       </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Before patient entry",style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            before patient entry
-          </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Clinical Data",style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px"   >
-          clinical data
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
-    <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Outdoor Receipt",style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            outdoor receipt
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Appointment",style:"color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px"   >
-          appointment
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Receipt 2" ,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            receipt
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Refund",style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          refund
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
+</div>
 
 <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Prescription" ,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            prescription
-          </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "New Registration",outdoors_new_registration_path%>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Immunization Schedule",style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          immunization schedule
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Add a new patient to opd
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Doctor Patiet List" ,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            doctor patient list
-          </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Old Registration",outdoors_old_registration_path%>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
+      </div>
+      <div class="box-content box-padding">
+        Old patient Registration.
+      </div>
     </div>
-    
   </div>
 
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Before Patient Entry",outdoors_before_patient_entry_path %>  
+
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Manage subjects corresponding to different courses.
+      </div>
+    </div>
+  </div>
+
+ <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Clinical Data",outdoors_clinical_report_path%>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Add student category.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "OutDoor Receipt",outdoors_money_receipt_path%>  
+
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Manage subjects corresponding to different courses.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Appoitment",outdoors_appoitment_path%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Set some general configurations related to institution,attendance, etc.
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Receipt 2",outdoors_money_receipt_path%>  
+
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Manage subjects corresponding to different courses.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Refund",''%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Set some general configurations related to institution,attendance, etc.
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Prescription",outdoors_prescription_path%>  
+
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Manage subjects corresponding to different courses.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Immunization schedule",outdoors_immunization_schedule_path%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Set some general configurations related to institution,attendance, etc.
+      </div>
+    </div>
+  </div>
+</div>
 
 
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Doctor Patient List",''%>  
 
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Manage subjects corresponding to different courses.
+      </div>
+    </div>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
