@@ -518,7 +518,20 @@ get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
 #common master#
+
+get 'masters/outdoor_patient_master'
+get 'masters/pharmacy_master'
+get 'masters/diagonostic_master'
+get 'masters/store_master'
 #doctor master
+get 'common_master/common_master'
+get 'common_master/doctor_master'
+get 'common_master/area_master'
+
+get 'common_master/indoor_patient_master'
+get 'common_master/bed_master'
+get 'common_master/ot_master'
+
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
 get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
@@ -540,8 +553,7 @@ patch 'common_master/:id/update_specialized_master',to: 'common_master#update_sp
 delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
 
 
-root 'home#dashboard'
- 
+
 #shift master
 get 'common_master/new_shift_master'
 post 'common_master/create_shift_master'
