@@ -538,7 +538,11 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
+
 get 'common_master/outdoor_patient_master'
+
+
+get 'common_master/view_doctor_master'
 
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
