@@ -1,7 +1,29 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
+=======
+
+#Ravikiran indoor module
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
+
+devise_for :users
+mount Ckeditor::Engine => '/ckeditor'
+
+>>>>>>> 7e716f684ecf4b0f6c0ac6d37bc7e3a236a92b2a
 get 'setting/course_batch'
 get 'general_settings/all'
 get 'general_settings/none'
@@ -516,9 +538,47 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
+<<<<<<< HEAD
 
 #common master#
 #doctor master
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 184d0b9331e81d8714e7dd2cfab609190b85d175
+
+get 'masters/common_master'
+get 'masters/doctor_master'
+get 'masters/add_doctor_master'
+get 'masters/phar'
+
+#----------OutDoors------------------------------------#
+get 'outdoors/new_registration'
+
+#common master#
+
+
+get 'masters/outdoor_patient_master'
+
+get 'masters/pharmacy_master'
+get 'masters/diagonostic_master'
+get 'masters/store_master'
+#doctor master
+get 'common_master/common_master'
+get 'common_master/doctor_master'
+get 'common_master/area_master'
+
+get 'common_master/indoor_patient_master'
+get 'common_master/bed_master'
+get 'common_master/ot_master'
+
+get 'common_master/outdoor_patient_master'
+
+
+get 'common_master/view_doctor_master'
+
+>>>>>>> 7e716f684ecf4b0f6c0ac6d37bc7e3a236a92b2a
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
 get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
@@ -871,10 +931,15 @@ get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
+<<<<<<< HEAD
+=======
+#---------------Master-----------------------
+
+>>>>>>> 7e716f684ecf4b0f6c0ac6d37bc7e3a236a92b2a
 #INDOOR#
 get 'indoor/new_registration'
-post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
-patch 'indoor/:id/create_registration',to: 'indoor#create_registration',as: 'create_registration'
+post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
+patch 'indoor/:id/update_registration',to: 'indoor#update_registration',as: 'update_registration'
 delete 'indoor/:id/delete_registration',to: 'indoor#delete_registration',as: 'delete_registration'
 
 get 'indoor/new_advance_booking'
@@ -947,7 +1012,21 @@ post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_
 patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
 delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
 #INDOOR#
-
+#INDOORS#
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
+#INDOORS#
 
 #PHARMACY#
 get 'pharmacy/new_credit_note'
@@ -991,9 +1070,13 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
+
+#PHARMACY#+
+
 get 'pharmacy/new_opening_stock'
 
 #PHARMACY#
+
 #STORES#
 get 'stores/new_common_opening_stock'
 post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
@@ -1040,7 +1123,10 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 root 'home#dashboard'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e716f684ecf4b0f6c0ac6d37bc7e3a236a92b2a
 resources :home
 resources :setting
 resources :categories

@@ -14,7 +14,7 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :ipd_registration  do |c| %>
+<%= form_for @new_registration ,url: create_registration_path do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
 
@@ -45,14 +45,7 @@
 
 
                   <label class="col-sm-1 control-label">Date:</label>
-                  <div class="col-sm-3"><%= c.date_field :date,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "DATE",
-                      required: true,
-                      :"data-content"=>"Select Date",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                  <div class="col-sm-3"><%= c.date_field :date %>  
                   </div>  
 
                    <label class="col-sm-2 control-label">Time:</label>
@@ -86,7 +79,7 @@
 
 
                   <label class="col-sm-2 control-label">Advance Booking</label>
-                 <div class="col-sm-2"><%= c.select :gender,['NO','YES'],
+                 <div class="col-sm-2"><%= c.select :advance_booking_check,['NO','YES'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "ADVANCE BOOKING",
                       required: true,
@@ -183,14 +176,7 @@
               <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Date of Birth:</label>
-                 <div class="col-sm-2"><%= c.date_field :date,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "DATE OF BIRTH",
-                      required: true,
-                      :"data-content"=>"Select Birth Date",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                 <div class="col-sm-2"><%= c.date_field :birthdate%>  
                   </div>  
 
                 <label class="col-sm-2 control-label">Height:</label>
@@ -238,11 +224,11 @@
                   </div>  
 
                 <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-2"><%= c.select :city,['Pune','Mumbai','Solapur','Nagpur'],
+                <div class="col-sm-2"><%= c.select :city,@city.collect{|b| [b.city_name,b.id]},
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "",
+                     class: "form-control input-group",placeholder: "Ref Doctor",
                       required: true,
-                      :"data-content"=>"Select City",
+                      :"data-content"=>"Adm Type",
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -404,13 +390,97 @@
                 </div>
             </div> 
       <br>
+<div class="row">
+              <div class="form-group">
+               <label class="col-sm-2 control-label">Bed No:</label>
+                 <div class="col-sm-2"><%= c.text_field :bed_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Bed No",
+                      required: true,
+                      :"data-content"=>"Bed No",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+
+                <label class="col-sm-2 control-label">Ward Name:</label>
+                 <div class="col-sm-2"><%= c.text_field :ward_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Ward Name",
+                      required: true,
+                      :"data-content"=>"Ward Name",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
 
 
+                   <label class="col-sm-2 control-label">Ref Doctor:</label>
+                 <div class="col-sm-2"><%= c.select :ref_dr,@doctor_masters.collect{|b| [b.name,b.id]},
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Ref Doctor",
+                      required: true,
+                      :"data-content"=>"Adm Type",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+                </div>
+            </div> 
+
+      <br>
+<div class="row">
+              <div class="form-group">
+               <label class="col-sm-2 control-label">Under Dr 1:</label>
+                 <div class="col-sm-2"><%= c.select :under_dr_one,@doctor_masters.collect{|b| [b.name,b.id]},
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Ref Doctor",
+                      required: true,
+                      :"data-content"=>"Adm Type",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+
+                <label class="col-sm-2 control-label">Under Doctor 2:</label>
+                 <div class="col-sm-2"><%= c.select :under_dr_two,@doctor_masters.collect{|b| [b.name,b.id]},
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Ref Doctor",
+                      required: true,
+                      :"data-content"=>"Adm Type",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
 
 
-
-
-
+                   <label class="col-sm-2 control-label">Shift:</label>
+                 <div class="col-sm-2"><%= c.text_field :shift,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Shift",
+                      required: true,
+                      :"data-content"=>"Shift",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+                </div>
+            </div> 
+<br>
+<div class="row">
+              <div class="form-group">
+               <label class="col-sm-2 control-label">Diesease:</label>
+                 <div class="col-sm-2"><%= c.text_field :diesease,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Diesease",
+                      required: true,
+                      :"data-content"=>"Diesease",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>  
+                </div>
+            </div> 
 
            <div class="form-actions">
                   <div class="row">

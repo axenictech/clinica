@@ -13,7 +13,6 @@ class CreateBedMasters < ActiveRecord::Migration
       t.boolean :is_bed_repair
       t.references :floor_master, index: true
       t.references :ward_master, index: true
-
       t.timestamps
     end
   end
