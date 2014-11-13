@@ -518,7 +518,20 @@ get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
 #common master#
+
+get 'masters/outdoor_patient_master'
+get 'masters/pharmacy_master'
+get 'masters/diagonostic_master'
+get 'masters/store_master'
 #doctor master
+get 'common_master/common_master'
+get 'common_master/doctor_master'
+get 'common_master/area_master'
+
+get 'common_master/indoor_patient_master'
+get 'common_master/bed_master'
+get 'common_master/ot_master'
+
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
 get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
@@ -538,6 +551,8 @@ post 'common_master/create_specialized_master'
 get 'common_master/:id/edit_specialized_master',to: 'common_master#edit_specialized_master',as:'common_master_edit_specialized_master'
 patch 'common_master/:id/update_specialized_master',to: 'common_master#update_specialized_master',as:'common_master_update_specialized_master'
 delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
+
+
 
 #shift master
 get 'common_master/new_shift_master'
@@ -735,6 +750,7 @@ post 'pharmacy_master/create_composition_master'
 get 'pharmacy_master/:id/edit_composition_master',to: 'pharmacy_master#edit_composition_master',as:'pharmacy_master_edit_composition_master'
 patch 'pharmacy_master/:id/update_composition_master',to: 'pharmacy_master#update_composition_master',as:'pharmacy_master_update_composition_master'
 delete 'pharmacy_master/:id/delete_composition_master',to: 'pharmacy_master#delete_composition_master',as:'pharmacy_master_delete_composition_master'
+
 
 #sales tax master
 get 'pharmacy_master/new_sales_tax_master'
