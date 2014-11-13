@@ -533,18 +533,21 @@ delete 'time_tables/time_table_delete'
 
 #common master#
 
-get 'masters/outdoor_patient_master'
+
 get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
 get 'masters/store_master'
 #doctor master
-get 'common_master/common_master'
 get 'common_master/doctor_master'
 get 'common_master/area_master'
-
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
+
+get 'common_master/outdoor_patient_master'
+
+
+get 'common_master/view_doctor_master'
 
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'

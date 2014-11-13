@@ -1,5 +1,9 @@
 class CommonMasterController < ApplicationController
 
+	def view_doctor_master
+		@doctor_masters=DoctorMaster.all
+	end
+
 	def new_doctor_master
 		@doctor_master=DoctorMaster.new
 	end
@@ -8,7 +12,7 @@ class CommonMasterController < ApplicationController
 		@doctor_master=DoctorMaster.new(params_doctor_master)
 		if @doctor_master.save
 		    flash[:notice] = 'Doctor master created successfully'
-	      	redirect_to common_master_new_doctor_master_path
+	      	redirect_to common_master_view_doctor_master_path
     	else
       		render 'new_doctor_master'
     	end
@@ -22,7 +26,7 @@ class CommonMasterController < ApplicationController
 		@doctor_master=DoctorMaster.find(params[:id])
 		if @doctor_master.update(params_doctor_master)
 		 	flash[:notice] = 'Doctor master updated successfully'
-	      	redirect_to common_master_new_doctor_master_path
+	      	redirect_to common_master_view_doctor_master_path
     	else
       		render 'edit_doctor_master'
     	end
@@ -32,7 +36,7 @@ class CommonMasterController < ApplicationController
 		@doctor_master=DoctorMaster.find(params[:id])
 		if @doctor_master.destroy
 		   flash[:notice] = 'Doctor master deleted successfully!'
-   		   redirect_to common_master_new_doctor_master_path
+   		   redirect_to common_master_view_doctor_master_path
    		end			
 	end
 

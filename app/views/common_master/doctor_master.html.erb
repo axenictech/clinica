@@ -1,71 +1,141 @@
-<div class="container">
-    <div class="row" style="margin-top:20px">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Doctor Master",common_master_new_doctor_master_path,style: 'color:black' %>
-          </div>
-          <div class="panel-body" style="height:70px">
-         
-          </div>
-        </div>
-       
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Common Master')%></span>
+              <small><%= t('Doctor Master')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Doctor Master')%></li>
+        </ul>
       </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Referred Doctor Master",common_master_new_referred_doctor_master_path,style: 'color:black' %>
-          </div>
-          <div class="panel-body" style="height:70px">
-           
-          </div>
-        </div>
+</div>
 
-      </div>
-       
-      <div class="col-md-2"></div>
-    </div>  
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Specilized Master",common_master_new_specialized_master_path,style: 'color:black' %>     
-         </div>
-          <div class="panel-body" style="height:70px">
-            
-          </div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Doctor Matser",common_master_view_doctor_master_path%>
         </div>
-       
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Shift Master",common_master_new_shift_master_path,style: 'color:black'%>
-          </div>
-          <div class="panel-body" style="height:70px">
-            
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-
       </div>
-       
-      <div class="col-md-2"></div>
+      <div class="box-content box-padding">
+      Create new doctor master
+      </div>
     </div>
-    <div class="row" style="margin-bottom:30px">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Doctor Commission",common_master_new_doctor_commission_path,style: 'color:black' %>     
-         </div>
-          <div class="panel-body" style="height:70px">
-           
-         </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Referred Doctor Master",'' %></div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-       
       </div>
+      <div class="box-content box-padding">
+        Create new referred doctor master
+      </div>
+    </div>
+  </div>
 
+</div>
 
-     
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Specialized Master","" %>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new specialized master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Shift Master", ""%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Create new shift master
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Doctor Commission","" %>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new doctor commission
+      </div>
+    </div>
+  </div>
+</div>

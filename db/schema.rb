@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141223103477) do
+=======
+ActiveRecord::Schema.define(version: 20141223103478) do
+>>>>>>> 3b0b75f8c549d353cb066845c0b67bc52310204b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1142,6 +1146,17 @@ ActiveRecord::Schema.define(version: 20141223103477) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
+<<<<<<< HEAD
+=======
+  create_table "ipd_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.datetime "datetime"
+    t.integer  "hr_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> 3b0b75f8c549d353cb066845c0b67bc52310204b
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
     t.integer  "product_unit"

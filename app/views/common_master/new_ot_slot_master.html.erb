@@ -2,7 +2,7 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Occupation Master')%></span>
+              <span><%= t('OT Slot Master')%></span>
               <small><%= t('New')%></small>
     </h1>
       <div class="pull-right">
@@ -22,7 +22,7 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Occupation Master')%></li>
+          <%= t('OT Slot Master')%></li>
         </ul>
       </div>
 </div>
@@ -34,7 +34,7 @@
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Occupation Master
+                        OT Master
       </div>
       <div class="actions">
                         
@@ -43,14 +43,44 @@
       </div>
     </div>
     <div class="box-content box-double-padding">
-      <form class="form-horizontal" style="margin-bottom: 0;">
+      <div class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Occupation:</label>
-                <div class="col-sm-6"><%= c.text_field :occupation,
+              <label class="col-sm-2 control-label">OT Slot Name:</label>
+                <div class="col-sm-6"><%= c.text_field :ot_slot_name,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Occupation",
+                     class: "form-control input-group",placeholder: "OT Slot Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">OT Name:</label>
+                <div class="col-sm-6"><%= c.text_field :ot_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "OT Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Rate:</label>
+                <div class="col-sm-6"><%= c.text_field :rate,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Rate",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -75,7 +105,7 @@
                
 
           </fieldset>
-        </form>
+        </div>
         </div>
         </div>
         </div>

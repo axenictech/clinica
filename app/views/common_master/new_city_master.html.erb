@@ -1,16 +1,30 @@
-<div class="page-header page-header-with-buttons">
-  <h1 class="pull-left">
-    <i class="icon-book"></i>
-    <span>Comman Master </span>
-  </h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('City Master')%></span>
+              <small><%= t('New')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Area Master')%></li>
+        </ul>
+      </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
