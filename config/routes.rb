@@ -1037,7 +1037,10 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70b092c8c6d03d279148cc18d3fe00365c53fef6
 
 resources :home
 resources :setting
@@ -1109,5 +1112,11 @@ resources :finance
 resources :outdoors
 resources :masters
 resources :stores
+<<<<<<< HEAD
 resources :common_master
+=======
+
+resources :common_master
+
+>>>>>>> 70b092c8c6d03d279148cc18d3fe00365c53fef6
 end
