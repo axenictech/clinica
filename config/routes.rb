@@ -645,7 +645,22 @@ delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: '
 
 
 #PHARMACY#
+#STORES#
+get 'stores/new_common_opening_stock'
+post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
+patch 'stores/:id/update_common_opening_stock',to: 'stores#update_common_opening_stock',as: 'stores_update_common_opening_stock'
+delete 'stores/:id/delete_common_opening_stock',to: 'stores#delete_common_opening_stock',as: 'stores_delete_common_opening_stock'
 
+get 'stores/new_purchase_master_store'
+post 'stores/create_purchase_master_store',to: 'stores#create_purchase_master_store',as: 'stores_create_purchase_master_store'
+patch 'stores/:id/update_purchase_master_store',to: 'stores#update_purchase_master_store',as: 'stores_update_purchase_master_store'
+delete 'stores/:id/delete_purchase_master_store',to: 'stores#delete_purchase_master_store',as: 'stores_delete_purchase_master_store'
+
+get 'stores/new_issue_counter'
+post 'stores/create_issue_counter',to: 'stores#create_issue_counter',as: 'stores_create_issue_counter'
+patch 'stores/:id/update_issue_counter',to: 'stores#update_issue_counter',as: 'stores_update_issue_counter'
+delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: 'stores_delete_issue_counter'
+#stores#
 
 resources :home
 resources :setting
@@ -715,4 +730,5 @@ resources :employees
 resources :employee_attendances
 resources :finance
 resources :masters
+resources :stores
 end
