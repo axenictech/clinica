@@ -521,7 +521,6 @@ delete 'time_tables/time_table_delete'
 #---------------Master-----------------------
 
 
-
 root 'home#dashboard'
  
 
