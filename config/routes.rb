@@ -545,6 +545,7 @@ patch 'common_master/:id/update_doctor_master',to: 'common_master#update_doctor_
 delete 'common_master/:id/delete_doctor_master',to: 'common_master#delete_doctor_master',as:'common_master_delete_doctor_master'
 
 #referred doctor master
+get 'common_master/view_referred_doctor_master'
 get 'common_master/new_referred_doctor_master'
 post 'common_master/create_referred_doctor_master'
 get 'common_master/:id/edit_referred_doctor_master',to: 'common_master#edit_referred_doctor_master',as:'common_master_edit_referred_doctor_master'

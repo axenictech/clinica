@@ -6,6 +6,8 @@ class CommonMasterController < ApplicationController
 
 	def new_doctor_master
 		@doctor_master=DoctorMaster.new
+		@specializations=Specialization.all
+		@cities=City.all
 	end
 
 	def create_doctor_master
@@ -38,6 +40,10 @@ class CommonMasterController < ApplicationController
 		   flash[:notice] = 'Doctor master deleted successfully!'
    		   redirect_to common_master_view_doctor_master_path
    		end			
+	end
+
+	def view_referred_doctor_master
+		@referred_doctor_masters=ReferredDoctorMaster.all
 	end
 
 	def new_referred_doctor_master

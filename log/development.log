@@ -1,0 +1,2866 @@
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:37:29 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_flash_messages.html.erb (0.9ms)
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (121.6ms)
+Completed 500 Internal Server Error in 218ms
+
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specailizations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516_86400150'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516_86400150'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:14 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (24.9ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xb4c2e354>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:16 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  [1m[35mSpecialization Load (0.3ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xb4e40700>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.1ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:16 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.4ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xb5077cd0>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.7ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:16 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.3ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xb5171528>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:16 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.3ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xcd1a824>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:17 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  [1m[35mSpecialization Load (0.3ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xcb65038>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.5ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:18 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.3ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xc20f984>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:18 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  [1m[35mSpecialization Load (0.4ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xbe8d0b8>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.3ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:38:18 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  [1m[35mSpecialization Load (0.4ms)[0m  SELECT "specializations".* FROM "specializations"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `specailization' for #<DoctorMaster:0xbb5b084>):
+    72:           <div class="row">
+    73:             <div class="form-group">
+    74:               <label class="col-sm-2 control-label">Specailized:</label>
+    75:                  <div class="col-sm-6"><%= c.select :specailization,@specializations.collect{|s| [s.specailized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+    76:                   </div> 
+    77:                 </div>
+    78:             </div>
+  app/views/common_master/new_doctor_master.html.erb:75:in `block in _app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+  app/views/common_master/new_doctor_master.html.erb:47:in `_app_views_common_master_new_doctor_master_html_erb___154231516__631162048'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.2ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.4ms)[0m  SELECT "specializations".* FROM "specializations"
+  [1m[36mCity Load (17.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (78.3ms)
+  Rendered layouts/_index.html.erb (1.3ms)
+Completed 200 OK in 369ms (Views: 348.5ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:06 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:07 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:08 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:39:08 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (173.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (985.4ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:39:09 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (905.7ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:39:10 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (185.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (953.1ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:39:11 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (190.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (966.1ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:39:12 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (178.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (936.4ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:39:13 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (931.5ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  [1m[36mSpecialization Load (0.3ms)[0m  [1mSELECT "specializations".* FROM "specializations"[0m
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_index.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:21 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:39:22 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (196.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (950.6ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:39:23 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (201.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (955.5ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:39:24 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (957.3ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:39:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (187.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1034.2ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:39:26 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (185.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (963.0ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:39:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (187.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (949.1ms)
+
+
+Started GET "/common_master/new_doctor_master" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+Processing by CommonMasterController#new_doctor_master as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[35mSpecialization Load (0.4ms)[0m  SELECT "specializations".* FROM "specializations"
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered common_master/new_doctor_master.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_index.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:00 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:41:01 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (176.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (940.9ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:41:02 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (185.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (946.8ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:41:03 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (180.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (939.9ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:41:04 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (184.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (948.0ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:41:05 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (201.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (967.4ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:41:06 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (176.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (952.5ms)
+
+
+Started GET "/common_master/home/dashboard" for 127.0.0.1 at 2014-11-13 16:41:18 +0530
+
+ActionController::RoutingError (No route matches [GET] "/common_master/home/dashboard"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (175.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (939.6ms)
+
+
+Started GET "/common_master/home/dashboard" for 127.0.0.1 at 2014-11-13 16:41:26 +0530
+
+ActionController::RoutingError (No route matches [GET] "/common_master/home/dashboard"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (193.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (962.7ms)
+
+
+Started GET "/common_master/view_doctor_master" for 127.0.0.1 at 2014-11-13 16:42:20 +0530
+Processing by CommonMasterController#view_doctor_master as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_flash_messages.html.erb (0.1ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "doctor_masters"[0m
+  Rendered common_master/view_doctor_master.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_index.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:21 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:22 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (955.0ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:42:23 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (166.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (947.2ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:24 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (162.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (145.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1009.2ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:42:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (155.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (858.2ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:26 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (438.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1114.8ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (156.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (843.5ms)
+
+
+Started GET "/home/dashboard" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+Processing by HomeController#dashboard as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_flash_messages.html.erb (0.2ms)
+  Rendered home/dashboard.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_index.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:29 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:30 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (170.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (883.9ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:42:31 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (160.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (900.7ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:32 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (175.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1045.1ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:42:33 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (156.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (893.4ms)
+
+
+Started GET "/masters" for 127.0.0.1 at 2014-11-13 16:42:34 +0530
+Processing by MastersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered masters/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_index.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (895.0ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:35 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (176.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (918.6ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:36 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:37 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (188.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (922.7ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:42:38 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (903.1ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:39 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (171.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (898.3ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:42:40 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (189.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (923.8ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:41 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (188.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (955.6ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:42 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (928.2ms)
+
+
+Started GET "/masters" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+Processing by MastersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered masters/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_index.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/blood_banks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/common_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/diagnostic_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/indoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/indoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/lab.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/light-theme.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/masters.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/outdoor.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/outdoors.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/pharmacy.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:43 +0530
+
+
+Started GET "/assets/pharmacy_master.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/jquery.datetimepicker.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/blood_banks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/bootbox.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/common_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/diagnostic_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/indoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/indoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/jquery-ui.min.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/lab.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/masters.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/outdoor.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/outdoors.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/package.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/pharmacy.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/pharmacy_master.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/theme.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+
+Started GET "/fonts/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:44 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (180.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (933.9ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.woff" for 127.0.0.1 at 2014-11-13 16:42:45 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.woff"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (174.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (931.1ms)
+
+
+Started GET "/fonts/fontawesome-webfont.ttf?v=3.2.1" for 127.0.0.1 at 2014-11-13 16:42:46 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (176.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (904.0ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.ttf" for 127.0.0.1 at 2014-11-13 16:42:47 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.ttf"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (950.1ms)
+
+
+Started GET "/fonts/fontawesome-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:48 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (179.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (920.6ms)
+
+
+Started GET "/fonts/montserrat-regular-webfont.svg" for 127.0.0.1 at 2014-11-13 16:42:49 +0530
+
+ActionController::RoutingError (No route matches [GET] "/fonts/montserrat-regular-webfont.svg"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sud/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (199.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/sud/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (946.0ms)
