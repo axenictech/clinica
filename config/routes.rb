@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 get 'setting/course_batch'
@@ -518,16 +527,13 @@ get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
 #common master#
-
 get 'masters/outdoor_patient_master'
 get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
 get 'masters/store_master'
 #doctor master
-get 'common_master/common_master'
 get 'common_master/doctor_master'
 get 'common_master/area_master'
-
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
@@ -830,7 +836,50 @@ get 'diagnostic_master/:id/edit_company_test_rate_master',to: 'diagnostic_master
 patch 'diagnostic_master/:id/update_company_test_rate_master',to: 'diagnostic_master#update_company_test_rate_master',as:'diagnostic_master_update_company_test_rate_master'
 delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_master#delete_company_test_rate_master',as:'diagnostic_master_delete_company_test_rate_master'
 
+#pathologist master
+get 'diagnostic_master/new_pathologist_master'
+post 'diagnostic_master/create_pathologist_master'
+get 'diagnostic_master/:id/edit_pathologist_master',to: 'diagnostic_master#edit_pathologist_master',as:'diagnostic_master_edit_pathologist_master'
+patch 'diagnostic_master/:id/update_pathologist_master',to: 'diagnostic_master#update_pathologist_master',as:'diagnostic_master_update_pathologist_master'
+delete 'diagnostic_master/:id/delete_pathologist_master',to: 'diagnostic_master#delete_pathologist_master',as:'diagnostic_master_delete_pathologist_master'
 
+#diagnostic doctor commission setup
+get 'diagnostic_master/new_diagnostic_doctor_commission_setup'
+post 'diagnostic_master/create_diagnostic_doctor_commission_setup'
+get 'diagnostic_master/:id/edit_diagnostic_doctor_commission_setup',to: 'diagnostic_master#edit_diagnostic_doctor_commission_setup',as:'diagnostic_master_edit_diagnostic_doctor_commission_setup'
+patch 'diagnostic_master/:id/update_diagnostic_doctor_commission_setup',to: 'diagnostic_master#update_diagnostic_doctor_commission_setup',as:'diagnostic_master_update_diagnostic_doctor_commission_setup'
+delete 'diagnostic_master/:id/delete_diagnostic_doctor_commission_setup',to: 'diagnostic_master#delete_diagnostic_doctor_commission_setup',as:'diagnostic_master_delete_diagnostic_doctor_commission_setup'
+
+#sample center master
+get 'diagnostic_master/new_sample_center_master'
+post 'diagnostic_master/create_sample_center_master'
+get 'diagnostic_master/:id/edit_sample_center_master',to: 'diagnostic_master#edit_sample_center_master',as:'diagnostic_master_edit_sample_center_master'
+patch 'diagnostic_master/:id/update_sample_center_master',to: 'diagnostic_master#update_sample_center_master',as:'diagnostic_master_update_sample_center_master'
+delete 'diagnostic_master/:id/delete_sample_center_master',to: 'diagnostic_master#delete_sample_center_master',as:'diagnostic_master_delete_sample_center_master'
+
+#material master
+get 'diagnostic_master/new_material_master'
+post 'diagnostic_master/create_material_master'
+get 'diagnostic_master/:id/edit_material_master',to: 'diagnostic_master#edit_material_master',as:'diagnostic_master_edit_material_master'
+patch 'diagnostic_master/:id/update_material_master',to: 'diagnostic_master#update_material_master',as:'diagnostic_master_update_material_master'
+delete 'diagnostic_master/:id/delete_material_master',to: 'diagnostic_master#delete_material_master',as:'diagnostic_master_delete_material_master'
+
+#prescription special instruction master
+get 'diagnostic_master/new_prescription_special_instruction_master'
+post 'diagnostic_master/create_prescription_special_instruction_master'
+get 'diagnostic_master/:id/edit_prescription_special_instruction_master',to: 'diagnostic_master#edit_prescription_special_instruction_master',as:'diagnostic_master_edit_prescription_special_instruction_master'
+patch 'diagnostic_master/:id/update_prescription_special_instruction_master',to: 'diagnostic_master#update_prescription_special_instruction_master',as:'diagnostic_master_update_prescription_special_instruction_master'
+delete 'diagnostic_master/:id/delete_prescription_special_instruction_master',to: 'diagnostic_master#delete_prescription_special_instruction_master',as:'diagnostic_master_delete_prescription_special_instruction_master'
+
+#masters#
+#company expence master
+get 'masters/new_company_expence_master'
+post 'masters/create_company_expence_master'
+get 'masters/:id/edit_company_expence_master',to: 'masters#edit_company_expence_master',as:'masters_edit_company_expence_master'
+patch 'masters/:id/update_company_expence_master',to: 'masters#update_company_expence_master',as:'masters_update_company_expence_master'
+delete 'masters/:id/delete_company_expence_master',to: 'masters#delete_company_expence_master',as:'masters_delete_company_expence_master'
+
+#outdoors#
 get 'outdoors/new'
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
