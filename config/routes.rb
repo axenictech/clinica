@@ -672,7 +672,7 @@ patch 'bloodbanks/:id/update_relative_group_master',to: 'bloodbanks#update_relat
 delete 'bloodbanks/:id/delete_relative_group_master',to: 'bloodbanks#delete_relative_group_master',as: 'delete_relative_group_master'
 
 get 'bloodbanks/new_hospital_type_master'
-post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_type_master',as: 'create_relative_group_master'
+post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_type_master',as: 'create_hospital_type_master'
 patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospital_type_master',as: 'update_hospital_type_master'
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
