@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-=======
+
 #Ravikiran indoor module
 get 'indoors/indoor_dashboard'
 get 'indoors/indoor_patient_admission_form'
@@ -15,7 +14,7 @@ get 'indoors/final_bill'
 get 'indoors/manual_final_bill'
 get 'indoors/ipd_clinical_report'
 get 'indoors/ipd_registration_form'
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
+
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
@@ -536,7 +535,7 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
+
 
 get 'masters/common_master'
 get 'masters/doctor_master'
@@ -545,15 +544,13 @@ get 'masters/phar'
 
 #----------OutDoors------------------------------------#
 get 'outdoors/new_registration'
-=======
+
 
 #common master#
 
-<<<<<<< HEAD
-get 'masters/outdoor_patient_master'
-=======
 
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
+get 'masters/outdoor_patient_master'
+
 get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
 get 'masters/store_master'
@@ -871,7 +868,7 @@ delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_m
 
 
 get 'outdoors/new'
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
+
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
@@ -933,13 +930,10 @@ get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
 
-<<<<<<< HEAD
-
 #---------------Master-----------------------
 
 
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
+
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -1109,14 +1103,6 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 root 'home#dashboard'
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> 4bc40dc4ccdf5a3a718667d390ea5f644d32cffd
 resources :home
 resources :setting
 resources :categories
