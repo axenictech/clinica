@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
-
 
 
 get 'setting/course_batch'
@@ -521,9 +519,13 @@ get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
+#common master#
+#doctor master
+
 
 #common master#
 #doctor master
+
 
 
 get 'masters/common_master'
@@ -539,7 +541,6 @@ get 'outdoors/new_registration'
 
 get 'masters/outdoor_patient_master'
 
-get 'masters/pharmacy_master'
 get 'masters/diagonostic_master'
 get 'masters/store_master'
 #doctor master
@@ -740,6 +741,7 @@ delete 'common_master/:id/delete_diet_master',to: 'common_master#delete_diet_mas
 
 #pharmacy master#
 #purchase tax master
+get 'pharmacy_master/view_purchase_tax_master'
 get 'pharmacy_master/new_purchase_tax_master'
 post 'pharmacy_master/create_purchase_tax_master'
 get 'pharmacy_master/:id/edit_purchase_tax_master',to: 'pharmacy_master#edit_purchase_tax_master',as:'pharmacy_master_edit_purchase_tax_master'
@@ -747,6 +749,7 @@ patch 'pharmacy_master/:id/update_purchase_tax_master',to: 'pharmacy_master#upda
 delete 'pharmacy_master/:id/delete_purchase_tax_master',to: 'pharmacy_master#delete_purchase_tax_master',as:'pharmacy_master_delete_purchase_tax_master'
 
 #supplier master
+get 'pharmacy_master/view_supplier_master'
 get 'pharmacy_master/new_supplier_master'
 post 'pharmacy_master/create_supplier_master'
 get 'pharmacy_master/:id/edit_supplier_master',to: 'pharmacy_master#edit_supplier_master',as:'pharmacy_master_edit_supplier_master'
@@ -754,6 +757,7 @@ patch 'pharmacy_master/:id/update_supplier_master',to: 'pharmacy_master#update_s
 delete 'pharmacy_master/:id/delete_supplier_master',to: 'pharmacy_master#delete_supplier_master',as:'pharmacy_master_delete_supplier_master'
 
 #uses master
+get 'pharmacy_master/view_uses_master'
 get 'pharmacy_master/new_uses_master'
 post 'pharmacy_master/create_uses_master'
 get 'pharmacy_master/:id/edit_uses_master',to: 'pharmacy_master#edit_uses_master',as:'pharmacy_master_edit_uses_master'
@@ -761,6 +765,7 @@ patch 'pharmacy_master/:id/update_uses_master',to: 'pharmacy_master#update_uses_
 delete 'pharmacy_master/:id/delete_uses_master',to: 'pharmacy_master#delete_uses_master',as:'pharmacy_master_delete_uses_master'
 
 #pack master
+get 'pharmacy_master/view_pack_master'
 get 'pharmacy_master/new_pack_master'
 post 'pharmacy_master/create_pack_master'
 get 'pharmacy_master/:id/edit_pack_master',to: 'pharmacy_master#edit_pack_master',as:'pharmacy_master_edit_pack_master'
@@ -768,6 +773,7 @@ patch 'pharmacy_master/:id/update_pack_master',to: 'pharmacy_master#update_pack_
 delete 'pharmacy_master/:id/delete_pack_master',to: 'pharmacy_master#delete_pack_master',as:'pharmacy_master_delete_pack_master'
 
 #composition master
+get 'pharmacy_master/view_composition_master'
 get 'pharmacy_master/new_composition_master'
 post 'pharmacy_master/create_composition_master'
 get 'pharmacy_master/:id/edit_composition_master',to: 'pharmacy_master#edit_composition_master',as:'pharmacy_master_edit_composition_master'
@@ -775,6 +781,7 @@ patch 'pharmacy_master/:id/update_composition_master',to: 'pharmacy_master#updat
 delete 'pharmacy_master/:id/delete_composition_master',to: 'pharmacy_master#delete_composition_master',as:'pharmacy_master_delete_composition_master'
 
 #sales tax master
+get 'pharmacy_master/view_sales_tax_master'
 get 'pharmacy_master/new_sales_tax_master'
 post 'pharmacy_master/create_sales_tax_master'
 get 'pharmacy_master/:id/edit_sales_tax_master',to: 'pharmacy_master#edit_sales_tax_master',as:'pharmacy_master_edit_sales_tax_master'
@@ -782,6 +789,7 @@ patch 'pharmacy_master/:id/update_sales_tax_master',to: 'pharmacy_master#update_
 delete 'pharmacy_master/:id/delete_sales_tax_master',to: 'pharmacy_master#delete_sales_tax_master',as:'pharmacy_master_delete_sales_tax_master'
 
 #item master
+get 'pharmacy_master/view_item_master'
 get 'pharmacy_master/new_item_master'
 post 'pharmacy_master/create_item_master'
 get 'pharmacy_master/:id/edit_item_master',to: 'pharmacy_master#edit_item_master',as:'pharmacy_master_edit_item_master'
@@ -789,6 +797,7 @@ patch 'pharmacy_master/:id/update_item_master',to: 'pharmacy_master#update_item_
 delete 'pharmacy_master/:id/delete_item_master',to: 'pharmacy_master#delete_item_master',as:'pharmacy_master_delete_item_master'
 
 #ledger master
+get 'pharmacy_master/view_ledger_master'
 get 'pharmacy_master/new_ledger_master'
 post 'pharmacy_master/create_ledger_master'
 get 'pharmacy_master/:id/edit_ledger_master',to: 'pharmacy_master#edit_ledger_master',as:'pharmacy_master_edit_ledger_master'
@@ -796,6 +805,7 @@ patch 'pharmacy_master/:id/update_ledger_master',to: 'pharmacy_master#update_led
 delete 'pharmacy_master/:id/delete_ledger_master',to: 'pharmacy_master#delete_ledger_master',as:'pharmacy_master_delete_ledger_master'
 
 #godown master
+get 'pharmacy_master/view_godown_master'
 get 'pharmacy_master/new_godown_master'
 post 'pharmacy_master/create_godown_master'
 get 'pharmacy_master/:id/edit_godown_master',to: 'pharmacy_master#edit_godown_master',as:'pharmacy_master_edit_godown_master'
@@ -803,6 +813,7 @@ patch 'pharmacy_master/:id/update_godown_master',to: 'pharmacy_master#update_god
 delete 'pharmacy_master/:id/delete_godown_master',to: 'pharmacy_master#delete_godown_master',as:'pharmacy_master_delete_godown_master'
 
 #series master
+get 'pharmacy_master/view_series_master'
 get 'pharmacy_master/new_series_master'
 post 'pharmacy_master/create_series_master'
 get 'pharmacy_master/:id/edit_series_master',to: 'pharmacy_master#edit_series_master',as:'pharmacy_master_edit_series_master'
@@ -908,6 +919,11 @@ post 'labs/test_cancellation_create'
 get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_edit_test_cancellation'
 patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
 delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
+
+
+#---------------Master-----------------------
+
+
 
 #INDOOR#
 get 'indoor/new_registration'
@@ -1169,5 +1185,10 @@ resources :outdoors
 resources :masters
 resources :stores
 resources :common_master
+
+resources :pharmacy_master
+
+
 resources :pharmacy
+
 end
