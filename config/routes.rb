@@ -1,20 +1,5 @@
 Rails.application.routes.draw do
 
-#Ravikiran indoor module
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
-
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 
@@ -532,10 +517,7 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
-=======
 
->>>>>>> 184d0b9331e81d8714e7dd2cfab609190b85d175
 
 get 'masters/common_master'
 get 'masters/doctor_master'
