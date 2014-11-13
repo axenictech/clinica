@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103478) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -465,11 +465,13 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.datetime "updated_at"
   end
 
+
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 
   create_table "department_masters", force: true do |t|
     t.string   "department_name"
@@ -1054,11 +1056,13 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   add_index "group_batches", ["batch_group_id"], name: "index_group_batches_on_batch_group_id", using: :btree
   add_index "group_batches", ["batch_id"], name: "index_group_batches_on_batch_id", using: :btree
 
+
   create_table "group_master_stores", force: true do |t|
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 
   create_table "group_masters", force: true do |t|
     t.string   "group"
@@ -1141,6 +1145,49 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   end
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
+
+  create_table "ipd_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.integer  "hr_no"
+    t.string   "advance_booking"
+    t.string   "advance_booking_check"
+    t.string   "patient_name"
+    t.string   "occupation"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "family"
+    t.datetime "birthdate"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "religion"
+    t.string   "city"
+    t.string   "pin"
+    t.string   "address"
+    t.string   "co"
+    t.string   "relation"
+    t.string   "company_name"
+    t.string   "relative_name"
+    t.string   "relative_phone_no"
+    t.string   "adm_type"
+    t.integer  "bed_no"
+    t.string   "ward_name"
+    t.integer  "ref_dr"
+    t.integer  "under_dr_one"
+    t.integer  "under_dr_two"
+    t.string   "shift"
+
+
+  create_table "ipd_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.datetime "datetime"
+    t.integer  "hr_no"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
@@ -1485,6 +1532,7 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.datetime "updated_at"
   end
 
+
   create_table "purchase_tax_masters", force: true do |t|
     t.string   "name"
     t.integer  "percentage"
@@ -1716,6 +1764,7 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   add_index "subjects", ["batch_id"], name: "index_subjects_on_batch_id", using: :btree
   add_index "subjects", ["elective_group_id"], name: "index_subjects_on_elective_group_id", using: :btree
 
+
   create_table "supplier_master_stores", force: true do |t|
     t.string   "supplier_name"
     t.string   "address"
@@ -1728,6 +1777,7 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   end
 
   add_index "supplier_master_stores", ["city_id"], name: "index_supplier_master_stores_on_city_id", using: :btree
+
 
   create_table "supplier_masters", force: true do |t|
     t.string   "supplier_name"

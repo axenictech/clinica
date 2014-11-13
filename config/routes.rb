@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 
-root 'home#dashboard'
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -519,6 +518,18 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
+
+
+#common master#
+#doctor master
+
+
+#common master#
+#doctor master
+
+
+
+
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
@@ -536,12 +547,15 @@ get 'indoors/manual_final_bill'
 get 'indoors/ipd_clinical_report'
 get 'indoors/ipd_registration_form'
 
-get 'masters/pharmacy_master'
+get 'masters/outdoor_patient_master'
+
 get 'masters/diagonostic_master'
 get 'masters/store_master'
 #doctor master
+get 'common_master/common_master'
 get 'common_master/doctor_master'
 get 'common_master/area_master'
+
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
@@ -550,6 +564,7 @@ get 'common_master/outdoor_patient_master'
 
 
 get 'common_master/view_doctor_master'
+
 
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
@@ -570,8 +585,6 @@ post 'common_master/create_specialized_master'
 get 'common_master/:id/edit_specialized_master',to: 'common_master#edit_specialized_master',as:'common_master_edit_specialized_master'
 patch 'common_master/:id/update_specialized_master',to: 'common_master#update_specialized_master',as:'common_master_update_specialized_master'
 delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
-
-
 
 #shift master
 get 'common_master/new_shift_master'
@@ -736,6 +749,7 @@ delete 'common_master/:id/delete_diet_master',to: 'common_master#delete_diet_mas
 
 #pharmacy master#
 #purchase tax master
+get 'pharmacy_master/view_purchase_tax_master'
 get 'pharmacy_master/new_purchase_tax_master'
 post 'pharmacy_master/create_purchase_tax_master'
 get 'pharmacy_master/:id/edit_purchase_tax_master',to: 'pharmacy_master#edit_purchase_tax_master',as:'pharmacy_master_edit_purchase_tax_master'
@@ -743,6 +757,7 @@ patch 'pharmacy_master/:id/update_purchase_tax_master',to: 'pharmacy_master#upda
 delete 'pharmacy_master/:id/delete_purchase_tax_master',to: 'pharmacy_master#delete_purchase_tax_master',as:'pharmacy_master_delete_purchase_tax_master'
 
 #supplier master
+get 'pharmacy_master/view_supplier_master'
 get 'pharmacy_master/new_supplier_master'
 post 'pharmacy_master/create_supplier_master'
 get 'pharmacy_master/:id/edit_supplier_master',to: 'pharmacy_master#edit_supplier_master',as:'pharmacy_master_edit_supplier_master'
@@ -750,6 +765,7 @@ patch 'pharmacy_master/:id/update_supplier_master',to: 'pharmacy_master#update_s
 delete 'pharmacy_master/:id/delete_supplier_master',to: 'pharmacy_master#delete_supplier_master',as:'pharmacy_master_delete_supplier_master'
 
 #uses master
+get 'pharmacy_master/view_uses_master'
 get 'pharmacy_master/new_uses_master'
 post 'pharmacy_master/create_uses_master'
 get 'pharmacy_master/:id/edit_uses_master',to: 'pharmacy_master#edit_uses_master',as:'pharmacy_master_edit_uses_master'
@@ -757,6 +773,7 @@ patch 'pharmacy_master/:id/update_uses_master',to: 'pharmacy_master#update_uses_
 delete 'pharmacy_master/:id/delete_uses_master',to: 'pharmacy_master#delete_uses_master',as:'pharmacy_master_delete_uses_master'
 
 #pack master
+get 'pharmacy_master/view_pack_master'
 get 'pharmacy_master/new_pack_master'
 post 'pharmacy_master/create_pack_master'
 get 'pharmacy_master/:id/edit_pack_master',to: 'pharmacy_master#edit_pack_master',as:'pharmacy_master_edit_pack_master'
@@ -764,14 +781,15 @@ patch 'pharmacy_master/:id/update_pack_master',to: 'pharmacy_master#update_pack_
 delete 'pharmacy_master/:id/delete_pack_master',to: 'pharmacy_master#delete_pack_master',as:'pharmacy_master_delete_pack_master'
 
 #composition master
+get 'pharmacy_master/view_composition_master'
 get 'pharmacy_master/new_composition_master'
 post 'pharmacy_master/create_composition_master'
 get 'pharmacy_master/:id/edit_composition_master',to: 'pharmacy_master#edit_composition_master',as:'pharmacy_master_edit_composition_master'
 patch 'pharmacy_master/:id/update_composition_master',to: 'pharmacy_master#update_composition_master',as:'pharmacy_master_update_composition_master'
 delete 'pharmacy_master/:id/delete_composition_master',to: 'pharmacy_master#delete_composition_master',as:'pharmacy_master_delete_composition_master'
 
-
 #sales tax master
+get 'pharmacy_master/view_sales_tax_master'
 get 'pharmacy_master/new_sales_tax_master'
 post 'pharmacy_master/create_sales_tax_master'
 get 'pharmacy_master/:id/edit_sales_tax_master',to: 'pharmacy_master#edit_sales_tax_master',as:'pharmacy_master_edit_sales_tax_master'
@@ -779,6 +797,7 @@ patch 'pharmacy_master/:id/update_sales_tax_master',to: 'pharmacy_master#update_
 delete 'pharmacy_master/:id/delete_sales_tax_master',to: 'pharmacy_master#delete_sales_tax_master',as:'pharmacy_master_delete_sales_tax_master'
 
 #item master
+get 'pharmacy_master/view_item_master'
 get 'pharmacy_master/new_item_master'
 post 'pharmacy_master/create_item_master'
 get 'pharmacy_master/:id/edit_item_master',to: 'pharmacy_master#edit_item_master',as:'pharmacy_master_edit_item_master'
@@ -786,6 +805,7 @@ patch 'pharmacy_master/:id/update_item_master',to: 'pharmacy_master#update_item_
 delete 'pharmacy_master/:id/delete_item_master',to: 'pharmacy_master#delete_item_master',as:'pharmacy_master_delete_item_master'
 
 #ledger master
+get 'pharmacy_master/view_ledger_master'
 get 'pharmacy_master/new_ledger_master'
 post 'pharmacy_master/create_ledger_master'
 get 'pharmacy_master/:id/edit_ledger_master',to: 'pharmacy_master#edit_ledger_master',as:'pharmacy_master_edit_ledger_master'
@@ -793,6 +813,7 @@ patch 'pharmacy_master/:id/update_ledger_master',to: 'pharmacy_master#update_led
 delete 'pharmacy_master/:id/delete_ledger_master',to: 'pharmacy_master#delete_ledger_master',as:'pharmacy_master_delete_ledger_master'
 
 #godown master
+get 'pharmacy_master/view_godown_master'
 get 'pharmacy_master/new_godown_master'
 post 'pharmacy_master/create_godown_master'
 get 'pharmacy_master/:id/edit_godown_master',to: 'pharmacy_master#edit_godown_master',as:'pharmacy_master_edit_godown_master'
@@ -800,6 +821,7 @@ patch 'pharmacy_master/:id/update_godown_master',to: 'pharmacy_master#update_god
 delete 'pharmacy_master/:id/delete_godown_master',to: 'pharmacy_master#delete_godown_master',as:'pharmacy_master_delete_godown_master'
 
 #series master
+get 'pharmacy_master/view_series_master'
 get 'pharmacy_master/new_series_master'
 post 'pharmacy_master/create_series_master'
 get 'pharmacy_master/:id/edit_series_master',to: 'pharmacy_master#edit_series_master',as:'pharmacy_master_edit_series_master'
@@ -849,50 +871,7 @@ get 'diagnostic_master/:id/edit_company_test_rate_master',to: 'diagnostic_master
 patch 'diagnostic_master/:id/update_company_test_rate_master',to: 'diagnostic_master#update_company_test_rate_master',as:'diagnostic_master_update_company_test_rate_master'
 delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_master#delete_company_test_rate_master',as:'diagnostic_master_delete_company_test_rate_master'
 
-#pathologist master
-get 'diagnostic_master/new_pathologist_master'
-post 'diagnostic_master/create_pathologist_master'
-get 'diagnostic_master/:id/edit_pathologist_master',to: 'diagnostic_master#edit_pathologist_master',as:'diagnostic_master_edit_pathologist_master'
-patch 'diagnostic_master/:id/update_pathologist_master',to: 'diagnostic_master#update_pathologist_master',as:'diagnostic_master_update_pathologist_master'
-delete 'diagnostic_master/:id/delete_pathologist_master',to: 'diagnostic_master#delete_pathologist_master',as:'diagnostic_master_delete_pathologist_master'
 
-#diagnostic doctor commission setup
-get 'diagnostic_master/new_diagnostic_doctor_commission_setup'
-post 'diagnostic_master/create_diagnostic_doctor_commission_setup'
-get 'diagnostic_master/:id/edit_diagnostic_doctor_commission_setup',to: 'diagnostic_master#edit_diagnostic_doctor_commission_setup',as:'diagnostic_master_edit_diagnostic_doctor_commission_setup'
-patch 'diagnostic_master/:id/update_diagnostic_doctor_commission_setup',to: 'diagnostic_master#update_diagnostic_doctor_commission_setup',as:'diagnostic_master_update_diagnostic_doctor_commission_setup'
-delete 'diagnostic_master/:id/delete_diagnostic_doctor_commission_setup',to: 'diagnostic_master#delete_diagnostic_doctor_commission_setup',as:'diagnostic_master_delete_diagnostic_doctor_commission_setup'
-
-#sample center master
-get 'diagnostic_master/new_sample_center_master'
-post 'diagnostic_master/create_sample_center_master'
-get 'diagnostic_master/:id/edit_sample_center_master',to: 'diagnostic_master#edit_sample_center_master',as:'diagnostic_master_edit_sample_center_master'
-patch 'diagnostic_master/:id/update_sample_center_master',to: 'diagnostic_master#update_sample_center_master',as:'diagnostic_master_update_sample_center_master'
-delete 'diagnostic_master/:id/delete_sample_center_master',to: 'diagnostic_master#delete_sample_center_master',as:'diagnostic_master_delete_sample_center_master'
-
-#material master
-get 'diagnostic_master/new_material_master'
-post 'diagnostic_master/create_material_master'
-get 'diagnostic_master/:id/edit_material_master',to: 'diagnostic_master#edit_material_master',as:'diagnostic_master_edit_material_master'
-patch 'diagnostic_master/:id/update_material_master',to: 'diagnostic_master#update_material_master',as:'diagnostic_master_update_material_master'
-delete 'diagnostic_master/:id/delete_material_master',to: 'diagnostic_master#delete_material_master',as:'diagnostic_master_delete_material_master'
-
-#prescription special instruction master
-get 'diagnostic_master/new_prescription_special_instruction_master'
-post 'diagnostic_master/create_prescription_special_instruction_master'
-get 'diagnostic_master/:id/edit_prescription_special_instruction_master',to: 'diagnostic_master#edit_prescription_special_instruction_master',as:'diagnostic_master_edit_prescription_special_instruction_master'
-patch 'diagnostic_master/:id/update_prescription_special_instruction_master',to: 'diagnostic_master#update_prescription_special_instruction_master',as:'diagnostic_master_update_prescription_special_instruction_master'
-delete 'diagnostic_master/:id/delete_prescription_special_instruction_master',to: 'diagnostic_master#delete_prescription_special_instruction_master',as:'diagnostic_master_delete_prescription_special_instruction_master'
-
-#masters#
-#company expence master
-get 'masters/new_company_expence_master'
-post 'masters/create_company_expence_master'
-get 'masters/:id/edit_company_expence_master',to: 'masters#edit_company_expence_master',as:'masters_edit_company_expence_master'
-patch 'masters/:id/update_company_expence_master',to: 'masters#update_company_expence_master',as:'masters_update_company_expence_master'
-delete 'masters/:id/delete_company_expence_master',to: 'masters#delete_company_expence_master',as:'masters_delete_company_expence_master'
-
-#outdoors#
 get 'outdoors/new'
 post 'outdoors/new_registration_create'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
@@ -924,17 +903,11 @@ get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdo
 patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
 delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
 
-get 'outdoors/appoitment'
-post 'outdoors/appoitment_create'
-get 'outdoors/:id/edit_appoitment',to:'outdoors#edit_appoitment',as:'outdoors_edit_appoitment'
-patch 'outdoors/:id/update_appoitment',to:'outdoors#update_appoitment',as:'outdoors_update_appoitment' 
-delete 'outdoors/:id/destroy_appoitment',to:'outdoors#destroy_appoitment',as:'outdoors_destroy_appoitment' 
-
-get 'outdoors/immunization_schedule'
-post 'outdoors/immunization_schedule_create'
-get 'outdoors/:id/edit_immunization_schedule',to:'outdoors#edit_immunization_schedule',as:'outdoors_edit_immunization_schedule'
-patch 'outdoors/:id/update_immunization_schedule',to:'outdoors#update_immunization_schedule',as:'outdoors_update_immunization_schedule' 
-delete 'outdoors/:id/destroy_immunization_schedule',to:'outdoors#destroy_immunization_scheduleimmunization_schedule',as:'outdoors_destroy_immunization_schedule'   
+get 'outdoors/appitment'
+post 'outdoors/appitment_create'
+get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
+patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
+delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
 
 get 'outdoors/prescription'
 post 'outdoors/prescription_create'
@@ -942,7 +915,7 @@ get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoor
 patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
 delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
 
-#-------------------Labs------------------------#
+
 get 'labs/new'
 post 'labs/lab_case_create'
 get 'labs/:id/edit_lab_case',to:'labs#edit_lab_case',as:'labs_edit_lab_case'
@@ -959,10 +932,11 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 #---------------Master-----------------------
 
 
+
 #INDOOR#
 get 'indoor/new_registration'
-post 'indoor/new_registration',to: 'indoor#new_registration',as: 'new_registration'
-patch 'indoor/:id/create_registration',to: 'indoor#create_registration',as: 'create_registration'
+post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
+patch 'indoor/:id/update_registration',to: 'indoor#update_registration',as: 'update_registration'
 delete 'indoor/:id/delete_registration',to: 'indoor#delete_registration',as: 'delete_registration'
 
 get 'indoor/new_advance_booking'
@@ -990,10 +964,12 @@ post 'indoor/create_ot_billing',to: 'indoor#create_ot_billing',as: 'create_ot_bi
 patch 'indoor/:id/update_ot_billing',to: 'indoor#update_ot_billing',as: 'update_ot_billing'
 delete 'indoor/:id/delete_ot_billing',to: 'indoor#delete_ot_billing',as: 'delete_ot_billing'
 
+
 get 'indoor/new_money_reciept'
 post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
 patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
 delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
+get 'indoor/:id/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
 
 get 'indoor/new_discharge'
 post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
@@ -1035,7 +1011,21 @@ post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_
 patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
 delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
 #INDOOR#
-
+#INDOORS#
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
+#INDOORS#
 
 #PHARMACY#
 get 'pharmacy/new_credit_note'
@@ -1079,7 +1069,13 @@ post 'pharmacy/create_sale_return',to: 'pharmacy#create_sale_return',as: 'create
 patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'update_sale_return'
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
+
+#PHARMACY#+
+
+get 'pharmacy/new_opening_stock'
+
 #PHARMACY#
+
 #STORES#
 get 'stores/new_common_opening_stock'
 post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
@@ -1124,6 +1120,7 @@ post 'bloodbanks/create_hospital_type_master',to: 'bloodbanks#create_hospital_ty
 patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospital_type_master',as: 'update_hospital_type_master'
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
+root 'home#dashboard'
 
 resources :home
 resources :setting
@@ -1195,7 +1192,11 @@ resources :finance
 resources :outdoors
 resources :masters
 resources :stores
-
 resources :common_master
+
+resources :pharmacy_master
+
+
+resources :pharmacy
 
 end

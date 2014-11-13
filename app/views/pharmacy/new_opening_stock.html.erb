@@ -1,0 +1,168 @@
+<div class="page-header page-header-with-buttons">
+	<h1 class="pull-left">
+	  <i class="icon-medkit"></i>
+	  <span>Opening Stock </span>
+	</h1>
+     <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-medkit"></i>
+          <%= t('debit_note')%></li>
+        </ul>
+      </div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for :opening_stock  do |o| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-medkit"></i>
+                        Opening Stock
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+    <div class="box-content box-double-padding">
+  
+        <fieldset>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Item Name:</label>
+                <div class="col-sm-6"><%= o.text_field :item_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Item Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+           <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Date:</label>
+                <div class="col-sm-6"><%= o.date_field :date,:value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Time:</label>
+                <div class="col-sm-6"><%= o.time_select :time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "",
+                      required: true,
+                   
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+        <br>
+        <br>
+           <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+    
+
+        <thead>
+          <tr role="row">
+          <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              GOTO
+            </th>
+          
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              BACTHNO
+            </th>
+
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+            STOCK
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              QTP
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              EXPDATE
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              MRP
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              INCL/EXCL
+            </th>
+                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 50px;">
+              S.RATE
+            </th>
+             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">P.RATE</th>
+
+
+            </tr>
+            
+        </thead>
+        
+      <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+      <tr class="<%= cycle('odd', 'even')%>">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+     
+      </tr>
+
+  </tbody>
+
+</table>    
+
+          </fieldset>
+        </div>
+        </div>
+        </div>
+        <%end%>
