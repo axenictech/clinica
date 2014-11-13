@@ -2,6 +2,8 @@ class IndoorController < ApplicationController
 
 	def new_registration
 	@new_registration=IpdRegistration.new
+	@new_registration.ipd_no=IpdRegistration.last.ipd_no.next
+	@new_registration.hr_no=IpdRegistration.last.hr_no.next
 	@doctor_masters= DoctorMaster.all
 	@city=City.all
 	end
@@ -179,8 +181,16 @@ class IndoorController < ApplicationController
 	end
 
 	def new_money_reciept
-	 @money_reciept=MoneyReciept.new
+	 @money_reciept#=MoneyReciept.new
+
 	end
+
+
+	def new_money_reciept_find_patient
+	 @money_reciept=MoneyReciept.new
+
+	end
+
 	def create_money_reciept
 	 @money_reciept=MoneyReciept.new(params_money_reciept)
 		if  @money_reciept.save
