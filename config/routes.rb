@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+get 'indoors/indoor_dashboard'
+get 'indoors/indoor_patient_admission_form'
+get 'indoors/advance_booking_form'
+get 'indoors/other_service_entry_form'
+get 'indoors/doctor_visit_form'
+get 'indoors/bed_transfer'
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 get 'setting/course_batch'
