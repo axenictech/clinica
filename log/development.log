@@ -4468,6 +4468,7 @@ Migrating to CreateSalesMasterStores (20141223103477)
   [1m[35m (29.5ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 >>>>>>> b0e1645b847507be22496defc87241a5bd5d6394
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at 2014-11-13 11:36:19 +0530
@@ -20993,3 +20994,38 @@ ActionController::RoutingError (No route matches [GET] "/fonts/fontawesome-webfo
   Rendered /home/kanishka/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
   Rendered /home/kanishka/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
   Rendered /home/kanishka/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (532.1ms)
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSupplierMasterStores (20141223103472)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (143.8ms)[0m  [1mCREATE TABLE "supplier_master_stores" ("id" serial primary key, "supplier_name" character varying(255), "address" character varying(255), "phone_no" integer, "tin_no" integer, "DL_no" integer, "city_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (40.0ms)[0m  CREATE  INDEX  "index_supplier_master_stores_on_city_id" ON "supplier_master_stores"  ("city_id")
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103472"]]
+  [1m[35m (21.1ms)[0m  COMMIT
+Migrating to CreateGroupMasterStores (20141223103473)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (47.2ms)[0m  CREATE TABLE "group_master_stores" ("id" serial primary key, "group" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103473"]]
+  [1m[35m (21.4ms)[0m  COMMIT
+Migrating to CreatePackMasterStores (20141223103474)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (80.9ms)[0m  CREATE TABLE "pack_master_stores" ("id" serial primary key, "pack_name" character varying(255), "sale_in_percentage" decimal, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103474"]]
+  [1m[35m (20.8ms)[0m  COMMIT
+Migrating to CreateDepartmentMasterStores (20141223103475)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (48.2ms)[0m  CREATE TABLE "department_master_stores" ("id" serial primary key, "department_name" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103475"]]
+  [1m[35m (20.5ms)[0m  COMMIT
+Migrating to CreatePurchaseMasterStores (20141223103476)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (48.6ms)[0m  CREATE TABLE "purchase_master_stores" ("id" serial primary key, "name" character varying(255), "percentage" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103476"]]
+  [1m[35m (20.1ms)[0m  COMMIT
+Migrating to CreateSalesMasterStores (20141223103477)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (183.4ms)[0m  CREATE TABLE "sales_master_stores" ("id" serial primary key, "name" character varying(255), "tax" decimal, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141223103477"]]
+  [1m[35m (29.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+>>>>>>> 70b092c8c6d03d279148cc18d3fe00365c53fef6
