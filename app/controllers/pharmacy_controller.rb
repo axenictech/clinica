@@ -86,7 +86,7 @@ class PharmacyController < ApplicationController
 
 
 	def new_purchase_challan
-	 @purchase_challan=PharmacyPurchaseChallan.new
+	  # @purchase_challan=PharmacyPurchaseChallan.new
 	end
 	def create_purchase_challan
 	@purchase_challan=PharmacyPurchaseChallan.new(params_purchase_challan)
