@@ -515,17 +515,72 @@ get 'exam_setting/:course_id/decrease_priority/:id',to:'exam_setting#decrease_pr
 get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
-<<<<<<< HEAD
-
-get 'outdoors/index'
-get 'outdoors/newpatient_registration'
-=======
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
->>>>>>> c23fc9e09b975eb58e5cdb4ac927564659370721
+get 'masters/phar'
+
+get 'outdoors/new'
+post 'outdoors/new_registration_create'
+get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
+patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
+delete 'outdoors/:id/destroy_patient',to:'outdoors#destroy_patient',as:'outdoors_destroy_patient'  
+
+get 'outdoors/old_registration'
+post 'outdoors/old_registration_create'
+get 'outdoors/:id/edit_registration_old',to:'outdoors#edit_registration_old',as:'outdoors_edit_registration_old'
+patch 'outdoors/:id/update_registration_old',to:'outdoors#update_registration_old',as:'outdoors_update_registration_old' 
+delete 'outdoors/:id/destroy_patient_old',to:'outdoors#destroy_patient_old',as:'outdoors_destroy_patient_old'  
+
+get 'outdoors/before_patient_entry'
+post 'outdoors/before_patient_entry_create'
+get 'outdoors/:id/edit_before_patient_entry',to:'outdoors#edit_before_patient_entry',as:'outdoors_edit_before_patient_entry'
+patch 'outdoors/:id/update_before_patient_entry',to:'outdoors#update_before_patient_entry',as:'outdoors_update_before_patient_entry' 
+delete 'outdoors/:id/destroy_before_patient_entry',to:'outdoors#destroy_before_patient_entry',as:'outdoors_destroy_before_patient_entry'  
+
+get 'outdoors/clinical_report'
+post 'outdoors/clinical_report_create'
+get 'outdoors/:id/edit_clinical_report',to:'outdoors#edit_clinical_report',as:'outdoors_edit_clinical_report'
+patch 'outdoors/:id/update_clinical_report',to:'outdoors#update_clinical_report',as:'outdoors_update_clinical_report' 
+delete 'outdoors/:id/destroy_clinical_report',to:'outdoors#destroy_clinical_report',as:'outdoors_destroy_clinical_report'  
+
+
+get 'outdoors/money_receipt'
+post 'outdoors/money_receipt_create'
+get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdoors_edit_money_receipt'
+patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
+delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
+
+get 'outdoors/appitment'
+post 'outdoors/appitment_create'
+get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
+patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
+delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+
+get 'outdoors/prescription'
+post 'outdoors/prescription_create'
+get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoors_edit_prescription'
+patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
+delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
+
+
+get 'labs/new'
+post 'labs/lab_case_create'
+get 'labs/:id/edit_lab_case',to:'labs#edit_lab_case',as:'labs_edit_lab_case'
+patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_lab_case' 
+delete 'labs/:id/destroy_lab_case',to:'labs#destroy_lab_case',as:'labs_destroy_lab_case'   
+
+get 'labs/test_cancellation'
+post 'labs/test_cancellation_create'
+get 'labs/:id/edit_test_cancellation',to:'labs#edit_test_cancellation',as:'labs_edit_test_cancellation'
+patch 'labs/:id/update_lab_case',to:'labs#update_lab_case',as:'labs_update_test_cancellation' 
+delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',as:'labs_destroy_test_cancellation'   
+
+
 root 'home#dashboard'
  
+
+
 resources :home
 resources :setting
 resources :categories
@@ -593,10 +648,6 @@ resources :online_exams
 resources :employees
 resources :employee_attendances
 resources :finance
-<<<<<<< HEAD
-
 resources :outdoors
-=======
 resources :masters
->>>>>>> c23fc9e09b975eb58e5cdb4ac927564659370721
 end
