@@ -518,7 +518,20 @@ get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
 #common master#
+
+get 'masters/outdoor_patient_master'
+get 'masters/pharmacy_master'
+get 'masters/diagonostic_master'
+get 'masters/store_master'
 #doctor master
+get 'common_master/common_master'
+get 'common_master/doctor_master'
+get 'common_master/area_master'
+
+get 'common_master/indoor_patient_master'
+get 'common_master/bed_master'
+get 'common_master/ot_master'
+
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
 get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
@@ -538,6 +551,8 @@ post 'common_master/create_specialized_master'
 get 'common_master/:id/edit_specialized_master',to: 'common_master#edit_specialized_master',as:'common_master_edit_specialized_master'
 patch 'common_master/:id/update_specialized_master',to: 'common_master#update_specialized_master',as:'common_master_update_specialized_master'
 delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
+
+
 
 #shift master
 get 'common_master/new_shift_master'
@@ -735,6 +750,7 @@ post 'pharmacy_master/create_composition_master'
 get 'pharmacy_master/:id/edit_composition_master',to: 'pharmacy_master#edit_composition_master',as:'pharmacy_master_edit_composition_master'
 patch 'pharmacy_master/:id/update_composition_master',to: 'pharmacy_master#update_composition_master',as:'pharmacy_master_update_composition_master'
 delete 'pharmacy_master/:id/delete_composition_master',to: 'pharmacy_master#delete_composition_master',as:'pharmacy_master_delete_composition_master'
+
 
 #sales tax master
 get 'pharmacy_master/new_sales_tax_master'
@@ -1035,6 +1051,23 @@ patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'u
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
 #PHARMACY#
+#STORES#
+get 'stores/new_common_opening_stock'
+post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
+patch 'stores/:id/update_common_opening_stock',to: 'stores#update_common_opening_stock',as: 'stores_update_common_opening_stock'
+delete 'stores/:id/delete_common_opening_stock',to: 'stores#delete_common_opening_stock',as: 'stores_delete_common_opening_stock'
+
+get 'stores/new_purchase_master_store'
+post 'stores/create_purchase_master_store',to: 'stores#create_purchase_master_store',as: 'stores_create_purchase_master_store'
+patch 'stores/:id/update_purchase_master_store',to: 'stores#update_purchase_master_store',as: 'stores_update_purchase_master_store'
+delete 'stores/:id/delete_purchase_master_store',to: 'stores#delete_purchase_master_store',as: 'stores_delete_purchase_master_store'
+
+get 'stores/new_issue_counter'
+post 'stores/create_issue_counter',to: 'stores#create_issue_counter',as: 'stores_create_issue_counter'
+patch 'stores/:id/update_issue_counter',to: 'stores#update_issue_counter',as: 'stores_update_issue_counter'
+delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: 'stores_delete_issue_counter'
+#stores#
+
 
 #BLOODBANK#
 get 'bloodbanks/new_rhd_master'
@@ -1133,5 +1166,8 @@ resources :employee_attendances
 resources :finance
 resources :outdoors
 resources :masters
+resources :stores
+
 resources :common_master
+
 end
