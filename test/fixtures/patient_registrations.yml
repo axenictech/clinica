@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ipd_no: 1
+  advance_booking: MyString
+  is_advance: false
+  date_time: 
+  patient_name: MyString
+  gender: MyString
+  marital_status: MyString
+  age: 9.99
+  address: MyString
+  address: MyString
+  city_id: 
+
+two:
+  ipd_no: 1
+  advance_booking: MyString
+  is_advance: false
+  date_time: 
+  patient_name: MyString
+  gender: MyString
+  marital_status: MyString
+  age: 9.99
+  address: MyString
+  address: MyString
+  city_id: 
