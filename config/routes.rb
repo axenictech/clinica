@@ -992,7 +992,6 @@ patch 'pharmacy/:id/update_sale_return',to: 'pharmacy#update_sale_return',as: 'u
 delete 'pharmacy/:id/delete_sale_return',to: 'pharmacy#delete_sale_return',as: 'delete_sale_return'
 
 #PHARMACY#
-<<<<<<< HEAD
 #STORES#
 get 'stores/new_common_opening_stock'
 post 'stores/create_common_opening_stock',to: 'stores#create_common_opening_stock',as: 'stores_create_common_opening_stock'
@@ -1009,7 +1008,7 @@ post 'stores/create_issue_counter',to: 'stores#create_issue_counter',as: 'stores
 patch 'stores/:id/update_issue_counter',to: 'stores#update_issue_counter',as: 'stores_update_issue_counter'
 delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: 'stores_delete_issue_counter'
 #stores#
-=======
+
 
 #BLOODBANK#
 get 'bloodbanks/new_rhd_master'
@@ -1038,7 +1037,6 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
->>>>>>> b2132193794c90f3806ae3cb42e52cfe0cfd3095
 
 resources :home
 resources :setting
@@ -1109,9 +1107,8 @@ resources :employee_attendances
 resources :finance
 resources :outdoors
 resources :masters
-<<<<<<< HEAD
 resources :stores
-=======
+
 resources :common_master
->>>>>>> b2132193794c90f3806ae3cb42e52cfe0cfd3095
+
 end
