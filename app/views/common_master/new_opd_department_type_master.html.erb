@@ -2,7 +2,7 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Floor Master')%></span>
+              <span><%= t('OPD Department Master')%></span>
               <small><%= t('New')%></small>
     </h1>
       <div class="pull-right">
@@ -22,7 +22,7 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Floor Master')%></li>
+          <%= t('OPD Department Master')%></li>
         </ul>
       </div>
 </div>
@@ -34,7 +34,7 @@
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Floor Master
+                        OPD Department Master
       </div>
       <div class="actions">
                         
@@ -47,10 +47,10 @@
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Floor Name:</label>
-                <div class="col-sm-6"><%= c.text_field :floor_name,
+              <label class="col-sm-2 control-label">Department:</label>
+                <div class="col-sm-6"><%= c.text_field :department,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Floor Name",
+                     class: "form-control input-group",placeholder: "Department",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
