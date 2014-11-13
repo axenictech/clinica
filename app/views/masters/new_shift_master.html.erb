@@ -1,0 +1,114 @@
+<div class="page-header page-header-with-buttons">
+	<h1 class="pull-left">
+	  <i class="icon-book"></i>
+	  <span>Comman Master </span>
+	</h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href=""></a>
+      </li>
+  </ol>
+</div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for :doctor_master  do |c| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-book"></i>
+                        Shift Master
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+    <div class="box-content box-double-padding">
+      <form class="form-horizontal" style="margin-bottom: 0;">
+        <fieldset>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Shift Code:</label>
+                <div class="col-sm-6"><%= c.text_field :shift_code,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Shift Code",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+           <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Shift Name:</label>
+                <div class="col-sm-6"><%= c.text_field :shift_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Shift Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Time From:</label>
+                <div class="col-sm-6"><%= c.time_select :start_time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Time To:</label>
+                <div class="col-sm-6"><%= c.time_select :end_time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+
+           <br><br>
+
+                  <div class="row">
+                       
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-2" >                
+                           
+                                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
+                                
+                        </div>
+                         <div class="col-sm-5"></div>
+                    </div> 
+               
+
+          </fieldset>
+        </form>
+        </div>
+        </div>
+        </div>
+        <%end%>

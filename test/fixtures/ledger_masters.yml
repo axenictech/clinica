@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ledger_name: MyString
+  address: MyString
+  phone_no: 1
+  opaning_balance: 1
+  city_id: 
+
+two:
+  ledger_name: MyString
+  address: MyString
+  phone_no: 1
+  opaning_balance: 1
+  city_id: 

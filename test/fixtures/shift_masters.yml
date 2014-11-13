@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shift_code: 1
+  shift_name: MyString
+  time_form: 1
+  time_to: 1
+
+two:
+  shift_code: 1
+  shift_name: MyString
+  time_form: 1
+  time_to: 1

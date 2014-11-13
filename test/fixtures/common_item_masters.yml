@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  print_name: MyString
+  minimum_quantity: 1
+  maximum_quantity: 1
+  pre_order_quantity: 1
+  company_master_id: 
+  pack_master_id: 
+  purchase_tax_master_id: 
+  sales_tax_master_id: 
+  group_master_id: 
+
+two:
+  item_name: MyString
+  print_name: MyString
+  minimum_quantity: 1
+  maximum_quantity: 1
+  pre_order_quantity: 1
+  company_master_id: 
+  pack_master_id: 
+  purchase_tax_master_id: 
+  sales_tax_master_id: 
+  group_master_id: 

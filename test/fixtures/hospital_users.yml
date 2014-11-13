@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  password: MyString
+  max_discount: 9.99
+  is_deactive: false
+
+two:
+  user_name: MyString
+  password: MyString
+  max_discount: 9.99
+  is_deactive: false
