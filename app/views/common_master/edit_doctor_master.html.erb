@@ -3,7 +3,7 @@
     <h1 class="pull-left">
       <i class="icon-gears"></i>
               <span><%= t('Doctor Master')%></span>
-              <small><%= t('new')%></small>
+              <small><%= t('edit')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -44,7 +44,7 @@
     </div>
 
     <div class="box-content box-double-padding">
-     <%= form_for @doctor_master,url:{action: 'create_doctor_master'}  do |c| %>
+     <%= form_for @doctor_master,url:{action: 'update_doctor_master'},method: :patch  do |c| %>
         <fieldset>
         <% if @doctor_master.errors.any?%>
         <div class="alert alert-danger">
@@ -70,9 +70,9 @@
           </div>
           <br>
           <div class="row">
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label class="col-sm-2 control-label">Specailized:</label>
-                <div class="col-sm-6"><%#= c.text_field :specialization,
+               <!--  <div class="col-sm-6"><%#= c.text_field :specialization,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Specailized",
                       required: true,
