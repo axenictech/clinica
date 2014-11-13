@@ -1,16 +1,30 @@
-<div class="page-header page-header-with-buttons">
-	<h1 class="pull-left">
-	  <i class="icon-book"></i>
-	  <span>Comman Master </span>
-	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Floor Master')%></span>
+              <small><%= t('New')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Floor Master')%></li>
+        </ul>
+      </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
@@ -20,7 +34,7 @@
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Occupation Master
+                        Floor Master
       </div>
       <div class="actions">
                         
@@ -29,14 +43,14 @@
       </div>
     </div>
     <div class="box-content box-double-padding">
-      <form class="form-horizontal" style="margin-bottom: 0;">
+      <div class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Occupation:</label>
-                <div class="col-sm-6"><%= c.text_field :occupation,
+              <label class="col-sm-2 control-label">Floor Name:</label>
+                <div class="col-sm-6"><%= c.text_field :floor_name,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Occupation",
+                     class: "form-control input-group",placeholder: "Floor Name",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -61,7 +75,7 @@
                
 
           </fieldset>
-        </form>
+        </div>
         </div>
         </div>
         </div>

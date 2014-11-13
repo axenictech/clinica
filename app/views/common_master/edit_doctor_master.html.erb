@@ -1,20 +1,34 @@
-<div class="page-header page-header-with-buttons">
-	<h1 class="pull-left">
-	  <i class="icon-book"></i>
-	  <span>Comman Master </span>
-	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Doctor Master')%></span>
+              <small><%= t('edit')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Doctor Master')%></li>
+        </ul>
+      </div>
 </div>
-</div>
+
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -28,13 +42,22 @@
                         </a>
       </div>
     </div>
+
     <div class="box-content box-double-padding">
-      <form class="form-horizontal" style="margin-bottom: 0;">
+     <%= form_for @doctor_master,url:{action: 'update_doctor_master'},method: :patch  do |c| %>
         <fieldset>
+        <% if @doctor_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @doctor_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+        <%end%>
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Doctor Name:</label>
-                <div class="col-sm-6"><%= c.text_field :doctor_name,
+                <div class="col-sm-6"><%= c.text_field :name,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Doctor name",
                       required: true,
@@ -49,7 +72,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Specailized:</label>
-                <div class="col-sm-6"><%= c.text_field :specailized,
+               <!--  <div class="col-sm-6"><%#= c.text_field :specialization,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Specailized",
                       required: true,
@@ -58,7 +81,7 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>     
-                </div>
+                </div> -->
             </div>
 
 
@@ -67,14 +90,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">Gender:</label>
-                  <div class="col-sm-6"><%= c.select :gender,['Male','Female'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "D.O.B",
-                      required: true,
-                      :"data-content"=>"Select Gender",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                  <div class="col-sm-6"><%= c.select :gender,['Male','Female'],{prompt:"Select gender"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
                   </div> 
                 </div>
             </div>
@@ -93,7 +109,7 @@
                   </div> 
 
                   <label class="col-sm-1 control-label">D.O.B:</label>
-                  <div class="col-sm-3"><%= c.date_field :dob,
+                  <div class="col-sm-3"><%= c.date_field :date_of_birth,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "D.O.B",
                       required: true,
@@ -110,7 +126,7 @@
              <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Address:</label>
-                <div class="col-sm-6"><%= c.text_field :address,
+                <div class="col-sm-6"><%= c.text_area :address,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Address",
                       required: true,
@@ -125,10 +141,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-6"><%= c.select :city,[]
-                
-                     
-                      %>  
+                <div class="col-sm-6"><%= c.select :city,[]%>  
                   </div>     
                 </div>
             </div> 
@@ -136,7 +149,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">State:</label>
-                <div class="col-sm-6"><%= c.select :state,[] %>  
+                <div class="col-sm-6"> 
                   </div>     
                 </div>
             </div> 
@@ -174,7 +187,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Email:</label>
-                <div class="col-sm-6"><%= c.text_field :email,
+                <div class="col-sm-6"><%= c.text_field :email_id,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Email",
                       required: true,
@@ -200,7 +213,7 @@
                       %>  
                   </div>  
                 <label class="col-sm-2 control-label">R.M.O [Y/N]:</label>
-                <div class="col-sm-2"><%= c.text_field :rmo,
+                <div class="col-sm-2"><%= c.text_field :is_rmo,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -217,7 +230,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Visit Rate:</label>
-                <div class="col-sm-2"><%= c.text_field :visit_rate,
+                <div class="col-sm-2"><%= c.text_field :vistit_rate,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -227,7 +240,7 @@
                       %>  
                   </div>  
                 <label class="col-sm-2 control-label">Visit Limit/Day:</label>
-                <div class="col-sm-2"><%= c.text_field :visit_limit_rate,
+                <div class="col-sm-2"><%= c.text_field :visit_limit,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -255,8 +268,8 @@
 
 
           </fieldset>
-        </form>
-        </div>
-        </div>
-        </div>
         <%end%>
+        </div>
+        </div>
+        </div>
+     

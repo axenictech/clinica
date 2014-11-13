@@ -1,7 +1,7 @@
 class IndoorController < ApplicationController
 
 	def new_registration
-	@new_registration=IpdRegistration.new
+	@new_registration#=IpdRegistration.new
 	end
 
 	def create_registration

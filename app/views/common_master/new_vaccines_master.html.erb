@@ -1,8 +1,8 @@
 <div class="page-header page-header-with-buttons">
-  <h1 class="pull-left">
-    <i class="icon-book"></i>
-    <span>Comman Master </span>
-  </h1>
+	<h1 class="pull-left">
+	  <i class="icon-book"></i>
+	  <span>Comman Master </span>
+	</h1>
 <div class="pull-right">
   <ol class="breadcrumb">
       <li class="active">
@@ -20,7 +20,7 @@
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        State Master
+                      Vaccines Master
       </div>
       <div class="actions">
                         
@@ -33,10 +33,10 @@
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">City Name:</label>
-                <div class="col-sm-6"><%= c.text_field :city,
+              <label class="col-sm-2 control-label">Vaccines:</label>
+                <div class="col-sm-6"><%= c.text_field :vaccines,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "City Name",
+                     class: "form-control input-group",placeholder: "Vaccines",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -48,10 +48,10 @@
           <br>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Short Name:</label>
-                <div class="col-sm-6"><%= c.text_field :short_name,
+              <label class="col-sm-2 control-label">Age Group:</label>
+                <div class="col-sm-6"><%= c.text_field :age_group,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Short Name",
+                     class: "form-control input-group",placeholder: "Age Group",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -63,10 +63,10 @@
           <br>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">State Name:</label>
-                <div class="col-sm-6"><%= c.text_field :state,
+              <label class="col-sm-2 control-label">DueOn (In Days):</label>
+                <div class="col-sm-6"><%= c.text_field :due_on,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "State Name",
+                     class: "form-control input-group",placeholder: "DueOn",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -75,6 +75,7 @@
                   </div>     
                 </div>
           </div>
+
            <br><br>
 
                   <div class="row">
