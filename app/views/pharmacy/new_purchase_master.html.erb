@@ -1,7 +1,7 @@
 <div class="page-header page-header-with-buttons">
 	<h1 class="pull-left">
 	  <i class="icon-medkit"></i>
-	  <span>Purchase Challan</span>
+	  <span>Purchase Master</span>
 	</h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -20,19 +20,19 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-medkit"></i>
-          <%= t('Purchase Challan')%></li>
+          <%= t('Purchase Master')%></li>
         </ul>
       </div>
 
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :purchase_challan  do |o| %>
+<%= form_for :purchase_master  do |o| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-medkit"></i>
-            Purchase Challan        
+            Purchase Master        
       </div>
       <div class="actions">
                         
@@ -45,12 +45,12 @@
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Supplier Name:</label>
-                <div class="col-sm-2"><%= o.text_field  :supplier_name,
+              <label class="col-sm-2 control-label">Challan No:</label>
+                <div class="col-sm-2"><%= o.text_field  :challan_no,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Supplier Name",
+                     class: "form-control input-group",placeholder: "Challan No",
                       required: true,
-                      :"data-content"=>"Special characters not allowed",
+                   
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -58,8 +58,9 @@
                 
           
        <label class="col-sm-2 control-label">Cash/Credit:</label>
-                <div class="col-sm-2"><%= o.select :cash,['Credit'] ,
+                <div class="col-sm-2"><%= o.select :cash,['Credit'],
                     onfocus:"$(this).popover('show');" ,
+                     placeholder: "Cash/Credit",
                      class: "form-control input-group",
                       required: true,
                       :"data-placement"=>"right",
@@ -67,8 +68,9 @@
                       %>  
                   </div>     
                <label class="col-sm-2 control-label">Entry No:</label>
-                <div class="col-sm-2"><%= o.text_field :entry_no,placeholder: "Entry No",
+                <div class="col-sm-2"><%= o.text_field :entry_no,
                     onfocus:"$(this).popover('show');" ,
+                     placeholder: "Entry No",
                      class: "form-control input-group",
                       required: true,
                       :"data-content"=>"",
@@ -81,11 +83,11 @@
         <br>
         <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Bill No:</label>
-                <div class="col-sm-2"><%= o.text_field  :bill,
+              <label class="col-sm-2 control-label">Supplier:</label>
+                <div class="col-sm-2"><%= o.text_field  :spplier,
                  
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Bill No",
+                     class: "form-control input-group",placeholder: "Supplier",
                       required: true,
                     
                       :"data-placement"=>"right",
@@ -93,8 +95,8 @@
                       %>  
                   </div>     
         
-              <label class="col-sm-2 control-label">Bill Date:</label>
-                <div class="col-sm-2"><%= o.date_field  :bill_date,
+              <label class="col-sm-2 control-label">Purchase Date:</label>
+                <div class="col-sm-2"><%= o.date_field  :purchase_date,
                  :value => Time.now.strftime('%Y-%m-%d'),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
@@ -104,9 +106,9 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>   
-                <label class="col-sm-2 control-label">Purchase Date:</label>
-                <div class="col-sm-2"><%= o.date_field  :purchase_date,
-                 :value => Time.now.strftime('%Y-%m-%d'),
+                <label class="col-sm-2 control-label">Bill No:</label>
+                <div class="col-sm-2"><%= o.text_field  :bill_no,
+                   placeholder: "Bill No",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -129,7 +131,40 @@
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
-                  </div>    
+                  </div> 
+
+                <div class="col-sm-2"><%= o.date_field  :purchase_date,
+                 :value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>   
+                <label class="col-sm-1 control-label">TO:</label>
+                <div class="col-sm-2"><%= o.date_field  :bill_no,
+                   placeholder: "Bill No",
+                    :value => Time.now.strftime('%Y-%m-%d'),
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+              
+                 <div class="col-sm-3"><%= o.select :all,['all','none'],
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-content"=>"Select Gender",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>      
                 </div>
                 <div>
                   <br>
@@ -299,7 +334,23 @@
                   </div>     
         </div>
       </div>
+    </br> <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Purchase Return Due Rs:</label>
+                <div class="col-sm-9"><%= o.text_field  :purchase_return,
+                
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                   
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        </div>
+      </div>
     </br>
+        
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Previous User:</label>

@@ -1,7 +1,7 @@
 <div class="page-header page-header-with-buttons">
 	<h1 class="pull-left">
 	  <i class="icon-medkit"></i>
-	  <span>Purchase Challan</span>
+	  <span>Sale Return</span>
 	</h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -20,19 +20,19 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-medkit"></i>
-          <%= t('Purchase Challan')%></li>
+          <%= t('Sale Return')%></li>
         </ul>
       </div>
 
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :purchase_challan  do |o| %>
+<%= form_for :sale_return  do |o| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-medkit"></i>
-            Purchase Challan        
+            Sale Return        
       </div>
       <div class="actions">
                         
@@ -45,10 +45,10 @@
         <fieldset>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Supplier Name:</label>
-                <div class="col-sm-2"><%= o.text_field  :supplier_name,
+              <label class="col-sm-2 control-label">Invoice No:</label>
+                <div class="col-sm-1"><%= o.text_field  :invoice_no,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Supplier Name",
+                     class: "form-control input-group",placeholder: "Invoice No",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -57,8 +57,9 @@
                   </div>     
                 
           
-       <label class="col-sm-2 control-label">Cash/Credit:</label>
-                <div class="col-sm-2"><%= o.select :cash,['Credit'] ,
+       <label class="col-sm-2 control-label">H.R No:</label>
+                <div class="col-sm-1"><%= o.text_field  :HR_no,
+                    placeholder: "Invoice No",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -66,26 +67,33 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>     
-               <label class="col-sm-2 control-label">Entry No:</label>
-                <div class="col-sm-2"><%= o.text_field :entry_no,placeholder: "Entry No",
+               <label class="col-sm-2 control-label">Return Date Time:</label>
+                <div class="col-sm-1"><%= o.date_field :return_date,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
-                      :"data-content"=>"",
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
-                  </div>    
+                  </div>  
+                     <div class="col-sm-3"><%= o.time_select :return_time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>   
           </div>
       </div>
         <br>
         <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Bill No:</label>
-                <div class="col-sm-2"><%= o.text_field  :bill,
+              <label class="col-sm-2 control-label">Customer Type:</label>
+                <div class="col-sm-2"><%= o.select  :customer_type,['Other'],
                  
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Bill No",
+                     class: "form-control input-group",
                       required: true,
                     
                       :"data-placement"=>"right",
@@ -93,21 +101,20 @@
                       %>  
                   </div>     
         
-              <label class="col-sm-2 control-label">Bill Date:</label>
-                <div class="col-sm-2"><%= o.date_field  :bill_date,
-                 :value => Time.now.strftime('%Y-%m-%d'),
+              <label class="col-sm-2 control-label">OPD/IPD No:</label>
+                <div class="col-sm-2"><%= o.text_field  :opd_no,
                     onfocus:"$(this).popover('show');" ,
+                     placeholder: "OPD/IPD No",
                      class: "form-control input-group",
                       required: true,
-                    
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>   
-                <label class="col-sm-2 control-label">Purchase Date:</label>
-                <div class="col-sm-2"><%= o.date_field  :purchase_date,
-                 :value => Time.now.strftime('%Y-%m-%d'),
+                <label class="col-sm-2 control-label">Patient Name:</label>
+                <div class="col-sm-2"><%= o.text_field  :patient_name,
                     onfocus:"$(this).popover('show');" ,
+                     placeholder: "Patient Name",
                      class: "form-control input-group",
                       required: true,
                     
@@ -120,19 +127,58 @@
           <br>
            <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Series:</label>
-                <div class="col-sm-2"><%= o.text_field  :series,
+              <label class="col-sm-2 control-label">Credit No:</label>
+                <div class="col-sm-2"><%= o.text_field  :credit_no,
+                 
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Series",
+                     class: "form-control input-group",placeholder: "Credit No",
                       required: true,
-                      :"data-content"=>"Special characters not allowed",
+                    
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
-                  </div>    
+                  </div>     
+        
+              <label class="col-sm-2 control-label">Bed No:</label>
+                <div class="col-sm-2"><%= o.text_field  :bed_no,
+                    onfocus:"$(this).popover('show');" ,
+                    placeholder: "Bed No",
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>   
+                <label class="col-sm-2 control-label">Dr Name:</label>
+                <div class="col-sm-2"><%= o.text_field  :doctor_name,
+                    onfocus:"$(this).popover('show');" ,
+                    placeholder: "Doctor Name",
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
                 </div>
                 <div>
                   <br>
+                  <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Remarks:</label>
+                <div class="col-sm-9"><%= o.text_field  :remark,
+                 
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Remarks",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+              </div>
                   <br>
            <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
     
@@ -142,7 +188,7 @@
           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              GOTO
+              Sale From
             </th>
           
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
@@ -174,12 +220,12 @@
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-              free
+              MRP
             </th>
                 <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 50px;">
-             T.Qty
+             S.Rate
             </th>
              <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">Sale RATE</th>
 
@@ -207,24 +253,98 @@
 
 </table>  
 <br>
-<br>
 
+<h4>PAYMENT DETAILS</h4>
+ <br>
+        <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Receipt Rs:</label>
+                <div class="col-sm-2"><%= o.text_field  :receipt_rs,
+                 
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        
+              <label class="col-sm-2 control-label">Balance:</label>
+                <div class="col-sm-2"><%= o.text_field  :balance,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>   
+                <label class="col-sm-2 control-label">payment Type:</label>
+                <div class="col-sm-2"><%=o.select :payment_type,['Cash'],
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+           <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Bank Name:</label>
+                <div class="col-sm-2"><%= o.text_field  :bank_name,
+                 
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Bank Name",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+        
+              <label class="col-sm-2 control-label">Chq/Card No:</label>
+                <div class="col-sm-2"><%= o.text_field  :card_no,
+                    onfocus:"$(this).popover('show');" ,
+                    placeholder: "Card No",
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>   
+                <label class="col-sm-2 control-label">chq Date:</label>
+                <div class="col-sm-2"><%= o.date_field  :chq_date,
+                    onfocus:"$(this).popover('show');" ,:value => Time.now.strftime('%Y-%m-%d'),
+                     class: "form-control input-group",
+                      required: true,
+                    
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+                <div>
+                  <br>
+                  <br>
 <div class="row">
       <div class="form-group">
-        <label class="col-sm-2 control-label">Gross  Amt:</label>
+        <label class="col-sm-2 control-label">Total Rs:</label>
                
-          <label class="col-sm-2 control-label">Tot Disc:</label>
-        <label class="col-sm-2 control-label">Tot TAX:</label>
-                <label class="col-sm-2 control-label">Misc:</label>
+          <label class="col-sm-2 control-label">Tot Disc Rs:</label>
+        <label class="col-sm-2 control-label">Tot tax Rs:</label>
                  <label class="col-sm-2 control-label">Round off:</label>
-                   <label class="col-sm-2 control-label">Net Amount:</label>
+                   <label class="col-sm-2 control-label">Grand Total:</label>
                 </div>
           </div>
           <br> 
 
   <div class="row">
       <div class="form-group">
-          <div class="col-sm-2"><%= o.text_field :gross_amt,
+          <div class="col-sm-2"><%= o.text_field :total_rs,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -236,16 +356,7 @@
         
        
      
-                <div class="col-sm-2"><%= o.text_field  :total_discount,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                    <div class="col-sm-2"><%= o.text_field  :tot_disc,
+               <div class="col-sm-2"><%= o.text_field  :tot_disc,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -272,7 +383,7 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>
-                     <div class="col-sm-2"><%= o.text_field  :net_amount,
+                     <div class="col-sm-2"><%= o.text_field  :grand_total,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -284,22 +395,54 @@
                 </div>
           </div>
           <br> 
-           <div class="row">
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Remarks:</label>
-                <div class="col-sm-9"><%= o.text_field  :remarks,
-                
+      <div class="row">
+      <div class="form-group">
+
+        <label class="col-sm-4 control-label">Discount(%):</label>
+               
+          <label class="col-sm-4 control-label">Tot Discount(Rs):</label>   
+                   <label class="col-sm-4 control-label">Net Total:</label>
+                </div>
+          </div>
+          <br> 
+          <div class="row">
+      <div class="form-group">
+          <div class="col-sm-4"><%= o.text_field :discount_per,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "remarks",
+                     class: "form-control input-group",
                       required: true,
-                      :"data-content"=>"Special characters not allowed",
+                     
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>     
-        </div>
-      </div>
-    </br>
+        
+       
+     
+               <div class="col-sm-3"><%= o.text_field  :discount_rs,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                    <div class="col-sm-3"><%= o.text_field  :net_grand,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+              
+                </div>
+          </div>
+          <br> 
+           
+  
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Previous User:</label>

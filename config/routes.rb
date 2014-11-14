@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
-
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -519,6 +519,7 @@ get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
+
 #common master#
 #doctor master
 
@@ -941,7 +942,6 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 #---------------Master-----------------------
 
 
-
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -1122,6 +1122,7 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
+
 
 resources :home
 resources :setting
