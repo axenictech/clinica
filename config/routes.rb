@@ -1083,6 +1083,12 @@ delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: '
 
 
 #BLOODBANK#
+get 'blood_banks/master'
+get 'blood_banks/report'
+get 'blood_banks/issue_to_patient'
+get 'blood_banks/direct_issue_patient'
+get 'blood_banks/pack_master'
+
 get 'bloodbanks/new_rhd_master'
 post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
 patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
@@ -1180,10 +1186,7 @@ resources :outdoors
 resources :masters
 resources :stores
 resources :common_master
-
 resources :pharmacy_master
-
-
 resources :pharmacy
-
+resources :blood_banks
 end

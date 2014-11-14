@@ -224,7 +224,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">D.O.B:</label>
-                  <div class="col-sm-3"><%= c.date_field :date,
+                  <div class="col-sm-3"><%= c.date_field :date_of_birth,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -478,7 +478,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Reference Doctor:</label>
-                  <div class="col-sm-4"><%= c.text_field :ref_doctor,
+                  <div class="col-sm-4"><%= c.text_field :reference_doctor,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -525,7 +525,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Previous User:</label>
-                <div class="col-sm-2"><%= c.text_field :prev_user,
+                <div class="col-sm-2"><%= c.text_field :previous_user,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
