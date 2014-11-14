@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141223103481) do
+=======
 ActiveRecord::Schema.define(version: 20141223103483) do
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1142,7 +1146,11 @@ ActiveRecord::Schema.define(version: 20141223103483) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
+<<<<<<< HEAD
+  create_table "indoor_money_reciepts", force: true do |t|
+=======
   create_table "ipd_money_reciepts", force: true do |t|
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.integer  "reciept_no"
     t.integer  "ipd_no"
     t.date     "date"
@@ -1153,17 +1161,21 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.decimal  "recieved_amount"
     t.string   "payment_type"
     t.string   "bank_name"
+<<<<<<< HEAD
+=======
     t.string   "cheque_number"
     t.string   "remark"
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ipd_registrations", force: true do |t|
     t.integer  "ipd_no"
-    t.date     "date"
-    t.string   "time"
+    t.datetime "datetime"
     t.integer  "hr_no"
+<<<<<<< HEAD
+=======
     t.string   "advance_booking"
     t.string   "advance_booking_check"
     t.string   "patient_name"
@@ -1191,6 +1203,7 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "under_dr_two"
     t.string   "shift"
     t.string   "diesease"
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.datetime "created_at"
     t.datetime "updated_at"
   end

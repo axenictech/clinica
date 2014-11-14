@@ -943,6 +943,7 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
+<<<<<<< HEAD
 get 'indoor/advance_booking_form'
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_transfer'
@@ -952,6 +953,10 @@ get 'indoor/ipd_clinical_report'
 get 'indoor/manual_final_bill'
 get 'indoor/ot_billing'
 get 'indoor/new_final_bill'
+=======
+get 'indoor/indoor_dashboard'
+get 'indoor/bed_occupancy_dashboard'
+>>>>>>> fe56bc0fa1669a6e1c34fb30ef4294c21a7655f2
 
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -1112,10 +1117,19 @@ get 'blood_banks/issue_to_patient'
 get 'blood_banks/direct_issue_patient'
 get 'blood_banks/pack_master'
 
+get 'blood_banks/blood_donor_details'
+
 get 'bloodbanks/new_rhd_master'
 post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
 patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
 delete 'bloodbanks/:id/delete_rhd_master',to: 'bloodbanks#delete_rhd_master',as: 'delete_rhd_master'
+
+get 'blood_banks/new_blood_doner_details'
+post 'blood_banks/create_blood_doner_details',to: 'blood_banks#create_blood_doner_details',as: 'blood_banks_create_blood_doner_details'
+patch 'blood_banks/:id/update_blood_doner_details',to: 'blood_banks#update_blood_doner_details',as: 'blood_banks_update_blood_doner_details'
+delete 'blood_banks/:id/delete_blood_doner_details',to: 'blood_banks#delete_blood_doner_details',as: 'blood_banks_delete_blood_doner_details'
+
+
 
 get 'bloodbanks/new_blood_group'
 post 'bloodbanks/create_blood_group',to: 'bloodbanks#create_blood_group',as: 'create_blood_group'
