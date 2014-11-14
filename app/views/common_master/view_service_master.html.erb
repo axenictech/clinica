@@ -13,7 +13,7 @@
           </a>
         </li> -->
           <li>
-            <a href="home/dashboard">
+            <a href="/home/dashboard">
               <i class="icon-dashboard"></i>
               <%= t('dashboard')%></li>
             </a>
@@ -39,7 +39,7 @@
 <div class="col-sm-12 ">
   <div class="box bordered-box green-border" style="margin-bottom:0;">
     <div class="box-header green-background">
-      <div class="title"><%= t('doctor master details')%></div>
+      <div class="title"><%= t('service master details')%></div>
         <div class="actions">  
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
@@ -57,7 +57,7 @@
       </div>
       </div>
       <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-        <% if @doctor_masters.empty? %>
+        <% if @service_masters.empty? %>
          <h4 align="center">No Record Found </h4>
           <% else %>
         <thead>
@@ -65,23 +65,28 @@
           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 297px;">
+             Service
+            </th>
+            <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
+            : activate to sort column descending" style="width: 297px;">
+             Charge
             </th>
             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">Actions</th>
-
             </tr>
         </thead>
         
-      <tbody role="alert" aria-live="polite" aria-relevant="all">
-    <% @doctor_masters.each do |dm|%>
+  <tbody role="alert" aria-live="polite" aria-relevant="all">
+    <% @service_masters.each do |f|%>
       <tr class="<%= cycle('odd', 'even')%>">
-        <td class=" sorting_1"><%= dm.name %></td>
+      <td class=" sorting_1"><%= f.name+"-"+f.service_date.to_s %></td>
+       <td class=" sorting_1"><%= f.charge %></td>
         <td class=" ">
           <div class="text-right">
           <i class="icon-pencil"></i>
-            <%= link_to 'Edit' ,common_master_edit_doctor_master_path(dm),class: "btn btn-warning btn-xs"%>
+            <%= link_to 'Edit' ,common_master_edit_service_master_path(f),class: "btn btn-warning btn-xs"%>
             <i class="icon-remove"></i>
-            <%= link_to 'Delete' ,common_master_delete_doctor_master_path(dm),method: :delete, data:{confirm:"Are You sure to delete data of '#{dm.name}' ?"},class: "btn btn-danger btn-xs"%>
+            <%= link_to 'Delete' ,common_master_delete_service_master_path(f),method: :delete, data:{confirm:"Are You sure to delete '#{f.name}' ?"},class: "btn btn-danger btn-xs"%>
           </div>              
         </td>
       </tr>

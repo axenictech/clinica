@@ -13,7 +13,7 @@
           </a>
         </li> -->
           <li>
-            <a href="home/dashboard">
+            <a href="/home/dashboard">
               <i class="icon-dashboard"></i>
               <%= t('dashboard')%></li>
             </a>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="box-content box-double-padding">
-     <%= form_for @doctor_master,url:{action: 'update_doctor_master'},method: :patch  do |c| %>
+     <%= form_for @doctor_master,url:{action: 'update_doctor_master',id:@doctor_master.id},method: :patch  do |c| %>
         <fieldset>
         <% if @doctor_master.errors.any?%>
         <div class="alert alert-danger">
@@ -72,16 +72,9 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Specailized:</label>
-               <!--  <div class="col-sm-6"><%#= c.text_field :specialization,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Specailized",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>     
-                </div> -->
+                  <div class="col-sm-6"><%= c.select :specialization_id,@specializations.collect{|s| [s.specialized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:200px"}%>  
+                  </div> 
+                </div>
             </div>
 
 
@@ -141,16 +134,9 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-6"><%= c.select :city,[]%>  
-                  </div>     
-                </div>
-            </div> 
-            <br>
-            <div class="row">
-              <div class="form-group">
-               <label class="col-sm-2 control-label">State:</label>
-                <div class="col-sm-6"> 
-                  </div>     
+                <div class="col-sm-6"><%= c.select :city_id,@cities.collect{|c| [c.city_name,c.id]},{prompt:"Select city"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+                  </div> 
+    
                 </div>
             </div> 
             <br>
@@ -259,7 +245,7 @@
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2" >                
                            
-                                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
+                                <%= c.submit 'Update', class: "btn btn-group btn-primary btn-lg"%>
                                 
                         </div>
                          <div class="col-sm-5"></div>

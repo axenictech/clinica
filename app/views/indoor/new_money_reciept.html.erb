@@ -14,8 +14,12 @@
 </div>
 </div>
 
-<%= form_for :money_reciept  do |c| %>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
 <div class="col-sm-12">
+<<<<<<< HEAD
+<%= form_for :search, url: new_money_reciept_find_patient_path, method: :get,remote:true  do |f|%>
+<div class="row">
+=======
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
@@ -158,13 +162,20 @@
 
 
  <div class="row">
+>>>>>>> f2f89448658671c9c9ff1f46f8954a165846b1c0
               <div class="form-group">
-                  <label class="col-sm-2 control-label">Gender:</label>
-                  <div class="col-sm-2"><%= c.select :gender,['Male','Female'],
-                    onfocus:"$(this).popover('show');" ,
+                <label class="col-sm-2 control-label">IPD No</label>
+  <div class="col-sm-3">
+  <%= f.text_field :id,onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
                       :"data-placement"=>"right",
+<<<<<<< HEAD
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"%>
+</div>
+<div class="col-sm-3">
+  <%=f.submit "Search",onfocus:"$(this).popover('show');" ,
+=======
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div>
@@ -306,16 +317,18 @@
                 <label class="col-sm-2 control-label">Cheque/Card Number:</label>
                   <div class="col-sm-4"><%= c.text_field :cheque_card_number,
                     onfocus:"$(this).popover('show');" ,
+>>>>>>> f2f89448658671c9c9ff1f46f8954a165846b1c0
                      class: "form-control input-group",
                       required: true,
                       :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"%>
+  <% end %>
+</div>
+</div>
+</div>
 
+<<<<<<< HEAD
+=======
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Remarks:</label>
@@ -331,16 +344,11 @@
               </div>      
               <br>
           </fieldset>
+>>>>>>> f2f89448658671c9c9ff1f46f8954a165846b1c0
 
-        <div class="form-actions">
-          <div class="row">
-            <div class="col-sm-20 col-sm-offset-0">                
-              <i class="icon-ok-circle "></i>
-                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
-            </div>
-          </div>
-        </div>
-      <%end%>
-     </div>
-</div>
+<br>
+<br>
+<br>
+<div id="money_reciept">
+<%=render 'money_reciept'%>
 </div>

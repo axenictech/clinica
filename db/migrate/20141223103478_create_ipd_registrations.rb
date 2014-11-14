@@ -12,7 +12,7 @@ class CreateIpdRegistrations < ActiveRecord::Migration
       t.string   :gender
       t.string   :marital_status
 	  t.string   :family
-	  t.datetime :birthdate
+	  t.date :birthdate
 	  t.string :height
 	  t.string :weight
 		 t.string   :religion

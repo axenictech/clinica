@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141223103481) do
+=======
+ActiveRecord::Schema.define(version: 20141223103483) do
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -324,27 +328,6 @@ ActiveRecord::Schema.define(version: 20141223103481) do
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
 
-  create_table "blood_doners", force: true do |t|
-    t.date     "date"
-    t.date     "time"
-    t.integer  "doner_no"
-    t.string   "doner_name"
-    t.string   "doner_father_name"
-    t.string   "address"
-    t.decimal  "phon"
-    t.integer  "age"
-    t.string   "gender"
-    t.string   "type_of_doner"
-    t.string   "type_of_pack"
-    t.integer  "weight"
-    t.string   "vol_rept"
-    t.string   "ABO"
-    t.string   "rhd"
-    t.integer  "remark"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -547,11 +530,6 @@ ActiveRecord::Schema.define(version: 20141223103481) do
   add_index "doctor_masters", ["city_id"], name: "index_doctor_masters_on_city_id", using: :btree
   add_index "doctor_masters", ["shift_master_id"], name: "index_doctor_masters_on_shift_master_id", using: :btree
   add_index "doctor_masters", ["specialization_id"], name: "index_doctor_masters_on_specialization_id", using: :btree
-
-  create_table "doctor_visits", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "dose_masters", force: true do |t|
     t.string   "dose_name"
@@ -1168,7 +1146,11 @@ ActiveRecord::Schema.define(version: 20141223103481) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
+<<<<<<< HEAD
   create_table "indoor_money_reciepts", force: true do |t|
+=======
+  create_table "ipd_money_reciepts", force: true do |t|
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.integer  "reciept_no"
     t.integer  "ipd_no"
     t.date     "date"
@@ -1179,6 +1161,11 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.decimal  "recieved_amount"
     t.string   "payment_type"
     t.string   "bank_name"
+<<<<<<< HEAD
+=======
+    t.string   "cheque_number"
+    t.string   "remark"
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1187,6 +1174,36 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.integer  "ipd_no"
     t.datetime "datetime"
     t.integer  "hr_no"
+<<<<<<< HEAD
+=======
+    t.string   "advance_booking"
+    t.string   "advance_booking_check"
+    t.string   "patient_name"
+    t.string   "occupation"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "family"
+    t.date     "birthdate"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "religion"
+    t.string   "city"
+    t.string   "pin"
+    t.string   "address"
+    t.string   "co"
+    t.string   "relation"
+    t.string   "company_name"
+    t.string   "relative_name"
+    t.string   "relative_phone_no"
+    t.string   "adm_type"
+    t.integer  "bed_no"
+    t.string   "ward_name"
+    t.integer  "ref_dr"
+    t.integer  "under_dr_one"
+    t.integer  "under_dr_two"
+    t.string   "shift"
+    t.string   "diesease"
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1421,6 +1438,25 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "other_services", force: true do |t|
+    t.integer  "oc_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "complaint"
+    t.string   "complaint_description"
+    t.string   "service_name"
+    t.string   "rate"
+    t.string   "quantiry"
+    t.string   "total"
+    t.string   "remark"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "other_services", ["doctor_master_id"], name: "index_other_services_on_doctor_master_id", using: :btree
 
   create_table "pack_master_stores", force: true do |t|
     t.string   "pack_name"
