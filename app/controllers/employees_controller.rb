@@ -794,7 +794,8 @@ end
      end
     redirect_to employees_monthly_payslip_path(@employee)
   end
-
+  end
+  end
 
   def employee_structure
     @employee=Employee.find(params[:employee_id])
@@ -845,7 +846,7 @@ end
     end
     redirect_to employees_payslip_path
 
-
+  end
 
   def select_month
         @salary_dates = MonthlyPayslip.all
@@ -1039,9 +1040,7 @@ end
 
   private
   def employee_params
-    params.require(:employee).permit!
-                    
-                     
+    params.require(:employee).permit!                     
   end
    
   def category_params
