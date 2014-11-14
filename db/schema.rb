@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103480) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103478) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103471) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103477) do
-=======
-ActiveRecord::Schema.define(version: 20141223103478) do
->>>>>>> 3b0b75f8c549d353cb066845c0b67bc52310204b
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> 4bc40dc4ccdf5a3a718667d390ea5f644d32cffd
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
+ActiveRecord::Schema.define(version: 20141223103479) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -340,6 +324,27 @@ ActiveRecord::Schema.define(version: 20141223103478) do
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
 
+  create_table "blood_doners", force: true do |t|
+    t.date     "date"
+    t.date     "time"
+    t.integer  "doner_no"
+    t.string   "doner_name"
+    t.string   "doner_father_name"
+    t.string   "address"
+    t.decimal  "phon"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "type_of_doner"
+    t.string   "type_of_pack"
+    t.integer  "weight"
+    t.string   "vol_rept"
+    t.string   "ABO"
+    t.string   "rhd"
+    t.integer  "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -481,21 +486,12 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "department_masters", force: true do |t|
     t.string   "department_name"
     t.datetime "created_at"
@@ -1079,21 +1075,12 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   add_index "group_batches", ["batch_group_id"], name: "index_group_batches_on_batch_group_id", using: :btree
   add_index "group_batches", ["batch_id"], name: "index_group_batches_on_batch_id", using: :btree
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "group_master_stores", force: true do |t|
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "group_masters", force: true do |t|
     t.string   "group"
     t.datetime "created_at"
@@ -1176,64 +1163,14 @@ ActiveRecord::Schema.define(version: 20141223103478) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
-<<<<<<< HEAD
-  create_table "ipd_registrations", force: true do |t|
-    t.integer  "ipd_no"
-    t.date     "date"
-    t.string   "time"
-    t.integer  "hr_no"
-    t.string   "advance_booking"
-    t.string   "advance_booking_check"
-    t.string   "patient_name"
-    t.string   "occupation"
-    t.string   "gender"
-    t.string   "marital_status"
-    t.string   "family"
-    t.datetime "birthdate"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "religion"
-    t.string   "city"
-    t.string   "pin"
-    t.string   "address"
-    t.string   "co"
-    t.string   "relation"
-    t.string   "company_name"
-    t.string   "relative_name"
-    t.string   "relative_phone_no"
-    t.string   "adm_type"
-    t.integer  "bed_no"
-    t.string   "ward_name"
-    t.integer  "ref_dr"
-    t.integer  "under_dr_one"
-    t.integer  "under_dr_two"
-    t.string   "shift"
-    t.string   "diesease"
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 4bc40dc4ccdf5a3a718667d390ea5f644d32cffd
   create_table "ipd_registrations", force: true do |t|
     t.integer  "ipd_no"
     t.datetime "datetime"
     t.integer  "hr_no"
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3b0b75f8c549d353cb066845c0b67bc52310204b
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> 4bc40dc4ccdf5a3a718667d390ea5f644d32cffd
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
     t.integer  "product_unit"
@@ -1568,11 +1505,6 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "purchase_master_stores", force: true do |t|
     t.string   "name"
     t.integer  "percentage"
@@ -1580,10 +1512,6 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "purchase_tax_masters", force: true do |t|
     t.string   "name"
     t.integer  "percentage"
@@ -1815,11 +1743,6 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   add_index "subjects", ["batch_id"], name: "index_subjects_on_batch_id", using: :btree
   add_index "subjects", ["elective_group_id"], name: "index_subjects_on_elective_group_id", using: :btree
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "supplier_master_stores", force: true do |t|
     t.string   "supplier_name"
     t.string   "address"
@@ -1833,10 +1756,6 @@ ActiveRecord::Schema.define(version: 20141223103478) do
 
   add_index "supplier_master_stores", ["city_id"], name: "index_supplier_master_stores_on_city_id", using: :btree
 
-<<<<<<< HEAD
-=======
->>>>>>> c596716803b72dc8c68d8e8a2ac3f4b854816c72
->>>>>>> f9957c69d5900464313a66b001b2f2f258670d52
   create_table "supplier_masters", force: true do |t|
     t.string   "supplier_name"
     t.string   "address"

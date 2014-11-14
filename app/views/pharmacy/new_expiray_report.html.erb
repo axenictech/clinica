@@ -45,7 +45,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Supplier Name:</label>
-                <div class="col-sm-4"><%= o.text_field  :supplier_name,
+                <div class="col-sm-4"><%= o.select :supplier_name,['All Supplier'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Supplier Name",
                       required: true,
@@ -57,7 +57,7 @@
                 
           
        <label class="col-sm-2 control-label">Item:</label>
-                <div class="col-sm-4"><%= o.text_field  :item,
+                <div class="col-sm-4"><%=o.select :item,['All Item'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Item ",
                       required: true,
