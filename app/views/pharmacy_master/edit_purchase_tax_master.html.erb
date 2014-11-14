@@ -1,0 +1,106 @@
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Purchase Tax Master')%></span>
+              <small><%= t('Edit')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Purchase Tax Master')%></li>
+        </ul>
+      </div>
+</div>
+
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-book"></i>
+                        Purchase Tax Master
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+
+    <div class="box-content box-double-padding">
+     <%= form_for @purchase_tax_master,url:{action: 'update_purchase_tax_master',id:@purchase_tax_master.id},method: :patch  do |c| %>
+        <fieldset>
+        <% if @purchase_tax_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @purchase_tax_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+        <%end%>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-6"><%= c.text_field :name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+             <div class="form-group">
+              <label class="col-sm-2 control-label">Tax(%):</label>
+                <div class="col-sm-6"><%= c.text_field :name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+
+          <br>
+             <div class="row">
+                       
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-2" >                
+                           
+                                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
+                                
+                        </div>
+                         <div class="col-sm-5"></div>
+                    </div> 
+               
+
+
+          </fieldset>
+        <%end%>
+        </div>
+        </div>
+        </div>
+     

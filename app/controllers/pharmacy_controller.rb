@@ -1,6 +1,10 @@
 class PharmacyController < ApplicationController
 
-def new_credit_note
+   def index
+
+   end
+
+   def new_credit_note
 	@credit_note=PharmacyCreditNote.new
 	end
 
@@ -35,7 +39,7 @@ def new_credit_note
 	
 
 	def new_debit_note
-	 @debit_note=PharmacyDebitNote.new
+	  @debit_note #=PharmacyDebitNote.new
 	end
 	def create_debit_note
 	@debit_note=PharmacyDebitNote.new(params_new_debit_note)
@@ -82,7 +86,7 @@ def new_credit_note
 
 
 	def new_purchase_challan
-	 @purchase_challan=PharmacyPurchaseChallan.new
+	  # @purchase_challan=PharmacyPurchaseChallan.new
 	end
 	def create_purchase_challan
 	@purchase_challan=PharmacyPurchaseChallan.new(params_purchase_challan)
@@ -180,7 +184,7 @@ def new_purchase_master
 
 	
 	def new_stock_transfer_godown_sale
-	 @stock_transfer=PharmacyStockTransfer.new
+	 @stock_transfer#=PharmacyStockTransfer.new
 	end
 	def create_stock_transfer_godown_sale
 	@stock_transfer=PharmacyStockTransfer.new(params_stock_transfer_godown_sale)

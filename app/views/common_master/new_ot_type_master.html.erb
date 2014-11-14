@@ -28,13 +28,13 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @ot_type_master,url:{action:'create_ot_type_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Occupation Master
+                        OT Type Master
       </div>
       <div class="actions">
                         
@@ -45,6 +45,14 @@
     <div class="box-content box-double-padding">
       <div class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
+           <% if @ot_type_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @ot_type_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+        <%end%>
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">OT Type Name:</label>

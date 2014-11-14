@@ -1,6 +1,6 @@
 class OutdoorController < ApplicationController
 	
-	def new
+	def new_registration
 		 @new_patient=NewPatient.new
 	end
 
@@ -8,9 +8,9 @@ class OutdoorController < ApplicationController
 	     @new_patient=NewPatient.new(new_patient_params)
         if @new_patient.save
       		 flash[:notice] = 'New Patient created successfully'
-  	   		 redirect_to outdoors_new_path
+  	   		 redirect_to outdoors_new_registration_path
         else
-          render 'new'
+          render 'new_registration'
       end
     end
 
@@ -23,9 +23,9 @@ class OutdoorController < ApplicationController
 
     	  if @new_patient.update(new_patient_params)
             flash[:notice] = 'New Patient updated successfully!'
-           redirect_to outdoors_new_path
+           redirect_to outdoors_new_registration_path
           else
-           render 'new'
+           render 'new_registration'
          end
     end
 
@@ -319,6 +319,7 @@ class OutdoorController < ApplicationController
 		
 	end
 
+	
 	private 
 	
 	def new_patient_params
