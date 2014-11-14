@@ -57,7 +57,7 @@
       </div>
       </div>
       <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-        <% if @doctor_masters.empty? %>
+        <% if @referred_doctor_masters.empty? %>
          <h4 align="center">No Record Found </h4>
           <% else %>
         <thead>
@@ -73,15 +73,15 @@
         </thead>
         
       <tbody role="alert" aria-live="polite" aria-relevant="all">
-    <% @doctor_masters.each do |dm|%>
+    <% @referred_doctor_masters.each do |dm|%>
       <tr class="<%= cycle('odd', 'even')%>">
         <td class=" sorting_1"><%= dm.name %></td>
         <td class=" ">
           <div class="text-right">
           <i class="icon-pencil"></i>
-            <%= link_to 'Edit' ,common_master_edit_doctor_master_path(dm),class: "btn btn-warning btn-xs"%>
+            <%= link_to 'Edit' ,common_master_edit_referred_doctor_master_path(dm),class: "btn btn-warning btn-xs"%>
             <i class="icon-remove"></i>
-            <%= link_to 'Delete' ,common_master_delete_doctor_master_path(dm),method: :delete, data:{confirm:"Are You sure to delete data of '#{dm.name}' ?"},class: "btn btn-danger btn-xs"%>
+            <%= link_to 'Delete' ,common_master_delete_referred_doctor_master_path(dm),method: :delete, data:{confirm:"Are You sure to delete data of '#{dm.name}' ?"},class: "btn btn-danger btn-xs"%>
           </div>              
         </td>
       </tr>

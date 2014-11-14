@@ -28,13 +28,13 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @ocupation_master,url:{action:'create_ocupation_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Occupation Master
+                        Occupation
       </div>
       <div class="actions">
                         

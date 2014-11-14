@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103478) do
+ActiveRecord::Schema.define(version: 20141223103479) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -501,6 +501,17 @@ ActiveRecord::Schema.define(version: 20141223103478) do
   end
 
   add_index "dignostic_setups", ["doctor_master_id"], name: "index_dignostic_setups_on_doctor_master_id", using: :btree
+
+  create_table "doctor_commissions", force: true do |t|
+    t.string   "type"
+    t.decimal  "discount"
+    t.string   "ot"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "doctor_commissions", ["doctor_master_id"], name: "index_doctor_commissions_on_doctor_master_id", using: :btree
 
   create_table "doctor_masters", force: true do |t|
     t.string   "name"
@@ -1142,14 +1153,6 @@ ActiveRecord::Schema.define(version: 20141223103478) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
-  create_table "ipd_registrations", force: true do |t|
-    t.integer  "ipd_no"
-    t.datetime "datetime"
-    t.integer  "hr_no"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
     t.integer  "product_unit"
@@ -1589,6 +1592,8 @@ ActiveRecord::Schema.define(version: 20141223103478) do
     t.integer  "time_to"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "specializations", force: true do |t|
