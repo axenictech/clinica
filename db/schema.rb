@@ -1148,6 +1148,7 @@ ActiveRecord::Schema.define(version: 20141223103481) do
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
   create_table "indoor_money_reciepts", force: true do |t|
+<<<<<<< HEAD
     t.integer  "reciept_no"
     t.integer  "ipd_no"
     t.date     "date"
@@ -1158,6 +1159,8 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.decimal  "recieved_amount"
     t.string   "payment_type"
     t.string   "bank_name"
+=======
+>>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

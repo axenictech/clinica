@@ -57,7 +57,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Advice No:</label>
-                  <div class="col-sm-3"><%= c.text_field :adv_no,
+                  <div class="col-sm-3"><%= c.text_field :advice_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -205,7 +205,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Mode of Discharge:</label>
-                <div class="col-sm-6"><%= c.select :discharge_mode,['discharge1','discharge2'],
+                <div class="col-sm-6"><%= c.select :mode_of_discharge,['discharge1','discharge2'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -231,7 +231,7 @@
               <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Previous User:</label>
-                <div class="col-sm-2"><%= c.text_field :prev_user,
+                <div class="col-sm-2"><%= c.text_field :previous_user,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,

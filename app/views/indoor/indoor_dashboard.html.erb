@@ -1,245 +1,426 @@
-<div id="content-header">
-  <h1>Indoor</h1>
-  <h3>Manage Indoor</h3>
-  <div id="app-back-button">
-    <%= link_to image_tag("buttons/back.png",:border => 0), :back %>
-  </div>
-    <div><%= image_tag("underline.jpg",width: "100%")%></div>
-</div><br/><br/>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Patient Admission", indoors_indoor_patient_admission_form_path,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Patient Admission
-          </div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-medkit"></i>
+              <span><%= t('Indoor')%></span>
+              <small><%= t('Indoor home')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%>
+            </a>
+          </li>  
+
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+
+          <li>
+            <a href="indoors">
+              <i class="icon-dashboard"></i>
+              <%= t('indoor')%>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Patient Admission", ''%>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Bed Status",'finance/transaction_category',style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage Bed Status
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Bed Occupancy",'finance/transactions',style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manages Bed Occupancy
-          </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Advance Booking", indoors_advance_booking_form_path,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px"   >
-          Manage Advance Booking
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
-    <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Other Services",indoors_other_service_entry_form_path ,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Other Services
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Doctor Visit",indoors_doctor_visit_form_path,style:"color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px"   >
-          Manage Doctor Visit
-          </div>
+      </div>
+      <div class="box-content box-padding">
+        Patient Admission
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Bed Transfer", indoors_bed_transfer_path,style: "color:black"%>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Bed Transfer
-          </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Bed Status",'' %>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "OT Billing",indoors_ot_billing_path,style:"color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px"   >
-          Manage OT Billing
-          </div>
+      </div>
+      <div class="box-content box-padding">
+        Bed Status
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
-    
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Indoor Money Receipt",indoors_indoor_money_reciept_path,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Indoor Money Receipt
-          </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Bed Occupancy"%>  
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Discharge",indoors_discharge_details_path,style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage Discharge
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Final Bill",indoors_final_bill_path,style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Final Bill
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Manual Final Bill",indoors_manual_final_bill_path,style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage Manual Final Bill
-          </div>
+      </div>
+      <div class="box-content box-padding">
+        Bed Occupancy
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Estimate Bill", 'finance/fees',style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Estimate Bill
-          </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Advance Booking"%>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Certificate",'finance/transaction_category',style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage Certificate
-          </div>
-      </div>
-    </div>
-    <div class="col-md-2 col-xs-2"></div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Nursing Counter", 'finance/fees',style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage Nursing Counter
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "IPD Clinical Data",indoors_ipd_clinical_report_path,style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage IPD Clinical Data
-          </div>
+      </div>
+      <div class="box-content box-padding">
+       Advance Booking
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-2 col-xs-2"></div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "IPD Receipt", 'finance/fees',style: "color:black" %>
-          </div>
-          <div class="panel-body" style="height:70px">
-            Manage IPD Receipt
-          </div>
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Other Service", 'pharmacy/new_debit_note'%>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-4">
-      <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "IPD Registration",indoors_ipd_registration_form_path,style: "color:black" %>
-          </div>
-
-          <div class="panel-body" style="height:70px"   >
-          Manage IPD Registration
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Other Service
       </div>
     </div>
-    <div class="col-md-2 col-xs-2"></div>
   </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Doctor Visit"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Doctor Visit
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Bed Transfer", 'pharmacy/new_debit_note'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Bed Transfer
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "OT Billing"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       OT Billing
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Indoor Money Reciept"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Indoor Money Reciept
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Discharge"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Discharge
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Final Bill"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Final Bill
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Manage Final Bill"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Manage Final Bill
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Estimate Bill"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Estimate Bill
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Certificate"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Certificate
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Nursing Counter"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Nursing Counter
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "IPD Clinical Data"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       IPD Clinical Data
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "IPD Reciept"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        IPD Reciept
+      </div>
+    </div>
+  </div>
+</div>
 
 
-
+</div>
 
 

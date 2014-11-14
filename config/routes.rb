@@ -1009,21 +1009,7 @@ post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_
 patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
 delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
 #INDOOR#
-#INDOORS#
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
-#INDOORS#
+
 
 #PHARMACY#
 get 'pharmacy/new_credit_note'
@@ -1093,6 +1079,12 @@ delete 'stores/:id/delete_issue_counter',to: 'stores#delete_issue_counter',as: '
 
 
 #BLOODBANK#
+get 'blood_banks/master'
+get 'blood_banks/report'
+get 'blood_banks/issue_to_patient'
+get 'blood_banks/direct_issue_patient'
+get 'blood_banks/pack_master'
+
 get 'bloodbanks/new_rhd_master'
 post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
 patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
@@ -1191,12 +1183,13 @@ resources :outdoors
 resources :masters
 resources :stores
 resources :common_master
-
 resources :pharmacy_master
-
-
 resources :pharmacy
+<<<<<<< HEAD
 resources :store
 resources :diagnostic_master
 
+=======
+resources :blood_banks
+>>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
 end

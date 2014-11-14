@@ -108,7 +108,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Marital Status:</label>
-                  <div class="col-sm-2"><%= c.select :marital,['Married','Unmarried'],
+                  <div class="col-sm-2"><%= c.select :marital_status,['Married','Unmarried'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -219,7 +219,7 @@
              <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Consultant Doctor:</label>
-                  <div class="col-sm-3"><%= c.text_field :cons_doctor,
+                  <div class="col-sm-3"><%= c.text_field :consultant_doctor,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -234,7 +234,7 @@
              <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Reference Doctor:</label>
-                  <div class="col-sm-3"><%= c.text_field :ref_doctor,
+                  <div class="col-sm-3"><%= c.text_field :reference_doctor,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -304,7 +304,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Hist And Examine:</label>
-                <div class="col-sm-5"><%= c.text_field :diagnosis,
+                <div class="col-sm-5"><%= c.text_field :hist_and_examine,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -374,7 +374,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Medicine Adv.:</label>
-                <div class="col-sm-5"><%= c.text_field :diagnosis,
+                <div class="col-sm-5"><%= c.text_field :medicine_adv,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -388,7 +388,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Remarks:</label>
-                <div class="col-sm-5"><%= c.text_field :remark,
+                <div class="col-sm-5"><%= c.text_field :remarks,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
