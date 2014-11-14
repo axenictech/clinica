@@ -549,6 +549,8 @@ get 'indoors/ipd_registration_form'
 
 get 'masters/outdoors_patient_master'
 
+get 'masters/outdoors_patient_master'
+
 #doctor master
 get 'common_master/common_master'
 get 'common_master/doctor_master'
@@ -557,6 +559,8 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
+
+get 'common_master/outdoors_patient_master'
 
 get 'common_master/outdoors_patient_master'
 
