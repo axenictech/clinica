@@ -1090,6 +1090,13 @@ post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'crea
 patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
 delete 'bloodbanks/:id/delete_rhd_master',to: 'bloodbanks#delete_rhd_master',as: 'delete_rhd_master'
 
+get 'blood_banks/new_blood_doner_details'
+post 'blood_banks/create_blood_doner_details',to: 'blood_banks#create_blood_doner_details',as: 'blood_banks_create_blood_doner_details'
+patch 'blood_banks/:id/update_blood_doner_details',to: 'blood_banks#update_blood_doner_details',as: 'blood_banks_update_blood_doner_details'
+delete 'blood_banks/:id/delete_blood_doner_details',to: 'blood_banks#delete_blood_doner_details',as: 'blood_banks_delete_blood_doner_details'
+
+
+
 get 'bloodbanks/new_blood_group'
 post 'bloodbanks/create_blood_group',to: 'bloodbanks#create_blood_group',as: 'create_blood_group'
 patch 'bloodbanks/:id/update_blood_group',to: 'bloodbanks#update_blood_group',as: 'update_blood_group'

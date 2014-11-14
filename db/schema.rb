@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103479) do
-=======
 ActiveRecord::Schema.define(version: 20141223103481) do
->>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1172,14 +1168,7 @@ ActiveRecord::Schema.define(version: 20141223103481) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
-<<<<<<< HEAD
-  create_table "ipd_registrations", force: true do |t|
-    t.integer  "ipd_no"
-    t.datetime "datetime"
-    t.integer  "hr_no"
-=======
   create_table "indoor_money_reciepts", force: true do |t|
-<<<<<<< HEAD
     t.integer  "reciept_no"
     t.integer  "ipd_no"
     t.date     "date"
@@ -1190,45 +1179,14 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.decimal  "recieved_amount"
     t.string   "payment_type"
     t.string   "bank_name"
-=======
->>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ipd_registrations", force: true do |t|
     t.integer  "ipd_no"
-    t.date     "date"
-    t.string   "time"
+    t.datetime "datetime"
     t.integer  "hr_no"
-    t.string   "advance_booking"
-    t.string   "advance_booking_check"
-    t.string   "patient_name"
-    t.string   "occupation"
-    t.string   "gender"
-    t.string   "marital_status"
-    t.string   "family"
-    t.datetime "birthdate"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "religion"
-    t.string   "city"
-    t.string   "pin"
-    t.string   "address"
-    t.string   "co"
-    t.string   "relation"
-    t.string   "company_name"
-    t.string   "relative_name"
-    t.string   "relative_phone_no"
-    t.string   "adm_type"
-    t.integer  "bed_no"
-    t.string   "ward_name"
-    t.integer  "ref_dr"
-    t.integer  "under_dr_one"
-    t.integer  "under_dr_two"
-    t.string   "shift"
-    t.string   "diesease"
->>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
