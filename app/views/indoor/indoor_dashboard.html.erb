@@ -42,7 +42,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Patient Admission", ''%>
+          <%= link_to "Patient Admission", indoor_new_registration_path%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -109,7 +109,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Advance Booking"%>
+          <%= link_to "Advance Booking",'advance_booking_form'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -135,7 +135,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Other Service", 'pharmacy/new_debit_note'%>
+          <%= link_to "Other Service", 'new_other_service'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -155,7 +155,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Doctor Visit"%>
+          <%= link_to "Services Given",'services_given'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -166,11 +166,59 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       Doctor Visit
+    Other Services Given
       </div>
     </div>
   </div>
 </div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Money Reciept", 'new_money_reciept'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Money Reciept
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "IPD Clinical Report",'ipd_clinical_report'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       IPD Clinical Report
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+
 
 <hr class="hr-double">
 <div class="row">
@@ -180,7 +228,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Bed Transfer", 'pharmacy/new_debit_note'%>
+          <%= link_to "Bed Transfer", 'bed_transfer'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -220,12 +268,12 @@
 <hr class="hr-double">
 <div class="row">
   <div class="col-sm-2"></div>
-  <div class="col-sm-4">
+   <div class="col-sm-4">
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Indoor Money Reciept"%>
+          <%= link_to "IPD Reciept"%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -236,7 +284,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        Indoor Money Reciept
+        IPD Reciept
       </div>
     </div>
   </div>
@@ -245,7 +293,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Discharge"%>
+          <%= link_to "Discharge",'discharge_details'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -270,7 +318,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Final Bill"%>
+          <%= link_to "Final Bill",'new_final_bill'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -290,7 +338,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Manage Final Bill"%>
+          <%= link_to "Manual Final Bill",'manual_final_bill'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -301,7 +349,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       Manage Final Bill
+       Manual Final Bill
       </div>
     </div>
   </div>
@@ -374,52 +422,8 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-medkit"></i>
-          <%= link_to "IPD Clinical Data"%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       IPD Clinical Data
-      </div>
-    </div>
-  </div>
+  
 </div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-medkit"></i>
-          <%= link_to "IPD Reciept"%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        IPD Reciept
-      </div>
-    </div>
-  </div>
-</div>
-
 
 </div>
 
