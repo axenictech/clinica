@@ -2,8 +2,8 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Ward Master')%></span>
-              <small><%= t('New')%></small>
+              <span><%= t('Diet Master')%></span>
+              <small><%= t('Edit')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -22,19 +22,19 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Ward Master')%></li>
+          <%= t('Diet Master')%></li>
         </ul>
       </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for @ward_master,url:{action: 'create_ward_master'}  do |c| %>
+<%= form_for @diet_master,url:{action:'update_diet_master',id:@diet_master.id},method: :patch  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Ward Master
+                        Diet Master
       </div>
       <div class="actions">
                         
@@ -45,20 +45,20 @@
     <div class="box-content box-double-padding">
       <form class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
-         <% if @ward_master.errors.any?%>
+          <% if @diet_master.errors.any?%>
         <div class="alert alert-danger">
         <h4>Errors prohibited to being saved:</h4>
-        <ul><% @ward_master.errors.full_messages.each do |msg|%>
+        <ul><% @diet_master.errors.full_messages.each do |msg|%>
           <li style="width:800px"><%= msg %></li>
           <%end%></ul>
           </div>  
         <%end%>
-        <div class="row">
+          <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Ward Name:</label>
-                <div class="col-sm-6"><%= c.text_field :ward_name,
+              <label class="col-sm-2 control-label">Diet:</label>
+                <div class="col-sm-6"><%= c.text_field :diet,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Ward Name",
+                     class: "form-control input-group",placeholder: "Diet",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -70,10 +70,10 @@
           <br>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">Floor Name:</label>
-                <div class="col-sm-6"><%= c.text_field :floor_name,
+              <label class="col-sm-2 control-label">From Time:</label>
+                <div class="col-sm-6"><%= c.text_field :from_time,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Floor Name",
+                     class: "form-control input-group",placeholder: "From Time",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -82,7 +82,51 @@
                   </div>     
                 </div>
           </div>
-
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">To Time:</label>
+                <div class="col-sm-6"><%= c.text_field :to_time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "To Time",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+           <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Advice:</label>
+                <div class="col-sm-6"><%= c.text_field :advice,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Advice",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+           <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Remark:</label>
+                <div class="col-sm-6"><%= c.text_field :remark,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Remark",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
            <br><br>
 
                   <div class="row">

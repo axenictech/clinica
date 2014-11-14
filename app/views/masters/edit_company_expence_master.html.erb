@@ -2,8 +2,8 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('OT Master')%></span>
-              <small><%= t('New')%></small>
+              <span><%= t('Company Expence Master')%></span>
+              <small><%= t('Edit')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -22,19 +22,19 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('OT Master')%></li>
+          <%= t('company Expence Master')%></li>
         </ul>
       </div>
 </div>
+
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for @ot_master,url:{action:'create_ot_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        OT Master
+                        Company Expence Master
       </div>
       <div class="actions">
                         
@@ -42,23 +42,54 @@
                         </a>
       </div>
     </div>
+
     <div class="box-content box-double-padding">
-      <div class="form-horizontal" style="margin-bottom: 0;">
+     <%= form_for @company_expence_master,url:{action: 'update_company_expence_master',id:@company_expence_master.id},method: :patch  do |c| %>
         <fieldset>
-        <% if @ot_master.errors.any?%>
+        <% if @company_expence_master.errors.any?%>
         <div class="alert alert-danger">
         <h4>Errors prohibited to being saved:</h4>
-        <ul><% @ot_master.errors.full_messages.each do |msg|%>
+        <ul><% @company_expence_master.errors.full_messages.each do |msg|%>
           <li style="width:800px"><%= msg %></li>
           <%end%></ul>
           </div>  
         <%end%>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">OT Name:</label>
-                <div class="col-sm-6"><%= c.text_field :ot_name,
+              <label class="col-sm-2 control-label">Expence Head:</label>
+                <div class="col-sm-6"><%= c.text_field :expence_head,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "OT Name",
+                     class: "form-control input-group",placeholder: "Expence Head",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+             <div class="form-group">
+              <label class="col-sm-2 control-label">Account Group:</label>
+                <div class="col-sm-6"><%= c.text_field :account_group,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Account Group",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+          <div class="row">
+             <div class="form-group">
+              <label class="col-sm-2 control-label">Remark:</label>
+                <div class="col-sm-6"><%= c.text_field :remark,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Remark",
                       required: true,
                       :"data-content"=>"Special characters not allowed",
                       :"data-placement"=>"right",
@@ -68,9 +99,8 @@
                 </div>
           </div>
 
-           <br><br>
-
-                  <div class="row">
+          <br>
+             <div class="row">
                        
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2" >                
@@ -82,9 +112,10 @@
                     </div> 
                
 
+
           </fieldset>
-        </div>
-        </div>
-        </div>
-        </div>
         <%end%>
+        </div>
+        </div>
+        </div>
+     

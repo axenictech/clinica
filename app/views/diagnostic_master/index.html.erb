@@ -2,8 +2,8 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Common Master')%></span>
-              <small><%= t('Pharmacy Master')%></small>
+              <span><%= t('Master')%></span>
+              <small><%= t('Diagnostic Master')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -22,10 +22,18 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Pharmacy Master')%></li>
+          <%= t('Diagnostic Master')%></li>
         </ul>
       </div>
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -36,7 +44,8 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Company Master",'/common_master/new_company_master' %>
+          <%= link_to "Item Master",'pharmacy_master/view_item_master' %>
+         
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -47,7 +56,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        View/Create company master
+        View/Create new common item master
       </div>
     </div>
   </div>
@@ -57,7 +66,8 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Purchase Tax Master" ,'pharmacy_master/view_purchase_tax_master'%>
+           <%= link_to "Company Master",'/common_master/new_company_master' %>
+         
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -67,7 +77,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       View/Create new purchase tax master
+       View/Create new company master
       </div>
     </div>
   </div>
@@ -102,7 +112,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Uses Master",'pharmacy_master/view_uses_master'%>
+          <%= link_to "Group Master",'common_master/new_group_master' %>  
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -112,7 +122,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       View/Create new uses master
+       View/Create new group master
       </div>
     </div>
   </div>
@@ -147,62 +157,17 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Composition Master",'pharmacy_master/view_composition_master' %>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       View/Create new composition master
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
           <%= link_to "Sales Tax Master",'pharmacy_master/view_sales_tax_master' %>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
           </a>
-          
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
         </div>
       </div>
       <div class="box-content box-padding">
-        View/Create new sales tax master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Item Master",'pharmacy_master/view_item_master' %>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       View/Create new item master
+       View/Create new sales tax master
       </div>
     </div>
   </div>
@@ -216,7 +181,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Ledger Master",'pharmacy_master/view_ledger_master'%>
+           <%= link_to "Purchase Tax Master" ,'pharmacy_master/view_purchase_tax_master'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -227,7 +192,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        View/Create new ledger master
+        View/Create new purchase tax master
       </div>
     </div>
   </div>
@@ -237,7 +202,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Gowdan Master",'pharmacy_master/view_godown_master'%>
+         <%= link_to "OPD Master",common_master_new_opd_department_type_master_path %>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -247,38 +212,8 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       View/Create new gowdan master
+       View/Create new department master
       </div>
     </div>
   </div>
 </div>
-
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Series Master",'pharmacy_master/view_series_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        View/Create new series master
-      </div>
-    </div>
-  </div>
-
-  
-</div>
-
-
-

@@ -3,7 +3,7 @@
     <h1 class="pull-left">
       <i class="icon-gears"></i>
               <span><%= t('Bed Master')%></span>
-              <small><%= t('New')%></small>
+              <small><%= t('Edit')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -27,7 +27,7 @@
       </div>
 </div>
 
-<%= form_for @bed_master,url:{action:'create_bed_master'}  do |c| %>
+<%= form_for @bed_master,url:{action:'update_bed_master',id:@bed_master.id},method: :patch  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">

@@ -1179,6 +1179,19 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.integer  "hr_no"
 =======
   create_table "indoor_money_reciepts", force: true do |t|
+<<<<<<< HEAD
+    t.integer  "reciept_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "reciept_type"
+    t.decimal  "amount"
+    t.decimal  "discount"
+    t.decimal  "recieved_amount"
+    t.string   "payment_type"
+    t.string   "bank_name"
+=======
+>>>>>>> fc92baedfb8477be78c6f8c26352180a7ddc6dd1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

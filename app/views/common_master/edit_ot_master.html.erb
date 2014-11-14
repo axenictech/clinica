@@ -3,7 +3,7 @@
     <h1 class="pull-left">
       <i class="icon-gears"></i>
               <span><%= t('OT Master')%></span>
-              <small><%= t('New')%></small>
+              <small><%= t('Edit')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -28,7 +28,7 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for @ot_master,url:{action:'create_ot_master'}  do |c| %>
+<%= form_for @ot_master,url:{action:'update_ot_master',id:@ot_master.id},method: :patch  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">

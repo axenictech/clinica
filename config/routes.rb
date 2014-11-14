@@ -540,10 +540,7 @@ get 'outdoors/new_registration'
 #common master#
 
 
-get 'masters/outdoor_patient_master'
 
-get 'masters/diagonostic_master'
-get 'masters/store_master'
 #doctor master
 get 'common_master/common_master'
 get 'common_master/doctor_master'
@@ -657,6 +654,7 @@ patch 'common_master/:id/update_group_master',to: 'common_master#update_group_ma
 delete 'common_master/:id/delete_group_master',to: 'common_master#delete_group_master',as:'common_master_delete_group_master'
 
 #service master
+get 'common_master/view_service_master'
 get 'common_master/new_service_master'
 post 'common_master/create_service_master'
 get 'common_master/:id/edit_service_master',to: 'common_master#edit_service_master',as:'common_master_edit_service_master'
@@ -685,6 +683,7 @@ patch 'common_master/:id/update_vaccines_master',to: 'common_master#update_vacci
 delete 'common_master/:id/delete_vaccines_master',to: 'common_master#delete_vaccines_master',as:'common_master_delete_vaccines_master'
 
 #floor master
+get 'common_master/view_floor_master'
 get 'common_master/new_floor_master'
 post 'common_master/create_floor_master'
 get 'common_master/:id/edit_floor_master',to: 'common_master#edit_floor_master',as:'common_master_edit_floor_master'
@@ -692,6 +691,7 @@ patch 'common_master/:id/update_floor_master',to: 'common_master#update_floor_ma
 delete 'common_master/:id/delete_floor_master',to: 'common_master#delete_floor_master',as:'common_master_delete_floor_master'
 
 #ward master
+get 'common_master/view_ward_master'
 get 'common_master/new_ward_master'
 post 'common_master/create_ward_master'
 get 'common_master/:id/edit_ward_master',to: 'common_master#edit_ward_master',as:'common_master_edit_ward_master'
@@ -699,6 +699,7 @@ patch 'common_master/:id/update_ward_master',to: 'common_master#update_ward_mast
 delete 'common_master/:id/delete_ward_master',to: 'common_master#delete_ward_master',as:'common_master_delete_ward_master'
 
 #bed master
+get 'common_master/view_bed_master'
 get 'common_master/new_bed_master'
 post 'common_master/create_bed_master'
 get 'common_master/:id/edit_bed_master',to: 'common_master#edit_bed_master',as:'common_master_edit_bed_master'
@@ -706,6 +707,7 @@ patch 'common_master/:id/update_bed_master',to: 'common_master#update_bed_master
 delete 'common_master/:id/delete_bed_master',to: 'common_master#delete_bed_master',as:'common_master_delete_bed_master'
 
 #ot master
+get 'common_master/view_ot_master'
 get 'common_master/new_ot_master'
 post 'common_master/create_ot_master'
 get 'common_master/:id/edit_ot_master',to: 'common_master#edit_ot_master',as:'common_master_edit_ot_master'
@@ -713,6 +715,7 @@ patch 'common_master/:id/update_ot_master',to: 'common_master#update_ot_master',
 delete 'common_master/:id/delete_ot_master',to: 'common_master#delete_ot_master',as:'common_master_delete_ot_master'
 
 #ot slot master
+get 'common_master/view_ot_slot_master'
 get 'common_master/new_ot_slot_master'
 post 'common_master/create_ot_slot_master'
 get 'common_master/:id/edit_ot_slot_master',to: 'common_master#edit_ot_slot_master',as:'common_master_edit_ot_slot_master'
@@ -720,6 +723,7 @@ patch 'common_master/:id/update_ot_slot_master',to: 'common_master#update_ot_slo
 delete 'common_master/:id/delete_ot_slot_master',to: 'common_master#delete_ot_slot_master',as:'common_master_delete_ot_slot_master'
 
 #ot type master
+get 'common_master/view_ot_type_master'
 get 'common_master/new_ot_type_master'
 post 'common_master/create_ot_type_master'
 get 'common_master/:id/edit_ot_type_master',to: 'common_master#edit_ot_type_master',as:'common_master_edit_ot_type_master'
@@ -727,6 +731,7 @@ patch 'common_master/:id/update_ot_type_master',to: 'common_master#update_ot_typ
 delete 'common_master/:id/delete_ot_type_master',to: 'common_master#delete_ot_type_master',as:'common_master_delete_ot_type_master'
 
 #opd department type master
+get 'common_master/view_opd_department_type_master'
 get 'common_master/new_opd_department_type_master'
 post 'common_master/create_opd_department_type_master'
 get 'common_master/:id/edit_opd_department_type_master',to: 'common_master#edit_opd_department_type_master',as:'common_master_edit_opd_department_type_master'
@@ -734,6 +739,7 @@ patch 'common_master/:id/update_opd_department_type_master',to: 'common_master#u
 delete 'common_master/:id/delete_opd_department_type_master',to: 'common_master#delete_opd_department_type_master',as:'common_master_delete_opd_department_type_master'
 
 #diet master
+get 'common_master/view_diet_master'
 get 'common_master/new_diet_master'
 post 'common_master/create_diet_master'
 get 'common_master/:id/edit_diet_master',to: 'common_master#edit_diet_master',as:'common_master_edit_diet_master'
@@ -1180,5 +1186,10 @@ resources :stores
 resources :common_master
 resources :pharmacy_master
 resources :pharmacy
+
+resources :store
+resources :diagnostic_master
+
+
 resources :blood_banks
 end

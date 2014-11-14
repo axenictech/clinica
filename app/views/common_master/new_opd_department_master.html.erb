@@ -20,15 +20,14 @@
           
           <li class="separator">
             <i class="icon-angle-right"></i>
-          </li>
-          <li class="active"><i class="icon-gears"></i>
+           <li class="active"><i class="icon-gears"></i>
           <%= t('OPD Department Master')%></li>
         </ul>
       </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @opd_department_master,url:{action:'create_opd_department_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -45,6 +44,14 @@
     <div class="box-content box-double-padding">
       <div class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
+         <% if @opd_department_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @opd_department_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+        <%end%>
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Department:</label>
