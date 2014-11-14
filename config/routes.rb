@@ -3,24 +3,6 @@ Rails.application.routes.draw do
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 
-#Ravikiran indoor module
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
-
-devise_for :users
-mount Ckeditor::Engine => '/ckeditor'
-
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -537,9 +519,13 @@ get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
+#common master#
+#doctor master
+
 
 #common master#
 #doctor master
+
 
 
 get 'masters/common_master'
@@ -938,6 +924,7 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 #---------------Master-----------------------
 
 
+
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -1126,7 +1113,6 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
-
 
 resources :home
 resources :setting
