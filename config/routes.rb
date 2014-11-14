@@ -926,6 +926,9 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
+get 'indoor/indoor_dashboard'
+get 'indoor/bed_occupancy_dashboard'
+
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
 patch 'indoor/:id/update_registration',to: 'indoor#update_registration',as: 'update_registration'
@@ -1078,6 +1081,8 @@ get 'blood_banks/report'
 get 'blood_banks/issue_to_patient'
 get 'blood_banks/direct_issue_patient'
 get 'blood_banks/pack_master'
+
+get 'blood_banks/blood_donor_details'
 
 get 'bloodbanks/new_rhd_master'
 post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
