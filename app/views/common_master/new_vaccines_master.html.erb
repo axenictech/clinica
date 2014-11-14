@@ -1,20 +1,34 @@
-<div class="page-header page-header-with-buttons">
-	<h1 class="pull-left">
-	  <i class="icon-book"></i>
-	  <span>Comman Master </span>
-	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Vaccines Master')%></span>
+              <small><%= t('New')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Vaccines Master')%></li>
+        </ul>
+      </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @vaccines_master,url:{action:'create_vaccines_master'} do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -49,22 +63,15 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Age Group:</label>
-                <div class="col-sm-6"><%= c.text_field :age_group,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Age Group",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+               <div class="col-sm-6"><%= c.select :age_group_master_id,@age_group_masters.collect{|a| [a.age_group,a.id]},{prompt:"Select age group"},{class: "form-control input-group",required:true,style:"width:200px"}%>  
                   </div>     
                 </div>
           </div>
           <br>
           <div class="row">
             <div class="form-group">
-              <label class="col-sm-2 control-label">DueOn (In Days):</label>
-                <div class="col-sm-6"><%= c.text_field :due_on,
+              <label class="col-sm-2 control-label">Due On (In Days):</label>
+                <div class="col-sm-6"><%= c.text_field :dueon,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "DueOn",
                       required: true,

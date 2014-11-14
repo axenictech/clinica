@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141223103483) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141223103481) do
+=======
+ActiveRecord::Schema.define(version: 20141223103483) do
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+>>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1153,11 +1161,40 @@ ActiveRecord::Schema.define(version: 20141223103483) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
+<<<<<<< HEAD
   create_table "ipd_registrations", force: true do |t|
+=======
+<<<<<<< HEAD
+  create_table "indoor_money_reciepts", force: true do |t|
+=======
+  create_table "ipd_money_reciepts", force: true do |t|
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+    t.integer  "reciept_no"
+>>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
     t.integer  "ipd_no"
     t.date     "date"
     t.string   "time"
+    t.string   "reciept_type"
+    t.decimal  "amount"
+    t.decimal  "discount"
+    t.decimal  "recieved_amount"
+    t.string   "payment_type"
+    t.string   "bank_name"
+<<<<<<< HEAD
+=======
+    t.string   "cheque_number"
+    t.string   "remark"
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ipd_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.datetime "datetime"
     t.integer  "hr_no"
+<<<<<<< HEAD
+=======
     t.string   "advance_booking"
     t.string   "advance_booking_check"
     t.string   "patient_name"
@@ -1165,7 +1202,7 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.string   "gender"
     t.string   "marital_status"
     t.string   "family"
-    t.datetime "birthdate"
+    t.date     "birthdate"
     t.string   "height"
     t.string   "weight"
     t.string   "religion"
@@ -1185,6 +1222,10 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "under_dr_two"
     t.string   "shift"
     t.string   "diesease"
+<<<<<<< HEAD
+=======
+>>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+>>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1431,6 +1472,25 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "other_services", force: true do |t|
+    t.integer  "oc_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "complaint"
+    t.string   "complaint_description"
+    t.string   "service_name"
+    t.string   "rate"
+    t.string   "quantiry"
+    t.string   "total"
+    t.string   "remark"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "other_services", ["doctor_master_id"], name: "index_other_services_on_doctor_master_id", using: :btree
 
   create_table "pack_master_stores", force: true do |t|
     t.string   "pack_name"

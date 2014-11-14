@@ -27,7 +27,7 @@
       </div>
 </div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @bed_master,url:{action:'create_bed_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -44,7 +44,14 @@
     <div class="box-content box-double-padding">
       <div class="form-horizontal" style="margin-bottom: 0;">
         <fieldset>
-
+          <% if @bed_master.errors.any?%>
+        <div class="alert alert-danger">
+        <h4>Errors prohibited to being saved:</h4>
+        <ul><% @bed_master.errors.full_messages.each do |msg|%>
+          <li style="width:800px"><%= msg %></li>
+          <%end%></ul>
+          </div>  
+           <%end%>
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Bed No:</label>

@@ -1,0 +1,365 @@
+
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-medkit"></i>
+              <span><%= t('blood bank master')%></span>
+              <small><%= t('blood bank master home')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%>
+            </a>
+          </li>  
+
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+
+          <li>
+            <a href="/blood_banks">
+              <i class="icon-dashboard"></i>
+              <%= t('blood bank')%>
+            </a>
+          </li>
+
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+
+          <li class="active"><i class="icon-medkit"></i>
+            <%= t('master')%>
+          </li>
+
+        </ul>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Pack Master",blood_banks_pack_master_path%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Pack Master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "RH Master",bloodbanks_new_rhd_master_path %>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        RH Master
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Blood Group Master"%>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Blood Group Master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Hospital Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Hospital Master
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Relative Master", 'pharmacy/new_debit_note'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Relative Master
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Disease Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Disease Master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Gender Master", 'pharmacy/new_debit_note'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Gender Master
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Occupation Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Occupation Master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "City Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        City Master
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "State Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       State Master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Doctor Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Doctor Master
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Compunder/Nurse Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Compunder/Nurse Master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Vol And Reply Master"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Vol And Reply Master
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Hospital Type"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Hopital Type
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+

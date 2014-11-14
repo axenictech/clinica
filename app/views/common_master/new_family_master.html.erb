@@ -1,20 +1,34 @@
-<div class="page-header page-header-with-buttons">
-	<h1 class="pull-left">
-	  <i class="icon-book"></i>
-	  <span>Comman Master </span>
-	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Family Master')%></span>
+              <small><%= t('New')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Family Master')%></li>
+        </ul>
+      </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @family_master,url:{action:'create_family_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -46,10 +60,25 @@
                 </div>
           </div>
           <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Discount:</label>
+              <div class="col-sm-6"><%= c.text_field :discount,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Discount",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div>     
+                </div>
+          </div>
+          <br>
            <div class="row">
             <div class="form-group">
               
-                <div class="col-sm-6"><%= c.check_box :allow %>Allow Discount
+                <div class="col-sm-6"><%= c.check_box :allow_discount %>Allow Discount
                     
                       
                   </div>     

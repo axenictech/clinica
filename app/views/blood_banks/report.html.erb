@@ -1,0 +1,543 @@
+
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-medkit"></i>
+              <span><%= t('blood bank')%></span>
+              <small><%= t('blood bank report')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%>
+            </a>
+          </li>  
+
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+
+          <li>
+            <a href="/blood_banks">
+              <i class="icon-dashboard"></i>
+              <%= t('blood bank')%>
+            </a>
+          </li>
+
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+
+          <li class="active"><i class="icon-medkit"></i>
+            <%= t('report')%>
+          </li>
+
+        </ul>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Adverse Reaction Register", ''%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Adverse Reaction Register
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Avidity And Potential Register",'' %>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Avidity And Potential Register
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Blood Collection Report"%>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Blood Collection Report
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Blood Component Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Blood Component Report
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Blood Remaining", 'pharmacy/new_debit_note'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Blood Remaining
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Blood Unit Stock Book"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Blood Unit Stock Book
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Camp Donor List", 'pharmacy/new_debit_note'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Camp Donor List
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Camp Register"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Camp Register
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Component Stock Register"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Component Stock Register
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Daily Donation Stock"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Daily Donation Stock
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Discard Register"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Discard Register
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Donor List Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Donor List Report
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Employee Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Employee Report
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Expiry Stock Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Expiry Stock Report
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Free Card Register"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Free Card Register
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Issue Register"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Issue Register
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Monthly CMIS Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Monthly CMIS Report
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Referring Doctor Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Referring Doctor Report
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Rejection Discarded Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Rejection Discarded Report
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Requisition Register Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Requisition Register Report
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Test Register Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Test Register Report
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Total Stock Report"%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Total Stock Report
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+

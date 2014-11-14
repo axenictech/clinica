@@ -197,7 +197,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Previous Total:</label>
-                  <div class="col-sm-3"><%= c.text_field :prev_total,
+                  <div class="col-sm-3"><%= c.text_field :previous_total,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -206,7 +206,7 @@
                       %>  
                   </div> 
                   <label class="col-sm-2 control-label">Discount(%):</label>
-                  <div class="col-sm-3"><%= c.text_field :discount_per,
+                  <div class="col-sm-3"><%= c.text_field :discount_percentage,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -231,7 +231,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Discount(Rs.):</label>
-                  <div class="col-sm-3"><%= c.text_field :disc_rs,
+                  <div class="col-sm-3"><%= c.text_field :discount_rs,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -246,7 +246,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Total Sur Charges(Rs):</label>
-                  <div class="col-sm-3"><%= c.text_field :total_char,
+                  <div class="col-sm-3"><%= c.text_field :total_sur_char,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -256,7 +256,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Net Amount:</label>
-                  <div class="col-sm-3"><%= c.text_field :net_amt,
+                  <div class="col-sm-3"><%= c.text_field :net_amount,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -271,7 +271,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Total Lux Tax(Rs):</label>
-                  <div class="col-sm-3"><%= c.text_field :total_lux,
+                  <div class="col-sm-3"><%= c.text_field :total_lux_tax,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -281,7 +281,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Reciept Amount:</label>
-                  <div class="col-sm-3"><%= c.text_field :rec_amt,
+                  <div class="col-sm-3"><%= c.text_field :reciept_amount,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -296,7 +296,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Total Bill Amount:</label>
-                  <div class="col-sm-3"><%= c.text_field :total_amt,
+                  <div class="col-sm-3"><%= c.text_field :total_bill_amount,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -306,7 +306,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">TDS Amount:</label>
-                  <div class="col-sm-3"><%= c.text_field :total_amt,
+                  <div class="col-sm-3"><%= c.text_field :tds_amount,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -321,7 +321,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Less Advance:</label>
-                  <div class="col-sm-3"><%= c.text_field :less_adv,
+                  <div class="col-sm-3"><%= c.text_field :less_advance,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -331,7 +331,7 @@
                   </div> 
 
                   <label class="col-sm-2 control-label">Due Amount:</label>
-                  <div class="col-sm-3"><%= c.text_field :due_amt,
+                  <div class="col-sm-3"><%= c.text_field :due_amount,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -346,7 +346,7 @@
               <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Grand Total:</label>
-                <div class="col-sm-2"><%= c.text_field :grand_amt,
+                <div class="col-sm-2"><%= c.text_field :grand_amount,
                     onfocus:"$(this).popover('show');",
                      class: "form-control input-group",
                       required: true,
@@ -391,7 +391,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cheque/Card Number:</label>
-                  <div class="col-sm-4"><%= c.text_field :cheque_number,
+                  <div class="col-sm-4"><%= c.text_field :cheque_card_number,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -415,7 +415,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Remarks:</label>
-                  <div class="col-sm-6"><%= c.text_field :remark,
+                  <div class="col-sm-6"><%= c.text_field :remarks,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -431,7 +431,7 @@
               <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Previous User:</label>
-                <div class="col-sm-3"><%= c.text_field :prev_user,
+                <div class="col-sm-3"><%= c.text_field :previous_user,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,

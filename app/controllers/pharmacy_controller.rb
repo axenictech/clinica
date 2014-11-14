@@ -5,7 +5,7 @@ class PharmacyController < ApplicationController
    end
 
    def new_credit_note
-	@credit_note=PharmacyCreditNote.new
+	 # @credit_note=PharmacyCreditNote.new
 	end
 
 	def create_credit_note
@@ -118,7 +118,7 @@ class PharmacyController < ApplicationController
 
 
 def new_purchase_master
-	 @purchase_master=PharmacyPurchaseMaster.new
+	 # @purchase_master=PharmacyPurchaseMaster.new
 	end
 	def create_purchase_master
 	@purchase_master=PharmacyPurchaseMaster.new(params_purchase_master)
@@ -152,7 +152,7 @@ def new_purchase_master
 
 
 	def new_pharmacy_sales_master
-	 @sales_master=PharmacySalesMaster.new
+	  # @sales_master=PharmacySalesMaster.new
 	end
 	def create_pharmacy_sales_master
 	@sales_master=PharmacySalesMaster.new(params_pharmacy_sales_master)
