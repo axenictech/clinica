@@ -940,6 +940,10 @@ get 'indoor/new_other_service'
 post 'indoor/create_other_service',to: 'indoor#create_other_service',as: 'create_other_service'
 patch 'indoor/:id/update_other_service',to: 'indoor#update_other_service',as: 'update_other_service'
 delete 'indoor/:id/delete_other_service',to: 'indoor#delete_other_service',as: 'delete_other_service'
+post 'indoor/other_service_find_patient',to: 'indoor#other_service_find_patient',as: 'other_service_find_patient'
+get 'indoor/services_given',to: 'indoor#services_given',as: 'indoor_services_given'
+
+
 
 get 'indoor/new_doctor_visit_details'
 post 'indoor/create_doctor_visit_details',to: 'indoor#create_doctor_visit_details',as: 'create_doctor_visit_details'
@@ -961,7 +965,9 @@ get 'indoor/new_money_reciept'
 post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
 patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
 delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
-get 'indoor/:id/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/:id/money_reciept',to: 'indoor#money_reciept',as: 'indoor_money_reciept'
+post 'indoor/pdf_reciept'
 
 get 'indoor/new_discharge'
 post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
