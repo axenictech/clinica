@@ -72,12 +72,20 @@ class IndoorController < ApplicationController
 
 
 	def new_other_service
-	 @other_service=OtherService.new
-
+	 @service=OtherService.last
+	  if  @service.nil?
+	  	@service=OtherService.new
+		@service.oc_no=0
+	  end
+	  @service.oc_no=@service.oc_no.next
+   	 @patient=IpdRegistration.new
+   	 @patient.ipd_no=0
 	end
 	def create_other_service
-	@other_service=OtherService.new(params_other_service)
-		if@other_service.save
+	   @other_service=OtherService.new(params_other_service)
+	    @other_service.doctor_master_id=params[:other_service][:ipd_no]
+	    if@other_service.save
+		
 			flash[:notice]="Other Service saved successfully"
 			redirect_to indoor_new_other_service_path
 		else
@@ -101,6 +109,18 @@ class IndoorController < ApplicationController
 		end
 	end
 
+	def other_service_find_patient
+    @service=OtherService.last
+	  if  @service.nil?
+	  	@service=OtherService.new
+		@service.oc_no=0
+	  end
+	  @service.oc_no=@service.oc_no.next
+   	  @patient=IpdRegistration.where(ipd_no:params[:search][:id]).take
+  end
+	def services_given
+		@other_service=OtherService.all
+	end
 	def new_doctor_visit_details
 	 @doctor_visit_details=DoctorVisitDetail.new
 	end
@@ -128,7 +148,7 @@ class IndoorController < ApplicationController
 		@other_service=DoctorVisitDetail.find(params[:id])
 		if@other_service.destroy
 			flash[:notice]="Other Service deleted successfully"
-			redirect_to indoor_new_other_service_path
+			redirect_to indoor_services_given_path
 		end
 	end
 
@@ -182,26 +202,51 @@ class IndoorController < ApplicationController
 
 	def new_money_reciept
 	 @money_reciept#=MoneyReciept.new
-
+	 @reciept=IpdMoneyReciept.last
+	 if  @reciept.nil?
+	 	@reciept=IpdMoneyReciept.new
+	 end
+	 @reciept.reciept_no=@reciept.reciept_no.next
+   	 @patient=IpdRegistration.new
+   	 @patient.ipd_no=0
 	end
 
 
 	def new_money_reciept_find_patient
-	 @money_reciept=MoneyReciept.new
+	 @money_reciept#=MoneyReciept.new
+	 @reciept=IpdMoneyReciept.last
+	 if  @reciept.nil?
+	 	@reciept=IpdMoneyReciept.new
+	 	@reciept.reciept_no=0
+	 end
+	 @reciept.reciept_no=@reciept.reciept_no.next
 
+	@patient=IpdRegistration.where(ipd_no:params[:search][:id]).take
 	end
 
 	def create_money_reciept
-	 @money_reciept=MoneyReciept.new(params_money_reciept)
+	 @money_reciept=IpdMoneyReciept.new(params_money_reciept)
 		if  @money_reciept.save
+			redirect_to indoor_money_reciept_path(@money_reciept)
 			flash[:notice]="Money Reciept saved successfully"
-			redirect_to indoor_new_money_reciept_path
 		else
 			render 'new_money_reciept'
 		end
 	end
+
+	def money_reciept
+		@money_reciept=IpdMoneyReciept.find(params[:id])
+		@patient=IpdRegistration.where(ipd_no:@money_reciept.ipd_no).take
+	end
+
+	def pdf_reciept
+		@money_reciept=IpdMoneyReciept.find(params[:id])
+		@patient=IpdRegistration.where(ipd_no:@money_reciept.ipd_no).take
+		render 'money_reciept',layout:false
+	end
+
 	def update_money_reciept
-	@money_reciept=MoneyReciept.find(params[:id])
+	@money_reciept=IpdMoneyReciept.find(params[:id])
 		if  @money_reciept.update(params_money_reciept)
 			flash[:notice]="Money Reciept updated successfully"
 			redirect_to indoor_new_money_reciept_path
@@ -209,8 +254,19 @@ class IndoorController < ApplicationController
 			render 'new_money_reciept'
 		end
 	end
+
+	def update_money_reciept
+		@money_reciept=IpdMoneyReciept.find(params[:id])
+		if  @money_reciept.update(params_money_reciept)
+			flash[:notice]="Money Reciept updated successfully"
+			redirect_to indoor_new_money_reciept_path
+		else
+			render 'new_money_reciept'
+		end
+	end
+
 	def delete_money_reciept
-	@money_reciept=MoneyReciept.find(params[:id])
+	@money_reciept=IpdMoneyReciept.find(params[:id])
 		if @money_reciept.destroy
 			flash[:notice]="Money Reciept deleted successfully"
 			redirect_to indoor_new_money_reciept_path
@@ -231,7 +287,7 @@ class IndoorController < ApplicationController
 	end
 
 	def new_final_bill
-	 @final_bill=FinalBill.new
+	 @final_bill#=FinalBill.new
 	end
 	def create_final_bill
 	@final_bill=FinalBill.new(params_final_bill)
@@ -438,6 +494,36 @@ class IndoorController < ApplicationController
 
 
 
+def indoor_dashboard
+end
+
+def bed_transfer
+end
+
+def discharge_details
+end
+
+def doctor_visit_form
+end
+
+def ipd_clinical_report
+end
+
+def manual_final_bill
+end
+
+def ot_billing
+end
+def advance_booking_form
+end
+
+
+
+
+
+
+
+
 
 
 
@@ -452,7 +538,7 @@ class IndoorController < ApplicationController
  		params.require(:advance_booking).permit!
 	end
 	def params_other_service
- 		params.require(:other_service).permit!
+ 		params.require(:other_service).permit(:oc_no,:ipd_no,:date,:time,:complaint,:complaint_description,:service_name,:rate,:quantiry,:total,:remark)
 	end
 	def params_doctor_visit_details
  		params.require(:doctor_visit_details).permit!
@@ -464,7 +550,7 @@ class IndoorController < ApplicationController
  		params.require(:ot_billing).permit!
 	end
 	def params_money_reciept
- 		params.require(:money_reciept).permit!
+ 		params.require(:money_reciept).permit(:reciept_no,:ipd_no,:date,:time,:reciept_type,:amount,:discount,:recieved_amount,:payment_type,:bank_name,:cheque_number,:remark)
 	end
 	def params_discharge
  		params.require(:discharge).permit!

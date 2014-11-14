@@ -2,7 +2,7 @@
 <div class="page-header page-header-with-buttons">
   <h1 class="pull-left">
     <i class="icon-book"></i>
-    <span>Money Reciept</span>
+    <span>Other Services</span>
   </h1>
 <div class="pull-right">
   <ol class="breadcrumb">
@@ -16,7 +16,7 @@
 
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 <div class="col-sm-12">
-<%= form_for :search, url: new_money_reciept_find_patient_path,method: :get,remote:true  do |f|%>
+<%= form_for :search, url: other_service_find_patient_path,remote:true  do |f|%>
 <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">IPD No</label>
@@ -43,5 +43,5 @@
 <br>
 <br>
 <div id="money_reciept">
-<%=render 'money_reciept'%>
+<%=render 'other_service_entry'%>
 </div>

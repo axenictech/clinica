@@ -529,17 +529,29 @@ delete 'time_tables/time_table_delete'
 
 
 
+
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
 get 'masters/phar'
 
-#----------OutDoors------------------------------------#
+#----------outdoors------------------------------------#
 get 'outdoors/new_registration'
 
 #common master#
+get 'indoors/ot_billing'
+get 'indoors/indoor_money_reciept'
+get 'indoors/discharge_details'
+get 'indoors/final_bill'
+get 'indoors/manual_final_bill'
+get 'indoors/ipd_clinical_report'
+get 'indoors/ipd_registration_form'
 
+<<<<<<< HEAD
+get 'masters/outdoors_patient_master'
+=======
 
+>>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
 
 #doctor master
 get 'common_master/common_master'
@@ -549,7 +561,14 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
+<<<<<<< HEAD
+
+get 'common_master/outdoors_patient_master'
+
+
+=======
 get 'common_master/outdoor_patient_master'
+>>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
 get 'common_master/view_doctor_master'
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
@@ -883,18 +902,22 @@ delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_m
 
 
 get 'outdoors/new'
-post 'outdoors/new_registration_create'
+get 'outdoors/disp_patient'
+post 'outdoors/create_registration'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
 delete 'outdoors/:id/destroy_patient',to:'outdoors#destroy_patient',as:'outdoors_destroy_patient'  
 
 get 'outdoors/old_registration'
+get 'outdoors/disp_patient_old'
 post 'outdoors/old_registration_create'
 get 'outdoors/:id/edit_registration_old',to:'outdoors#edit_registration_old',as:'outdoors_edit_registration_old'
 patch 'outdoors/:id/update_registration_old',to:'outdoors#update_registration_old',as:'outdoors_update_registration_old' 
 delete 'outdoors/:id/destroy_patient_old',to:'outdoors#destroy_patient_old',as:'outdoors_destroy_patient_old'  
 
 get 'outdoors/before_patient_entry'
+get 'outdoors/disp_patient_before'
+get 'outdoors/clinic_values'
 post 'outdoors/before_patient_entry_create'
 get 'outdoors/:id/edit_before_patient_entry',to:'outdoors#edit_before_patient_entry',as:'outdoors_edit_before_patient_entry'
 patch 'outdoors/:id/update_before_patient_entry',to:'outdoors#update_before_patient_entry',as:'outdoors_update_before_patient_entry' 
@@ -913,17 +936,24 @@ get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdo
 patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
 delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
 
-get 'outdoors/appitment'
-post 'outdoors/appitment_create'
-get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
-patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
-delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+get 'outdoors/appoitment'
+post 'outdoors/appoitment_create'
+get 'outdoors/:id/edit_appoitment',to:'outdoors#edit_appoitment',as:'outdoors_edit_appoitment'
+patch 'outdoors/:id/update_appoitment',to:'outdoors#update_appoitment',as:'outdoors_update_appoitment' 
+delete 'outdoors/:id/destroy_appoitment',to:'outdoors#destroy_appoitment',as:'outdoors_destroy_appoitment' 
 
 get 'outdoors/prescription'
 post 'outdoors/prescription_create'
 get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoors_edit_prescription'
 patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
 delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
+
+
+get 'outdoors/immunization_schedule'
+post 'outdoors/immunization_create'
+get 'outdoors/:id/edit_immunization',to:'outdoors#edit_immunization',as:'outdoors_edit_immunization'
+patch 'outdoors/:id/update_immunization',to:'outdoors#update_immunization',as:'outdoors_update_immunization' 
+delete 'outdoors/:id/destroy_immunization',to:'outdoors#destroy_immunization',as:'outdoors_destroy_immunization'   
 
 
 get 'labs/new'
@@ -943,6 +973,21 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
+<<<<<<< HEAD
+get 'indoor/advance_booking_form'
+get 'indoor/indoor_dashboard'
+get 'indoor/bed_transfer'
+get 'indoor/discharge_details'
+get 'indoor/doctor_visit_form'
+get 'indoor/ipd_clinical_report'
+get 'indoor/manual_final_bill'
+get 'indoor/ot_billing'
+get 'indoor/new_final_bill'
+=======
+get 'indoor/indoor_dashboard'
+get 'indoor/bed_occupancy_dashboard'
+>>>>>>> fe56bc0fa1669a6e1c34fb30ef4294c21a7655f2
+
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
 patch 'indoor/:id/update_registration',to: 'indoor#update_registration',as: 'update_registration'
@@ -957,6 +1002,10 @@ get 'indoor/new_other_service'
 post 'indoor/create_other_service',to: 'indoor#create_other_service',as: 'create_other_service'
 patch 'indoor/:id/update_other_service',to: 'indoor#update_other_service',as: 'update_other_service'
 delete 'indoor/:id/delete_other_service',to: 'indoor#delete_other_service',as: 'delete_other_service'
+post 'indoor/other_service_find_patient',to: 'indoor#other_service_find_patient',as: 'other_service_find_patient'
+get 'indoor/services_given',to: 'indoor#services_given',as: 'indoor_services_given'
+
+
 
 get 'indoor/new_doctor_visit_details'
 post 'indoor/create_doctor_visit_details',to: 'indoor#create_doctor_visit_details',as: 'create_doctor_visit_details'
@@ -978,7 +1027,9 @@ get 'indoor/new_money_reciept'
 post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
 patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
 delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
-get 'indoor/:id/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/:id/money_reciept',to: 'indoor#money_reciept',as: 'indoor_money_reciept'
+post 'indoor/pdf_reciept'
 
 get 'indoor/new_discharge'
 post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
@@ -1096,10 +1147,19 @@ get 'blood_banks/issue_to_patient'
 get 'blood_banks/direct_issue_patient'
 get 'blood_banks/pack_master'
 
+get 'blood_banks/blood_donor_details'
+
 get 'bloodbanks/new_rhd_master'
 post 'bloodbanks/create_rhd_master',to: 'bloodbanks#create_rhd_master',as: 'create_rhd_master'
 patch 'bloodbanks/:id/update_rhd_master',to: 'bloodbanks#update_rhd_master',as: 'update_rhd_master'
 delete 'bloodbanks/:id/delete_rhd_master',to: 'bloodbanks#delete_rhd_master',as: 'delete_rhd_master'
+
+get 'blood_banks/new_blood_doner_details'
+post 'blood_banks/create_blood_doner_details',to: 'blood_banks#create_blood_doner_details',as: 'blood_banks_create_blood_doner_details'
+patch 'blood_banks/:id/update_blood_doner_details',to: 'blood_banks#update_blood_doner_details',as: 'blood_banks_update_blood_doner_details'
+delete 'blood_banks/:id/delete_blood_doner_details',to: 'blood_banks#delete_blood_doner_details',as: 'blood_banks_delete_blood_doner_details'
+
+
 
 get 'bloodbanks/new_blood_group'
 post 'bloodbanks/create_blood_group',to: 'bloodbanks#create_blood_group',as: 'create_blood_group'

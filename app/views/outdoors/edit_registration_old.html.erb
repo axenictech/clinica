@@ -1,7 +1,7 @@
 <div class="page-header page-header-with-buttons">
   <h1 class="pull-left">
     <i class="icon-book"></i>
-    <span>OutDoor(New Patient) </span>
+    <span>OutDoor(Old Patient) </span>
   </h1>
 <div class="pull-right">
   <ol class="breadcrumb">
@@ -15,7 +15,7 @@
 
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%=form_for @new_patient,url:{action:'create_registration'}  do |c| %>
+<%=form_for @old_patient,url:{action:'update_registration_old'}  do |c| %>
 
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
@@ -37,7 +37,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">H.R.No:</label>
-                <div class="col-sm-6"><%= c.text_field :HR_no,readonly: true,:value=> @new_patient.HR_no,
+                <div class="col-sm-6"><%= c.text_field :HR_no,readonly: true,:value=> @old_patient.HR_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "H.R.No",
                       required:false,
@@ -445,7 +445,7 @@
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2" >                
                            
-                                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
+                                <%= c.submit 'Update', class: "btn btn-group btn-primary btn-lg"%>
                                 
                         </div>
                          <div class="col-sm-5"></div>

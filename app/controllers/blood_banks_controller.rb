@@ -160,6 +160,38 @@ class BloodBanksController < ApplicationController
 			end
 	end
 
+	def new_blood_doner_details
+		  @blood_doner=BloodDoner.new
+	end
+
+	def create_blood_doner_details
+		@blood_doner=BloodDoner.new(params_hospital_type_master)
+			if @blood_doner.save
+				flash[:notice]="Blood Doner added successfully"
+				redirect_to blood_banks_new_blood_doner_details_path
+			else
+				render 'new_blood_doner_details'
+			end
+	end
+
+	def update_blood_doner_details
+		@blood_doner=BloodDoner.find(params[:id])
+			if  @blood_doner.update(params_hospital_type_master)
+				flash[:notice]="Blood Doner updated successfully"
+				redirect_to blood_banks_new_blood_doner_details_path
+			else
+				render 'new_blood_doner_details'
+			end
+	end
+
+	def delete_blood_doner_details
+		@blood_doner=BloodDoner.find(params[:id])
+			if @blood_doner.destroy
+				flash[:notice]="Blood Doner Deleted"
+				redirect_to  blood_banks_new_blood_doner_details_path
+			end
+	end
+
 	private
 		def params_rhd_master
 	 		params.require(:rhd_master).permit!
@@ -177,5 +209,7 @@ class BloodBanksController < ApplicationController
 		def params_hospital_type_master
 	 		params.require(:hospital_type_master).permit!
 		end
-	
+	    def params_blood_doner
+	 		params.require(:blood_doner).permit!
+		end
 end

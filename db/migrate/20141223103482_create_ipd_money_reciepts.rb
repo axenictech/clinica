@@ -1,7 +1,7 @@
-class CreateIndoorMoneyReciepts < ActiveRecord::Migration
+class CreateIpdMoneyReciepts < ActiveRecord::Migration
   def change
-    create_table :indoor_money_reciepts do |t|
-	  t.integer  :reciept_no
+    create_table :ipd_money_reciepts do |t|
+      t.integer  :reciept_no
       t.integer  :ipd_no
       t.date     :date
       t.string   :time
