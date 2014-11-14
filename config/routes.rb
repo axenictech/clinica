@@ -547,11 +547,7 @@ get 'indoors/manual_final_bill'
 get 'indoors/ipd_clinical_report'
 get 'indoors/ipd_registration_form'
 
-<<<<<<< HEAD
 get 'masters/outdoors_patient_master'
-=======
-
->>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
 
 #doctor master
 get 'common_master/common_master'
@@ -561,14 +557,11 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
-<<<<<<< HEAD
 
 get 'common_master/outdoors_patient_master'
 
-
-=======
 get 'common_master/outdoor_patient_master'
->>>>>>> 26d3c24014f8cfddfafbefcb3b43add6e9efa1d9
+
 get 'common_master/view_doctor_master'
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
@@ -973,7 +966,6 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
-<<<<<<< HEAD
 get 'indoor/advance_booking_form'
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_transfer'
@@ -983,10 +975,9 @@ get 'indoor/ipd_clinical_report'
 get 'indoor/manual_final_bill'
 get 'indoor/ot_billing'
 get 'indoor/new_final_bill'
-=======
+
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_occupancy_dashboard'
->>>>>>> fe56bc0fa1669a6e1c34fb30ef4294c21a7655f2
 
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
