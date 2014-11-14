@@ -148,7 +148,7 @@ class IndoorController < ApplicationController
 		@other_service=DoctorVisitDetail.find(params[:id])
 		if@other_service.destroy
 			flash[:notice]="Other Service deleted successfully"
-			redirect_to indoor_new_other_service_path
+			redirect_to indoor_services_given_path
 		end
 	end
 
@@ -491,6 +491,36 @@ class IndoorController < ApplicationController
 			redirect_to indoor_new_nurseing_counter_entry_path
 		end
 	end
+
+
+
+def indoor_dashboard
+end
+
+def bed_transfer
+end
+
+def discharge_details
+end
+
+def doctor_visit_form
+end
+
+def ipd_clinical_report
+end
+
+def manual_final_bill
+end
+
+def ot_billing
+end
+def advance_booking_form
+end
+
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Ward Master')%></span>
+              <span><%= t('Doctor Master')%></span>
               <small><%= t('View')%></small>
     </h1>
       <div class="pull-right">
@@ -22,7 +22,7 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Ward Master')%></li>
+          <%= t('Doctor Master')%></li>
         </ul>
       </div>
 </div>
@@ -31,7 +31,7 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="pull-right">
-        <%= link_to 'New Ward Master', common_master_new_ward_master_path, class: "btn btn-white hidden-xs", style: "margin-bottom:20px;" %>
+        <%= link_to 'New Patient',outdoors_new_registration_path, class: "btn btn-white hidden-xs", style: "margin-bottom:20px;" %>
     </div>
   </div>
 </div>
@@ -39,7 +39,7 @@
 <div class="col-sm-12 ">
   <div class="box bordered-box green-border" style="margin-bottom:0;">
     <div class="box-header green-background">
-      <div class="title"><%= t('ward master details')%></div>
+      <div class="title"><%= t('doctor master details')%></div>
         <div class="actions">  
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
@@ -57,7 +57,7 @@
       </div>
       </div>
       <table class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-        <% if @ward_masters.empty? %>
+        <% if @new_patients.empty? %>
          <h4 align="center">No Record Found </h4>
           <% else %>
         <thead>
@@ -65,7 +65,7 @@
           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
               Name
             : activate to sort column descending" style="width: 297px;">
-              Ward Name
+              Name
             </th>
             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 125px;">Actions</th>
 
@@ -73,15 +73,15 @@
         </thead>
         
       <tbody role="alert" aria-live="polite" aria-relevant="all">
-    <% @ward_masters.each do |dm|%>
+    <% @new_patients.each do |dm|%>
       <tr class="<%= cycle('odd', 'even')%>">
-        <td class=" sorting_1"><%= dm.ward_name+"-"+dm.floor_master.floor_name%></td>
+        <td class=" sorting_1"><%= dm.patient_name %></td>
         <td class=" ">
           <div class="text-right">
           <i class="icon-pencil"></i>
-            <%= link_to 'Edit' ,common_master_edit_ward_master_path(dm),class: "btn btn-warning btn-xs"%>
+            <%= link_to 'Edit' ,outdoors_edit_registration_path(dm),class: "btn btn-warning btn-xs"%>
             <i class="icon-remove"></i>
-            <%= link_to 'Delete' ,common_master_delete_ward_master_path(dm),method: :delete, data:{confirm:"Are You sure to delete data of '#{dm.ward_name}' ?"},class: "btn btn-danger btn-xs"%>
+            <%= link_to 'Delete' ,outdoors_destroy_patient_path(dm),method: :delete, data:{confirm:"Are You sure to delete data of '#{dm.patient_name}' ?"},class: "btn btn-danger btn-xs"%>
           </div>              
         </td>
       </tr>

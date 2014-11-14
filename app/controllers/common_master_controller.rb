@@ -738,6 +738,10 @@ class CommonMasterController < ApplicationController
    		end			
 	end
 
+	def view_floor_master
+		@floor_masters=FloorMaster.all
+	end
+
 	def new_floor_master
 		@floor_master=FloorMaster.new
 	end
@@ -746,7 +750,7 @@ class CommonMasterController < ApplicationController
 		@floor_master=FloorMaster.new(params_floor_master)
 		if @floor_master.save
 		    flash[:notice] = 'Floor master created successfully'
-	      	redirect_to common_master_new_floor_master_path
+	      	redirect_to common_master_view_floor_master_path
     	else
       		render 'new_floor_master'
     	end
@@ -760,7 +764,7 @@ class CommonMasterController < ApplicationController
 		@floor_master=FloorMaster.find(params[:id])
 		if @floor_master.update(params_floor_master)
 		 	flash[:notice] = 'Floor master updated successfully'
-	      	redirect_to common_master_new_floor_master_path
+	      	redirect_to common_master_view_floor_master_path
     	else
       		render 'edit_floor_master'
     	end
@@ -770,19 +774,24 @@ class CommonMasterController < ApplicationController
 		@floor_master=FloorMaster.find(params[:id])
 		if @floor_master.destroy
 		   flash[:notice] = 'Floor master deleted successfully!'
-   		   redirect_to common_master_new_floor_master_path
+   		   redirect_to common_master_view_floor_master_path
    		end			
+	end
+
+	def view_ward_master
+		@ward_masters=WardMaster.all
 	end
 
 	def new_ward_master
 		@ward_master=WardMaster.new
+		@floor_masters=FloorMaster.all
 	end
 
 	def create_ward_master
 		@ward_master=WardMaster.new(params_ward_master)
 		if @ward_master.save
 		    flash[:notice] = 'Ward master created successfully'
-	      	redirect_to common_master_new_ward_master_path
+	      	redirect_to common_master_view_ward_master_path
     	else
       		render 'new_ward_master'
     	end
@@ -790,13 +799,14 @@ class CommonMasterController < ApplicationController
 
 	def edit_ward_master
 		@ward_master=WardMaster.find(params[:id])
+		@floor_masters=FloorMaster.all
 	end
 
 	def update_ward_master
 		@ward_master=WardMaster.find(params[:id])
 		if @ward_master.update(params_ward_master)
 		 	flash[:notice] = 'Ward master updated successfully'
-	      	redirect_to common_master_new_ward_master_path
+	      	redirect_to common_master_view_ward_master_path
     	else
       		render 'edit_ward_master'
     	end
@@ -806,8 +816,12 @@ class CommonMasterController < ApplicationController
 		@ward_master=WardMaster.find(params[:id])
 		if @ward_master.destroy
 		   flash[:notice] = 'Ward master deleted successfully!'
-   		   redirect_to common_master_new_ward_master_path
+   		   redirect_to common_master_view_ward_master_path
    		end			
+	end
+
+	def view_bed_master
+		@bed_masters=BedMaster.all
 	end
 
 	def new_bed_master
@@ -818,7 +832,7 @@ class CommonMasterController < ApplicationController
 		@bed_master=BedMaster.new(params_bed_master)
 		if @bed_master.save
 		    flash[:notice] = 'Bed master created successfully'
-	      	redirect_to common_master_new_bed_master_path
+	      	redirect_to common_master_view_bed_master_path
     	else
       		render 'new_bed_master'
     	end
@@ -832,7 +846,7 @@ class CommonMasterController < ApplicationController
 		@bed_master=BedMaster.find(params[:id])
 		if @bed_master.update(params_bed_master)
 		 	flash[:notice] = 'Bed master updated successfully'
-	      	redirect_to common_master_new_bed_master_path
+	      	redirect_to common_master_view_bed_master_path
     	else
       		render 'edit_bed_master'
     	end
@@ -842,8 +856,12 @@ class CommonMasterController < ApplicationController
 		@bed_master=BedMaster.find(params[:id])
 		if @bed_master.destroy
 		   flash[:notice] = 'Bed master deleted successfully!'
-   		   redirect_to common_master_new_bed_master_path
+   		   redirect_to common_master_view_bed_master_path
    		end			
+	end
+
+	def view_ot_master
+		@ot_masters=OtMaster.all
 	end
 
 	def new_ot_master
@@ -854,7 +872,7 @@ class CommonMasterController < ApplicationController
 		@ot_master=OtMaster.new(params_ot_master)
 		if @ot_master.save
 		    flash[:notice] = 'OT master created successfully'
-	      	redirect_to common_master_new_ot_master_path
+	      	redirect_to common_master_view_ot_master_path
     	else
       		render 'new_ot_master'
     	end
@@ -868,7 +886,7 @@ class CommonMasterController < ApplicationController
 		@ot_master=OtMaster.find(params[:id])
 		if @ot_master.update(params_ot_master)
 		 	flash[:notice] = 'OT master updated successfully'
-	      	redirect_to common_master_new_ot_master_path
+	      	redirect_to common_master_view_ot_master_path
     	else
       		render 'edit_ot_master'
     	end
@@ -878,8 +896,12 @@ class CommonMasterController < ApplicationController
 		@ot_master=OtMaster.find(params[:id])
 		if @ot_master.destroy
 		   flash[:notice] = 'OT master deleted successfully!'
-   		   redirect_to common_master_new_ot_master_path
+   		   redirect_to common_master_view_ot_master_path
    		end			
+	end
+
+	def view_ot_slot_master
+		@ot_slot_masters=OtSlotMaster.all
 	end
 
 	def new_ot_slot_master
@@ -890,7 +912,7 @@ class CommonMasterController < ApplicationController
 		@ot_slot_master=OtSlotMaster.new(params_ot_slot_master)
 		if @ot_slot_master.save
 		    flash[:notice] = 'OT slot master created successfully'
-	      	redirect_to common_master_new_ot_slot_master_path
+	      	redirect_to common_master_view_ot_slot_master_path
     	else
       		render 'new_ot_slot_master'
     	end
@@ -904,7 +926,7 @@ class CommonMasterController < ApplicationController
 		@ot_slot_master=OtSlotMaster.find(params[:id])
 		if @ot_slot_master.update(params_ot_slot_master)
 		 	flash[:notice] = 'OT slot master updated successfully'
-	      	redirect_to common_master_new_ot_slot_master_path
+	      	redirect_to common_master_view_ot_slot_master_path
     	else
       		render 'edit_ot_slot_master'
     	end
@@ -914,8 +936,12 @@ class CommonMasterController < ApplicationController
 		@ot_slot_master=OtSlotMaster.find(params[:id])
 		if @ot_slot_master.destroy
 		   flash[:notice] = 'OT slot master deleted successfully!'
-   		   redirect_to common_master_new_ot_slot_master_path
+   		   redirect_to common_master_view_ot_slot_master_path
    		end			
+	end
+
+	def view_ot_type_master
+		@ot_type_masters=OtTypeMaster.all
 	end
 
 	def new_ot_type_master
@@ -926,7 +952,7 @@ class CommonMasterController < ApplicationController
 		@ot_type_master=OtTypeMaster.new(params_ot_type_master)
 		if @ot_type_master.save
 		    flash[:notice] = 'OT type master created successfully'
-	      	redirect_to common_master_new_ot_type_master_path
+	      	redirect_to common_master_view_ot_type_master_path
     	else
       		render 'new_ot_type_master'
     	end
@@ -940,7 +966,7 @@ class CommonMasterController < ApplicationController
 		@ot_type_master=OtTypeMaster.find(params[:id])
 		if @ot_type_master.update(params_ot_type_master)
 		 	flash[:notice] = 'OT type master updated successfully'
-	      	redirect_to common_master_new_ot_type_master_path
+	      	redirect_to common_master_view_ot_type_master_path
     	else
       		render 'edit_ot_type_master'
     	end
@@ -950,8 +976,12 @@ class CommonMasterController < ApplicationController
 		@ot_type_master=OtTypeMaster.find(params[:id])
 		if @ot_type_master.destroy
 		   flash[:notice] = 'OT type master deleted successfully!'
-   		   redirect_to common_master_new_ot_type_master_path
+   		   redirect_to common_master_view_ot_type_master_path
    		end			
+	end
+
+	def view_opd_department_master
+		@opd_department_masters=OpdDepartmentMaster.all
 	end
 
 	def new_opd_department_master
@@ -962,7 +992,7 @@ class CommonMasterController < ApplicationController
 		@opd_department_master=OpdDepartmentMaster.new(params_opd_department_master)
 		if @opd_department_master.save
 		    flash[:notice] = 'OPD department master created successfully'
-	      	redirect_to common_master_new_opd_department_master_path
+	      	redirect_to common_master_view_opd_department_master_path
     	else
       		render 'new_opd_department_master'
     	end
@@ -976,7 +1006,7 @@ class CommonMasterController < ApplicationController
 		@opd_department_master=OpdDepartmentMaster.find(params[:id])
 		if @opd_department_master.update(params_opd_department_master)
 		 	flash[:notice] = 'OPD department master updated successfully'
-	      	redirect_to common_master_new_opd_department_master_path
+	      	redirect_to common_master_view_opd_department_master_path
     	else
       		render 'edit_opd_department_master'
     	end
@@ -986,8 +1016,12 @@ class CommonMasterController < ApplicationController
 		@opd_department_master=OpdDepartmentMaster.find(params[:id])
 		if @opd_department_master.destroy
 		   flash[:notice] = 'OPD department master deleted successfully!'
-   		   redirect_to common_master_new_opd_department_master_path
+   		   redirect_to common_master_view_opd_department_master_path
    		end			
+	end
+
+	def view_diet_master
+		@diet_masters=DietMaster.all
 	end
 
 	def new_diet_master
@@ -998,7 +1032,7 @@ class CommonMasterController < ApplicationController
 		@diet_master=DietMaster.new(params_diet_master)
 		if @diet_master.save
 		    flash[:notice] = 'Diet master created successfully'
-	      	redirect_to common_master_new_diet_master_path
+	      	redirect_to common_master_view_diet_master_path
     	else
       		render 'new_diet_master'
     	end
@@ -1012,7 +1046,7 @@ class CommonMasterController < ApplicationController
 		@diet_master=DietMaster.find(params[:id])
 		if @diet_master.update(params_diet_master)
 		 	flash[:notice] = 'Diet master updated successfully'
-	      	redirect_to common_master_new_diet_master_path
+	      	redirect_to common_master_view_diet_master_path
     	else
       		render 'edit_diet_master'
     	end
@@ -1022,7 +1056,7 @@ class CommonMasterController < ApplicationController
 		@diet_master=DietMaster.find(params[:id])
 		if @diet_master.destroy
 		   flash[:notice] = 'Diet master deleted successfully!'
-   		   redirect_to common_master_new_diet_master_path
+   		   redirect_to common_master_view_diet_master_path
    		end			
 	end
 

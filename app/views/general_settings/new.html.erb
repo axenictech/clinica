@@ -1,7 +1,7 @@
 <div id="content-header">
   <h1><%= t('General Setting')%></h1>
   <h3><%= t('Home')%><br/>
- <small><font color="red"><%= t('Fields Marked with * must be filled</font></small')%></font></h3>
+ <small><font color="red"><%= t('Fields Marked with * must be filled')%></font></h3>
   <div id="app-back-button">
     <%= link_to image_tag("buttons/back.png",:border => 0), :back %>
   </div>
@@ -27,28 +27,28 @@
 
   <tbody>
     <tr>
-      <td class="col-2"><%= t('School/College Name')%><span class="necessary-field">*</span></td> 
+      <td class="col-2"><%= t('Hospital Name')%><span class="necessary-field">*</span></td> 
       <td><%= f.text_field :school_or_college_name,:style =>"width: 310px" , class: "form-control" %></td></tr>
       
 
   <tr>
 
-    <td class="col-2"><%= t('School/College Address')%><span class="necessary-field">*</span></td> 
+    <td class="col-2"><%= t('Hospital Address')%><span class="necessary-field">*</span></td> 
     <td><%= f.text_field :school_or_college_address,:style =>"width: 310px",class: "form-control"%></td>
     
   </tr>
 
   <tr>
    
-    <td class="col-2"><%= t('School/College Phone No.')%><span class="necessary-field">*</span></td> 
+    <td class="col-2"><%= t('Hospital Phone No.')%><span class="necessary-field">*</span></td> 
     <td><%= f.text_field :school_or_college_phone_no,:style =>"width: 310px", class: "form-control"%></td>
     
   </tr>
 
-  <tr>
-    <td class="col-2"><%= t('Student Attendance Type')%></td> 
-    <td class="col-2"><%= f.select :student_attendance_type, ['Subjectwise','Daily'], :selected => 'SubjectWise', :style =>"width: 310px" %></td>
-  </tr>
+  <!-- <tr>
+    <td class="col-2"><%#= t('Student Attendance Type')%></td> 
+    <td class="col-2"><%#= f.select :student_attendance_type, ['Subjectwise','Daily'], :selected => 'SubjectWise', :style =>"width: 310px" %></td>
+  </tr> -->
 
  <tr>
     <td class="col-2"><%= t('Finance_start_year_date') %></td> 
@@ -79,28 +79,28 @@
     <td class="col-2"><%= t('Upload Logo')%></td> 
     <td class="col-2"><%= f.file_field :image%></td>
   </tr>
-  <tr>
-    <td class="col-2"><%= t('Include Grading Systems') %></td> 
+  <!-- <tr>
+    <td class="col-2"><%#= t('Include Grading Systems') %></td> 
     <td class="col-2">
     Select: &nbsp;&nbsp;
-    <%= link_to "All",general_settings_all_path,remote:true%>&nbsp;&nbsp;
-        <%= link_to  "None",general_settings_none_path,remote:true%>
-        <p id="grading_system"><%= render 'grading_type'%></p>
+    <%#= link_to "All",general_settings_all_path,remote:true%>&nbsp;&nbsp;
+        <%#= link_to  "None",general_settings_none_path,remote:true%>
+        <p id="grading_system"><%#= render 'grading_type'%></p>
       </td>
-  </tr>
+  </tr> -->
     <tr><td></td>
-      <td class="col-2"> <%= f.check_box :addmission_number_auto_increament, {:checked=>true} %>  <%= t('Enable Auto Increment Student Admission No.')%>
+      <td class="col-2"> <%= f.check_box :addmission_number_auto_increament, {:checked=>true} %>  <%= t('Enable Auto Increment Patient No.')%>
       </td>
     </tr>
     <tr><td></td>
     <td class="col-2"> <%= f.check_box :employee_number_auto_increament, {:checked=>true} %> 
-        <%= t('Enable Auto Increment Employee No.')%>
+        <%= t('Enable Auto Increment Doctor No.')%>
     </td>
     </tr>
     <tr><td></td>
-        <td class="col-2"> <%= f.check_box :enable_news_comment_moderation, {:checked=>false} %> 
-        <%=  t('Enable News Comment Moderation') %>
-        </td> 
+        <!-- <td class="col-2"> <%#= f.check_box :enable_news_comment_moderation, {:checked=>false} %> 
+        <%#=  t('Enable News Comment Moderation') %>
+        </td> --> 
     </tr>
     <tr><td colspan="2">
     <%= f.submit 'Update',  class: "btn btn-success"%> 
