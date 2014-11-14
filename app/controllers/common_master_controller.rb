@@ -1,15 +1,18 @@
 class CommonMasterController < ApplicationController
 
 	def view_doctor_master
-		@doctor_masters=DoctorMaster.all
+		@doctor_masters=DoctorMaster.where(is_refered:false)
 	end
 
 	def new_doctor_master
 		@doctor_master=DoctorMaster.new
+		@specializations=Specialization.all
+		@cities=City.all
 	end
 
 	def create_doctor_master
 		@doctor_master=DoctorMaster.new(params_doctor_master)
+		@doctor_master.is_refered=false
 		if @doctor_master.save
 		    flash[:notice] = 'Doctor master created successfully'
 	      	redirect_to common_master_view_doctor_master_path
@@ -20,6 +23,8 @@ class CommonMasterController < ApplicationController
 
 	def edit_doctor_master
 		@doctor_master=DoctorMaster.find(params[:id])
+		@specializations=Specialization.all
+		@cities=City.all
 	end
 
 	def update_doctor_master
@@ -40,76 +45,93 @@ class CommonMasterController < ApplicationController
    		end			
 	end
 
+	def view_referred_doctor_master
+		@referred_doctor_masters=DoctorMaster.where(is_refered:true)
+	end
+
 	def new_referred_doctor_master
-		@referred_doctor_master=ReferredDoctorMaster.new
+		@referred_doctor_master=DoctorMaster.new
+		@specializations=Specialization.all
+		@cities=City.all
 	end
 
 	def create_referred_doctor_master
-		@referred_doctor_master=ReferredDoctorMaster.new(params_referred_doctor_master)
+		@referred_doctor_master=DoctorMaster.new(params_doctor_master)
+		@referred_doctor_master.is_refered=true
 		if @referred_doctor_master.save
 			flash[:notice] = 'Referred doctor master created successfully'
-	      	redirect_to common_master_new_referred_doctor_master_path
+	      	redirect_to common_master_view_referred_doctor_master_path
     	else
       		render 'new_referred_doctor_master'
     	end
 	end
 
 	def edit_referred_doctor_master
-		@referred_doctor_master=ReferredDoctorMaster.find(params[:id])
+		@referred_doctor_master=DoctorMaster.find(params[:id])
+		@specializations=Specialization.all
+		@cities=City.all
 	end
 
 	def update_referred_doctor_master
-		@referred_doctor_master=ReferredDoctorMaster.find(params[:id])
+		@referred_doctor_master=DoctorMaster.find(params[:id])
 		if @referred_doctor_master.update(params_doctor_master)
 			flash[:notice] = 'Referred doctor master updated successfully'
-	      	redirect_to common_master_new_referred_doctor_master_path
+	      	redirect_to common_master_view_referred_doctor_master_path
     	else
       		render 'edit_referred_doctor_master'
     	end
 	end
 
 	def delete_referred_doctor_master
-		@referred_doctor_master=ReferredDoctorMaster.find(params[:id])
+		@referred_doctor_master=DoctorMaster.find(params[:id])
 		if @referred_doctor_master.destroy
 			flash[:notice] = 'Referred doctor master created successfully'
-	      	redirect_to common_master_new_referred_doctor_master_path
+	      	redirect_to common_master_view_referred_doctor_master_path
     	end
 	end
 
+	def view_specialized_master
+		@specialized_masters=Specialization.all
+	end
+
 	def new_specialized_master
-		@specialized_master=SpecializedMaster.new
+		@specialized_master=Specialization.new
 	end
 
 	def create_specialized_master
-		@specialized_master=SpecializedMaster.new(params_specialized_master)
+		@specialized_master=Specialization.new(params_specialized_master)
 		if @specialized_master.save
 		    flash[:notice] = 'Specialized master created successfully'
-	      	redirect_to common_master_new_specialized_master_path
+	      	redirect_to common_master_view_specialized_master_path
     	else
       		render 'new_specialized_master'
     	end
 	end
 
 	def edit_specialized_master
-		@specialized_master=SpecializedMaster.find(params[:id])
+		@specialized_master=Specialization.find(params[:id])
 	end
 
 	def update_specialized_master
-		@specialized_master=SpecializedMaster.find(params[:id])
+		@specialized_master=Specialization.find(params[:id])
 		if @specialized_master.update(params_specialized_master)
 		 	flash[:notice] = 'Specialized master updated successfully'
-	      	redirect_to common_master_new_specialized_master_path
+	      	redirect_to common_master_view_specialized_master_path
     	else
       		render 'edit_specialized_master'
     	end
 	end
 
 	def delete_specialized_master
-		@specialized_master=SpecializedMaster.find(params[:id])
+		@specialized_master=Specialization.find(params[:id])
 		if @specialized_master.destroy
 		   flash[:notice] = 'Specialized master deleted successfully!'
-   		   redirect_to common_master_new_specialized_master_path
+   		   redirect_to common_master_view_specialized_master_path
    		end			
+	end
+
+	def view_shift_master
+		@shift_masters=ShiftMaster.all
 	end
 
 	def new_shift_master
@@ -120,7 +142,7 @@ class CommonMasterController < ApplicationController
 		@shift_master=ShiftMaster.new(params_shift_master)
 		if @shift_master.save
 		    flash[:notice] = 'Shift master created successfully'
-	      	redirect_to common_master_new_shift_master_path
+	      	redirect_to common_master_view_shift_master_path
     	else
       		render 'new_shift_master'
     	end
@@ -134,7 +156,7 @@ class CommonMasterController < ApplicationController
 		@shift_master=ShiftMaster.find(params[:id])
 		if @shift_master.update(params_shift_master)
 		 	flash[:notice] = 'Shift master updated successfully'
-	      	redirect_to common_master_new_shift_master_path
+	      	redirect_to common_master_view_shift_master_path
     	else
       		render 'edit_shift_master'
     	end
@@ -144,19 +166,24 @@ class CommonMasterController < ApplicationController
 		@shift_master=ShiftMaster.find(params[:id])
 		if @shift_master.destroy
 		   flash[:notice] = 'Shift master deleted successfully!'
-   		   redirect_to common_master_new_shift_master_path
+   		   redirect_to common_master_view_shift_master_path
    		end			
+	end
+
+	def view_doctor_commission
+		@doctor_commissions=DoctorCommission.all
 	end
 
 	def new_doctor_commission
 		@doctor_commission=DoctorCommission.new
+		@doctor_masters=DoctorMaster.all
 	end
 
 	def create_doctor_commission
 		@doctor_commission=DoctorCommission.new(params_doctor_commission)
 		if @doctor_commission.save
 		    flash[:notice] = 'Doctor commission created successfully'
-	      	redirect_to common_master_new_doctor_commission_path
+	      	redirect_to common_master_view_doctor_commission_path
     	else
       		render 'new_doctor_commission'
     	end
@@ -164,13 +191,14 @@ class CommonMasterController < ApplicationController
 
 	def edit_doctor_commission
 		@doctor_commission=DoctorCommission.find(params[:id])
+		@doctor_masters=DoctorMaster.all
 	end
 
 	def update_doctor_commission
 		@doctor_commission=DoctorCommission.find(params[:id])
 		if @doctor_commission.update(params_doctor_commission)
 		 	flash[:notice] = 'Doctor commission updated successfully'
-	      	redirect_to common_master_new_doctor_commission_path
+	      	redirect_to common_master_view_doctor_commission_path
     	else
       		render 'edit_doctor_commission'
     	end
@@ -180,80 +208,94 @@ class CommonMasterController < ApplicationController
 		@doctor_commission=DoctorCommission.find(params[:id])
 		if @doctor_commission.destroy
 		   flash[:notice] = 'Doctor commission deleted successfully!'
-   		   redirect_to common_master_new_doctor_commission_path
+   		   redirect_to common_master_view_doctor_commission_path
    		end			
 	end
 
+	def view_state_master
+		@state_masters=State.all
+	end
+
 	def new_state_master
-		@state_master=StateMaster.new
+		@state_master=State.new
 	end
 
 	def create_state_master
-		@state_master=StateMaster.new(params_state_master)
+		@state_master=State.new(params_state_master)
 		if @state_master.save
 		    flash[:notice] = 'State master created successfully'
-	      	redirect_to common_master_new_state_master_path
+	      	redirect_to common_master_view_state_master_path
     	else
       		render 'new_state_master'
     	end
 	end
 
 	def edit_state_master
-		@state_master=StateMaster.find(params[:id])
+		@state_master=State.find(params[:id])
 	end
 
 	def update_state_master
-		@state_master=StateMaster.find(params[:id])
+		@state_master=State.find(params[:id])
 		if @state_master.update(params_state_master)
 		 	flash[:notice] = 'State master updated successfully'
-	      	redirect_to common_master_new_state_master_path
+	      	redirect_to common_master_view_state_master_path
     	else
       		render 'edit_state_master'
     	end
 	end
 
 	def delete_state_master
-		@state_master=StateMaster.find(params[:id])
+		@state_master=State.find(params[:id])
 		if @state_master.destroy
 		   flash[:notice] = 'State master deleted successfully!'
-   		   redirect_to common_master_new_state_master_path
+   		   redirect_to common_master_view_state_master_path
    		end			
 	end
 
+	def view_city_master
+		@city_masters=City.all
+	end
+
 	def new_city_master
-		@city_master=CityMaster.new
+		@city_master=City.new
+		@state_masters=State.all
 	end
 
 	def create_city_master
-		@city_master=CityMaster.new(params_city_master)
+		@city_master=City.new(params_city_master)
 		if @city_master.save
 		    flash[:notice] = 'City master created successfully'
-	      	redirect_to common_master_new_city_master_path
+	      	redirect_to common_master_view_city_master_path
     	else
       		render 'new_city_master'
     	end
 	end
 
 	def edit_city_master
-		@city_master=CityMaster.find(params[:id])
+		@city_master=City.find(params[:id])
+		@state_masters=State.all
 	end
 
 	def update_city_master
-		@city_master=CityMaster.find(params[:id])
+		@city_master=City.find(params[:id])
 		if @city_master.update(params_city_master)
 		 	flash[:notice] = 'City master updated successfully'
-	      	redirect_to common_master_new_city_master_path
+	      	redirect_to common_master_view_city_master_path
     	else
       		render 'edit_city_master'
     	end
 	end
 
 	def delete_city_master
-		@city_master=CityMaster.find(params[:id])
+		@city_master=City.find(params[:id])
 		if @city_master.destroy
 		   flash[:notice] = 'City master deleted successfully!'
-   		   redirect_to common_master_new_city_master_path
+   		   redirect_to common_master_view_city_master_path
    		end			
+	end
+
+	def view_family_master
+		@family_masters=FamilyMaster.all
 	end
 
 	def new_family_master
@@ -264,7 +306,7 @@ class CommonMasterController < ApplicationController
 		@family_master=FamilyMaster.new(params_family_master)
 		if @family_master.save
 		    flash[:notice] = 'Family master created successfully'
-	      	redirect_to common_master_new_family_master_path
+	      	redirect_to common_master_view_family_master_path
     	else
       		render 'new_family_master'
     	end
@@ -278,7 +320,7 @@ class CommonMasterController < ApplicationController
 		@family_master=FamilyMaster.find(params[:id])
 		if @family_master.update(params_family_master)
 		 	flash[:notice] = 'Family master updated successfully'
-	      	redirect_to common_master_new_family_master_path
+	      	redirect_to common_master_view_family_master_path
     	else
       		render 'edit_family_master'
     	end
@@ -288,44 +330,52 @@ class CommonMasterController < ApplicationController
 		@family_master=FamilyMaster.find(params[:id])
 		if @family_master.destroy
 		   flash[:notice] = 'Family master deleted successfully!'
-   		   redirect_to common_master_new_family_master_path
+   		   redirect_to common_master_view_family_master_path
    		end			
 	end
 
+	def view_ocupation_master
+		@ocupation_masters=OccupationMaster.all
+	end
+
 	def new_ocupation_master
-		@ocupation_master=OcupationMaster.new
+		@ocupation_master=OccupationMaster.new
 	end
 
 	def create_ocupation_master
-		@ocupation_master=OcupationMaster.new(params_ocupation_master)
+		@ocupation_master=OccupationMaster.new(params_ocupation_master)
 		if @ocupation_master.save
 		    flash[:notice] = 'Ocupation master created successfully'
-	      	redirect_to common_master_new_ocupation_master_path
+	      	redirect_to common_master_view_ocupation_master_path
     	else
       		render 'new_ocupation_master'
     	end
 	end
 
 	def edit_ocupation_master
-		@ocupation_master=OcupationMaster.find(params[:id])
+		@ocupation_master=OccupationMaster.find(params[:id])
 	end
 
 	def update_ocupation_master
-		@ocupation_master=OcupationMaster.find(params[:id])
+		@ocupation_master=OccupationMaster.find(params[:id])
 		if @ocupation_master.update(params_ocupation_master)
 		 	flash[:notice] = 'Ocupation master updated successfully'
-	      	redirect_to common_master_new_ocupation_master_path
+	      	redirect_to common_master_view_ocupation_master_path
     	else
       		render 'edit_ocupation_master'
     	end
 	end
 
 	def delete_ocupation_master
-		@ocupation_master=OcupationMaster.find(params[:id])
+		@ocupation_master=OccupationMaster.find(params[:id])
 		if @ocupation_master.destroy
 		   flash[:notice] = 'Ocupation master deleted successfully!'
-   		   redirect_to common_master_new_ocupation_master_path
+   		   redirect_to common_master_view_ocupation_master_path
    		end			
+	end
+
+	def view_religion_master
+		@religion_masters=ReligionMaster.all
 	end
 
 	def new_religion_master
@@ -336,7 +386,7 @@ class CommonMasterController < ApplicationController
 		@religion_master=ReligionMaster.new(params_religion_master)
 		if @religion_master.save
 		    flash[:notice] = 'Religion master created successfully'
-	      	redirect_to common_master_new_religion_master_path
+	      	redirect_to common_master_view_religion_master_path
     	else
       		render 'new_religion_master'
     	end
@@ -350,7 +400,7 @@ class CommonMasterController < ApplicationController
 		@religion_master=ReligionMaster.find(params[:id])
 		if @religion_master.update(params_religion_master)
 		 	flash[:notice] = 'Religion master updated successfully'
-	      	redirect_to common_master_new_religion_master_path
+	      	redirect_to common_master_view_religion_master_path
     	else
       		render 'edit_religion_master'
     	end
@@ -360,9 +410,13 @@ class CommonMasterController < ApplicationController
 		@religion_master=ReligionMaster.find(params[:id])
 		if @religion_master.destroy
 		   flash[:notice] = 'Religion master deleted successfully!'
-   		   redirect_to common_master_new_religion_master_path
+   		   redirect_to common_master_view_religion_master_path
    		end			
 	end	
+
+	def view_bank_master
+		@bank_masters=BankMaster.all
+	end
 
 	def new_bank_master
 		@bank_master=BankMaster.new
@@ -372,7 +426,7 @@ class CommonMasterController < ApplicationController
 		@bank_master=BankMaster.new(params_bank_master)
 		if @bank_master.save
 		    flash[:notice] = 'Bank master created successfully'
-	      	redirect_to common_master_new_bank_master_path
+	      	redirect_to common_master_view_bank_master_path
     	else
       		render 'new_bank_master'
     	end
@@ -386,7 +440,7 @@ class CommonMasterController < ApplicationController
 		@bank_master=BankMaster.find(params[:id])
 		if @bank_master.update(params_bank_master)
 		 	flash[:notice] = 'Bank master updated successfully'
-	      	redirect_to common_master_new_bank_master_path
+	      	redirect_to common_master_view_bank_master_path
     	else
       		render 'edit_bank_master'
     	end
@@ -396,19 +450,24 @@ class CommonMasterController < ApplicationController
 		@bank_master=BankMaster.find(params[:id])
 		if @bank_master.destroy
 		   flash[:notice] = 'Bank master deleted successfully!'
-   		   redirect_to common_master_new_bank_master_path
+   		   redirect_to common_master_view_bank_master_path
    		end			
 	end
 	
+	def view_company_master
+		@company_masters=CompanyMaster.all
+	end
+
 	def new_company_master
 		@company_master=CompanyMaster.new
+		@cities=City.all
 	end
 
 	def create_company_master
 		@company_master=CompanyMaster.new(params_company_master)
 		if @company_master.save
 		    flash[:notice] = 'Company master created successfully'
-	      	redirect_to common_master_new_company_master_path
+	      	redirect_to common_master_view_company_master_path
     	else
       		render 'new_company_master'
     	end
@@ -416,13 +475,14 @@ class CommonMasterController < ApplicationController
 
 	def edit_company_master
 		@company_master=CompanyMaster.find(params[:id])
+		@cities=City.all
 	end
 
 	def update_company_master
 		@company_master=CompanyMaster.find(params[:id])
 		if @company_master.update(params_company_master)
 		 	flash[:notice] = 'Company master updated successfully'
-	      	redirect_to common_master_new_company_master_path
+	      	redirect_to common_master_view_company_master_path
     	else
       		render 'edit_company_master'
     	end
@@ -432,44 +492,52 @@ class CommonMasterController < ApplicationController
 		@company_master=CompanyMaster.find(params[:id])
 		if @company_master.destroy
 		   flash[:notice] = 'Company master deleted successfully!'
-   		   redirect_to common_master_new_company_master_path
+   		   redirect_to common_master_view_company_master_path
    		end			
 	end
 
+	def view_diagnosis_master
+		@diagnosis_masters=DignosisMaster.all
+	end
+
 	def new_diagnosis_master
-		@diagnosis_master=DiagnosisMaster.new
+		@diagnosis_master=DignosisMaster.new
 	end
 
 	def create_diagnosis_master
-		@diagnosis_master=DiagnosisMaster.new(params_diagnosis_master)
+		@diagnosis_master=DignosisMaster.new(params_diagnosis_master)
 		if @diagnosis_master.save
 		    flash[:notice] = 'Diagnosis master created successfully'
-	      	redirect_to common_master_new_diagnosis_master_path
+	      	redirect_to common_master_view_diagnosis_master_path
     	else
       		render 'new_diagnosis_master'
     	end
 	end
 
 	def edit_diagnosis_master
-		@diagnosis_master=DiagnosisMaster.find(params[:id])
+		@diagnosis_master=DignosisMaster.find(params[:id])
 	end
 
 	def update_diagnosis_master
-		@diagnosis_master=DiagnosisMaster.find(params[:id])
+		@diagnosis_master=DignosisMaster.find(params[:id])
 		if @diagnosis_master.update(params_diagnosis_master)
 		 	flash[:notice] = 'Diagnosis master updated successfully'
-	      	redirect_to common_master_new_diagnosis_master_path
+	      	redirect_to common_master_view_diagnosis_master_path
     	else
       		render 'edit_diagnosis_master'
     	end
 	end
 
 	def delete_diagnosis_master
-		@diagnosis_master=DiagnosisMaster.find(params[:id])
+		@diagnosis_master=DignosisMaster.find(params[:id])
 		if @diagnosis_master.destroy
 		   flash[:notice] = 'Diagnosis master deleted successfully!'
-   		   redirect_to common_master_new_diagnosis_master_path
+   		   redirect_to common_master_view_diagnosis_master_path
    		end			
+	end
+
+	def view_group_master
+		@group_masters=GroupMaster.all
 	end
 
 	def new_group_master
@@ -480,7 +548,7 @@ class CommonMasterController < ApplicationController
 		@group_master=GroupMaster.new(params_group_master)
 		if @group_master.save
 		    flash[:notice] = 'Group master created successfully'
-	      	redirect_to common_master_new_group_master_path
+	      	redirect_to common_master_view_group_master_path
     	else
       		render 'new_group_master'
     	end
@@ -494,7 +562,7 @@ class CommonMasterController < ApplicationController
 		@group_master=GroupMaster.find(params[:id])
 		if @group_master.update(params_group_master)
 		 	flash[:notice] = 'Group master updated successfully'
-	      	redirect_to common_master_new_group_master_path
+	      	redirect_to common_master_view_group_master_path
     	else
       		render 'edit_group_master'
     	end
@@ -504,8 +572,12 @@ class CommonMasterController < ApplicationController
 		@group_master=GroupMaster.find(params[:id])
 		if @group_master.destroy
 		   flash[:notice] = 'Group master deleted successfully!'
-   		   redirect_to common_master_new_group_master_path
+   		   redirect_to common_master_view_group_master_path
    		end			
+	end
+
+	def view_service_master
+		@service_masters=ServiceMaster.all
 	end
 
 	def new_service_master
@@ -516,7 +588,7 @@ class CommonMasterController < ApplicationController
 		@service_master=ServiceMaster.new(params_service_master)
 		if @service_master.save
 		    flash[:notice] = 'Service master created successfully'
-	      	redirect_to common_master_new_service_master_path
+	      	redirect_to common_master_view_service_master_path
     	else
       		render 'new_service_master'
     	end
@@ -530,7 +602,7 @@ class CommonMasterController < ApplicationController
 		@service_master=ServiceMaster.find(params[:id])
 		if @service_master.update(params_service_master)
 		 	flash[:notice] = 'Service master updated successfully'
-	      	redirect_to common_master_new_service_master_path
+	      	redirect_to common_master_view_service_master_path
     	else
       		render 'edit_service_master'
     	end
@@ -540,10 +612,14 @@ class CommonMasterController < ApplicationController
 		@service_master=ServiceMaster.find(params[:id])
 		if @service_master.destroy
 		   flash[:notice] = 'Service master deleted successfully!'
-   		   redirect_to common_master_new_service_master_path
+   		   redirect_to common_master_view_service_master_path
    		end			
 	end
 	
+	def view_dose_master
+		@dose_masters=DoseMaster.all
+	end
+
 	def new_dose_master
 		@dose_master=DoseMaster.new
 	end
@@ -552,7 +628,7 @@ class CommonMasterController < ApplicationController
 		@dose_master=DoseMaster.new(params_dose_master)
 		if @dose_master.save
 		    flash[:notice] = 'Dose master created successfully'
-	      	redirect_to common_master_new_dose_master_path
+	      	redirect_to common_master_view_dose_master_path
     	else
       		render 'new_dose_master'
     	end
@@ -566,7 +642,7 @@ class CommonMasterController < ApplicationController
 		@dose_master=DoseMaster.find(params[:id])
 		if @dose_master.update(params_dose_master)
 		 	flash[:notice] = 'Dose master updated successfully'
-	      	redirect_to common_master_new_dose_master_path
+	      	redirect_to common_master_view_dose_master_path
     	else
       		render 'edit_dose_master'
     	end
@@ -576,8 +652,12 @@ class CommonMasterController < ApplicationController
 		@dose_master=DoseMaster.find(params[:id])
 		if @dose_master.destroy
 		   flash[:notice] = 'Dose master deleted successfully!'
-   		   redirect_to common_master_new_dose_master_path
+   		   redirect_to common_master_view_dose_master_path
    		end			
+	end
+
+	def view_age_group_master
+		@age_group_masters=AgeGroupMaster.all
 	end
 
 	def new_age_group_master
@@ -588,7 +668,7 @@ class CommonMasterController < ApplicationController
 		@age_group_master=AgeGroupMaster.new(params_age_group_master)
 		if @age_group_master.save
 		    flash[:notice] = 'Age group master created successfully'
-	      	redirect_to common_master_new_age_group_master_path
+	      	redirect_to common_master_view_age_group_master_path
     	else
       		render 'new_age_group_master'
     	end
@@ -602,7 +682,7 @@ class CommonMasterController < ApplicationController
 		@age_group_master=AgeGroupMaster.find(params[:id])
 		if @age_group_master.update(params_age_group_master)
 		 	flash[:notice] = 'Age group master updated successfully'
-	      	redirect_to common_master_new_age_group_master_path
+	      	redirect_to common_master_view_age_group_master_path
     	else
       		render 'edit_age_group_master'
     	end
@@ -612,19 +692,24 @@ class CommonMasterController < ApplicationController
 		@age_group_master=AgeGroupMaster.find(params[:id])
 		if @age_group_master.destroy
 		   flash[:notice] = 'Age group master deleted successfully!'
-   		   redirect_to common_master_new_age_group_master_path
+   		   redirect_to common_master_view_age_group_master_path
    		end			
+	end
+
+	def view_vaccines_master
+		@vaccines_masters=VaccinesMaster.all
 	end
 
 	def new_vaccines_master
 		@vaccines_master=VaccinesMaster.new
+		@age_group_masters=AgeGroupMaster.all
 	end
 
 	def create_vaccines_master
 		@vaccines_master=VaccinesMaster.new(params_vaccines_master)
 		if @vaccines_master.save
 		    flash[:notice] = 'Vaccines master created successfully'
-	      	redirect_to common_master_new_vaccines_master_path
+	      	redirect_to common_master_view_vaccines_master_path
     	else
       		render 'new_vaccines_master'
     	end
@@ -632,13 +717,14 @@ class CommonMasterController < ApplicationController
 
 	def edit_vaccines_master
 		@vaccines_master=VaccinesMaster.find(params[:id])
+		@age_group_masters=AgeGroupMaster.all
 	end
 
 	def update_vaccines_master
 		@vaccines_master=VaccinesMaster.find(params[:id])
 		if @vaccines_master.update(params_vaccines_master)
 		 	flash[:notice] = 'Vaccines master updated successfully'
-	      	redirect_to common_master_new_vaccines_master_path
+	      	redirect_to common_master_view_vaccines_master_path
     	else
       		render 'edit_vaccines_master'
     	end
@@ -648,11 +734,11 @@ class CommonMasterController < ApplicationController
 		@vaccines_master=VaccinesMaster.find(params[:id])
 		if @vaccines_master.destroy
 		   flash[:notice] = 'Vaccines master deleted successfully!'
-   		   redirect_to common_master_new_vaccines_master_path
+   		   redirect_to common_master_view_vaccines_master_path
    		end			
 	end
 
-		def new_floor_master
+	def new_floor_master
 		@floor_master=FloorMaster.new
 	end
 
@@ -944,29 +1030,29 @@ class CommonMasterController < ApplicationController
 	def params_doctor_master
 		params.require(:doctor_master).permit!
 	end
-	def params_referred_doctor_master
-		params.require(:referred_doctor_master).permit!
-	end
 	def params_specialized_master
-		params.require(:specialized_master).permit!
+		params.require(:specialization).permit!
 	end
 	def params_shift_master
 		params.require(:shift_master).permit!
 	end
 	def params_doctor_commission
-		params.require(:doctor_commission_master).permit!
+		params.require(:doctor_commission).permit!
 	end
 	def params_state_master
-		params.require(:state_master).permit!
+		params.require(:state).permit!
 	end
 	def params_city_master
-		params.require(:city_master).permit!
+		params.require(:city).permit!
 	end
 	def params_family_master
 		params.require(:family_master).permit!
 	end
 	def params_ocupation_master
-		params.require(:ocupation_master).permit!
+		params.require(:occupation_master).permit!
+	end
+	def params_religion_master
+		params.require(:religion_master).permit!
 	end
 	def params_bank_master
 		params.require(:bank_master).permit!
@@ -975,7 +1061,7 @@ class CommonMasterController < ApplicationController
 		params.require(:company_master).permit!
 	end
 	def params_diagnosis_master
-		params.require(:diagnosis_master).permit!
+		params.require(:dignosis_master).permit!
 	end
 	def params_group_master
 		params.require(:group_master).permit!

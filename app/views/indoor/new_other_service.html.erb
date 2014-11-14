@@ -1,0 +1,47 @@
+
+<div class="page-header page-header-with-buttons">
+  <h1 class="pull-left">
+    <i class="icon-book"></i>
+    <span>Other Services</span>
+  </h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href="">Settings</a>
+      </li>
+  </ol>
+</div>
+</div>
+
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+<div class="col-sm-12">
+<%= form_for :search, url: other_service_find_patient_path,remote:true  do |f|%>
+<div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">IPD No</label>
+  <div class="col-sm-3">
+  <%= f.text_field :id,onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"%>
+</div>
+<div class="col-sm-3">
+  <%=f.submit "Search",onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",
+                      required: true,
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"%>
+  <% end %>
+</div>
+</div>
+</div>
+
+
+<br>
+<br>
+<br>
+<div id="money_reciept">
+<%=render 'other_service_entry'%>
+</div>

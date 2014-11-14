@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103481) do
+ActiveRecord::Schema.define(version: 20141223103483) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -526,11 +526,6 @@ ActiveRecord::Schema.define(version: 20141223103481) do
   add_index "doctor_masters", ["city_id"], name: "index_doctor_masters_on_city_id", using: :btree
   add_index "doctor_masters", ["shift_master_id"], name: "index_doctor_masters_on_shift_master_id", using: :btree
   add_index "doctor_masters", ["specialization_id"], name: "index_doctor_masters_on_specialization_id", using: :btree
-
-  create_table "doctor_visits", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "dose_masters", force: true do |t|
     t.string   "dose_name"
@@ -1147,7 +1142,19 @@ ActiveRecord::Schema.define(version: 20141223103481) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
-  create_table "indoor_money_reciepts", force: true do |t|
+  create_table "ipd_money_reciepts", force: true do |t|
+    t.integer  "reciept_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "reciept_type"
+    t.decimal  "amount"
+    t.decimal  "discount"
+    t.decimal  "recieved_amount"
+    t.string   "payment_type"
+    t.string   "bank_name"
+    t.string   "cheque_number"
+    t.string   "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1164,7 +1171,7 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.string   "gender"
     t.string   "marital_status"
     t.string   "family"
-    t.datetime "birthdate"
+    t.date     "birthdate"
     t.string   "height"
     t.string   "weight"
     t.string   "religion"
@@ -1418,6 +1425,25 @@ ActiveRecord::Schema.define(version: 20141223103481) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "other_services", force: true do |t|
+    t.integer  "oc_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "complaint"
+    t.string   "complaint_description"
+    t.string   "service_name"
+    t.string   "rate"
+    t.string   "quantiry"
+    t.string   "total"
+    t.string   "remark"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "other_services", ["doctor_master_id"], name: "index_other_services_on_doctor_master_id", using: :btree
 
   create_table "pack_master_stores", force: true do |t|
     t.string   "pack_name"

@@ -13,7 +13,7 @@
           </a>
         </li> -->
           <li>
-            <a href="home/dashboard">
+            <a href="/home/dashboard">
               <i class="icon-dashboard"></i>
               <%= t('dashboard')%></li>
             </a>
@@ -70,18 +70,11 @@
           </div>
           <br>
           <div class="row">
-            <!-- <div class="form-group">
-              <label class="col-sm-2 control-label">Specailized:</label>
-                <div class="col-sm-6"><%#= c.text_field :specialization,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Specailized",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>     
-                </div> -->
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Specialization:</label>
+                 <div class="col-sm-6"><%= c.select :specialization_id,@specializations.collect{|s| [s.specialized,s.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:200px"}%>  
+                  </div> 
+                </div>
             </div>
 
 
@@ -141,16 +134,9 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">City:</label>
-                <div class="col-sm-6"><%= c.select :city,[]%>  
-                  </div>     
-                </div>
-            </div> 
-            <br>
-            <div class="row">
-              <div class="form-group">
-               <label class="col-sm-2 control-label">State:</label>
-                <div class="col-sm-6"> 
-                  </div>     
+                <div class="col-sm-6"><%= c.select :city_id,@cities.collect{|c| [c.city_name,c.id]},{prompt:"Select city"},{class: "form-control input-group",required: true,style:"width:150px"}%>  
+                  </div> 
+    
                 </div>
             </div> 
             <br>

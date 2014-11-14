@@ -58,7 +58,7 @@
                 
           
        <label class="col-sm-2 control-label">Cash/Credit:</label>
-                <div class="col-sm-2"><%= o.text_field  :cash,
+                <div class="col-sm-2"><%= o.select :cash,['Credit'] ,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -67,7 +67,7 @@
                       %>  
                   </div>     
                <label class="col-sm-2 control-label">Entry No:</label>
-                <div class="col-sm-2"><%= o.text_field :entry_no,
+                <div class="col-sm-2"><%= o.text_field :entry_no,placeholder: "Entry No",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -85,7 +85,7 @@
                 <div class="col-sm-2"><%= o.text_field  :bill,
                  
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "From",
+                     class: "form-control input-group",placeholder: "Bill No",
                       required: true,
                     
                       :"data-placement"=>"right",

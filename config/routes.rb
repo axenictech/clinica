@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
-
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -519,6 +519,7 @@ get 'employees/employee_individual_payslip_pdf'
 get 'employee_attendances/attendance_report_pdf'
 delete 'time_tables/time_table_delete'
 
+
 #common master#
 #doctor master
 
@@ -539,10 +540,7 @@ get 'outdoors/new_registration'
 #common master#
 
 
-get 'masters/outdoor_patient_master'
 
-get 'masters/diagonostic_master'
-get 'masters/store_master'
 #doctor master
 get 'common_master/common_master'
 get 'common_master/doctor_master'
@@ -551,13 +549,8 @@ get 'common_master/area_master'
 get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
-
 get 'common_master/outdoor_patient_master'
-
-
 get 'common_master/view_doctor_master'
-
-
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
 get 'common_master/:id/edit_doctor_master',to: 'common_master#edit_doctor_master',as:'common_master_edit_doctor_master'
@@ -565,6 +558,7 @@ patch 'common_master/:id/update_doctor_master',to: 'common_master#update_doctor_
 delete 'common_master/:id/delete_doctor_master',to: 'common_master#delete_doctor_master',as:'common_master_delete_doctor_master'
 
 #referred doctor master
+get 'common_master/view_referred_doctor_master'
 get 'common_master/new_referred_doctor_master'
 post 'common_master/create_referred_doctor_master'
 get 'common_master/:id/edit_referred_doctor_master',to: 'common_master#edit_referred_doctor_master',as:'common_master_edit_referred_doctor_master'
@@ -572,6 +566,7 @@ patch 'common_master/:id/update_referred_doctor_master',to: 'common_master#updat
 delete 'common_master/:id/delete_referred_doctor_master',to: 'common_master#delete_referred_doctor_master',as:'common_master_delete_referred_doctor_master'
 
 #specialized master
+get 'common_master/view_specialized_master'
 get 'common_master/new_specialized_master'
 post 'common_master/create_specialized_master'
 get 'common_master/:id/edit_specialized_master',to: 'common_master#edit_specialized_master',as:'common_master_edit_specialized_master'
@@ -579,6 +574,7 @@ patch 'common_master/:id/update_specialized_master',to: 'common_master#update_sp
 delete 'common_master/:id/delete_specialized_master',to: 'common_master#delete_specialized_master',as:'common_master_delete_specialized_master'
 
 #shift master
+get 'common_master/view_shift_master'
 get 'common_master/new_shift_master'
 post 'common_master/create_shift_master'
 get 'common_master/:id/edit_shift_master',to: 'common_master#edit_shift_master',as:'common_master_edit_shift_master'
@@ -586,6 +582,7 @@ patch 'common_master/:id/update_shift_master',to: 'common_master#update_shift_ma
 delete 'common_master/:id/delete_shift_master',to: 'common_master#delete_shift_master',as:'common_master_delete_shift_master'
 
 #doctor commission
+get 'common_master/view_doctor_commission'
 get 'common_master/new_doctor_commission'
 post 'common_master/create_doctor_commission'
 get 'common_master/:id/edit_doctor_commission',to: 'common_master#edit_doctor_commission',as:'common_master_edit_doctor_commission'
@@ -593,6 +590,7 @@ patch 'common_master/:id/update_doctor_commission',to: 'common_master#update_doc
 delete 'common_master/:id/delete_doctor_commission',to: 'common_master#delete_doctor_commission',as:'common_master_delete_doctor_commission'
 
 #state master
+get 'common_master/view_state_master'
 get 'common_master/new_state_master'
 post 'common_master/create_state_master'
 get 'common_master/:id/edit_state_master',to: 'common_master#edit_state_master',as:'common_master_edit_state_master'
@@ -600,6 +598,7 @@ patch 'common_master/:id/update_state_master',to: 'common_master#update_state_ma
 delete 'common_master/:id/delete_state_master',to: 'common_master#delete_state_master',as:'common_master_delete_state_master'
 
 #city master
+get 'common_master/view_city_master'
 get 'common_master/new_city_master'
 post 'common_master/create_city_master'
 get 'common_master/:id/edit_city_master',to: 'common_master#edit_city_master',as:'common_master_edit_city_master'
@@ -607,6 +606,7 @@ patch 'common_master/:id/update_city_master',to: 'common_master#update_city_mast
 delete 'common_master/:id/delete_city_master',to: 'common_master#delete_city_master',as:'common_master_delete_city_master'
 
 #family master
+get 'common_master/view_family_master'
 get 'common_master/new_family_master'
 post 'common_master/create_family_master'
 get 'common_master/:id/edit_family_master',to: 'common_master#edit_family_master',as:'common_master_edit_family_master'
@@ -614,6 +614,7 @@ patch 'common_master/:id/update_family_master',to: 'common_master#update_family_
 delete 'common_master/:id/delete_family_master',to: 'common_master#delete_family_master',as:'common_master_delete_family_master'
 
 #ocupation master
+get 'common_master/view_ocupation_master'
 get 'common_master/new_ocupation_master'
 post 'common_master/create_ocupation_master'
 get 'common_master/:id/edit_ocupation_master',to: 'common_master#edit_ocupation_master',as:'common_master_edit_ocupation_master'
@@ -621,6 +622,7 @@ patch 'common_master/:id/update_ocupation_master',to: 'common_master#update_ocup
 delete 'common_master/:id/delete_ocupation_master',to: 'common_master#delete_ocupation_master',as:'common_master_delete_ocupation_master'
 
 #religion master
+get 'common_master/view_religion_master'
 get 'common_master/new_religion_master'
 post 'common_master/create_religion_master'
 get 'common_master/:id/edit_religion_master',to: 'common_master#edit_religion_master',as:'common_master_edit_religion_master'
@@ -628,6 +630,7 @@ patch 'common_master/:id/update_religion_master',to: 'common_master#update_relig
 delete 'common_master/:id/delete_religion_master',to: 'common_master#delete_religion_master',as:'common_master_delete_religion_master'
 
 #bank master
+get 'common_master/view_bank_master'
 get 'common_master/new_bank_master'
 post 'common_master/create_bank_master'
 get 'common_master/:id/edit_bank_master',to: 'common_master#edit_bank_master',as:'common_master_edit_bank_master'
@@ -635,6 +638,7 @@ patch 'common_master/:id/update_bank_master',to: 'common_master#update_bank_mast
 delete 'common_master/:id/delete_bank_master',to: 'common_master#delete_bank_master',as:'common_master_delete_bank_master'
 
 #company master
+get 'common_master/view_company_master'
 get 'common_master/new_company_master'
 post 'common_master/create_company_master'
 get 'common_master/:id/edit_company_master',to: 'common_master#edit_company_master',as:'common_master_edit_company_master'
@@ -642,6 +646,7 @@ patch 'common_master/:id/update_company_master',to: 'common_master#update_compan
 delete 'common_master/:id/delete_company_master',to: 'common_master#delete_company_master',as:'common_master_delete_company_master'
 
 #diagnosis master
+get 'common_master/view_diagnosis_master'
 get 'common_master/new_diagnosis_master'
 post 'common_master/create_diagnosis_master'
 get 'common_master/:id/edit_diagnosis_master',to: 'common_master#edit_diagnosis_master',as:'common_master_edit_diagnosis_master'
@@ -649,6 +654,7 @@ patch 'common_master/:id/update_diagnosis_master',to: 'common_master#update_diag
 delete 'common_master/:id/delete_diagnosis_master',to: 'common_master#delete_diagnosis_master',as:'common_master_delete_diagnosis_master'
 
 #group master
+get 'common_master/view_group_master'
 get 'common_master/new_group_master'
 post 'common_master/create_group_master'
 get 'common_master/:id/edit_group_master',to: 'common_master#edit_group_master',as:'common_master_edit_group_master'
@@ -656,6 +662,7 @@ patch 'common_master/:id/update_group_master',to: 'common_master#update_group_ma
 delete 'common_master/:id/delete_group_master',to: 'common_master#delete_group_master',as:'common_master_delete_group_master'
 
 #service master
+get 'common_master/view_service_master'
 get 'common_master/new_service_master'
 post 'common_master/create_service_master'
 get 'common_master/:id/edit_service_master',to: 'common_master#edit_service_master',as:'common_master_edit_service_master'
@@ -663,6 +670,7 @@ patch 'common_master/:id/update_service_master',to: 'common_master#update_servic
 delete 'common_master/:id/delete_service_master',to: 'common_master#delete_service_master',as:'common_master_delete_service_master'
 
 #dose master
+get 'common_master/view_dose_master'
 get 'common_master/new_dose_master'
 post 'common_master/create_dose_master'
 get 'common_master/:id/edit_dose_master',to: 'common_master#edit_dose_master',as:'common_master_edit_dose_master'
@@ -670,6 +678,7 @@ patch 'common_master/:id/update_dose_master',to: 'common_master#update_dose_mast
 delete 'common_master/:id/delete_dose_master',to: 'common_master#delete_dose_master',as:'common_master_delete_dose_master'
 
 #age group master
+get 'common_master/view_age_group_master'
 get 'common_master/new_age_group_master'
 post 'common_master/create_age_group_master'
 get 'common_master/:id/edit_age_group_master',to: 'common_master#edit_age_group_master',as:'common_master_edit_age_group_master'
@@ -677,6 +686,7 @@ patch 'common_master/:id/update_age_group_master',to: 'common_master#update_age_
 delete 'common_master/:id/delete_age_group_master',to: 'common_master#delete_age_group_master',as:'common_master_delete_age_group_master'
 
 #vaccines master
+get 'common_master/view_vaccines_master'
 get 'common_master/new_vaccines_master'
 post 'common_master/create_vaccines_master'
 get 'common_master/:id/edit_vaccines_master',to: 'common_master#edit_vaccines_master',as:'common_master_edit_vaccines_master'
@@ -684,6 +694,7 @@ patch 'common_master/:id/update_vaccines_master',to: 'common_master#update_vacci
 delete 'common_master/:id/delete_vaccines_master',to: 'common_master#delete_vaccines_master',as:'common_master_delete_vaccines_master'
 
 #floor master
+get 'common_master/view_floor_master'
 get 'common_master/new_floor_master'
 post 'common_master/create_floor_master'
 get 'common_master/:id/edit_floor_master',to: 'common_master#edit_floor_master',as:'common_master_edit_floor_master'
@@ -691,6 +702,7 @@ patch 'common_master/:id/update_floor_master',to: 'common_master#update_floor_ma
 delete 'common_master/:id/delete_floor_master',to: 'common_master#delete_floor_master',as:'common_master_delete_floor_master'
 
 #ward master
+get 'common_master/view_ward_master'
 get 'common_master/new_ward_master'
 post 'common_master/create_ward_master'
 get 'common_master/:id/edit_ward_master',to: 'common_master#edit_ward_master',as:'common_master_edit_ward_master'
@@ -698,6 +710,7 @@ patch 'common_master/:id/update_ward_master',to: 'common_master#update_ward_mast
 delete 'common_master/:id/delete_ward_master',to: 'common_master#delete_ward_master',as:'common_master_delete_ward_master'
 
 #bed master
+get 'common_master/view_bed_master'
 get 'common_master/new_bed_master'
 post 'common_master/create_bed_master'
 get 'common_master/:id/edit_bed_master',to: 'common_master#edit_bed_master',as:'common_master_edit_bed_master'
@@ -705,6 +718,7 @@ patch 'common_master/:id/update_bed_master',to: 'common_master#update_bed_master
 delete 'common_master/:id/delete_bed_master',to: 'common_master#delete_bed_master',as:'common_master_delete_bed_master'
 
 #ot master
+get 'common_master/view_ot_master'
 get 'common_master/new_ot_master'
 post 'common_master/create_ot_master'
 get 'common_master/:id/edit_ot_master',to: 'common_master#edit_ot_master',as:'common_master_edit_ot_master'
@@ -712,6 +726,7 @@ patch 'common_master/:id/update_ot_master',to: 'common_master#update_ot_master',
 delete 'common_master/:id/delete_ot_master',to: 'common_master#delete_ot_master',as:'common_master_delete_ot_master'
 
 #ot slot master
+get 'common_master/view_ot_slot_master'
 get 'common_master/new_ot_slot_master'
 post 'common_master/create_ot_slot_master'
 get 'common_master/:id/edit_ot_slot_master',to: 'common_master#edit_ot_slot_master',as:'common_master_edit_ot_slot_master'
@@ -719,6 +734,7 @@ patch 'common_master/:id/update_ot_slot_master',to: 'common_master#update_ot_slo
 delete 'common_master/:id/delete_ot_slot_master',to: 'common_master#delete_ot_slot_master',as:'common_master_delete_ot_slot_master'
 
 #ot type master
+get 'common_master/view_ot_type_master'
 get 'common_master/new_ot_type_master'
 post 'common_master/create_ot_type_master'
 get 'common_master/:id/edit_ot_type_master',to: 'common_master#edit_ot_type_master',as:'common_master_edit_ot_type_master'
@@ -726,6 +742,7 @@ patch 'common_master/:id/update_ot_type_master',to: 'common_master#update_ot_typ
 delete 'common_master/:id/delete_ot_type_master',to: 'common_master#delete_ot_type_master',as:'common_master_delete_ot_type_master'
 
 #opd department type master
+get 'common_master/view_opd_department_type_master'
 get 'common_master/new_opd_department_type_master'
 post 'common_master/create_opd_department_type_master'
 get 'common_master/:id/edit_opd_department_type_master',to: 'common_master#edit_opd_department_type_master',as:'common_master_edit_opd_department_type_master'
@@ -733,6 +750,7 @@ patch 'common_master/:id/update_opd_department_type_master',to: 'common_master#u
 delete 'common_master/:id/delete_opd_department_type_master',to: 'common_master#delete_opd_department_type_master',as:'common_master_delete_opd_department_type_master'
 
 #diet master
+get 'common_master/view_diet_master'
 get 'common_master/new_diet_master'
 post 'common_master/create_diet_master'
 get 'common_master/:id/edit_diet_master',to: 'common_master#edit_diet_master',as:'common_master_edit_diet_master'
@@ -924,7 +942,6 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 #---------------Master-----------------------
 
 
-
 #INDOOR#
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_occupancy_dashboard'
@@ -943,6 +960,10 @@ get 'indoor/new_other_service'
 post 'indoor/create_other_service',to: 'indoor#create_other_service',as: 'create_other_service'
 patch 'indoor/:id/update_other_service',to: 'indoor#update_other_service',as: 'update_other_service'
 delete 'indoor/:id/delete_other_service',to: 'indoor#delete_other_service',as: 'delete_other_service'
+post 'indoor/other_service_find_patient',to: 'indoor#other_service_find_patient',as: 'other_service_find_patient'
+get 'indoor/services_given',to: 'indoor#services_given',as: 'indoor_services_given'
+
+
 
 get 'indoor/new_doctor_visit_details'
 post 'indoor/create_doctor_visit_details',to: 'indoor#create_doctor_visit_details',as: 'create_doctor_visit_details'
@@ -964,7 +985,9 @@ get 'indoor/new_money_reciept'
 post 'indoor/create_money_reciept',to: 'indoor#create_money_reciept',as: 'create_money_reciept'
 patch 'indoor/:id/update_money_reciept',to: 'indoor#update_money_reciept',as: 'update_money_reciept'
 delete 'indoor/:id/delete_money_reciept',to: 'indoor#delete_money_reciept',as: 'delete_money_reciept'
-get 'indoor/:id/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/new_money_reciept_find_patient',to: 'indoor#new_money_reciept_find_patient',as: 'new_money_reciept_find_patient'
+get 'indoor/:id/money_reciept',to: 'indoor#money_reciept',as: 'indoor_money_reciept'
+post 'indoor/pdf_reciept'
 
 get 'indoor/new_discharge'
 post 'indoor/create_discharge',to: 'indoor#create_discharge',as: 'create_discharge'
@@ -1111,6 +1134,7 @@ delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospi
 
 root 'home#dashboard'
 
+
 resources :home
 resources :setting
 resources :categories
@@ -1184,5 +1208,7 @@ resources :stores
 resources :common_master
 resources :pharmacy_master
 resources :pharmacy
+resources :store
+resources :diagnostic_master
 resources :blood_banks
 end

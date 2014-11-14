@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-11-14
+  time: 2014-11-14
+  doner_no: 1
+  doner_name: MyString
+  doner_father_name: MyString
+  address: MyString
+  phon: 9.99
+  age: 1
+  gender: MyString
+  type_of_doner: MyString
+  type_of_pack: MyString
+  weight: 1
+  vol_rept: MyString
+  ABO: MyString
+  rhd: MyString
+  remark: 1
+
+two:
+  date: 2014-11-14
+  time: 2014-11-14
+  doner_no: 1
+  doner_name: MyString
+  doner_father_name: MyString
+  address: MyString
+  phon: 9.99
+  age: 1
+  gender: MyString
+  type_of_doner: MyString
+  type_of_pack: MyString
+  weight: 1
+  vol_rept: MyString
+  ABO: MyString
+  rhd: MyString
+  remark: 1
