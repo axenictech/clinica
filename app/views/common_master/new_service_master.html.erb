@@ -28,7 +28,7 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @service_master,url:{action:'create_service_master'}  do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Service Date:</label>
-                  <div class="col-sm-4"><%= c.date_field :date,
+                  <div class="col-sm-4"><%= c.date_field :service_date,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
@@ -76,29 +76,10 @@
                       %>  
                   </div> 
                   <div class="col-sm-3">
-                  <%= c.check_box :active %>Active   </div> 
+                  <%= c.check_box :is_active%>Active   </div> 
                 </div>
           </div>
-
           <br>
-
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-2 control-label"></label>
-                  <div class="col-sm-6"><%= c.text_field :group,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "",
-                      required: true,
-                      :"data-content"=>"Select Date",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>     
-                </div>
-          </div>
-
-          <br>
-
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Charge:</label>
@@ -119,7 +100,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Service Chg(%):</label>
-                  <div class="col-sm-6"><%= c.text_field :service,
+                  <div class="col-sm-6"><%= c.text_field :service_charge,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,

@@ -1,0 +1,91 @@
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Doctor Commission')%></span>
+              <small><%= t('Edit')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Doctor Commission')%></li>
+        </ul>
+      </div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for @doctor_commission,url:{action:'update_doctor_commission',id:@doctor_commission.id}  do |c| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-book"></i>
+                        Doctor Commission Setup
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+    <div class="box-content box-double-padding">
+      <form class="form-horizontal" style="margin-bottom: 0;">
+        <fieldset>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Commission Type:</label>
+                <div class="col-sm-5"><%= c.select :type,['OT','Other Services','Doctor Visit'],{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:200px"}%>  
+                  </div>     
+                </div>
+          </div>
+          <br>
+           <div class="row">
+            <div class="form-group">
+            <label class="col-sm-3 control-label">Doctor Name:</label>
+               <div class="col-sm-"><%= c.select :doctor_master_id,@doctor_masters.collect{|m| [m.name,m.id]},{prompt:"Select specailized"},{class: "form-control input-group",required: true,style:"width:200px"}%>  
+                  </div>    
+                </div>
+              <div class="form-group">
+              <label class="col-sm-2 control-label">Discount:</label>
+                  <div class="col-sm-2"><%= c.text_field :discount,onfocus:"$(this).popover('show');" ,class: "form-control input-group",placeholder: "discount",required: true,:"data-content"=>"Special characters not allowed",:"data-placement"=>"right",:"data-toggle"=>"popover",:"data-trigger"=>"focus"%>  
+                  </div> 
+              </div>
+          </div>
+          </div>
+            <div class="col-sm-3">
+              <%= c.radio_button  "ot","OT Name", :checked => "checked" %>OT Name
+              <br>
+              <%= c.radio_button  "ot","OT Type" %>OT Type
+              <br>
+              <%= c.radio_button  "ot","OT Slot" %>OT Slot
+
+            </div>
+          
+          <div class="col-sm-12">
+               <div class="col-sm-4"></div>
+               <div class="col-sm-2">
+                <%= c.submit 'Update', class: "btn btn-group btn-primary btn-lg"%></div>
+                <div class="col-sm-6"></div>
+
+          </div> 
+               </fieldset>
+        </form>
+        </div>
+        </div>
+        </div>
+        <%end%>

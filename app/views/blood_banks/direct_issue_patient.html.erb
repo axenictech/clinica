@@ -1,0 +1,224 @@
+<div class="page-header page-header-with-buttons">
+	<h1 class="pull-left">
+	  <i class="icon-medkit"></i>
+	  <span>DIRECT ISSUE TO PATIENT </span>
+	</h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href=""></a>
+      </li>
+  </ol>
+</div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for :direct_issue_patient do |c| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+
+<div class="box-header blue-background">
+      <div class="title"><span class="translation_missing" title="translation missing: en.courses details">Direct Issue To Patient</span></div>
+        <div class="actions">  
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+    </div>
+    <div class="box-content box-double-padding">
+     <fieldset>
+    <div class="form-horizontal" style="margin-bottom: 0;">
+    <font color="blue">Patient Details</font>
+      <hr class="hr-normal">
+      <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Date:</label>
+                  <div class="col-sm-3"><%= c.date_field :date %>  
+                  </div>  
+
+                   <label class="col-sm-2 control-label">Time:</label>
+                  <div class="col-sm-3"><%= c.text_field :time,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "TIME",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                  
+                </div>
+              </div>  
+          <br>
+          <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">BHT No:</label>
+                  <div class="col-sm-3"><%= c.text_field :bht_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "BHT No",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                  <label class="col-sm-2 control-label">H.R No:</label>
+                  <div class="col-sm-3"><%= c.text_field :hr_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "H.R NO",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>  
+            <br>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Patient Name:</label>
+                  <div class="col-sm-8"><%= c.text_field :patient_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Patient Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>              
+             <br>
+             <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Ward No:</label>
+                  <div class="col-sm-3"><%= c.text_field :ward_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Ward No",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                  <label class="col-sm-2 control-label">Bed No:</label>
+                  <div class="col-sm-3"><%= c.text_field :bed_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Bed NO",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>  
+            <br>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">ABO:</label>
+                  <div class="col-sm-3"><%= c.text_field :abo,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "ABO",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                  <label class="col-sm-2 control-label">RHD:</label>
+                  <div class="col-sm-3"><%= c.text_field :rhd,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "RHD",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>  
+            <br>
+            <font color="blue">Donor Details</font>
+            <hr class="hr-normal">
+             <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Donor No:</label>
+                  <div class="col-sm-3"><%= c.text_field :donor_no,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Donor No",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>              
+             <br>
+             <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Donor Name:</label>
+                  <div class="col-sm-8"><%= c.text_field :donor_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Donor Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>              
+             <br>
+             <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">ABO:</label>
+                  <div class="col-sm-3"><%= c.text_field :abo,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "ABO",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                  <label class="col-sm-2 control-label">RHD:</label>
+                  <div class="col-sm-3"><%= c.text_field :rhd,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "RHD",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>  
+            <br>
+            <font color="blue">Report</font>
+            <hr class="hr-normal">
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Report Table Here:</label>
+                   
+                </div>
+              </div>              
+             <br>
+             
+             <div class="form-actions">
+                  <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-2" >                
+                        <%= c.submit 'Create', class: "btn btn-group btn-primary btn-lg"%>
+                        </div>
+                         <div class="col-sm-5"></div>
+                    </div> 
+                </div>
+        </div>
+ </fieldset>        
+ </div>
+        </div>
+        </div>
+        <%end%>

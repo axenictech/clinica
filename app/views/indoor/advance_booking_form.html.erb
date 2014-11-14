@@ -64,7 +64,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">OPD Patient Y/N:</label>
-                  <div class="col-sm-6"><%= c.select :yes_no,['Yes','No'],
+                  <div class="col-sm-6"><%= c.select :opd_patient_yes_no,['Yes','No'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -206,7 +206,7 @@
                   </div> 
 
                   <label class="col-sm-1 control-label">D.O.B:</label>
-                  <div class="col-sm-3"><%= c.date_field :dob,
+                  <div class="col-sm-3"><%= c.date_field :date_of_birth,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -263,7 +263,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Admission Date:</label>
-                <div class="col-sm-3"><%= c.date_field :adm_date,
+                <div class="col-sm-3"><%= c.date_field :admission_date,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -278,7 +278,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-3 control-label">Approx Discharg date:</label>
-                <div class="col-sm-3"><%= c.date_field :approx_date,
+                <div class="col-sm-3"><%= c.date_field :approx_discharge_date,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -310,7 +310,7 @@
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Previous User:</label>
-                <div class="col-sm-2"><%= c.text_field :prev_user,
+                <div class="col-sm-2"><%= c.text_field :previous_user,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -334,16 +334,7 @@
               <div class="row">
                 <div class="col-sm-3"></div>
                   <div class="col-sm-15" >                
-                           
-                                <%= c.submit 'New', class: "btn btn-group btn-primary btn-lg"%>
-
-                                <%= c.submit 'Edit', class: "btn btn-group btn-primary btn-lg"%>
-
-                                <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
-
-                                <%= c.submit 'Undo', class: "btn btn-group btn-primary btn-lg"%>
-
-                                <%= c.submit 'Exit', class: "btn btn-group btn-primary btn-lg"%>
+                    <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
                   </div>
                 <div class="col-sm-5"></div>
               </div> 

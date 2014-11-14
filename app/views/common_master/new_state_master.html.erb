@@ -1,20 +1,34 @@
-<div class="page-header page-header-with-buttons">
-	<h1 class="pull-left">
-	  <i class="icon-book"></i>
-	  <span>Comman Master </span>
-	</h1>
-<div class="pull-right">
-  <ol class="breadcrumb">
-      <li class="active">
-        <i class="fa fa-gears"></i> 
-        <a href=""></a>
-      </li>
-  </ol>
-</div>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('State Master')%></span>
+              <small><%= t('New')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('State Master')%></li>
+        </ul>
+      </div>
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<%= form_for :doctor_master  do |c| %>
+<%= form_for @state_master,url:{action:'create_state_master'} do |c| %>
 <div class="col-sm-12">
   <div class="box bordered-box blue-border">
     <div class="box-header blue-background">
@@ -34,7 +48,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">State Name:</label>
-                <div class="col-sm-6"><%= c.text_field :state,
+                <div class="col-sm-6"><%= c.text_field :state_name,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "State Name",
                       required: true,
@@ -45,22 +59,6 @@
                   </div>     
                 </div>
           </div>
-          <br>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Short Name:</label>
-                <div class="col-sm-6"><%= c.text_field :short_name,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Short Name",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>     
-                </div>
-          </div>
-
            <br><br>
 
                   <div class="row">
