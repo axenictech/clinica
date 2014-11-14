@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
+
 
 get 'setting/course_batch'
 get 'general_settings/all'
@@ -525,6 +527,7 @@ delete 'time_tables/time_table_delete'
 #doctor master
 
 
+
 get 'masters/common_master'
 get 'masters/doctor_master'
 get 'masters/add_doctor_master'
@@ -921,6 +924,7 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 #---------------Master-----------------------
 
 
+
 #INDOOR#
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
@@ -999,21 +1003,7 @@ post 'indoor/create_nurseing_counter_entry',to: 'indoor#create_nurseing_counter_
 patch 'indoor/:id/update_nurseing_counter_entry',to: 'indoor#update_nurseing_counter_entry',as: 'update_nurseing_counter_entry'
 delete 'indoor/:id/delete_nurseing_counter_entry',to: 'indoor#delete_nurseing_counter_entry',as: 'delete_nurseing_counter_entry'
 #INDOOR#
-#INDOORS#
-get 'indoors/indoor_dashboard'
-get 'indoors/indoor_patient_admission_form'
-get 'indoors/advance_booking_form'
-get 'indoors/other_service_entry_form'
-get 'indoors/doctor_visit_form'
-get 'indoors/bed_transfer'
-get 'indoors/ot_billing'
-get 'indoors/indoor_money_reciept'
-get 'indoors/discharge_details'
-get 'indoors/final_bill'
-get 'indoors/manual_final_bill'
-get 'indoors/ipd_clinical_report'
-get 'indoors/ipd_registration_form'
-#INDOORS#
+
 
 #PHARMACY#
 get 'pharmacy/new_credit_note'
@@ -1115,6 +1105,7 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
+
 resources :home
 resources :setting
 resources :categories
