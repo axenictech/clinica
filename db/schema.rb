@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
+ActiveRecord::Schema.define(version: 20141223103483) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -308,12 +308,18 @@
     t.integer  "OccupationMaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "doctor_master_id"
   end
 
   add_index "before_patient_entries", ["DignosisMaster_id"], name: "index_before_patient_entries_on_DignosisMaster_id", using: :btree
   add_index "before_patient_entries", ["FamilyMaster_id"], name: "index_before_patient_entries_on_FamilyMaster_id", using: :btree
   add_index "before_patient_entries", ["OccupationMaster_id"], name: "index_before_patient_entries_on_OccupationMaster_id", using: :btree
   add_index "before_patient_entries", ["ShiftMaster_id"], name: "index_before_patient_entries_on_ShiftMaster_id", using: :btree
+  add_index "before_patient_entries", ["city_id"], name: "index_before_patient_entries_on_city_id", using: :btree
+  add_index "before_patient_entries", ["doctor_master_id"], name: "index_before_patient_entries_on_doctor_master_id", using: :btree
+  add_index "before_patient_entries", ["state_id"], name: "index_before_patient_entries_on_state_id", using: :btree
 
   create_table "bill_of_materials", force: true do |t|
     t.integer  "quantity"
@@ -465,13 +471,11 @@
     t.datetime "updated_at"
   end
 
-
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "department_masters", force: true do |t|
     t.string   "department_name"
@@ -528,6 +532,11 @@
   add_index "doctor_masters", ["city_id"], name: "index_doctor_masters_on_city_id", using: :btree
   add_index "doctor_masters", ["shift_master_id"], name: "index_doctor_masters_on_shift_master_id", using: :btree
   add_index "doctor_masters", ["specialization_id"], name: "index_doctor_masters_on_specialization_id", using: :btree
+
+  create_table "doctor_visits", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dose_masters", force: true do |t|
     t.string   "dose_name"
@@ -1056,13 +1065,11 @@
   add_index "group_batches", ["batch_group_id"], name: "index_group_batches_on_batch_group_id", using: :btree
   add_index "group_batches", ["batch_id"], name: "index_group_batches_on_batch_id", using: :btree
 
-
   create_table "group_master_stores", force: true do |t|
     t.string   "group"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "group_masters", force: true do |t|
     t.string   "group"
@@ -1177,17 +1184,10 @@
     t.integer  "under_dr_one"
     t.integer  "under_dr_two"
     t.string   "shift"
-
-
-  create_table "ipd_registrations", force: true do |t|
-    t.integer  "ipd_no"
-    t.datetime "datetime"
-    t.integer  "hr_no"
-
+    t.string   "diesease"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
@@ -1316,13 +1316,17 @@
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "doctor_master_id"
+    t.integer  "city_id"
+    t.integer  "state_id"
   end
 
   add_index "new_patients", ["DignosisMaster_id"], name: "index_new_patients_on_DignosisMaster_id", using: :btree
   add_index "new_patients", ["FamilyMaster_id"], name: "index_new_patients_on_FamilyMaster_id", using: :btree
   add_index "new_patients", ["OccupationMaster_id"], name: "index_new_patients_on_OccupationMaster_id", using: :btree
   add_index "new_patients", ["ShiftMaster_id"], name: "index_new_patients_on_ShiftMaster_id", using: :btree
+  add_index "new_patients", ["city_id"], name: "index_new_patients_on_city_id", using: :btree
   add_index "new_patients", ["doctor_master_id"], name: "index_new_patients_on_doctor_master_id", using: :btree
+  add_index "new_patients", ["state_id"], name: "index_new_patients_on_state_id", using: :btree
 
   create_table "newscasts", force: true do |t|
     t.string   "title"
@@ -1366,12 +1370,18 @@
     t.integer  "OccupationMaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "doctor_master_id"
   end
 
   add_index "old_patients", ["DignosisMaster_id"], name: "index_old_patients_on_DignosisMaster_id", using: :btree
   add_index "old_patients", ["FamilyMaster_id"], name: "index_old_patients_on_FamilyMaster_id", using: :btree
   add_index "old_patients", ["OccupationMaster_id"], name: "index_old_patients_on_OccupationMaster_id", using: :btree
   add_index "old_patients", ["ShiftMaster_id"], name: "index_old_patients_on_ShiftMaster_id", using: :btree
+  add_index "old_patients", ["city_id"], name: "index_old_patients_on_city_id", using: :btree
+  add_index "old_patients", ["doctor_master_id"], name: "index_old_patients_on_doctor_master_id", using: :btree
+  add_index "old_patients", ["state_id"], name: "index_old_patients_on_state_id", using: :btree
 
   create_table "online_exam_questions", force: true do |t|
     t.integer  "online_exam_id"
@@ -1531,7 +1541,6 @@
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "purchase_tax_masters", force: true do |t|
     t.string   "name"
@@ -1764,7 +1773,6 @@
   add_index "subjects", ["batch_id"], name: "index_subjects_on_batch_id", using: :btree
   add_index "subjects", ["elective_group_id"], name: "index_subjects_on_elective_group_id", using: :btree
 
-
   create_table "supplier_master_stores", force: true do |t|
     t.string   "supplier_name"
     t.string   "address"
@@ -1777,7 +1785,6 @@
   end
 
   add_index "supplier_master_stores", ["city_id"], name: "index_supplier_master_stores_on_city_id", using: :btree
-
 
   create_table "supplier_masters", force: true do |t|
     t.string   "supplier_name"

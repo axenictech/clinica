@@ -535,7 +535,7 @@ get 'masters/doctor_master'
 get 'masters/add_doctor_master'
 get 'masters/phar'
 
-#----------OutDoors------------------------------------#
+#----------outdoors------------------------------------#
 get 'outdoors/new_registration'
 
 #common master#
@@ -547,7 +547,7 @@ get 'indoors/manual_final_bill'
 get 'indoors/ipd_clinical_report'
 get 'indoors/ipd_registration_form'
 
-get 'masters/outdoor_patient_master'
+get 'masters/outdoors_patient_master'
 
 get 'masters/diagonostic_master'
 get 'masters/store_master'
@@ -560,7 +560,7 @@ get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
 
-get 'common_master/outdoor_patient_master'
+get 'common_master/outdoors_patient_master'
 
 
 get 'common_master/view_doctor_master'
@@ -873,18 +873,22 @@ delete 'diagnostic_master/:id/delete_company_test_rate_master',to: 'diagnostic_m
 
 
 get 'outdoors/new'
-post 'outdoors/new_registration_create'
+get 'outdoors/disp_patient'
+post 'outdoors/create_registration'
 get 'outdoors/:id/edit_registration',to:'outdoors#edit_registration',as:'outdoors_edit_registration'
 patch 'outdoors/:id/update_registration',to:'outdoors#update_registration',as:'outdoors_update_registration' 
 delete 'outdoors/:id/destroy_patient',to:'outdoors#destroy_patient',as:'outdoors_destroy_patient'  
 
 get 'outdoors/old_registration'
+get 'outdoors/disp_patient_old'
 post 'outdoors/old_registration_create'
 get 'outdoors/:id/edit_registration_old',to:'outdoors#edit_registration_old',as:'outdoors_edit_registration_old'
 patch 'outdoors/:id/update_registration_old',to:'outdoors#update_registration_old',as:'outdoors_update_registration_old' 
 delete 'outdoors/:id/destroy_patient_old',to:'outdoors#destroy_patient_old',as:'outdoors_destroy_patient_old'  
 
 get 'outdoors/before_patient_entry'
+get 'outdoors/disp_patient_before'
+get 'outdoors/clinic_values'
 post 'outdoors/before_patient_entry_create'
 get 'outdoors/:id/edit_before_patient_entry',to:'outdoors#edit_before_patient_entry',as:'outdoors_edit_before_patient_entry'
 patch 'outdoors/:id/update_before_patient_entry',to:'outdoors#update_before_patient_entry',as:'outdoors_update_before_patient_entry' 
@@ -903,17 +907,24 @@ get 'outdoors/:id/edit_money_receipt',to:'outdoors#edit_money_receipt',as:'outdo
 patch 'outdoors/:id/update_money_receipt',to:'outdoors#update_money_receipt',as:'outdoors_update_money_receipt' 
 delete 'outdoors/:id/destroy_money_receipt',to:'outdoors#destroy_money_receipt',as:'outdoors_destroy_money_receipt'  
 
-get 'outdoors/appitment'
-post 'outdoors/appitment_create'
-get 'outdoors/:id/edit_appitment',to:'outdoors#edit_appitment',as:'outdoors_edit_appitment'
-patch 'outdoors/:id/update_appitment',to:'outdoors#update_appitment',as:'outdoors_update_appitment' 
-delete 'outdoors/:id/destroy_appitment',to:'outdoors#destroy_appitment',as:'outdoors_destroy_appitment' 
+get 'outdoors/appoitment'
+post 'outdoors/appoitment_create'
+get 'outdoors/:id/edit_appoitment',to:'outdoors#edit_appoitment',as:'outdoors_edit_appoitment'
+patch 'outdoors/:id/update_appoitment',to:'outdoors#update_appoitment',as:'outdoors_update_appoitment' 
+delete 'outdoors/:id/destroy_appoitment',to:'outdoors#destroy_appoitment',as:'outdoors_destroy_appoitment' 
 
 get 'outdoors/prescription'
 post 'outdoors/prescription_create'
 get 'outdoors/:id/edit_prescription',to:'outdoors#edit_prescription',as:'outdoors_edit_prescription'
 patch 'outdoors/:id/update_prescription',to:'outdoors#update_prescription',as:'outdoors_update_prescription' 
 delete 'outdoors/:id/destroy_prescription',to:'outdoors#destroy_prescription',as:'outdoors_destroy_prescription'   
+
+
+get 'outdoors/immunization_schedule'
+post 'outdoors/immunization_create'
+get 'outdoors/:id/edit_immunization',to:'outdoors#edit_immunization',as:'outdoors_edit_immunization'
+patch 'outdoors/:id/update_immunization',to:'outdoors#update_immunization',as:'outdoors_update_immunization' 
+delete 'outdoors/:id/destroy_immunization',to:'outdoors#destroy_immunization',as:'outdoors_destroy_immunization'   
 
 
 get 'labs/new'
