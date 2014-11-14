@@ -2,8 +2,8 @@
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
       <i class="icon-gears"></i>
-              <span><%= t('Master')%></span>
-              <small><%= t('Common Master')%></small>
+              <span><%= t('Common Master')%></span>
+              <small><%= t('Pharmacy Master')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -22,11 +22,13 @@
             <i class="icon-angle-right"></i>
           </li>
           <li class="active"><i class="icon-gears"></i>
-          <%= t('Common Master')%></li>
+          <%= t('Pharmacy Master')%></li>
         </ul>
       </div>
 </div>
 
+
+
 <div class="row">
   <div class="col-sm-2"></div>
   <div class="col-sm-4">
@@ -34,17 +36,18 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Doctor Matser",'/common_master/doctor_master'%>
+          <%= link_to "Company Master",'/common_master/new_company_master' %>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
           </a>
+          
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
         </div>
       </div>
       <div class="box-content box-padding">
-      Add doctor master
+        Create company master
       </div>
     </div>
   </div>
@@ -54,242 +57,17 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Area Master",'common_master/area_master' %></div>
+          <%= link_to "Purchase Tax Master" ,'pharmacy_master/view_purchase_tax_master'%>
+        </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
           </a>
-          
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
         </div>
       </div>
       <div class="box-content box-padding">
-        Add area master.
-      </div>
-    </div>
-  </div>
-
-</div>
-
- <hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Family Master",'common_master/new_family_master' %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add family master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Ocupation Master",'common_master/new_ocupation_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add ocupation master
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Religion Master",'common_master/new_religion_master' %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add religion master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Bank Master", 'common_master/new_bank_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add bank master
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Payment Master",'common_master/new_company_master' %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add payment master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Diagnosis/Disease Master", 'common_master/new_diagnosis_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add diagnosis/disease master
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Group Master",'common_master/new_group_master' %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add group master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Service Master",'common_master/new_service_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add service master
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Dose Master",'common_master/new_dose_master' %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add dose master
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Age Master",'common_master/new_age_group_master'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add age master
+       Create new purchase tax master
       </div>
     </div>
   </div>
@@ -303,22 +81,204 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-book"></i>
-          <%= link_to "Vaccines Master",'common_master/new_vaccines_master' %>  
+          <%= link_to "Suppiler Master",'pharmacy_master/view_supplier_master' %>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>          
+          </a>
+          
           <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
           </a>
         </div>
       </div>
       <div class="box-content box-padding">
-        Add vaccines master
+        Create new supplier master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Uses Master",'pharmacy_master/view_uses_master'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Create new uses master
       </div>
     </div>
   </div>
 </div>
 
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Pack Master",'pharmacy_master/view_pack_master' %>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new pack master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Composition Master",'pharmacy_master/view_composition_master' %>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Create new composition master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Sales Tax Master",'pharmacy_master/view_sales_tax_master' %>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new sales tax master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Item Master",'pharmacy_master/view_item_master' %>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Create new item master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Ledger Master",'pharmacy_master/view_ledger_master'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new ledger master
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Gowdan Master",'pharmacy_master/view_godown_master'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Create new gowdan master
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-book"></i>
+          <%= link_to "Series Master",'pharmacy_master/view_series_master'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Create new series master
+      </div>
+    </div>
+  </div>
+
+  
+</div>
 
 
 

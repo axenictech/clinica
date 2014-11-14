@@ -1,0 +1,60 @@
+<div class="page-header page-header-with-buttons">
+	<h1 class="pull-left">
+	  <i class="icon-medkit"></i>
+	  <span>RALATIVE GROUP MASTER</span>
+	</h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href=""></a>
+      </li>
+  </ol>
+</div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%= form_for :relative_group_master do |c| %>
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+
+<div class="box-header blue-background">
+      <div class="title"><span class="translation_missing" title="translation missing: en.courses details">Relative Group Master</span></div>
+        <div class="actions">  
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+    </div>
+    <div class="box-content box-double-padding">
+     <fieldset>
+    <div class="form-horizontal" style="margin-bottom: 0;">
+      <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Relative Name:</label>
+                  <div class="col-sm-8"><%= c.text_field :relative_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Relative Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                </div>
+              </div>              
+             <br>
+             <div class="form-actions">
+                  <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-2" >                
+                        <%= c.submit 'Create', class: "btn btn-group btn-primary btn-lg"%>
+                        </div>
+                         <div class="col-sm-5"></div>
+                    </div> 
+                </div>
+        </div>
+ </fieldset>        
+ </div>
+        </div>
+        </div>
+        <%end%>

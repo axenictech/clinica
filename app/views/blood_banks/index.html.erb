@@ -2,9 +2,9 @@
 <div class="col-xs-12">
   <div class="page-header page-header-with-buttons">
     <h1 class="pull-left">
-      <i class="icon-gears"></i>
-              <span><%= t('Master')%></span>
-              <small><%= t('Home')%></small>
+      <i class="icon-medkit"></i>
+              <span><%= t('blood bank')%></span>
+              <small><%= t('blood bank home')%></small>
     </h1>
       <div class="pull-right">
         <ul class="breadcrumb">
@@ -22,8 +22,8 @@
           <li class="separator">
             <i class="icon-angle-right"></i>
           </li>
-          <li class="active"><i class="icon-gears"></i>
-          <%= t('Master')%></li>
+          <li class="active"><i class="icon-medkit"></i>
+          <%= t('blood bank')%></li>
         </ul>
       </div>
 </div>
@@ -34,28 +34,9 @@
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Common Master", '/common_master'%>
+          <i class="icon-medkit"></i>
+          <%= link_to "Donor Details", ''%>
         </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-      Add common masters
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Indoor Patient Master",'/common_master/indoor_patient_master' %></div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
           </a>
@@ -65,7 +46,27 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        Add indoor patient master.
+        Donor Details
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Issue To Patient",'blood_banks/issue_to_patient' %>        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Issue To Patient
       </div>
     </div>
   </div>
@@ -79,8 +80,8 @@
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Outdoor Patient Master",'/common_master/outdoor_patient_master' %>  
+          <i class="icon-medkit"></i>
+          <%= link_to "Master","blood_banks/master" %>  
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -91,7 +92,7 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        Add outdoor patient master
+        Master
       </div>
     </div>
   </div>
@@ -100,8 +101,8 @@
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Pharmacy Master", '/pharmacy_master'%>
+          <i class="icon-medkit"></i>
+          <%= link_to "Direct Issue Patient",'blood_banks/direct_issue_patient'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -112,65 +113,22 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       Add pharmacy master
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="hr-double">
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Diagnostic Master","" %>  
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Add diagnostic master
+       Direct Issue Patient
       </div>
     </div>
   </div>
 
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Store", ""%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Add store master
-      </div>
-    </div>
-  </div>
 </div>
-<hr class="hr-double">
+
+ <hr class="hr-double">
 <div class="row">
   <div class="col-sm-2"></div>
   <div class="col-sm-4">
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
-          <i class="icon-book"></i>
-          <%= link_to "Expences Head","" %>  
+          <i class="icon-medkit"></i>
+          <%= link_to "Report", 'blood_banks/report'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -181,8 +139,10 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        Add expences head
+        Report
       </div>
     </div>
   </div>
 </div>
+
+
