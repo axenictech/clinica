@@ -35,12 +35,12 @@
 
 
  <%= form_for :sub,url:{action:'select_subject'},method: :get,remote:true,html:{id:"em"} do |f| %>
- <%= f.label :select_subjects %>
+ <%= f.label :select %>
  <%= f.select :subject_id,@subjects.collect {|b| [b.name,b.id,"#{b.id}"]},{prompt:true},{
   onchange: "$('#em').submit();"}%>
 <%end%>
 <div id="emp_div"></div>
 
 <%else%>
-<h4>Yet class timing are not assigned for this batch,Assign from Set class timings</h4>
+<h4>Yet patients appointment register are not assigned for this batch</h4>
 <%end%>

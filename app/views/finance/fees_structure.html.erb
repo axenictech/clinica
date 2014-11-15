@@ -10,7 +10,7 @@
 <div id="page-yield">
 <div align="center">
     <%= form_for :student, url:{action:'student_search'}, method: :get,remote:true,html:{id: "student_form"} do |f|%>
-        <%= f.label :search_student %>
+        <%= f.label :search_patient %>
           <%= text_field_tag :search,"",{oninput:"$('#student_form').submit();"}%>
     <% end %>
   </div><br/><br/>
