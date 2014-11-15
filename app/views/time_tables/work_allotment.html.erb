@@ -14,7 +14,7 @@
  <div><%= image_tag("underline.jpg",width: "100%")%></div>
 </div>
 <div id="page-yield">
-<%=link_to 'Assign Multiple Doctors ',employees_subject_assignment_path %>
+<%#=link_to 'Assign Multiple Doctors ',employees_subject_assignment_path %>
 <%=form_for :employees_subjects,:html=>{:id=>'work_allotment_form'} do |f| %>
    <table align="center" class="table table-hover" style="width:80%">
     <% @batches.each do |batch| %>
@@ -25,7 +25,7 @@
         <tr>
          <% batch.subjects.each do |subj| %>
               <td><%=subj.name%></td>
-        <td><%=select_tag "employee_subjects[#{subj.id}]",options_for_select([[t('select_employee'),""]]+Employee.all.collect{|c| [c.first_name,c.id]},subj.employees.first.try(:id))%>
+        <td><%=select_tag "employee_subjects[#{subj.id}]",options_for_select([[t('select_doctor'),""]]+Employee.all.collect{|c| [c.first_name,c.id]},subj.employees.first.try(:id))%>
          </td>
           </tr>
          <%end%>

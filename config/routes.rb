@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
-
+get 'home/doctor_dashboard'
 get 'setting/course_batch'
 get 'general_settings/all'
 get 'general_settings/none'
@@ -1185,6 +1185,12 @@ resources :categories
 resources :general_settings
   
 resources :courses do
+	member do
+		get :blah_blah
+	end
+	collection do
+		post :blah_test
+	end
 	resources :batches
 end
 

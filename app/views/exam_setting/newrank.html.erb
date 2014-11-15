@@ -14,8 +14,8 @@
  <div class="box">
 <div class="text-input-bg">
 <%= form_for :course, url:{action:'selectrank'},method: :get,remote:true, html:{id:"class_form"} do  |f| %>
-<%= f.label :select_test %>
-<%= f.select :id, @courses.collect {|b| [b.course_name,b.id]}, {prompt:true},{onchange:"$('#class_form').submit();"}%>  
+<%= f.label :select_department %>
+<%= f.select :id, Course.all.collect {|b| [b.course_name,b.id]}, {prompt:true},{onchange:"$('#class_form').submit();"}%>  
 <%end%>
 </div><br/><br/><br/>
 
