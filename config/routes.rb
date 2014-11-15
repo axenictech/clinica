@@ -560,7 +560,6 @@ get 'common_master/indoor_patient_master'
 get 'common_master/bed_master'
 get 'common_master/ot_master'
 
-get 'common_master/outdoors_patient_master'
 
 get 'common_master/outdoors_patient_master'
 
@@ -970,6 +969,7 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
+
 get 'indoor/advance_booking_form'
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_transfer'
@@ -982,6 +982,7 @@ get 'indoor/new_final_bill'
 
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_occupancy_dashboard'
+
 
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'

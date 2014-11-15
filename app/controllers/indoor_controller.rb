@@ -2,6 +2,12 @@ class IndoorController < ApplicationController
 
 	def new_registration
 	@new_registration=IpdRegistration.new
+<<<<<<< HEAD
+	unless @new_registration.nil?
+	@new_registration.ipd_no=IpdRegistration.last.ipd_no.next
+	@new_registration.hr_no=IpdRegistration.last.hr_no.next
+    end
+=======
 	unless IpdRegistration.last.nil?
 		@new_registration.ipd_no=IpdRegistration.last.ipd_no.next
 		@new_registration.hr_no=IpdRegistration.last.hr_no.next
@@ -9,6 +15,7 @@ class IndoorController < ApplicationController
 		@new_registration.ipd_no=1111
 		@new_registration.hr_no=1010
 	end
+>>>>>>> 83633f3c417b3ac5cd3cbcb3be615bb43f484e02
 	@doctor_masters= DoctorMaster.all
 	@city=City.all
 	end
