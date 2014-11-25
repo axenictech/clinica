@@ -980,10 +980,9 @@ get 'indoor/manual_final_bill'
 get 'indoor/ot_billing'
 get 'indoor/new_final_bill'
 
-<<<<<<< HEAD
-=======
+
 get 'indoor/indoor_dashboard'
->>>>>>> 90f3ca9d4d276e696ed39aa36e1104b6120d47c4
+
 get 'indoor/bed_occupancy_dashboard'
 
 

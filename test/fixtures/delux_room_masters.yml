@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  t.references: MyString
+  : 
+  index: MyString
+  'true': MyString
+
+two:
+  name: MyString
+  t.references: MyString
+  : 
+  index: MyString
+  'true': MyString

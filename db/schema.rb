@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103488) do
+ActiveRecord::Schema.define(version: 20141223103490) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -270,13 +270,16 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.integer  "s_tax"
     t.string   "link_service"
     t.boolean  "is_bed_repair"
-    t.integer  "floor_master_id"
     t.integer  "ward_master_id"
+    t.integer  "icu_master_id"
+    t.integer  "delux_room_master_id"
+    t.string   "used_for"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bed_masters", ["floor_master_id"], name: "index_bed_masters_on_floor_master_id", using: :btree
+  add_index "bed_masters", ["delux_room_master_id"], name: "index_bed_masters_on_delux_room_master_id", using: :btree
+  add_index "bed_masters", ["icu_master_id"], name: "index_bed_masters_on_icu_master_id", using: :btree
   add_index "bed_masters", ["ward_master_id"], name: "index_bed_masters_on_ward_master_id", using: :btree
 
   create_table "before_patient_entries", force: true do |t|
@@ -329,6 +332,27 @@ ActiveRecord::Schema.define(version: 20141223103488) do
   end
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
+
+  create_table "blood_doners", force: true do |t|
+    t.date     "date"
+    t.date     "time"
+    t.integer  "doner_no"
+    t.string   "doner_name"
+    t.string   "doner_father_name"
+    t.string   "address"
+    t.decimal  "phon"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "type_of_doner"
+    t.string   "type_of_pack"
+    t.integer  "weight"
+    t.string   "vol_rept"
+    t.string   "ABO"
+    t.string   "rhd"
+    t.integer  "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -470,6 +494,15 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "delux_room_masters", force: true do |t|
+    t.string   "name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delux_room_masters", ["floor_master_id"], name: "index_delux_room_masters_on_floor_master_id", using: :btree
 
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
@@ -1151,6 +1184,15 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.datetime "updated_at"
   end
 
+  create_table "icu_masters", force: true do |t|
+    t.string   "icu_name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "icu_masters", ["floor_master_id"], name: "index_icu_masters_on_floor_master_id", using: :btree
+
   create_table "individual_payslip_categories", force: true do |t|
     t.integer  "employee_id"
     t.date     "salary_date"
@@ -1210,7 +1252,7 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.string   "gender"
     t.string   "marital_status"
     t.string   "family"
-    t.datetime "birthdate"
+    t.date     "birthdate"
     t.string   "height"
     t.string   "weight"
     t.string   "religion"
@@ -1700,8 +1742,8 @@ ActiveRecord::Schema.define(version: 20141223103488) do
   create_table "shift_masters", force: true do |t|
     t.integer  "shift_code"
     t.string   "shift_name"
-    t.integer  "time_form"
-    t.integer  "time_to"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
