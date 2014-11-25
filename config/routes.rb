@@ -943,7 +943,7 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 
 #INDOOR#
-<<<<<<< HEAD
+
 get 'indoor/advance_booking_form'
 get 'indoor/indoor_dashboard'
 get 'indoor/bed_transfer'
@@ -953,10 +953,9 @@ get 'indoor/ipd_clinical_report'
 get 'indoor/manual_final_bill'
 get 'indoor/ot_billing'
 get 'indoor/new_final_bill'
-=======
-get 'indoor/indoor_dashboard'
+
 get 'indoor/bed_occupancy_dashboard'
->>>>>>> fe56bc0fa1669a6e1c34fb30ef4294c21a7655f2
+
 
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
