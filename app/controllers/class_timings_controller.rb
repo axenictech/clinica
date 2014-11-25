@@ -16,7 +16,7 @@ class ClassTimingsController < ApplicationController
         @class_timings=@batch.class_timings.all
     	@class_timing1=@batch.class_timings.new(params_class)
     	if @class_timing1.save
-    	  flash[:class_time_notice]="Class Timing Created Successfully"
+    	  flash[:class_time_notice]="Appointment Timing Created Successfully"
         end
     end
 
@@ -25,7 +25,7 @@ class ClassTimingsController < ApplicationController
         @class_timings=@batch.class_timings.all
         @class_timing1=@batch.class_timings.find(params[:id])
         if @class_timing1.destroy
-          flash[:class_time_notice]="Class Timing Deleted Successfully"
+          flash[:class_time_notice]="Appointment Timing Deleted Successfully"
         end
     end
 
@@ -39,7 +39,7 @@ class ClassTimingsController < ApplicationController
         @class_timings=@batch.class_timings.all
         @class_timing1=@batch.class_timings.find(params[:id])
        if @class_timing1.update(params_class)
-        flash[:class_time_notice]="Class Timing Updated Successfully"
+        flash[:class_time_notice]="Appointment Timing Updated Successfully"
        end
     end
 

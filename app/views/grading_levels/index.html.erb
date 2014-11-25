@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1 class="pull-left">
     <i class="icon-chart"></i>
-      <span>Exams</span>
+      <span>Laboratory</span>
       <small>Grading levels</small>
   </h1>
   <div class="pull-right">
@@ -31,15 +31,14 @@
 <div class="row">
 <div class="col-sm-6">
 <%= form_for :batch, url:{action:'select'},method: :get,remote:true,html:{id: "batch_form"} do |f| %>
+<%= f.label :select_department%>
 <%= f.select :id, @batches.collect {|b| [b.course.course_name+" "+b.course.section_name+" - "+b.name, b.id]},{prompt:true},{onchange:"$('#batch_form').submit();",class: "select2 form-control select2-offscreen"} %>  
 <%end%>
 </div>
-<div class="col-sm-6 pull-right" id="batch_div">
-	
 </div>
-
+<br/><br/>
+<div id="batch_div">
 </div>
-
 <div id="myModal" class="modal fade">
  </div>
 </div></div>

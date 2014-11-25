@@ -1,7 +1,7 @@
 <header>
       <nav class="navbar navbar-default">
         <a class="navbar-brand" href="./Educulture_files/Educulture.html">
-            <label>Axenic Clinica</label>
+            <label><%= GeneralSetting.first.school_or_college_name%></label>
         </a>
         <a class="toggle-nav btn pull-left">
           <i class="icon-reorder"></i>
@@ -86,15 +86,15 @@
                </a>
             </li>
             <li class="">
-              <a href="http://localhost:3000/students/admission1">
+              <a href="http://localhost:3000/outdoors/new_registration">
               <i class="icon-edit"></i>
-                <span>Admission</span>
+                <span>Patient Admission</span>
               </a>      
             </li>
             <li class="">
               <a href="http://localhost:3000/students">
                 <i class="icon-star"></i>
-                <span>Student details</span>
+                <span>Patient Details</span>
               </a>
             </li>
             <li class="">
@@ -106,22 +106,22 @@
             <li class="">
               <a href="http://localhost:3000/exams">
                 <i class="icon-bar-chart"></i>
-                <span>Examinations</span>
+                <span>Labs</span>
               </a>
             </li>
             <li class="">
-              <a href="http://localhost:3000/setting">
+              <a href="http://localhost:3000/general_settings/new">
                 <i class="icon-cogs"></i>
                 <span>Settings</span>
               </a>
             </li>
-            <li class="">
+<!--             <li class="">
               <a href="http://localhost:3000/employees">
                 <i class="icon-link"></i>
                 <span>Human Resources</span>
               </a>
             </li>
-            <li class="">
+ -->            <li class="">
               <a href="http://localhost:3000/finance">
                 <i class="icon-rupee"></i>
                 <span>Finance</span>
@@ -129,13 +129,13 @@
             </li>
             <li>
 
-            
+            <!-- 
                <li class="">
               <a href="http://localhost:3000/finance">
                 <i class="icon-file"></i>
                 <span>File</span>
               </a>
-            </li>
+            </li> -->
             <li>
 
 
@@ -163,12 +163,12 @@
             </li>
             <li>
 
-               <li class="">
+              <!--  <li class="">
               <a href="http://localhost:3000/finance">
                 <i class="icon-stethoscope"></i>
                 <span>Lab</span>
               </a>
-            </li>
+            </li> -->
             <li>
 
                <li class="">
@@ -186,12 +186,12 @@
             </li>
             <li>
 
-               <li class="">
+               <!-- <li class="">
               <a href="http://localhost:3000/finance">
                 <i class="icon-folder-open"></i>
                 <span>Reports</span>
               </a>
-            </li>
+            </li> -->
             <li>
 
                <li class="">
@@ -203,13 +203,13 @@
             <li>
 
 
-               <li class="">
+               <!-- <li class="">
               <a href="http://localhost:3000/finance">
                 <i class="icon-dollar"></i>
                 <span>Accounts</span>
               </a>
-            </li>
-            <li>
+            </li> -->
+<!--             <li>
 
                <li class="">
               <a href="http://localhost:3000/finance">
@@ -218,37 +218,38 @@
               </a>
             </li>
             <li>
-
+ -->
+    <li>
+     <a href="http://localhost:3000/time_tables">
+        <i class="icon-time"></i>
+        <span>Appointments</span>
+      </a>
+    </li>
+    <li>    
+      <a href="http://localhost:3000/attendences">
+        <i class="icon-list"></i>
+        <span>Patient Medecine</span>
+      </a>
+    </li>            
+    <li>
+      <a href="http://localhost:3000/newscasts">
+        <i class="icon-bullhorn"></i>
+        <span>Manage News</span>
+      </a>
+    </li>
+     <li>
+      <a href="http://localhost:3000/calender">
+        <i class="icon-calendar"></i>
+        <span>Calender</span>
+      </a>
+    </li>   
+    <li>
     <a class="dropdown-collapse" href="./Educulture_files/Educulture.html">
                 <i class="icon-folder-open-alt"></i>
                 <span>More</span>
                 <i class="icon-angle-down angle-down"></i>
               </a>
               <ul class="nav nav-stacked">
-                <li>
-                 <a href="http://localhost:3000/time_tables">
-                    <i class="icon-caret-right"></i>
-                    <span>Timetable</span>
-                  </a>
-                </li>
-                <li>    
-                  <a href="http://localhost:3000/attendences">
-                    <i class="icon-caret-right"></i>
-                    <span>Attendance</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="http://localhost:3000/calender">
-                    <i class="icon-caret-right"></i>
-                    <span>Calender</span>
-                  </a>
-                </li>               
-                <li>
-                  <a href="http://localhost:3000/newscasts">
-                    <i class="icon-caret-right"></i>
-                    <span>Manage News</span>
-                  </a>
-                </li>
               </ul>
             </li>
           </ul>

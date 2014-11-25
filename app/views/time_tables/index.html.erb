@@ -1,114 +1,206 @@
-<div id="content-header">
-   <h1>Timetable</h1>
-  <h3>Home</h3>
-  <div id="app-back-button">
-    <%= link_to image_tag("buttons/back.png",:border => 0), :back %>
-  </div>
-    <div><%= image_tag("underline.jpg",width: "100%")%></div>
-</div><br/><br/>
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-time"></i>
+              <span><%= t('Appointment')%></span>
+              <small><%= t('Home')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-time"></i>
+          <%= t('Appointment')%></li>
+        </ul>
+      </div>
+</div>
 
- 
- <div class="container">
-    <div class="row" style="margin-top:20px">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Create weekdays",'/weekdays',style: 'color:black' %>
-          </div>
-          <div class="panel-body" style="height:70px">
-        Create weekdays
-          </div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Hospital Working Days",'/weekdays'%>
         </div>
-       
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-         <%= link_to "Set class timings",'/class_timings',style: 'color:black' %>
-          </div>
-          <div class="panel-body" style="height:70px">
-          Select a class and edit the timetable for that class
-          </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
         </div>
-
       </div>
-       
-      <div class="col-md-2"></div>
-    </div>  
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to " Work Allotment",'/time_tables/work_allotment',style: 'color:black' %>     
-         </div>
-          <div class="panel-body" style="height:70px">
-          Assign subjects to teachers.
-          </div>
-        </div>
-       
+      <div class="box-content box-padding">
+     Create Hospital Working Days
       </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-        <%= link_to "Create Timetable",'/time_tables/new_timetable',style: 'color:black'%>
-          </div>
-          <div class="panel-body" style="height:70px">
-         Create timetable for all the classes.
-          </div>
-        </div>
-
-      </div>
-       
-      <div class="col-md-2"></div>
     </div>
-    <div class="row" style="margin-bottom:30px">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-            <%= link_to "Edit Timetable",time_tables_edit_timetable_path,style: 'color:black' %>     
-         </div>
-          <div class="panel-body" style="height:70px">
-          Select a class and edit the timetable for that class.
-         </div>
-        </div>
-       
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "View Timetables", '/time_tables/new',style: 'color:black'%></div>
-          <div class="panel-body" style="height:70px">
-         View the timetable for a class.
-          </div>
-        </div>
-      </div>
-     
-   <div class="col-md-2"></div>
-    </div>  
-    <div class="row" style="margin-bottom:30px">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-           <%= link_to " Teacher Timetable", '/time_tables/teachers_timetable',style: 'color:black' %>    
-         </div>
-          <div class="panel-body" style="height:70px">
-           View timetable for teachers.
-          </div>
-        </div>
-       
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning " style="width:250px;">
-          <div class="panel-heading">
-          <%= link_to "Institutional Timetable",'/time_tables/timetable',style: 'color:black' %> 
-          </div>
-          <div class="panel-body" style="height:70px">
-         View the entire timetable for a day
-          </div>
-        </div>
+  </div>
 
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Appointment Timings",'/class_timings' %></div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
       </div>
+      <div class="box-content box-padding">
+       Create Appointment Timings
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Doctors work Allotment",'/time_tables/work_allotment' %>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+            Assign work to Doctor
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to link_to "Schedule Appointment",'/time_tables/new_timetable'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+    Create Schedule Appointment.
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Edit appointment",time_tables_edit_timetable_path %>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        Edit appointment.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i  class="icon-time"></i>
+          <%= link_to "View Appointment ", '/time_tables/new'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        View Appointment Schedule.
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="hr-double">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Doctor Schedule", '/time_tables/teachers_timetable' %>  
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+        View Appointment Schedule For Doctors.
+      </div>
+    </div>
+  </div><div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-time"></i>
+          <%= link_to "Hospital schedule",'/time_tables/timetable'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+         View the hospital schedule for a day.
+      </div>
+</div>
+</div>
+</div>

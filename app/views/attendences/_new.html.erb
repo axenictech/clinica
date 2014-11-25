@@ -1,7 +1,7 @@
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-  <h3><%= "Attendance for " %><span><%= @student.first_name%></span></h3>
+  <h3><%= "Medecine for " %><span><%= @student.first_name%></span></h3>
 </div>
 <div class="modal-body">
 <ul class="errors"></ul>
@@ -12,7 +12,7 @@
     <%=f.hidden_field :batch_id,value:@student.batch.id %>
     <%=f.hidden_field :time_table_entry_id,value:@time_table_entry_id %>
     <tr>
-      <td><%= f.label :reason_for_absence%></td>
+      <td><%= f.label :"Medecine Name"%></td>
       <td><%= f.text_field :reason%></td>
     </tr>
         

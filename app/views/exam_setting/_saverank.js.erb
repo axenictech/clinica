@@ -4,6 +4,6 @@ $("ul.errors").html("")
 		$("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
 		<% end %>
 <% else %>
+$("#myModalrank").modal("hide")
 $('#rank_div').html("<%= j render 'rank'%>");
-  $("#myModalrank").modal("hide")
  <%end%>

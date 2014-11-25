@@ -18,7 +18,7 @@
          <font color="red"><%= @present.subject.name %></font><br/>
        <font color="blue"><%= @present.employee.first_name+" "+@present.employee.last_name%></font><br/>
         <div id="image">
-        <%=link_to image_tag("download.jpg",width:"10%"),time_table_entries_delete_time_path(@present), method: :delete, data:{ confirm: "Are you sure to delete"},remote:true%></div>
+        <%=link_to image_tag("delete_round.png",width:"10%"),time_table_entries_delete_time_path(@present), method: :delete, data:{ confirm: "Are you sure to delete"},remote:true%></div>
         <%else%>
      <%=button_tag "Assign Here",{onclick:"
        $('#timing_id').val(#{c.id});
@@ -35,12 +35,12 @@
 
 
  <%= form_for :sub,url:{action:'select_subject'},method: :get,remote:true,html:{id:"em"} do |f| %>
- <%= f.label :select_subjects %>
+ <%= f.label :select %>
  <%= f.select :subject_id,@subjects.collect {|b| [b.name,b.id,"#{b.id}"]},{prompt:true},{
   onchange: "$('#em').submit();"}%>
 <%end%>
 <div id="emp_div"></div>
 
 <%else%>
-<h4>Yet class timing are not assigned for this batch,Assign from Set class timings</h4>
+<h4>Yet patients appointment register are not assigned for this batch</h4>
 <%end%>

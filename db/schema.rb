@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103481) do
-=======
-ActiveRecord::Schema.define(version: 20141223103483) do
->>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+ActiveRecord::Schema.define(version: 20141223103488) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -312,12 +308,18 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "OccupationMaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "doctor_master_id"
   end
 
   add_index "before_patient_entries", ["DignosisMaster_id"], name: "index_before_patient_entries_on_DignosisMaster_id", using: :btree
   add_index "before_patient_entries", ["FamilyMaster_id"], name: "index_before_patient_entries_on_FamilyMaster_id", using: :btree
   add_index "before_patient_entries", ["OccupationMaster_id"], name: "index_before_patient_entries_on_OccupationMaster_id", using: :btree
   add_index "before_patient_entries", ["ShiftMaster_id"], name: "index_before_patient_entries_on_ShiftMaster_id", using: :btree
+  add_index "before_patient_entries", ["city_id"], name: "index_before_patient_entries_on_city_id", using: :btree
+  add_index "before_patient_entries", ["doctor_master_id"], name: "index_before_patient_entries_on_doctor_master_id", using: :btree
+  add_index "before_patient_entries", ["state_id"], name: "index_before_patient_entries_on_state_id", using: :btree
 
   create_table "bill_of_materials", force: true do |t|
     t.integer  "quantity"
@@ -506,6 +508,17 @@ ActiveRecord::Schema.define(version: 20141223103483) do
 
   add_index "dignostic_setups", ["doctor_master_id"], name: "index_dignostic_setups_on_doctor_master_id", using: :btree
 
+  create_table "doctor_commissions", force: true do |t|
+    t.string   "type"
+    t.decimal  "discount"
+    t.string   "ot"
+    t.integer  "doctor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "doctor_commissions", ["doctor_master_id"], name: "index_doctor_commissions_on_doctor_master_id", using: :btree
+
   create_table "doctor_masters", force: true do |t|
     t.string   "name"
     t.integer  "age"
@@ -530,6 +543,11 @@ ActiveRecord::Schema.define(version: 20141223103483) do
   add_index "doctor_masters", ["city_id"], name: "index_doctor_masters_on_city_id", using: :btree
   add_index "doctor_masters", ["shift_master_id"], name: "index_doctor_masters_on_shift_master_id", using: :btree
   add_index "doctor_masters", ["specialization_id"], name: "index_doctor_masters_on_specialization_id", using: :btree
+
+  create_table "doctor_visits", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dose_masters", force: true do |t|
     t.string   "dose_name"
@@ -1146,11 +1164,7 @@ ActiveRecord::Schema.define(version: 20141223103483) do
 
   add_index "individual_payslip_categories", ["employee_id"], name: "index_individual_payslip_categories_on_employee_id", using: :btree
 
-<<<<<<< HEAD
   create_table "indoor_money_reciepts", force: true do |t|
-=======
-  create_table "ipd_money_reciepts", force: true do |t|
->>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.integer  "reciept_no"
     t.integer  "ipd_no"
     t.date     "date"
@@ -1161,21 +1175,34 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.decimal  "recieved_amount"
     t.string   "payment_type"
     t.string   "bank_name"
-<<<<<<< HEAD
-=======
     t.string   "cheque_number"
     t.string   "remark"
->>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ipd_money_reciepts", force: true do |t|
+    t.integer  "reciept_no"
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.string   "reciept_type"
+    t.decimal  "amount"
+    t.decimal  "discount"
+    t.decimal  "recieved_amount"
+    t.string   "payment_type"
+    t.string   "bank_name"
+    t.string   "cheque_number"
+    t.string   "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ipd_registrations", force: true do |t|
     t.integer  "ipd_no"
-    t.datetime "datetime"
+    t.date     "date"
+    t.string   "time"
     t.integer  "hr_no"
-<<<<<<< HEAD
-=======
     t.string   "advance_booking"
     t.string   "advance_booking_check"
     t.string   "patient_name"
@@ -1183,7 +1210,7 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.string   "gender"
     t.string   "marital_status"
     t.string   "family"
-    t.date     "birthdate"
+    t.datetime "birthdate"
     t.string   "height"
     t.string   "weight"
     t.string   "religion"
@@ -1203,7 +1230,6 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "under_dr_two"
     t.string   "shift"
     t.string   "diesease"
->>>>>>> 38c73edb68fc7b9a8fdc973ae81f2d9064c41818
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1334,12 +1360,18 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "OccupationMaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "doctor_master_id"
+    t.integer  "city_id"
+    t.integer  "state_id"
   end
 
   add_index "new_patients", ["DignosisMaster_id"], name: "index_new_patients_on_DignosisMaster_id", using: :btree
   add_index "new_patients", ["FamilyMaster_id"], name: "index_new_patients_on_FamilyMaster_id", using: :btree
   add_index "new_patients", ["OccupationMaster_id"], name: "index_new_patients_on_OccupationMaster_id", using: :btree
   add_index "new_patients", ["ShiftMaster_id"], name: "index_new_patients_on_ShiftMaster_id", using: :btree
+  add_index "new_patients", ["city_id"], name: "index_new_patients_on_city_id", using: :btree
+  add_index "new_patients", ["doctor_master_id"], name: "index_new_patients_on_doctor_master_id", using: :btree
+  add_index "new_patients", ["state_id"], name: "index_new_patients_on_state_id", using: :btree
 
   create_table "newscasts", force: true do |t|
     t.string   "title"
@@ -1383,12 +1415,18 @@ ActiveRecord::Schema.define(version: 20141223103483) do
     t.integer  "OccupationMaster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "doctor_master_id"
   end
 
   add_index "old_patients", ["DignosisMaster_id"], name: "index_old_patients_on_DignosisMaster_id", using: :btree
   add_index "old_patients", ["FamilyMaster_id"], name: "index_old_patients_on_FamilyMaster_id", using: :btree
   add_index "old_patients", ["OccupationMaster_id"], name: "index_old_patients_on_OccupationMaster_id", using: :btree
   add_index "old_patients", ["ShiftMaster_id"], name: "index_old_patients_on_ShiftMaster_id", using: :btree
+  add_index "old_patients", ["city_id"], name: "index_old_patients_on_city_id", using: :btree
+  add_index "old_patients", ["doctor_master_id"], name: "index_old_patients_on_doctor_master_id", using: :btree
+  add_index "old_patients", ["state_id"], name: "index_old_patients_on_state_id", using: :btree
 
   create_table "online_exam_questions", force: true do |t|
     t.integer  "online_exam_id"

@@ -864,8 +864,8 @@ class FinanceController < ApplicationController
 
   def fees_defaulters
     @courses=Course.all
-    @batches=Course.first.batches
-    @collections=Batch.first.finance_fee_collections
+    @batches=Course.first.batches if @courses.nil?
+    @collections=Batch.first.finance_fee_collections if @courses.nil?
   end
 
   def batch_choice

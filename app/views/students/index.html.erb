@@ -1,5 +1,5 @@
 <div id="content-header">
-  <h1>Student Details</h1>
+  <h1>Patient Details</h1>
   <h3>View Details</h3>
   <div id="app-back-button">
     <%= link_to image_tag("buttons/back.png",:border => 0), :back  %>
@@ -21,9 +21,9 @@
 					html:{id: "student_form"} do |f|%>
 				<%= f.label :Search %>
 			   	<%= text_field_tag :search,"",{oninput:"$('#student_form').submit();"}%>
-			   	<%= f.radio_button  "status","present", :checked => "checked" %>Present Students
+			   	<%= f.radio_button  "status","present", :checked => "checked" %>Present Patients
 			   	&nbsp;&nbsp;&nbsp;
-			   	<%= f.radio_button  "status","former"%>Former Students
+			   	<%= f.radio_button  "status","former"%>Discharge Patients
 			 	<% end %>
  	</div>
 <div id="box">
