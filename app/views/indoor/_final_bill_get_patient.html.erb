@@ -189,9 +189,8 @@
             Bed Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :bed_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :bed_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -201,9 +200,8 @@
             Laxury Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :laxury_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :laxury_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -213,9 +211,8 @@
             Service Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :service_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :service_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -228,9 +225,8 @@
             Other Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :other_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :other_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -240,9 +236,8 @@
             OT Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :ot_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :ot_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -252,9 +247,8 @@
             Doctor Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :doctor_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :doctor_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -267,9 +261,8 @@
             Diagnostic Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :diagnostic_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :diagnostic_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -279,9 +272,8 @@
             Medicine Charges              
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :medicine_charges,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :medicine_charges,                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group calculation",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -293,7 +285,7 @@
              <div class="col-sm-2 ">                
             <%= c.text_field :total_charges,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+                     class: "form-control input-group totalcharges",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -308,9 +300,8 @@
             Less Advance             
             </div>
              <div class="col-sm-2 ">                
-            <%= c.text_field :less_advance,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+            <%= c.text_field :less_advance, onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group less_advance",value: "0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -367,7 +358,7 @@
              <div class="col-sm-2 ">                
             <%= c.text_field :bill_amount,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+                     class: "form-control input-group bill_amount",value:"0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -379,7 +370,7 @@
              <div class="col-sm-2 ">                
             <%= c.text_field :discount,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+                     class: "form-control input-group discount",value:"0",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -391,7 +382,7 @@
              <div class="col-sm-2 ">                
             <%= c.text_field :net_amount,
                     onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
+                     class: "form-control input-group net_amount",
                       required: true,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
@@ -449,5 +440,25 @@ $("#other_service_quantiry").change(function(){
 
     $("#other_service_total").val(parseInt($("#other_service_rate").val())*parseInt($("#other_service_quantiry").val()));
   });
+
+var total=0;
+$(".calculation").change(function(){ calculate();});
+$(".less_advance").change(function(){ calculate();});
+$(".bill_amount").change(function(){ calculate();});
+$(".discount").change(function(){ calculate();});
+
+function calculate(){
+
+  total=0;
+$(".calculation").each(function(){
+  if ($(this).val()!="");
+  total+= parseInt($(this).val());
+});
+$(".totalcharges").val(total);
+if ($(".less_advance").val()!="");
+  total-= parseInt($(".less_advance").val());
+$(".bill_amount").val(total);
+$(".net_amount").val(parseInt($(".bill_amount").val())-parseInt($(".discount").val()));
+}
 </script>>
 
