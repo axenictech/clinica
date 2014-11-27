@@ -10,7 +10,7 @@ class EmployeeSubject < ActiveRecord::Base
         subject_asso = self.find_or_create_by(:subject_id=>subj_id)
         subject_asso.employee_id = emp_id
         subject_asso.save
-        emp_subjs << subject_asso
+        emp_subjs<<subject_asso
       end
   end
 end

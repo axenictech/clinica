@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103488) do
+ActiveRecord::Schema.define(version: 20141223103489) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -265,7 +265,7 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.integer  "bed_rent"
     t.integer  "total_bed_change"
     t.integer  "increase"
-    t.integer  "leave_time"
+    t.time     "leave_time"
     t.integer  "l_tax"
     t.integer  "s_tax"
     t.string   "link_service"
@@ -329,6 +329,27 @@ ActiveRecord::Schema.define(version: 20141223103488) do
   end
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
+
+  create_table "blood_doners", force: true do |t|
+    t.date     "date"
+    t.date     "time"
+    t.integer  "doner_no"
+    t.string   "doner_name"
+    t.string   "doner_father_name"
+    t.string   "address"
+    t.decimal  "phon"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "type_of_doner"
+    t.string   "type_of_pack"
+    t.integer  "weight"
+    t.string   "vol_rept"
+    t.string   "ABO"
+    t.string   "rhd"
+    t.integer  "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -467,6 +488,17 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.string   "section_name"
     t.string   "grading_type"
     t.boolean  "is_deleted",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "demos", force: true do |t|
+    t.date     "from_date"
+    t.date     "to_date"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "address"
+    t.integer  "total_amt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1198,42 +1230,6 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.datetime "updated_at"
   end
 
-  create_table "ipd_registrations", force: true do |t|
-    t.integer  "ipd_no"
-    t.date     "date"
-    t.string   "time"
-    t.integer  "hr_no"
-    t.string   "advance_booking"
-    t.string   "advance_booking_check"
-    t.string   "patient_name"
-    t.string   "occupation"
-    t.string   "gender"
-    t.string   "marital_status"
-    t.string   "family"
-    t.datetime "birthdate"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "religion"
-    t.string   "city"
-    t.string   "pin"
-    t.string   "address"
-    t.string   "co"
-    t.string   "relation"
-    t.string   "company_name"
-    t.string   "relative_name"
-    t.string   "relative_phone_no"
-    t.string   "adm_type"
-    t.integer  "bed_no"
-    t.string   "ward_name"
-    t.integer  "ref_dr"
-    t.integer  "under_dr_one"
-    t.integer  "under_dr_two"
-    t.string   "shift"
-    t.string   "diesease"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
     t.integer  "product_unit"
@@ -1700,8 +1696,8 @@ ActiveRecord::Schema.define(version: 20141223103488) do
   create_table "shift_masters", force: true do |t|
     t.integer  "shift_code"
     t.string   "shift_name"
-    t.integer  "time_form"
-    t.integer  "time_to"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1970,6 +1966,8 @@ ActiveRecord::Schema.define(version: 20141223103488) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "ward_masters", ["floor_master_id"], name: "index_ward_masters_on_floor_master_id", using: :btree
 
   create_table "weekdays", force: true do |t|
     t.integer  "batch_id"

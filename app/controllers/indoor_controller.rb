@@ -37,6 +37,63 @@ class IndoorController < ApplicationController
 		end
 	end
 	
+def bed_status
+	
+	
+end
+
+def ward_wise
+	
+end
+
+def select
+	p "ffffffffffffffffffffffffffffffffffff"
+	 @floor=FloorMaster.find(params[:Floor][:id])
+	 p "ffffffffffffffffffffffffffffffffffff"
+	 p @floor
+	 @wards=@floor.ward_masters.all
+     p "wwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+	  p @wards
+end
+
+def select_ward
+ @ward=WardMaster.find(params[:ward_name][:id])
+ @bed=BedMaster.where(ward_master_id:@ward) 
+ 
+end
+
+def icu_wise
+	
+end
+
+def select_floor
+	p "ffffffffffffffffffffffffffffffffffff"
+	 @floor=FloorMaster.find(params[:Floor][:id])
+	 p "ffffffffffffffffffffffffffffffffffff"
+	 p @floor
+	 @wards=@floor.ward_masters.all
+     p "wwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+	  p @wards
+end
+
+def select_icu
+
+ 
+end
+
+def ipd_bill
+  @bill=Demo.all
+end
+
+
+
+def patient_details
+	
+end
+
+def unoccoupy_bed
+
+end
 
 	def new_advance_booking
 	@advance_booking=AdvanceBooking.new 
@@ -494,6 +551,9 @@ class IndoorController < ApplicationController
 
 
 
+
+
+
 def indoor_dashboard
 end
 
@@ -516,12 +576,6 @@ def ot_billing
 end
 def advance_booking_form
 end
-
-
-
-
-
-
 
 
 

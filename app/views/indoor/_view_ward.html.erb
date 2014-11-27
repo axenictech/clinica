@@ -1,0 +1,15 @@
+
+<div class="row">
+<div class="col-sm-6">
+
+<%= form_for :ward_name, url:{action:'select_ward'},method: :get,remote:true,html:{id: "ward_form"} do |f| %>
+<%= f.label :Select_Ward %>
+
+<%= f.select :id,@wards.all.collect{|b| [b.ward_name,b.id]},{prompt:true},{onchange:"$('#ward_form').submit();",class: "select2 form-control select2-offscreen"} %> 
+<%end%>
+</div>
+</div>
+<br/><br/>
+
+
+<div id="ward_div"></div>

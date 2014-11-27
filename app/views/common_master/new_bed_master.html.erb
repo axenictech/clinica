@@ -64,25 +64,17 @@
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
                   </div> 
-                  <div class="col-sm-3">
-                  <%= c.check_box :active %>Active   </div> 
+                 
                 </div>
           </div>
 
-        
+       
           
          
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Ward Name:</label>
-                <div class="col-sm-6"><%= c.text_field :ward_name,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Ward Name",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                <div class="col-sm-6"><%= c.select :ward_master_id,WardMaster.all.collect {|b| [b.ward_name,b.id]},prompt:true%>
                   </div> 
                   
                 </div>
@@ -92,14 +84,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Floor Name:</label>
-                <div class="col-sm-6"><%= c.text_field :floor_name,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Floor Name",
-                      required: true,
-                      :"data-content"=>"Special characters not allowed",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                <div class="col-sm-6"><%= c.select :floor_master_id,FloorMaster.all.collect {|b| [b.floor_name,b.id]},prompt:true%>
                   </div> 
                    
                 </div>
@@ -120,7 +105,7 @@
                   </div>  
 
                   <label class="col-sm-2 control-label"> % Increase:</label>
-                  <div class="col-sm-3"><%= c.text_field :per_increase,
+                  <div class="col-sm-3"><%= c.text_field :increase,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
@@ -136,7 +121,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Total Bed Charge:</label>
-                  <div class="col-sm-3"><%= c.text_field :total_bed_charge,
+                  <div class="col-sm-3"><%= c.text_field :total_bed_change,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
@@ -174,7 +159,7 @@
                   </div>  
 
                   <label class="col-sm-2 control-label"> Tax for Assam:</label>
-                  <div class="col-sm-3"><%= c.text_field :tax_for_assam,
+                  <div class="col-sm-3"><%= c.text_field :l_tax,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
@@ -208,7 +193,7 @@
           <div class="row">
             <div class="form-group">
               <label class="col-sm-2 control-label">Link Service:</label>
-                  <div class="col-sm-3"><%= c.text_field :link_services,
+                  <div class="col-sm-3"><%= c.text_field :link_service,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "",
                       required: true,
