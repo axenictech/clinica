@@ -991,7 +991,16 @@ get 'indoor/indoor_dashboard'
 
 get 'indoor/bed_occupancy_dashboard'
 
-
+get 'indoor/ward_wise'
+get 'indoor/icu_wise'
+get 'indoor/bed_status'
+get 'indoor/select'
+ get 'indoor/select_ward'
+ get 'indoor/select_floor'
+ get 'indoor/select_icu'
+ get 'indoor/ipd_bill'
+ get 'indoor/unoccoupy_bed',to:'indoor#unoccoupy_bed',as:'indoor_unoccoupy_bed'
+ get 'indoor/patient_details',to:'indoor#patient_details',as:'indoor_patient_details'
 get 'indoor/new_registration'
 post 'indoor/create_registration',to: 'indoor#create_registration',as: 'create_registration'
 patch 'indoor/:id/update_registration',to: 'indoor#update_registration',as: 'update_registration'

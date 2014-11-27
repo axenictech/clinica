@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_date: 2014-11-27
+  to_date: 2014-11-27
+  name: MyString
+  age: 1
+  address: MyString
+  total_amt: 1
+
+two:
+  from_date: 2014-11-27
+  to_date: 2014-11-27
+  name: MyString
+  age: 1
+  address: MyString
+  total_amt: 1

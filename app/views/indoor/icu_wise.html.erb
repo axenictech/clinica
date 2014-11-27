@@ -1,0 +1,22 @@
+<div id="content-header">
+  <div id="app-back-button">
+      <%= link_to image_tag("buttons/back.png",:border => 0), :back  %>
+  </div>
+  <div><%= image_tag("underline.jpg",width: "100%")%></div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<%= form_for :Floor,url:{action:'select_floor'},method: :get,remote:true,html:{id: "floor_form"} do |f| %>
+<%= f.label :Select_Floor%>
+
+<%= f.select :id, FloorMaster.all.collect {|t| [t.floor_name,t.id]},{prompt:true},{onchange:"$('#floor_form').submit();",class: "select2 form-control select2-offscreen"} %> 
+<%end%>
+</div>
+</div>
+<br/><br/>
+
+<div id="floor_div"></div>
+</div></div>
+
+ <div id="myModal" class="modal fade">
+ </div>

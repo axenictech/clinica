@@ -1,0 +1,35 @@
+<table align="center">
+<tr><td><div class="btn btn-danger" style="width:100px"><%='BED'%></div>&nbsp</td><td><%='Occupied Bed'%>&nbsp</td>
+ <td><div class="btn btn-group btn-primary" style="width:100px"><%='BED'%></div>&nbsp</td>
+<td><%='Unoccupied Bed'%></td>
+ </tr>
+
+</table>
+<br/>
+<br/>
+<%i=0%>
+<table>
+<% 29.times do |b|%>
+
+<%if b!=0%>
+<%if b==6 or i==4 or i==9 or i==14 or i==23 or i==19 or i==28%>
+<td>
+<div class="btn btn-danger" style="width:100px"><%=link_to "BED NO: "+i.to_s,indoor_patient_details_path,remote: true %></div>&nbsp
+
+ </td>
+<%else%>
+<td>
+<div class="btn btn-group btn-primary" style="width:100px"><%=link_to "BED NO: "+i.to_s,indoor_unoccoupy_bed_path,remote: true %></div>&nbsp
+
+ </td>
+ <%end%><%end%>
+  <%i=i+1%>
+ <% 
+if b!=0
+ if b%7==0%>
+
+
+</tr><tr><td>&nbsp</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr>
+ <%end%><%end%>
+  <%end%>
+</tr></table>
