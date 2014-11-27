@@ -292,6 +292,8 @@ class IndoorController < ApplicationController
 	
 	end
 
+
+
 	def new_final_bill
 	 @final_bill#=FinalBill.new
 	end
@@ -320,6 +322,16 @@ class IndoorController < ApplicationController
 			redirect_to indoor_new_money_reciept_path
 		end
 	end
+
+	def final_bill_get_patient
+	 @patient=IpdRegistration.where(ipd_no: params['search']['id']).take
+	end
+
+
+
+
+
+
 
 
 	def new_ipd_clinical_report

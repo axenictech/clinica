@@ -1,0 +1,150 @@
+<h4>Presscription Tablets</h4>
+ <div class="row">
+              <div class="form-group">
+                 <div class="col-sm-3">
+                <%=form_for :search_tablet,url: prescription_search_tablet_path,remote: true do |form|%>
+               
+              <div class="row">
+              <div class="form-group">
+                
+                  <div class="col-sm-7"><%= form.text_field :tablet_name,
+                    onfocus:"$(this).popover('show');" ,
+                     class: "form-control input-group",placeholder: "Tablet Name",
+                      required: true,
+                      :"data-content"=>"Special characters not allowed",
+                      :"data-placement"=>"right",
+                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
+                      %>  
+                  </div> 
+                   <div class="col-sm-3"> <%= form.submit 'Search', class: "btn btn-group btn-primary "%>
+                  </div>  
+
+                </div>
+              </div>  
+                <%end%>
+        <br>
+        <div id="tablet_result">
+           
+        </div>
+           </div> 
+<div class="col-sm-9">
+ <table id="table_info" class="data-table table table-bordered table-striped dataTable" style="margin-bottom:0;" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+          <thead>
+          <tr role="row">
+           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Sr No
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Name
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Type
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Timing
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Comment
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Power
+            </th>
+
+             <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+              Name
+            : activate to sort column descending" style="width: 297px;">
+              Quantity
+            </th>
+           </tr>
+        </thead>
+      <tbody id="add_tablet"  role="alert" aria-live="polite" aria-relevant="all">
+      </tbody>
+      </table>
+    </div>  
+   </div>
+  </div>  
+<br>
+<br>
+ <div class="row">
+              <div class="form-group">
+                
+                  <div class="col-sm-6">
+                    <div class="row">
+                     <div class="form-group">
+                  
+                      <div class="col-sm-4">Recommended Tests
+                      </div> 
+                      <div class="col-sm-2"><input type="checkbox" name="comment">&nbspBlood
+                      </div> 
+                    <div class="col-sm-2"><input type="checkbox" name="comment">&nbspSugar
+                    </div>  
+
+                      <div class="col-sm-2"><input type="checkbox" name="comment">&nbspUrine
+                      </div> 
+                    <div class="col-sm-2"><input type="checkbox" name="comment">&nbspECG
+                    </div>  
+                    </div>
+                      </div>  
+                  </div> 
+          <div class="col-sm-6"> 
+
+            <div class="row">
+                     <div class="form-group">
+                  
+                         <div class="col-sm-3">Next Visit Date </div> 
+                         <div class="col-sm-9"> <input type="radio" name="next_app_date" value="10" checked="true">10&nbsp
+                         <input type="radio" name="next_app_date" value="10">15&nbsp
+                         <input type="radio" name="next_app_date" value="10">20&nbsp
+                         <input type="radio" name="next_app_date" value="10">30 Days&nbsp
+                          <input type="radio" name="next_app_date" value="10">Other
+                         </div> 
+                      </div>
+          </div>  
+
+          <div class="row">
+                     <div class="form-group">
+                  
+                         <div class="col-sm-3"></div> 
+                         <div class="col-sm-9">
+                         Doctor Note<br>
+                         <textarea style="width: 359px; height: 44px;"></textarea>
+                         </div> 
+                      </div>
+          </div>  
+
+        </div>  
+    </div>
+</div>  
+<div class="form-group">
+<div class="col-sm-12">
+<%=form_for :create,url: prescription_save_prescription_path,remote: true do |form|%>
+ <div class="row">
+                     <div class="form-group">
+                        <div class="col-sm-3">
+                       <%= form.submit "Create Group", class: "btn btn-group btn-primary "%>    
+                        </div> 
+                        <div class="col-sm-3">
+                             <%= form.submit "Discard", class: "btn btn-group btn-primary "%>    
+                        </div> 
+                      </div>
+                  </div>  
+<%end%>
+          </div> 
+          </div>

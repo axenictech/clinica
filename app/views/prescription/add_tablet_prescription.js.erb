@@ -1,0 +1,10 @@
+$("#add_tablet").append("<%= j render 'add_tablet_prescription'%>");
+
+var rows=document.getElementById("table_info").rows.length-1;
+var i=0;
+var s = $('#table_info tr');
+for(i=0;i<=rows;i++)
+ {
+ 	
+  var a = s.eq(i).find('td').eq(0).text(i);
+ }

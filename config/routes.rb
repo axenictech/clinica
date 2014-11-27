@@ -538,6 +538,14 @@ get 'masters/phar'
 #----------outdoors------------------------------------#
 get 'outdoors/new_registration'
 
+#Prescription Controller
+get 'prescription/prescription',to: 'prescription#prescription',as: 'precription_new'
+post 'prescription/search_patient',to: 'prescription#search_patient',as: 'prescription_search_patient'
+post 'prescription/search_tablet',to: 'prescription#search_tablet',as: 'prescription_search_tablet'
+post 'prescription/add_tablet_prescription',to: 'prescription#add_tablet_prescription',as: 'prescription_add_tablet_prescription'
+post 'prescription/save_prescription',to: 'prescription#save_prescription',as: 'prescription_save_prescription'
+post 'prescription/add_group',to: 'prescription#add_group',as: 'prescription_add_group'
+
 #common master#
 get 'indoors/ot_billing'
 get 'indoors/indoor_money_reciept'
@@ -562,9 +570,7 @@ get 'common_master/ot_master'
 
 
 get 'common_master/outdoors_patient_master'
-
 get 'common_master/outdoor_patient_master'
-
 get 'common_master/view_doctor_master'
 get 'common_master/new_doctor_master'
 post 'common_master/create_doctor_master'
@@ -1038,6 +1044,9 @@ get 'indoor/new_final_bill'
 post 'indoor/create_final_bill',to: 'indoor#create_final_bill',as: 'create_final_bill'
 patch 'indoor/:id/update_final_bill',to: 'indoor#update_final_bill',as: 'update_final_bill'
 delete 'indoor/:id/delete_final_bill',to: 'indoor#delete_final_bill',as: 'delete_final_bill'
+post 'indoor/final_bill_get_patient',to: 'indoor#final_bill_get_patient',as: 'final_bill_get_patient'
+
+
 
 get 'indoor/new_ipd_clinical_report'
 post 'indoor/create_ipd_clinical_report',to: 'indoor#create_ipd_clinical_report',as: 'create_ipd_clinical_report'

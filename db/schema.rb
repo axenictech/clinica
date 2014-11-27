@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103490) do
+ActiveRecord::Schema.define(version: 20141223103491) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -332,6 +332,34 @@ ActiveRecord::Schema.define(version: 20141223103490) do
   end
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
+
+  create_table "bills", force: true do |t|
+    t.integer  "bill_no"
+    t.date     "date"
+    t.string   "time"
+    t.decimal  "bed_charges"
+    t.decimal  "laxury_charges"
+    t.decimal  "service_charges"
+    t.decimal  "other_charges"
+    t.decimal  "ot_charges"
+    t.decimal  "doctor_charges"
+    t.decimal  "diagnostic_charges"
+    t.decimal  "medicine_charges"
+    t.decimal  "total_charges"
+    t.string   "pay_type"
+    t.string   "bank_name"
+    t.string   "cheque_no"
+    t.decimal  "bill_amount"
+    t.decimal  "discount"
+    t.decimal  "net_amount"
+    t.string   "remark"
+    t.integer  "ipd_registration_id"
+    t.boolean  "is_desabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bills", ["ipd_registration_id"], name: "index_bills_on_ipd_registration_id", using: :btree
 
   create_table "blood_doners", force: true do |t|
     t.date     "date"

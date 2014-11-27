@@ -25,9 +25,6 @@ class CreateIpdRegistrations < ActiveRecord::Migration
 		 t.string   :relative_name
 		 t.string   :relative_phone_no
 		 t.string   :adm_type
-		 t.string   :relative_name
-		 t.string   :relative_phone_no
-		 t.string   :adm_type
 		 t.integer  :bed_no
 		 t.string   :ward_name
 		 t.integer  :ref_dr
