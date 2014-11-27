@@ -88,7 +88,7 @@
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Bed Occupancy"%>  
+          <%= link_to "IPD Billing",'new_final_bill'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -99,17 +99,16 @@
         </div>
       </div>
       <div class="box-content box-padding">
-        Bed Occupancy
+        IPD Billing
       </div>
     </div>
   </div>
-
   <div class="col-sm-4">
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "Advance Booking",'advance_booking_form'%>
+          <%= link_to "IPD Clinical Report",'ipd_clinical_report'%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -120,10 +119,11 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       Advance Booking
+       IPD Clinical Report
       </div>
     </div>
   </div>
+
 
 </div>
 
@@ -195,12 +195,13 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+
+<div class="col-sm-4">
     <div class="box box-transparent box-nomargin">
       <div class="box-header">
         <div class="title">
           <i class="icon-medkit"></i>
-          <%= link_to "IPD Clinical Report",'ipd_clinical_report'%>
+          <%= link_to "Prescription",precription_new_path%>
         </div>
         <div class="actions">
           <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
@@ -211,10 +212,11 @@
         </div>
       </div>
       <div class="box-content box-padding">
-       IPD Clinical Report
+       Prescription
       </div>
     </div>
   </div>
+
  </div>
 
 
@@ -313,46 +315,8 @@
 <hr class="hr-double">
 <div class="row">
   <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-medkit"></i>
-          <%= link_to "Final Bill",'new_final_bill'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-        Final Bill
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="box box-transparent box-nomargin">
-      <div class="box-header">
-        <div class="title">
-          <i class="icon-medkit"></i>
-          <%= link_to "Manual Final Bill",'manual_final_bill'%>
-        </div>
-        <div class="actions">
-          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-          </a>
-          
-          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-          </a>
-        </div>
-      </div>
-      <div class="box-content box-padding">
-       Manual Final Bill
-      </div>
-    </div>
-  </div>
+  
+  
 </div>
 
 <hr class="hr-double">
@@ -422,6 +386,29 @@
       </div>
     </div>
   </div>
+  <div class="col-sm-4">
+    <div class="box box-transparent box-nomargin">
+      <div class="box-header">
+        <div class="title">
+          <i class="icon-medkit"></i>
+          <%= link_to "Advance Booking",'advance_booking_form'%>
+        </div>
+        <div class="actions">
+          <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
+          </a>
+          
+          <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+          </a>
+        </div>
+      </div>
+      <div class="box-content box-padding">
+       Advance Booking
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
 
 <div class="col-sm-4">

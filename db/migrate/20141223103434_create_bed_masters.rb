@@ -11,8 +11,10 @@ class CreateBedMasters < ActiveRecord::Migration
       t.integer :s_tax
       t.string :link_service
       t.boolean :is_bed_repair
-      t.references :floor_master, index: true
       t.references :ward_master, index: true
+      t.references :icu_master, index: true
+      t.references :delux_room_master, index: true
+      t.string :used_for
       t.timestamps
     end
   end

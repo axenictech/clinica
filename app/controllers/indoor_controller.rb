@@ -2,8 +2,14 @@ class IndoorController < ApplicationController
 
 	def new_registration
 	@new_registration=IpdRegistration.new
+	unless  IpdRegistration.last.nil?
 	@new_registration.ipd_no=IpdRegistration.last.ipd_no.next
 	@new_registration.hr_no=IpdRegistration.last.hr_no.next
+	else
+	@new_registration.ipd_no=1
+	@new_registration.hr_no=1
+	
+	end
 	@doctor_masters= DoctorMaster.all
 	@city=City.all
 	end
@@ -343,6 +349,8 @@ end
 	
 	end
 
+
+
 	def new_final_bill
 	 @final_bill#=FinalBill.new
 	end
@@ -371,6 +379,16 @@ end
 			redirect_to indoor_new_money_reciept_path
 		end
 	end
+
+	def final_bill_get_patient
+	 @patient=IpdRegistration.where(ipd_no: params['search']['id']).take
+	end
+
+
+
+
+
+
 
 
 	def new_ipd_clinical_report

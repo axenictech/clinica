@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20141223103489) do
+
+ActiveRecord::Schema.define(version: 20141223103491) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -270,13 +274,16 @@ ActiveRecord::Schema.define(version: 20141223103489) do
     t.integer  "s_tax"
     t.string   "link_service"
     t.boolean  "is_bed_repair"
-    t.integer  "floor_master_id"
     t.integer  "ward_master_id"
+    t.integer  "icu_master_id"
+    t.integer  "delux_room_master_id"
+    t.string   "used_for"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bed_masters", ["floor_master_id"], name: "index_bed_masters_on_floor_master_id", using: :btree
+  add_index "bed_masters", ["delux_room_master_id"], name: "index_bed_masters_on_delux_room_master_id", using: :btree
+  add_index "bed_masters", ["icu_master_id"], name: "index_bed_masters_on_icu_master_id", using: :btree
   add_index "bed_masters", ["ward_master_id"], name: "index_bed_masters_on_ward_master_id", using: :btree
 
   create_table "before_patient_entries", force: true do |t|
@@ -329,6 +336,36 @@ ActiveRecord::Schema.define(version: 20141223103489) do
   end
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
+
+
+  create_table "bills", force: true do |t|
+    t.integer  "bill_no"
+    t.date     "date"
+    t.string   "time"
+    t.decimal  "bed_charges"
+    t.decimal  "laxury_charges"
+    t.decimal  "service_charges"
+    t.decimal  "other_charges"
+    t.decimal  "ot_charges"
+    t.decimal  "doctor_charges"
+    t.decimal  "diagnostic_charges"
+    t.decimal  "medicine_charges"
+    t.decimal  "total_charges"
+    t.string   "pay_type"
+    t.string   "bank_name"
+    t.string   "cheque_no"
+    t.decimal  "bill_amount"
+    t.decimal  "discount"
+    t.decimal  "net_amount"
+    t.string   "remark"
+    t.integer  "ipd_registration_id"
+    t.boolean  "is_desabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bills", ["ipd_registration_id"], name: "index_bills_on_ipd_registration_id", using: :btree
+
 
   create_table "blood_doners", force: true do |t|
     t.date     "date"
@@ -492,6 +529,7 @@ ActiveRecord::Schema.define(version: 20141223103489) do
     t.datetime "updated_at"
   end
 
+
   create_table "demos", force: true do |t|
     t.date     "from_date"
     t.date     "to_date"
@@ -499,9 +537,18 @@ ActiveRecord::Schema.define(version: 20141223103489) do
     t.integer  "age"
     t.string   "address"
     t.integer  "total_amt"
+
+  create_table "delux_room_masters", force: true do |t|
+    t.string   "name"
+    t.integer  "floor_master_id"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  add_index "delux_room_masters", ["floor_master_id"], name: "index_delux_room_masters_on_floor_master_id", using: :btree
+
 
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
@@ -1183,6 +1230,15 @@ ActiveRecord::Schema.define(version: 20141223103489) do
     t.datetime "updated_at"
   end
 
+  create_table "icu_masters", force: true do |t|
+    t.string   "icu_name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "icu_masters", ["floor_master_id"], name: "index_icu_masters_on_floor_master_id", using: :btree
+
   create_table "individual_payslip_categories", force: true do |t|
     t.integer  "employee_id"
     t.date     "salary_date"
@@ -1229,6 +1285,43 @@ ActiveRecord::Schema.define(version: 20141223103489) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ipd_registrations", force: true do |t|
+    t.integer  "ipd_no"
+    t.date     "date"
+    t.string   "time"
+    t.integer  "hr_no"
+    t.string   "advance_booking"
+    t.string   "advance_booking_check"
+    t.string   "patient_name"
+    t.string   "occupation"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "family"
+    t.date     "birthdate"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "religion"
+    t.string   "city"
+    t.string   "pin"
+    t.string   "address"
+    t.string   "co"
+    t.string   "relation"
+    t.string   "company_name"
+    t.string   "relative_name"
+    t.string   "relative_phone_no"
+    t.string   "adm_type"
+    t.integer  "bed_no"
+    t.string   "ward_name"
+    t.integer  "ref_dr"
+    t.integer  "under_dr_one"
+    t.integer  "under_dr_two"
+    t.string   "shift"
+    t.string   "diesease"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
