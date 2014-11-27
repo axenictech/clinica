@@ -295,12 +295,14 @@ class IndoorController < ApplicationController
 
 
 	def new_final_bill
-	 @final_bill#=FinalBill.new
+	 @final_bill=Bill.new
 	end
 	def create_final_bill
-	@final_bill=FinalBill.new(params_final_bill)
+	@final_bill=Bill.new(params_final_bill)
+	@final_bill.is_desabled=false
+	@final_bill.ipd_registration=IpdRegistration.where(ipd_no: params['final_bill']['ipd_no']).take
 		if  @final_bill.save
-			flash[:notice]="Money Reciept saved successfully"
+			flash[:notice]="Bill saved successfully"
 			redirect_to indoor_new_final_bill_path
 		else
 			render 'new_final_bill'
@@ -309,7 +311,7 @@ class IndoorController < ApplicationController
 	def update_final_bill
 	@final_bill=FinalBill.find(params[:id])
 		if  @final_bill.update(params_final_bill)
-			flash[:notice]="Money Reciept updated successfully"
+			flash[:notice]="Bill updated successfully"
 			redirect_to indoor_new_final_bill_path
 		else
 			render 'new_final_bill'
@@ -575,7 +577,7 @@ end
 	end
 
     def params_final_bill
- 		params.require(:final_bill).permit!
+ 		params.require(:final_bill).permit(:bill_no,:date,:time,:bed_charges,:laxury_charges,:service_charges,:other_charges,:ot_charges,:doctor_charges,:diagnostic_charges,:medicine_charges,:total_charges,:less_advance,:pay_type,:bank_name,:cheque_no,:bill_amount,:discount,:net_amount,:remark)
 	end
     def params_clinical_report
  		params.require(:clinical_report).permit!

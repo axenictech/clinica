@@ -13,6 +13,7 @@ class CreateBills < ActiveRecord::Migration
     	t.decimal :diagnostic_charges
     	t.decimal :medicine_charges
     	t.decimal :total_charges
+    	t.decimal :less_advance
     	t.string  :pay_type
     	t.string  :bank_name
     	t.string  :cheque_no

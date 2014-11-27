@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103491) do
+ActiveRecord::Schema.define(version: 20141223103492) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -357,6 +357,7 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.boolean  "is_desabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "less_advance"
   end
 
   add_index "bills", ["ipd_registration_id"], name: "index_bills_on_ipd_registration_id", using: :btree

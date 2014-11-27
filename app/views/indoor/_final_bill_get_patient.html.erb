@@ -323,7 +323,7 @@
              Payment Type
             </div>
              <div class="col-sm-2 ">                
-           <%=c.select :payment_type,["Cash","Cheque","Net Banking"], onfocus:"$(this).popover('show');" ,
+           <%=c.select :pay_type,["Cash","Cheque","Net Banking"], onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
                       :"data-placement"=>"right",
