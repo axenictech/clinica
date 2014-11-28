@@ -1,0 +1,30 @@
+
+ <%=form_for :bill_update, :url => {:action=>'bill_update',s:@start_date,e:@end_date},method: :get do |f| %>
+<b><font color="black">Bill Details</font></span></b>
+<hr class="hr-normal">
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+<table align="center" class="table table-hover table-bordered" style="width:80%">
+<tr>
+  <th><%='Sr no'%></th>
+  <th><%='Bill No'%></th>
+  <th><%='Date'%></th>
+  <th><%='Patient Name'%></th>
+  <th><%='Total Amount'%></th>
+  <th><%='Disable'%></th>
+</tr>
+<%i=1%>
+<%@p.each do |p|%>
+<tr>
+  <td><%=i%></td>
+  <td><%=p.bill_no%></td>
+  <td><%=p.date%></td>
+  <td><%=p.ipd_registration.patient_name
+%></td>
+  <td><%=p.bill_amount%></td>
+   <td><%= check_box_tag "bills[]",p.id,p.is_desabled,class: 'check_box'%></td>
+  <%i=i+1%>
+</tr>
+<%end%>
+</table>
+<div align="center"><%=f.submit 'Reset', class: 'btn btn-primary'%></div>
+<%end%>
