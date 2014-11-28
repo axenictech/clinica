@@ -36,7 +36,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Bill No:</label>
-                  <div class="col-sm-2"><%= c.text_field :bill_no,value: 0,
+                  <div class="col-sm-2"><%= c.text_field :bill_no,value: @bill_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -431,17 +431,7 @@
 </div>
 </div>
 <script>
-  $("#other_service_rate").change(function(){
-
-   $("#other_service_total").val(parseInt($("#other_service_rate").val())*parseInt($("#other_service_quantiry").val()));
- });
-
-$("#other_service_quantiry").change(function(){
-
-    $("#other_service_total").val(parseInt($("#other_service_rate").val())*parseInt($("#other_service_quantiry").val()));
-  });
-
-var total=0;
+ var total=0;
 $(".calculation").change(function(){ calculate();});
 $(".less_advance").change(function(){ calculate();});
 $(".bill_amount").change(function(){ calculate();});

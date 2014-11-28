@@ -384,6 +384,11 @@ end
 
 	def final_bill_get_patient
 	 @patient=IpdRegistration.where(ipd_no: params['search']['id']).take
+	 if Bill.last.bill_no.nil?
+	 @bill_no=1
+	 else
+	 @bill_no=Bill.last.bill_no+1;
+	 end
 	end
 
 
