@@ -120,11 +120,10 @@ end
  end
   
   def report_status
-    @start_date=params[:bill][:from_date]
+  @start_date=params[:bill][:from_date]
   @end_date= params[:bill][:to_date]
-     params[:bill][:to_date]
- @p=Bill.where("date >= :start_date AND date <= :end_date and is_desabled=:a",
-  {start_date: params[:bill][:from_date], end_date: params[:bill][:to_date],a:'true'})
+  @p=Bill.where("date >= :start_date AND date <= :end_date and is_desabled=:a",
+  {start_date: params[:bill][:from_date], end_date: params[:bill][:to_date],a:'false'})
 
   end
 
@@ -143,9 +142,6 @@ def bill_update
    flash[:notice] = 'Update Succesfully'
 
  end
-end
-
-
 
 def new_advance_booking
 	@advance_booking=AdvanceBooking.new 

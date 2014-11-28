@@ -9,10 +9,10 @@
   <th><%='Date'%></th>
   <th><%='Patient Name'%></th>
   <th><%='Total Amount'%></th>
-  <th><%='Total'%>
-</tr>
+ </tr>
 <%i=1%>
 <%c=0%>
+<%total=0%>
 <%@p.each do |p|%>
 <tr>
   <td><%=i%></td>
@@ -20,9 +20,11 @@
   <td><%=p.date%></td>
   <td><%=p.ipd_registration.patient_name
 %></td>
+<td><%=p.net_amount%></td>
  <%i=i+1%>
-
+<%total=total+p.net_amount%>
 <%end%>
- <td><%=total%></td>
  </tr>
+
+<tr><td>Total</td><td></td><td></td><td></td><td><%=total%></td></tr>
 </table>
