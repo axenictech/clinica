@@ -98,7 +98,7 @@
                   <div class="col-sm-2"><%= c.date_field :birthdate,value:@patient.birthdate,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -112,7 +112,7 @@
                   <div class="col-sm-2"><%= c.date_field :admitdate,value:@patient.date,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -127,7 +127,7 @@
                   <div class="col-sm-2"><%= c.select :gender,[@patient.gender,'MALE','FEMALE'],
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -141,7 +141,7 @@
                   <div class="col-sm-4"><%= c.text_field :bed_no,value: @patient.bed_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -156,7 +156,7 @@
                   <div class="col-sm-4"><%= c.text_field :ward,value: @patient.ward_name,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -171,7 +171,7 @@
                   <div class="col-sm-4"><%= c.text_field :address,value: @patient.address,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>  
@@ -329,7 +329,7 @@
             <%= c.text_field :bank_name,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>             
@@ -341,7 +341,7 @@
             <%= c.text_field :cheque_no,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>             
@@ -397,7 +397,7 @@
      <%= c.text_area :remark,style:"width: 452px; height: 81px;",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
-                      required: true,
+                      required: false,
                       :"data-placement"=>"right",
                       :"data-toggle"=>"popover",:"data-trigger"=>"focus"
                       %>      
