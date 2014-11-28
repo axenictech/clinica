@@ -117,38 +117,18 @@ end
 
 
 def bill_update
-	
+  @records_for_false=Bill.where("date >= ? AND date <= ?",params['bill_update']['start_date'],params['bill_update']['end_date'])
+  @records_for_false.each do |r|
+  	r.update(is_desabled:false)
+  end
   unless params[:bills].nil?
-    @p=Bill.where("date >= :start_date AND date <= :end_date",
-      {start_date:params[:s], end_date:params[:e]})
-    
-     @bill=params[:bills]
-        @bill.each do |f|
-          @u=Bill.find_by_id(f)
-           @u.update(:is_desabled=>true)
-         end
-    @false_no=@p.where.not(id:params[:bills])
-      @false_no.each do |f|
-        @u=Bill.find_by_id(f)
-        if @u.is_desabled==true
-         @u.update(:is_desabled=>false)
-        end
-        end
-      
-   redirect_to indoor_bill_report_path
-          flash[:notice] = 'Update Succesfully'
-  
- else
-    @all=Bill.all
-   
-    @all.each do |b|
-  	 @u=Bill.find_by_id(b)
-      @u.update(:is_desabled=>false)
+  	@records=Bill.where("date >= ? AND date <= ? AND id in (?)",params['bill_update']['start_date'],params['bill_update']['end_date'],params[:bills])
+    @records.each do |r|
+  	r.update(is_desabled:true)
+  end
   end
    redirect_to indoor_bill_report_path
-          flash[:notice] = 'Update Succesfully'
-
-end
+   flash[:notice] = 'Update Succesfully'
  end
 
 def new_advance_booking
@@ -434,11 +414,7 @@ def new_advance_booking
 
 	def final_bill_get_patient
 	 @patient=IpdRegistration.where(ipd_no: params['search']['id']).take
-<<<<<<< HEAD
-	 if Bill.first.nil?
-=======
 	 if Bill.last.nil?
->>>>>>> b031f30138cf43fdd840676cff8d70c6bef38e33
 	 @bill_no=1
 	 else
 	 @bill_no=Bill.last.bill_no+1;

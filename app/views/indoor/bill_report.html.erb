@@ -48,7 +48,9 @@
 
                   <label class="col-sm-2 control-label">To_Date:</label>
                   <div class="col-sm-4"><%= c.date_field :to_date,
-                  onchange:"$('#floor_form').submit();",
+                  onchange:"
+                  $('#bill_update_end_date').val($(this).val());
+                  $('#floor_form').submit();",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,

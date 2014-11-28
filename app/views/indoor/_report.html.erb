@@ -1,5 +1,7 @@
 
- <%=form_for :bill_update, :url => {:action=>'bill_update',s:@start_date,e:@end_date},method: :get do |f| %>
+ <%=form_for :bill_update, url: indoor_bill_update_path,method: :get do |f| %>
+<%=f.hidden_field :start_date%>
+<%=f.hidden_field :end_date%>
 <b><font color="black">Bill Details</font></span></b>
 <hr class="hr-normal">
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
@@ -26,5 +28,5 @@
 </tr>
 <%end%>
 </table>
-<div align="center"><%=f.submit 'Reset', class: 'btn btn-primary'%></div>
+<div align="center"><%=f.submit 'Update Records', class: 'btn btn-primary'%></div>
 <%end%>

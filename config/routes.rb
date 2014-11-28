@@ -988,7 +988,7 @@ get 'indoor/new_final_bill'
 
 get 'indoor/bill_report'
 get 'indoor/report'
-get 'indoor/bill_update/:s/:e',to:'indoor#bill_update',as:'indoor_bill_update'
+get 'indoor/bill_update',to:'indoor#bill_update',as:'indoor_bill_update'
 
 get 'indoor/indoor_dashboard'
 
