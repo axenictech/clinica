@@ -115,9 +115,23 @@ def report
 
 end
 
+ def bill_status
+ 	
+ end
+  
+  def report_status
+    @start_date=params[:bill][:from_date]
+  @end_date= params[:bill][:to_date]
+     params[:bill][:to_date]
+ @p=Bill.where("date >= :start_date AND date <= :end_date and is_desabled=:a",
+  {start_date: params[:bill][:from_date], end_date: params[:bill][:to_date],a:'true'})
+
+  end
 
 def bill_update
 	
+        p  start_date:params[:s]
+         p  end_date:params[:e]
   unless params[:bills].nil?
     @p=Bill.where("date >= :start_date AND date <= :end_date",
       {start_date:params[:s], end_date:params[:e]})
@@ -130,7 +144,7 @@ def bill_update
     @false_no=@p.where.not(id:params[:bills])
       @false_no.each do |f|
         @u=Bill.find_by_id(f)
-        if @u.is_desabled==true
+        if @u.is_desabled==true 
          @u.update(:is_desabled=>false)
         end
         end
@@ -138,18 +152,10 @@ def bill_update
    redirect_to indoor_bill_report_path
           flash[:notice] = 'Update Succesfully'
   
- else
-    @all=Bill.all
-   
-    @all.each do |b|
-  	 @u=Bill.find_by_id(b)
-      @u.update(:is_desabled=>false)
-  end
-   redirect_to indoor_bill_report_path
-          flash[:notice] = 'Update Succesfully'
-
-end
  end
+end
+
+
 
 def new_advance_booking
 	@advance_booking=AdvanceBooking.new 
