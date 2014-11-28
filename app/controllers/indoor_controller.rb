@@ -101,7 +101,57 @@ def unoccoupy_bed
 
 end
 
-	def new_advance_booking
+
+def bill_report
+   @p=Bill.all
+end
+
+def report
+  @start_date=params[:bill][:from_date]
+  @end_date= params[:bill][:to_date]
+     params[:bill][:to_date]
+ @p=Bill.where("date >= :start_date AND date <= :end_date",
+  {start_date: params[:bill][:from_date], end_date: params[:bill][:to_date]})
+
+end
+
+
+def bill_update
+	
+  unless params[:bills].nil?
+    @p=Bill.where("date >= :start_date AND date <= :end_date",
+      {start_date:params[:s], end_date:params[:e]})
+    
+     @bill=params[:bills]
+        @bill.each do |f|
+          @u=Bill.find_by_id(f)
+           @u.update(:is_desabled=>true)
+         end
+    @false_no=@p.where.not(id:params[:bills])
+      @false_no.each do |f|
+        @u=Bill.find_by_id(f)
+        if @u.is_desabled==true
+         @u.update(:is_desabled=>false)
+        end
+        end
+      
+   redirect_to indoor_bill_report_path
+          flash[:notice] = 'Update Succesfully'
+  
+ else
+    @all=Bill.all
+   
+    @all.each do |b|
+  	 @u=Bill.find_by_id(b)
+      @u.update(:is_desabled=>false)
+  end
+   redirect_to indoor_bill_report_path
+          flash[:notice] = 'Update Succesfully'
+
+end
+ end
+
+def new_advance_booking
 	@advance_booking=AdvanceBooking.new 
 	end
 	def create_advance_booking
@@ -384,7 +434,11 @@ end
 
 	def final_bill_get_patient
 	 @patient=IpdRegistration.where(ipd_no: params['search']['id']).take
+<<<<<<< HEAD
 	 if Bill.first.nil?
+=======
+	 if Bill.last.nil?
+>>>>>>> b031f30138cf43fdd840676cff8d70c6bef38e33
 	 @bill_no=1
 	 else
 	 @bill_no=Bill.last.bill_no+1;

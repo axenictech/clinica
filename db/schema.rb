@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141223103492) do
-=======
-
-ActiveRecord::Schema.define(version: 20141223103489) do
-
 ActiveRecord::Schema.define(version: 20141223103491) do
->>>>>>> 26ba8393e0be0fe3eb63143ebef4bd9a0ac1c432
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -278,16 +270,13 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.integer  "s_tax"
     t.string   "link_service"
     t.boolean  "is_bed_repair"
+    t.integer  "floor_master_id"
     t.integer  "ward_master_id"
-    t.integer  "icu_master_id"
-    t.integer  "delux_room_master_id"
-    t.string   "used_for"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bed_masters", ["delux_room_master_id"], name: "index_bed_masters_on_delux_room_master_id", using: :btree
-  add_index "bed_masters", ["icu_master_id"], name: "index_bed_masters_on_icu_master_id", using: :btree
+  add_index "bed_masters", ["floor_master_id"], name: "index_bed_masters_on_floor_master_id", using: :btree
   add_index "bed_masters", ["ward_master_id"], name: "index_bed_masters_on_ward_master_id", using: :btree
 
   create_table "before_patient_entries", force: true do |t|
@@ -341,7 +330,6 @@ ActiveRecord::Schema.define(version: 20141223103491) do
 
   add_index "bill_of_materials", ["test_master_id"], name: "index_bill_of_materials_on_test_master_id", using: :btree
 
-
   create_table "bills", force: true do |t|
     t.integer  "bill_no"
     t.date     "date"
@@ -355,6 +343,7 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.decimal  "diagnostic_charges"
     t.decimal  "medicine_charges"
     t.decimal  "total_charges"
+    t.decimal  "less_advance"
     t.string   "pay_type"
     t.string   "bank_name"
     t.string   "cheque_no"
@@ -366,11 +355,9 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.boolean  "is_desabled"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "less_advance"
   end
 
   add_index "bills", ["ipd_registration_id"], name: "index_bills_on_ipd_registration_id", using: :btree
-
 
   create_table "blood_doners", force: true do |t|
     t.date     "date"
@@ -534,6 +521,14 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.datetime "updated_at"
   end
 
+  create_table "delux_room_masters", force: true do |t|
+    t.string   "name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delux_room_masters", ["floor_master_id"], name: "index_delux_room_masters_on_floor_master_id", using: :btree
 
   create_table "demos", force: true do |t|
     t.date     "from_date"
@@ -542,18 +537,9 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.integer  "age"
     t.string   "address"
     t.integer  "total_amt"
-
-  create_table "delux_room_masters", force: true do |t|
-    t.string   "name"
-    t.integer  "floor_master_id"
-
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-
-  add_index "delux_room_masters", ["floor_master_id"], name: "index_delux_room_masters_on_floor_master_id", using: :btree
-
 
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
@@ -1235,15 +1221,6 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.datetime "updated_at"
   end
 
-  create_table "icu_masters", force: true do |t|
-    t.string   "icu_name"
-    t.integer  "floor_master_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "icu_masters", ["floor_master_id"], name: "index_icu_masters_on_floor_master_id", using: :btree
-
   create_table "individual_payslip_categories", force: true do |t|
     t.integer  "employee_id"
     t.date     "salary_date"
@@ -1326,7 +1303,6 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "item_masters", force: true do |t|
     t.string   "item_name"
