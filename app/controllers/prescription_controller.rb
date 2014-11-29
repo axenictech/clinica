@@ -13,7 +13,7 @@ class PrescriptionController < ApplicationController
 	end
 	def save_prescription
 		flash[:notice]="Prescription saved and sent for print"
-		redirect_to prescription_prescription_path
+		redirect_to precription_new_path
 	end
 	def add_group
 	end

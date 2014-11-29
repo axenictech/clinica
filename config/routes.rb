@@ -973,7 +973,6 @@ delete 'labs/:id/destroy_test_cancellation',to:'labs#destroy_test_cancellation',
 
 #---------------Master-----------------------
 
-
 #INDOOR#
 
 get 'indoor/advance_booking_form'

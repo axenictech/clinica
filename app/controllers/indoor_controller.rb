@@ -53,14 +53,9 @@ def ward_wise
 end
 
 def select
-	p "ffffffffffffffffffffffffffffffffffff"
 	 @floor=FloorMaster.find(params[:Floor][:id])
-	 p "ffffffffffffffffffffffffffffffffffff"
-	 p @floor
 	 @wards=@floor.ward_masters.all
-     p "wwwwwwwwwwwwwwwwwwwwwwwwwwwww"
-	  p @wards
-end
+ end
 
 def select_ward
  @ward=WardMaster.find(params[:ward_name][:id])
@@ -73,13 +68,8 @@ def icu_wise
 end
 
 def select_floor
-	p "ffffffffffffffffffffffffffffffffffff"
 	 @floor=FloorMaster.find(params[:Floor][:id])
-	 p "ffffffffffffffffffffffffffffffffffff"
-	 p @floor
 	 @wards=@floor.ward_masters.all
-     p "wwwwwwwwwwwwwwwwwwwwwwwwwwwww"
-	  p @wards
 end
 
 def select_icu
@@ -138,10 +128,10 @@ def bill_update
   	r.update(is_desabled:true)
   end
   end
-   redirect_to indoor_bill_report_path
-   flash[:notice] = 'Update Succesfully'
 
- end
+	@p=Bill.where("date >= ? AND date <= ? AND is_desabled=false",params['bill_update']['start_date'],params['bill_update']['end_date'])
+	render '_report_status'
+   end
 
 def new_advance_booking
 	@advance_booking=AdvanceBooking.new 
@@ -400,9 +390,10 @@ def new_advance_booking
 	@final_bill=Bill.new(params_final_bill)
 	@final_bill.is_desabled=false
 	@final_bill.ipd_registration=IpdRegistration.where(ipd_no: params['final_bill']['ipd_no']).take
-		if  @final_bill.save
-			flash[:notice]="Bill saved successfully"
-			redirect_to indoor_new_final_bill_path
+	if  @final_bill.save
+	#flash[:notice]="Bill saved successfully"
+	@final_bill=params["final_bill"].permit!
+	  	render "create_final_bill", layout: false
 		else
 			render 'new_final_bill'
 		end

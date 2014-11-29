@@ -14,53 +14,6 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-
-<%= form_for :bill,url:{action:'report_status'},method: :get,remote:true,html:{id: "floor_form"} do |c| %>
-<div class="col-sm-12">
-  <div class="box bordered-box blue-border">
-    <div class="box-header blue-background">
-      <div class="title">
-        <i class="icon-book"></i>
-          Bill Report
-      </div>
-        <div class="actions">
-          <a class="btn box-collapse btn-xs btn-link" href="#"></a>
-        </div>
-      </div>
-      <div class="box-content box-double-padding">
-        <form class="form-horizontal" style="margin-bottom: 0;">
-          <fieldset>
-        
-          
-          <hr class="hr-normal">
-          <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">From_Date:</label>
-                <div class="col-sm-4"><%= c.date_field :from_date,
-                 onchange:"$('#floor_form').submit();",
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>  
-
-                  <label class="col-sm-2 control-label">To_Date:</label>
-                  <div class="col-sm-4"><%= c.date_field :to_date,
-                  onchange:"$('#floor_form').submit();",
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>  
-                </div>
-              </div>  </div>
-              </div>  </div>   
-              <br>
-
-<%end%>
-
-<div id="report_div"></div>
+<div id="report_div">
+  <%=render '_report_status'%>
+</div>

@@ -22,11 +22,11 @@
   <td><%=p.date%></td>
   <td><%=p.ipd_registration.patient_name
 %></td>
-  <td><%=p.bill_amount%></td>
+  <td><%=p.net_amount%></td>
    <td><%= check_box_tag "bills[]",p.id,p.is_desabled,class: 'check_box'%></td>
   <%i=i+1%>
 </tr>
 <%end%>
 </table>
-<div align="center"><%=f.submit 'Update Records', class: 'btn btn-primary'%></div>
+<div align="center"><%=f.submit 'Drop Records', class: 'btn btn-primary'%></div>
 <%end%>

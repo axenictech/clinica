@@ -335,24 +335,25 @@
       </table>
     </div>  
    </div>
-  </div>  
-
+   <br>
 <div class="form-group">
 <div class="col-sm-12">
 <%=form_for :create,url: prescription_save_prescription_path do |form|%>
  <div class="row">
                      <div class="form-group">
                         <div class="col-sm-3">
-                       <%= form.submit "Submit and Print", class: "btn btn-group btn-primary "%>    
+                       <%= form.submit "Create Group", class: "btn btn-group btn-primary "%>    
                         </div> 
                         <div class="col-sm-3">
-                             <%= form.submit "Save as Draft", class: "btn btn-group btn-primary "%>    
+                             <%= form.submit "Discard", class: "btn btn-group btn-primary "%>    
                         </div> 
                       </div>
                   </div>  
 <%end%>
           </div> 
           </div>
+  </div>  
+
           </div>  
 
 
