@@ -5,15 +5,41 @@
   <div><%= image_tag("underline.jpg",width: "100%")%></div>
 </div>
 <div class="row">
-<div class="col-sm-6">
-<%= form_for :Floor,url:{action:'select_floor'},method: :get,remote:true,html:{id: "floor_form"} do |f| %>
-<%= f.label :Select_Floor%>
+<table align="center">
+<tr><td><div class="btn btn-danger" style="width:100px"><%='ICU'%></div>&nbsp</td><td><%='Occupied ICU'%>&nbsp</td>
+ <td><div class="btn btn-group btn-primary" style="width:100px"><%='ICU'%></div>&nbsp</td>
+<td><%='Unoccupied ICU'%></td>
+ </tr>
 
-<%= f.select :id, FloorMaster.all.collect {|t| [t.floor_name,t.id]},{prompt:true},{onchange:"$('#floor_form').submit();",class: "select2 form-control select2-offscreen"} %> 
-<%end%>
-</div>
-</div>
-<br/><br/>
+</table>
+<br/>
+<br/>
+<%i=0%>
+<table>
+<% 11.times do |b|%>
+
+<%if b!=0%>
+<%if b==6 or i==4 or i==9%>
+<td>
+<div class="btn btn-danger" style="width:100px"><%=link_to "ICU NO: "+i.to_s,indoor_patient_details_path,remote: true %></div>&nbsp
+
+ </td>
+<%else%>
+<td>
+<div class="btn btn-group btn-primary" style="width:100px"><%=link_to "ICU NO: "+i.to_s,indoor_unoccoupy_bed_path,remote: true %></div>&nbsp
+
+ </td>
+ <%end%><%end%>
+  <%i=i+1%>
+ <% 
+if b!=0
+ if b%7==0%>
+
+
+</tr><tr><td>&nbsp</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr>
+ <%end%><%end%>
+  <%end%>
+</tr></table>
 
 <div id="floor_div"></div>
 </div></div>
