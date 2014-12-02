@@ -5,7 +5,7 @@
 <%= form_for :ward_name, url:{action:'select_ward'},method: :get,remote:true,html:{id: "ward_form"} do |f| %>
 <%= f.label :Select_Ward %>
 
-<%= f.select :id,@wards.all.collect{|b| [b.ward_name,b.id]},{prompt:true},{onchange:"$('#ward_form').submit();",class: "select2 form-control select2-offscreen"} %> 
+<%= f.select :id,["Ward1", "Ward2", "Ward3", "Ward4", "Ward5", "Ward6","Ward7"],{prompt:true},{onchange:"$('#ward_form').submit();",class: "select2 form-control select2-offscreen"} %> 
 <%end%>
 </div>
 </div>

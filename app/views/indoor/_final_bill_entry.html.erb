@@ -45,7 +45,7 @@
                       %>  
                   </div> 
                   <label class="col-sm-2 control-label">Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :date,value: Date.today,
+                  <div class="col-sm-2"><%= c.date_field :date,:value => Time.now.strftime('%Y-%m-%d'),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -54,7 +54,7 @@
                       %>  
                   </div> 
                    <label class="col-sm-2 control-label">Time:</label>
-                  <div class="col-sm-2"><%= c.text_field :time,
+                  <div class="col-sm-2"><%= c.text_field :time,:value=>Time.now.strftime("%I:%M %p"),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -95,7 +95,7 @@
               <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Birth Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :birthdate,
+                  <div class="col-sm-2"><%= c.date_field :birthdate,:value => Time.now.strftime('%Y-%m-%d'),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,
@@ -109,7 +109,7 @@
  <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Admit Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :admitdate,
+                  <div class="col-sm-2"><%= c.date_field :admitdate,:value => Time.now.strftime('%Y-%m-%d'),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,

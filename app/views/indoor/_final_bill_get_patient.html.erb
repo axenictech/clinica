@@ -50,7 +50,7 @@
                       %>  
                   </div> 
                    <label class="col-sm-2 control-label">Time:</label>
-                  <div class="col-sm-2"><%= c.text_field :time,
+                  <div class="col-sm-2"><%= c.text_field :time,:value=>Time.now.strftime("%I:%M %p"),
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
                       required: true,

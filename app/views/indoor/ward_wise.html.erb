@@ -9,7 +9,7 @@
 <%= form_for :Floor,url:{action:'select'},method: :get,remote:true,html:{id: "floor_form"} do |f| %>
 <%= f.label :Select_Floor%>
 
-<%= f.select :id, FloorMaster.all.collect {|t| [t.floor_name,t.id]},{prompt:true},{onchange:"$('#floor_form').submit();",class: "select2 form-control select2-offscreen"} %> 
+<%= f.select :id, ["First Floor"],{prompt:true},{onchange:"$('#floor_form').submit();",class: "select2 form-control select2-offscreen"} %> 
 <%end%>
 </div>
 </div>
