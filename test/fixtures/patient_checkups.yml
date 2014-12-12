@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clinical_investigation: MyString
+  clinical_history: MyString
+  clinical_diagnosis: MyString
+  notes: MyString
+  new_patient_id: 
+
+two:
+  clinical_investigation: MyString
+  clinical_history: MyString
+  clinical_diagnosis: MyString
+  notes: MyString
+  new_patient_id: 

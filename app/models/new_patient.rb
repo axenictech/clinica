@@ -3,4 +3,5 @@ class NewPatient < ActiveRecord::Base
   belongs_to :ShiftMaster
   belongs_to :DignosisMaster
   belongs_to :OccupationMaster
+  belongs_to :DoctorMaster
 end

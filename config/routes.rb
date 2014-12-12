@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 devise_for :users
 mount Ckeditor::Engine => '/ckeditor'
 get 'home/doctor_dashboard'
+get 'home/opd_patient_list'
+get 'home/patient_checkup_form'
+post 'home/save_patient_checkup_information'
 get 'setting/course_batch'
 get 'general_settings/all'
 get 'general_settings/none'
@@ -957,6 +960,8 @@ get 'outdoors/:id/edit_immunization',to:'outdoors#edit_immunization',as:'outdoor
 patch 'outdoors/:id/update_immunization',to:'outdoors#update_immunization',as:'outdoors_update_immunization' 
 delete 'outdoors/:id/destroy_immunization',to:'outdoors#destroy_immunization',as:'outdoors_destroy_immunization'   
 
+get 'outdoors/todays_patient'
+get 'outdoors/patient_list'
 
 get 'labs/new'
 post 'labs/lab_case_create'

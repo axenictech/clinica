@@ -1,0 +1,154 @@
+<div class="col-xs-12">
+  <div class="page-header page-header-with-buttons">
+    <h1 class="pull-left">
+      <i class="icon-gears"></i>
+              <span><%= t('Doctors')%></span>
+              <small><%= t('dashboard')%></small>
+    </h1>
+      <div class="pull-right">
+        <ul class="breadcrumb">
+        <!-- <li>
+          <a href="">
+            <i class="icon-backward"></i>
+          </a>
+        </li> -->
+          <li>
+            <a href="/home/dashboard">
+              <i class="icon-dashboard"></i>
+              <%= t('dashboard')%></li>
+            </a>
+          
+          <li class="separator">
+            <i class="icon-angle-right"></i>
+          </li>
+          <li class="active"><i class="icon-gears"></i>
+          <%= t('Doctors')%></li>
+        </ul>
+      </div>
+</div>
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<div class="col-sm-12">
+  <div class="box bordered-box blue-border">
+    <div class="box-header blue-background">
+      <div class="title">
+        <i class="icon-book"></i>
+                        Welcome Dr. Vijay Kulkarni
+      </div>
+      <div class="actions">
+                        
+                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
+                        </a>
+      </div>
+    </div>
+    <div class="box-content box-double-padding">
+         <div class="row">
+            <div class="form-group">
+            <h4 align="center">Patient List </h4>
+              <table class="table table-bordered table-striped">
+              <% if @opd_patients.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
+                <thead>
+                  <tr>
+                    <th width="5">Sr.No</th>
+                    <th>Patien Name</th>
+                  </tr>
+                </thead>
+                      
+                <tbody>
+                <% @opd_patients.each_with_index do |op,i|%>
+                  <tr class="<%= cycle('odd', 'even')%>">
+                    <td><%= i+1  %></td>
+                    <td><%= link_to op.patient_name,home_patient_checkup_form_path(op.id) %></td>
+                  </tr>
+                  <%end%>
+                </tbody>
+                <%end%>
+              </table>
+            </div>
+          </div>
+          <br><br/>
+  </div></div>
+</fieldset>
+</div>
+</div>
+</div>
+
+<script>
+var final_transcript = '';
+var recognizing = false;
+var ignore_onend;
+var start_timestamp;
+if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+  start_button.style.display = 'inline-block';
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+
+  recognition.onstart = function() {
+    recognizing = true;
+  };
+
+  recognition.onend = function() {
+    recognizing = false;
+    if (ignore_onend) {
+      return;
+    }
+    if (!final_transcript) {
+      return;
+    }
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
+      range.selectNode(document.getElementById('final_span'));
+      window.getSelection().addRange(range);
+    }
+  };
+
+  recognition.onresult = function(event) {
+    if (typeof(event.results) == 'undefined') {
+      recognition.onend = null;
+      recognition.stop();
+      upgrade();
+      return;
+    }
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+  };
+}
+
+function upgrade() {
+  start_button.style.visibility = 'hidden';
+}
+
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+
+var first_char = /\S/;
+function capitalize(s) {
+  return s.replace(first_char, function(m) { return m.toUpperCase(); });
+}
+
+function startButton(event) {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = 'en';
+  recognition.start();
+  ignore_onend = false;
+  final_span.innerHTML = '';
+  start_timestamp = event.timeStamp;
+}
+</script>

@@ -12,14 +12,22 @@ class OutdoorsController < ApplicationController
    end
 	
 	def create_registration
-	     @new_patient=NewPatient.new(new_patient_params)
-        if @new_patient.save
-      		 flash[:notice] = 'New Patient created successfully'
-  	   		 redirect_to outdoors_disp_patient_path
-        else
-          render 'new_registration'
-        end
+    @ref= params[:doctor][:id]
+    @new_patient=NewPatient.new(new_patient_params)
+      if @new_patient.save
+        @new_patient.update(references_doctor_id:@ref)
+    	  flash[:notice] = 'New Patient created successfully'
+  	   	redirect_to outdoors_disp_patient_path
+      else
+        render 'new_registration'
+      end
+  end
+
+    def patient_list
+      @opd_patients=NewPatient.where("doctor_master_id=? AND date_time=? ",params[:doctor_master][:doctor_master_id],Date.today)
     end
+
+     
 
     def disp_patient
     	 @new_patients=NewPatient.all

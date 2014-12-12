@@ -45,13 +45,13 @@
          <div class="row">
             <div class="form-group">
             <div class="col-xs-4 col-sm-3">
-               <button class="btn btn-success">OPD Patient</button>
+               <%= link_to "OPD PATIENT", home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             <div class="col-xs-4 col-sm-3">
-               <button class="btn btn-success">IPD Patient</button>
+              <%= link_to "DOCTOR NOTES",home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             <div class="col-xs-4 col-sm-3">
-              <button class="btn btn-success">Today's Appointment</button>
+              <%= link_to "TODAY'S APPOINTMENT",home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             </div>
           </div>
@@ -59,13 +59,13 @@
           <div class="row">
             <div class="form-group">
             <div class="col-xs-4 col-sm-3">
-               <button class="btn btn-success">Prescriptions</button>
+               <%= link_to "IPD PATIENT",home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             <div class="col-xs-4 col-sm-3">
-               <button class="btn btn-success">MR Appointment</button>
+               <%= link_to "PRESCRIPTION",home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             <div class="col-xs-4 col-sm-3">
-              <button class="btn btn-success">Doctor Notes</button>
+               <%= link_to "MR APPOINTMENT",home_opd_patient_list_path, class: 'btn btn-primary'%>
             </div>
             </div>
             <br/><br/><br/>

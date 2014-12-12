@@ -1,0 +1,52 @@
+<div class="page-header page-header-with-buttons">
+  <h1 class="pull-left">
+    <i class="icon-medkit"></i>
+    <span>OutDoor(Todays Patient) </span>
+  </h1>
+<div class="pull-right">
+  <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-gears"></i> 
+        <a href=""></a>
+      </li>
+  </ol>
+</div>
+</div>
+
+<div id="flash"><%= render 'layouts/flash_messages'%></div>
+
+<%=form_for :doctor_master,url:{action:'patient_list'},method: :get,remote:true,html:{id:"dd"}  do |c| %>
+	<div class="col-sm-12">
+  	<div class="box bordered-box blue-border">
+    	<div class="box-header blue-background">
+      	<div class="title">
+        	<i class="icon-medkit"></i>
+          OutDoor(Todays Patient)
+      	</div>
+      	<div class="actions">
+        	<a class="btn box-collapse btn-xs btn-link" href="#"></a>
+      	</div>
+    	</div>
+    	<div class="box-content box-double-padding">
+      	<form class="form-horizontal" style="margin-bottom: 0;">
+        	<fieldset>
+          	<div class="row">
+            	<div class="form-group">
+              	<label class="col-sm-2 control-label">Select Doctor:</label>
+                <div class="col-sm-6">
+                	<%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},{prompt:true},{onchange: "$('#dd').submit();"}
+                  %> 
+                </div> 
+              </div>
+            </div>
+          	<br>
+          	<div id="show"></div>
+              
+          </fieldset>
+      	</form>
+      </div>
+    </div>
+  </div>
+<%end%>
+
+

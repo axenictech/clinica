@@ -100,14 +100,7 @@
             <div class="form-group">
               
                <label class="col-sm-2 control-label">Dr.Name:</label>
-                  <div class="col-sm-6"><%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},prompt:true,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Dr.Name",
-                      required:false,
-                      :"data-content"=>"Dr.Name",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>
+                   <div class="col-sm-6"><%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},prompt:true %>
                   </div> 
                 </div>
             </div>
@@ -341,7 +334,7 @@
              <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">Date:</label>
-                  <div class="col-sm-2"><%=c.date_field :date_of_birth,
+                  <div class="col-sm-2"><%=c.date_field :date_time,value:Date.today,
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",placeholder: "Date",
                       required:false,
@@ -373,17 +366,13 @@
             </div> 
             <br>
 
+
             <div class="row">
               <div class="form-group">
                <label class="col-sm-2 control-label">Ref.Dr :</label>
-                <div class="col-sm-6"><%= c.select :doctor_master_id,DoctorMaster.all.collect {|b| [b.name,b.id]},prompt:true,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",placeholder: "Ref dr",
-                      required:false,
-                      :"data-content"=>"Enter Ref dr Here",
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
+                <div class="col-sm-6">
+            <%= select :doctor, :id, DoctorMaster.all.collect { |b| [b.name,b.id] },{prompt:true},{class: "form-control input-group"}%>
+
                   </div>     
                 </div>
             </div> 

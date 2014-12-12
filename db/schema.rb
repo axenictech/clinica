@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103491) do
+ActiveRecord::Schema.define(version: 20141223103495) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -270,13 +270,16 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.integer  "s_tax"
     t.string   "link_service"
     t.boolean  "is_bed_repair"
-    t.integer  "floor_master_id"
     t.integer  "ward_master_id"
+    t.integer  "icu_master_id"
+    t.integer  "delux_room_master_id"
+    t.string   "used_for"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bed_masters", ["floor_master_id"], name: "index_bed_masters_on_floor_master_id", using: :btree
+  add_index "bed_masters", ["delux_room_master_id"], name: "index_bed_masters_on_delux_room_master_id", using: :btree
+  add_index "bed_masters", ["icu_master_id"], name: "index_bed_masters_on_icu_master_id", using: :btree
   add_index "bed_masters", ["ward_master_id"], name: "index_bed_masters_on_ward_master_id", using: :btree
 
   create_table "before_patient_entries", force: true do |t|
@@ -529,17 +532,6 @@ ActiveRecord::Schema.define(version: 20141223103491) do
   end
 
   add_index "delux_room_masters", ["floor_master_id"], name: "index_delux_room_masters_on_floor_master_id", using: :btree
-
-  create_table "demos", force: true do |t|
-    t.date     "from_date"
-    t.date     "to_date"
-    t.string   "name"
-    t.integer  "age"
-    t.string   "address"
-    t.integer  "total_amt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "department_master_stores", force: true do |t|
     t.string   "department_name"
@@ -1221,6 +1213,15 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.datetime "updated_at"
   end
 
+  create_table "icu_masters", force: true do |t|
+    t.string   "icu_name"
+    t.integer  "floor_master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "icu_masters", ["floor_master_id"], name: "index_icu_masters_on_floor_master_id", using: :btree
+
   create_table "individual_payslip_categories", force: true do |t|
     t.integer  "employee_id"
     t.date     "salary_date"
@@ -1411,7 +1412,7 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.string   "care_of"
     t.string   "address"
     t.integer  "pin_no"
-    t.integer  "contact_no"
+    t.string   "contact_no"
     t.string   "remark"
     t.date     "date_time"
     t.date     "date_of_birth"
@@ -1433,6 +1434,7 @@ ActiveRecord::Schema.define(version: 20141223103491) do
     t.integer  "doctor_master_id"
     t.integer  "city_id"
     t.integer  "state_id"
+    t.integer  "references_doctor_id"
   end
 
   add_index "new_patients", ["DignosisMaster_id"], name: "index_new_patients_on_DignosisMaster_id", using: :btree
@@ -1611,6 +1613,30 @@ ActiveRecord::Schema.define(version: 20141223103491) do
 
   add_index "pathologist_masters", ["city_id"], name: "index_pathologist_masters_on_city_id", using: :btree
   add_index "pathologist_masters", ["specialization_id"], name: "index_pathologist_masters_on_specialization_id", using: :btree
+
+  create_table "patient_check_info1s", force: true do |t|
+    t.string   "clinical_investigation"
+    t.string   "clinical_history"
+    t.string   "clinical_diagnosis"
+    t.string   "notes"
+    t.integer  "new_patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patient_check_info1s", ["new_patient_id"], name: "index_patient_check_info1s_on_new_patient_id", using: :btree
+
+  create_table "patient_checkups", force: true do |t|
+    t.string   "clinical_investigation"
+    t.string   "clinical_history"
+    t.string   "clinical_diagnosis"
+    t.string   "notes"
+    t.integer  "new_patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patient_checkups", ["new_patient_id"], name: "index_patient_checkups_on_new_patient_id", using: :btree
 
   create_table "patient_registrations", force: true do |t|
     t.integer  "ipd_no"
