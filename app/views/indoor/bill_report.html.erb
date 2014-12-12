@@ -36,7 +36,7 @@
           <div class="row">
               <div class="form-group">
                 <label class="col-sm-2 control-label">From Date:</label>
-                <div class="col-sm-4"><%= c.date_field :from_date,
+                <div class="col-sm-4"><%= c.date_field :from_date,:value => Time.now.strftime('%Y-%m-%d'),
                  onchange:"$('#floor_form').submit();",
                     onfocus:"$(this).popover('show');" ,
                      class: "form-control input-group",
@@ -47,7 +47,7 @@
                   </div>  
 
                   <label class="col-sm-2 control-label">To Date:</label>
-                  <div class="col-sm-4"><%= c.date_field :to_date,
+                  <div class="col-sm-4"><%= c.date_field :to_date,:value => Time.now.strftime('%Y-%m-%d'),
                   onchange:"
                   $('#bill_update_end_date').val($(this).val());
                   $('#floor_form').submit();",

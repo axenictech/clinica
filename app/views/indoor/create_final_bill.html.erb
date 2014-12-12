@@ -1,441 +1,146 @@
 
-<%= form_for :final_bill_pdf ,url: create_final_bill_path,layout: false do |c| %>
-<div class="col-sm-12">
-  <div class="box bordered-box blue-border">
-    <div class="box-header blue-background">
-      <div class="title">
-        <i class="icon-book"></i>
-          Bill PDF Report
-      </div>
-      <div class="actions">
-        <a class="btn box-collapse btn-xs btn-link" href="#"></a>
-      </div>
-    </div>
-    <div class="box-content box-double-padding">
-      <fieldset>
-          <font color="blue">PDF Report</font>
-            <hr class="hr-normal">
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">IPD No:</label>
-                  <div class="col-sm-3"><%= c.text_field :ipd_no,value:@final_bill['ipd_no'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>  
-              <br><br>
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Bill No:</label>
-                  <div class="col-sm-2"><%= c.text_field :bill_no,value: @final_bill['bill_no'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                  <label class="col-sm-2 control-label">Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :date,value: @final_bill['date'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                   <label class="col-sm-2 control-label">Time:</label>
-                  <div class="col-sm-2"><%= c.text_field :time,value:@final_bill['time'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>  
-                  </div>
-              </div>      
-              <br>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style type="text/css">
 
-              <div class="row">
-              <div class="form-group">
-                
-
-                 
-                </div>
-              </div>      
-              <br>  
-              
-              <br>
-
-              <font color="blue">Patient Details</font>
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Patient Name:</label>
-                  <div class="col-sm-3"><%= c.text_field :patient_name,value:@final_bill['patient_name'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>     
-            <br>
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Birth Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :birthdate,value:@final_bill['birthdate'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                 </div>
-              </div>              
-              <br>  
- <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Admit Date:</label>
-                  <div class="col-sm-2"><%= c.date_field :admitdate,value:@final_bill['admitdate'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                 </div>
-              </div>              
-              <br>  
-
- <div class="row">
-              <div class="form-group">
-                  <label class="col-sm-2 control-label">Gender:</label>
-                  <div class="col-sm-2"><%= c.select :gender,[@final_bill['gender'],'MALE','FEMALE'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div>
-                </div>
-              </div>              
-              <br>  
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Bed No:</label>
-                  <div class="col-sm-4"><%= c.text_field :bed_no,value: @final_bill['bed_no'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ward:</label>
-                  <div class="col-sm-4"><%= c.text_field :ward,value: @final_bill['ward'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <div class="row">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Address:</label>
-                  <div class="col-sm-4"><%= c.text_field :address,value: @final_bill['address'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>  
-                  </div> 
-                </div>
-              </div>      
-              <br>
-
-              <h3>Bill Details</h3>
-              <hr class="hr-normal">
-
-<div class="form-actions">
-          <div class="row">
-            <div class="col-sm-2 ">                
-            Bed Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :bed_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['bed_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-              <div class="col-sm-2 ">                
-            Laxury Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :laxury_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value:@final_bill['laxury_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-               <div class="col-sm-2 ">                
-            Service Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :service_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['service_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-         </div>
-        <br>
-          <div class="row">
-             <div class="col-sm-2 ">                
-            Other Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :other_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['other_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-          <div class="col-sm-2 ">                
-            OT Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :ot_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['ot_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-              <div class="col-sm-2 ">                
-            Doctor Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :doctor_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value:  @final_bill['doctor_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-         </div>
-<br>
-          <div class="row">
-          <div class="col-sm-2 ">                
-            Diagnostic Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :diagnostic_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['diagnostic_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-              <div class="col-sm-2 ">                
-            Medicine Charges              
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :medicine_charges,                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group calculation",value: @final_bill['medicine_charges'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-             <div class="col-sm-2 ">                
-            Total
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :total_charges,value:@final_bill['total_charges'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group totalcharges",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-         </div>
-
-<br>
-       
-          <div class="row">
-          <div class="col-sm-2 ">                
-            Less Advance             
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :less_advance, onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group less_advance",value: @final_bill['less_advance'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-        </div><br><br>
-  
-   <div class="row">
-          <div class="col-sm-2 ">    
-             Payment Type
-            </div>
-             <div class="col-sm-2 ">                
-           <%=c.select :pay_type,[@final_bill['pay_type']], onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                   %>
-
-            </div>
-             <div class="col-sm-2 ">                
-            Bank Name             
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :bank_name,value:@final_bill['bank_name'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-              <div class="col-sm-2 ">                
-            Cheque No             
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :cheque_no,value:@final_bill['cheque_no'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-            
-         
-
-         </div>
-<br><br>
-     <div class="row">
-          <div class="col-sm-2 ">    
-             Bill Amount
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :bill_amount,
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group bill_amount",value:@final_bill['bill_amount'],
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-             <div class="col-sm-2 ">                
-            Discount             
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :discount,value:@final_bill['discount'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group discount",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-              <div class="col-sm-2 ">                
-            Net Amount             
-            </div>
-             <div class="col-sm-2 ">                
-            <%= c.text_field :net_amount,value:@final_bill['net_amount'],
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group net_amount",
-                      required: true,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>             
-            </div>
-         </div><br>
-    <div class="row">
-     <div class="col-sm-2 ">                
-    Remark
-     </div>
-       <div class="col-sm-2 ">                
-     <%= c.text_area :remark,value:@final_bill['remark'],style:"width: 452px; height: 81px;",
-                    onfocus:"$(this).popover('show');" ,
-                     class: "form-control input-group",
-                      required: false,
-                      :"data-placement"=>"right",
-                      :"data-toggle"=>"popover",:"data-trigger"=>"focus"
-                      %>      
-     </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-           
-          </fieldset>
-
-      <%end%>
-     </div>
-</div>
-</div>
-<script>
- var total=0;
-$(".calculation").change(function(){ calculate();});
-$(".less_advance").change(function(){ calculate();});
-$(".bill_amount").change(function(){ calculate();});
-$(".discount").change(function(){ calculate();});
-
-function calculate(){
-
-  total=0;
-$(".calculation").each(function(){
-  if ($(this).val()!="");
-  total+= parseInt($(this).val());
-});
-$(".totalcharges").val(total);
-if ($(".less_advance").val()!="");
-  total-= parseInt($(".less_advance").val());
-$(".bill_amount").val(total);
-$(".net_amount").val(parseInt($(".bill_amount").val())-parseInt($(".discount").val()));
+table#pdf-table{
+   border: 1px solid #ADACAB;
+   border-left: 0px solid #ADACAB;
 }
-</script>>
 
+</style>
+<body>
+<div align="center">
+<font color="purple"><b><i><h3>Axenic Clinica</h3>
+<h4>Bill Report</h4></i></b></font>
+</div>
+
+<%= form_for :final_bill_pdf ,url: create_final_bill_path,layout: false do |c| %>
+ <table id="pdf-table" width="100%" border="0px">
+<tr><td>IPD No:</td>
+    <td><%= @final_bill['ipd_no'] %></td></tr>
+
+  <tr><td>Bill No:</td>
+      <td><%= @final_bill['bill_no']%></td></tr>
+      <tr><td>Date:</td>
+                 <td><%=  @final_bill['date']%></td> </tr> 
+       <tr><td>Time:</td>
+            <td><%= @final_bill['time']%></td>  
+            </tr>
+
+     <tr><td> <font color="blue">Patient Details</font></td><td></td></tr>
+       <tr><td>Patient Name:</td>
+               <td><%= @final_bill['patient_name']%>
+          </td></tr>           
+            
+           <tr><td>Birth Date:</td>
+                  <td><%= @final_bill['birthdate']%></td></tr>
+
+ <tr><td> Admit Date:</td>
+        <td><%=@final_bill['admitdate']%></td></tr>
+                   <tr><td>Gender:</td>
+                  <td><%=@final_bill['gender']%></td></tr>
+                   
+
+
+                  <tr><td> Bed No:</td>
+                 <td> <%=  @final_bill['bed_no']%></td>
+                   </tr>
+                <tr><td>
+                   Ward:</td>
+              <td><%=  @final_bill['ward']%></td></tr>
+                    
+
+             <tr><td> Address:</td><td><%=  @final_bill['address']%></td></td>
+                   
+               
+
+         <tr><td> <font color="blue"> Bill Details</td></font></tr>
+        
+
+               
+            <tr><td>Bed Charges :</td>              
+                        
+            <td><%= @final_bill['bed_charges']%></td></tr>                      
+           <tr><td> Luxury Charges :</td>
+                <td><%= @final_bill['luxury_charges']%></td></tr>                
+            <tr><td>Service Charges</td>              
+            <td>            
+            <%= @final_bill['service_charges']
+                      %>  
+            </td>
+            </tr>           
+                   
+           <tr><td> Other Charges </td>             
+                       
+       
+         </tr>         
+      <tr><td> OT Charges</td>
+      <td><%= @final_bill['ot_charges']%></td></tr>          
+    <tr><td>Doctor Charges</td>              
+                         
+           <td> <%= @final_bill['doctor_charges'] 
+                      %></td></tr>             
+                           
+    <tr><td>Diagnostic Charges </td>             
+                          
+            <td><%=@final_bill['diagnostic_charges'] 
+                      %> </td></tr>            
+                          
+            <tr><td>Medicine Charges</td>              
+                    
+           <td> <%=@final_bill['medicine_charges']
+                      %></td></tr>             
+                        
+            <tr><td>Total</td>
+                        
+            <td><%= @final_bill['total_charges']%></td>
+           
+           </tr>
+
+   <tr><td> Less Advance</td>             
+                        
+            <td><%=@final_bill['less_advance']
+                      %> </td></tr>            
+           
+             <tr><td>Payment Type</td>
+                          
+           <td><%=@final_bill['pay_type']
+                   %></td></tr>
+              
+            <tr><td>Bank Name </td>            
+                        
+           <td> <%= @final_bill['bank_name']
+                      %></td> </tr>            
+                        
+          <tr><td>Cheque No </td>            
+                       
+           <td> <%=@final_bill['cheque_no']
+                      %></td></tr>             
+             
+             <tr><td>Bill Amount</td>
+                        
+            <td><%=  @final_bill['bill_amount']
+                      %></td></tr>             
+                        
+           <tr><td> Discount</td>             
+                         
+            <td><%= @final_bill['discount']
+                      %></td></tr>             
+                         
+            <tr><td>Net Amount</td>             
+                        
+            <td><%= @final_bill['net_amount']%></td></tr>
+                        
+ <tr><td>   Remark</td>
+                   
+     <td><%= @final_bill['remark'] %></td></tr>      
+   
+   
+ </table>
+ <%end%>
+ </div>
+</body>
+</html>

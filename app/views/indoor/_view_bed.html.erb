@@ -9,10 +9,10 @@
 <br/>
 <%i=0%>
 <table>
-<% 29.times do |b|%>
+<% 4.times do |b|%>
 
 <%if b!=0%>
-<%if b==6 or i==4 or i==9 or i==14 or i==23 or i==19 or i==28%>
+<%if b==1 or i==3 %>
 <td>
 <div class="btn btn-danger" style="width:100px"><%=link_to "BED NO: "+i.to_s,indoor_patient_details_path,remote: true %></div>&nbsp
 

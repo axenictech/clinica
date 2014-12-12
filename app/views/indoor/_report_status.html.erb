@@ -14,7 +14,7 @@
 </div>
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 
-<b><font color="black">Bill Details</font></span></b>
+<b><font color="black"> </font></span></b>
 <hr class="hr-normal">
 <div id="flash"><%= render 'layouts/flash_messages'%></div>
 <table align="center" class="table table-hover table-bordered" style="width:80%">
@@ -43,3 +43,6 @@
 
 <tr><td>Total</td><td></td><td></td><td></td><td><%=total%></td></tr>
 </table>
+
+<div><%=link_to 'PDF REPORT',indoor_bill_report_pdf_path(s:@s,
+e:@e,format:"pdf"),class: "btn btn-success"%></div>

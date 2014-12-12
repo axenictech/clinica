@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style type="text/css">
+
+table#pdf-table{
+   border: 1px solid #ADACAB;
+   border-left: 0px solid #ADACAB;
+}
+
+</style>
+<body>
+<div align="center">
+<font color="purple"><b><i><h3>Axenic Clinica</h3>
+<h4>Bill Report</h4></i></b></font>
+</div>
+
+  <table id="pdf-table" width="100%" border="1px"> <tr>
+  <th><%='Sr no'%></th>
+  <th><%='Bill No'%></th>
+  <th><%='Date'%></th>
+  <th><%='Patient Name'%></th>
+  <th><%='Total Amount'%></th>
+ </tr>
+<%i=1%>
+<%c=0%>
+<%total=0%>
+<%@p.each do |p|%>
+<tr>
+  <td><%=i%></td>
+  <td><%=p.bill_no%></td>
+  <td><%=p.date%></td>
+  <td><%=p.ipd_registration.patient_name
+%></td>
+<td><%=p.net_amount%></td>
+ <%i=i+1%>
+<%total=total+p.net_amount%>
+<%end%>
+ </tr>
+
+<tr><td>Total</td><td></td><td></td><td></td><td><%=total%></td></tr>
+  
+</table><br/><br/><br/>
+
+</div>
+</body>
+</html>

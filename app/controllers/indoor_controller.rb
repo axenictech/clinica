@@ -53,13 +53,13 @@ def ward_wise
 end
 
 def select
-	 @floor=FloorMaster.find(params[:Floor][:id])
-	 @wards=@floor.ward_masters.all
+	 # @floor=FloorMaster.find(params[:Floor][:id])
+	 # @wards=@floor.ward_masters.all
  end
 
 def select_ward
- @ward=WardMaster.find(params[:ward_name][:id])
- @bed=BedMaster.where(ward_master_id:@ward) 
+ # @ward=WardMaster.find(params[:ward_name][:id])
+ # @bed=BedMaster.where(ward_master_id:@ward) 
  
 end
 
@@ -93,10 +93,17 @@ end
 
 
 def bill_report
+Bill.all.each do |bill|
+	bill.update(is_desabled: false)
+end
+
    @p=Bill.all
 end
 
 def report
+	Bill.all.each do |bill|
+	bill.update(is_desabled: false)
+end
   @start_date=params[:bill][:from_date]
   @end_date= params[:bill][:to_date]
      params[:bill][:to_date]
@@ -128,12 +135,22 @@ def bill_update
   	r.update(is_desabled:true)
   end
   end
-
+  
 	@p=Bill.where("date >= ? AND date <= ? AND is_desabled=false",params['bill_update']['start_date'],params['bill_update']['end_date'])
+	@s=params['bill_update']['start_date']
+	@e=params['bill_update']['end_date']
 	render '_report_status'
    end
 
-def new_advance_booking
+  
+   def bill_report_pdf
+         @s=params[:s]
+         @e=params[:e]
+         @p=Bill.where("date >= ? AND date <= ? AND is_desabled=false",params[:s],params[:e])
+         render 'bill_report_pdf',layout:false
+   end
+
+   def new_advance_booking
 	@advance_booking=AdvanceBooking.new 
 	end
 	def create_advance_booking
@@ -695,4 +712,4 @@ end
  		params.require(:nurseing_counter_entry).permit!
 	end
 
-
+end
