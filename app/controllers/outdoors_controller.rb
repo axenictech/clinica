@@ -24,10 +24,10 @@ class OutdoorsController < ApplicationController
   end
 
     def patient_list
+      @doctor = params[:doctor_master][:doctor_master_id]
       @opd_patients=NewPatient.where("doctor_master_id=? AND date_time=? ",params[:doctor_master][:doctor_master_id],Date.today)
+      @checked_patients=PatientCheckup.all
     end
-
-     
 
     def disp_patient
     	 @new_patients=NewPatient.all
@@ -327,8 +327,6 @@ class OutdoorsController < ApplicationController
 		       redirect_to outdoors_prescription_path 
    		 end
 	end
-
-
 
 	def immunization_schedule
 		#@immunization=ImmunizationSchedule.new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223103495) do
+ActiveRecord::Schema.define(version: 20141223103496) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1634,6 +1634,7 @@ ActiveRecord::Schema.define(version: 20141223103495) do
     t.integer  "new_patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "references_doctor_id"
   end
 
   add_index "patient_checkups", ["new_patient_id"], name: "index_patient_checkups_on_new_patient_id", using: :btree

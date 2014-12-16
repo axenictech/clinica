@@ -1,34 +1,48 @@
 
-    <div class="box-content box-double-padding">
-         <div class="row">
-            <div class="form-group">
-            <h4 align="center">Patient List </h4>
-              <table class="table table-bordered table-striped">
-              <% if @opd_patients.empty? %>
-                <h4 align="center">No Record Found </h4>
-              <% else %>
-                <thead>
-                  <tr>
-                    <th width="5">Sr.No</th>
-                    <th>Patient Name</th>
-                    <th>Address</th>
-                    <th>Contact Number</th>
-                  </tr>
-                </thead>
-                      
-                <tbody>
-                <% @opd_patients.each_with_index do |op,i|%>
-                  <tr class="<%= cycle('odd', 'even')%>">
-                    <td><%= i+1  %></td>
-                    <td><%= link_to op.patient_name,home_patient_checkup_form_path(op.id) %></td>
-                    <td><%= op.address  %></td>
-                    <td><%= op.contact_no  %></td>
-                  </tr>
-                  <%end%>
-                </tbody>
-                <%end%>
-              </table>
-            </div>
-          </div>
-          <br><br/>
-  </div>
+<div class="box-content box-double-padding">
+  <div class="row">
+    <div class="form-group">
+      <h4 align="center">Patient List </h4>
+      <table class="table table-bordered table-striped">
+        <% if @opd_patients.empty? %>
+          <h4 align="center">No Record Found </h4>
+        <% else %>
+          <thead>
+            <tr>
+              <th width="5">Sr.No</th>
+              <th>Patient Name</th>
+              <th>Address</th>
+              <th>Contact Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @opd_patients.each_with_index do |op,i|%>
+              <%flag=false%>
+              <% @checked_patients.each do |cp|%>
+                <% if op.id==cp.new_patient_id%>
+                  <%flag=true%>
+                  <%break%>
+                <%end%> 
+              <%end%>
+              <%unless flag%> 
+                <tr class="<%= cycle('odd', 'even')%>">
+                  <td><%= i+1  %></td>
+                  <td><%= link_to op.patient_name,home_patient_checkup_form_path(op.id,doctor_id:@doctor) %></td>
+                  <td><%= op.address  %></td>
+                  <td><%= op.contact_no  %></td>
+                </tr>
+              <%else%>
+                <tr class="<%= cycle('odd', 'even')%>">
+                  <td><%= i+1  %></td>
+                  <td><%= op.patient_name %>-checked</td>
+                  <td><%= op.address  %></td>
+                  <td><%= op.contact_no  %></td>
+                </tr>
+              <%end%>
+            <%end%>
+          </tbody>
+        <%end%>
+      </table>
+    </div>
+  </div><br><br/>
+</div>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-
 devise_for :users
-mount Ckeditor::Engine => '/ckeditor'
+
 get 'home/doctor_dashboard'
 get 'home/opd_patient_list'
 get 'home/patient_checkup_form'
@@ -126,18 +125,15 @@ get 'exam_reports/choose_batch'
 get 'exam_reports/generate_subject_report'
 get 'exam_reports/grouped_exam_report'
 get 'exam_reports/generate_grouped_report'
-get 'exam_reports/:exam_group_id/student_exam_report/:student_id',
-                    to: 'exam_reports#student_exam_report',as: 'exam_reports_student_exam_report'
-get 'exam_reports/:batch_id/student_report/:student_id',
-                    to: 'exam_reports#student_report',as: 'exam_reports_student_report'
+get 'exam_reports/:exam_group_id/student_exam_report/:student_id', to: 'exam_reports#student_exam_report',as: 'exam_reports_student_exam_report'
+get 'exam_reports/:batch_id/student_report/:student_id', to: 'exam_reports#student_report',as: 'exam_reports_student_report'
 get 'exam_reports/:exam_group_id/consolidated_report',to: 'exam_reports#consolidated_report',as: 'exam_reports_consolidated_report'
-get 'exam_reports/:batch_id/consolidated_archived_report',
-                    to: 'exam_reports#consolidated_archived_report',as: 'exam_reports_consolidated_archived_report'
+get 'exam_reports/:batch_id/consolidated_archived_report', to: 'exam_reports#consolidated_archived_report',as: 'exam_reports_consolidated_archived_report'
 get 'exam_reports/archived_student_report'
 get 'exam_reports/select_course'
 get 'exam_reports/generate_archived_report'
 get 'exam_reports/exam_group_wise_report'
-get 'exam_reports/student_ranking_per_subject'
+#get 'exam_reports/student_ranking_per_subject'
 get 'exam_reports/rank_report_batch'
 get 'exam_reports/generate_ranking_report'
 get 'exam_reports/student_ranking_per_batch'
@@ -175,6 +171,7 @@ get 'exam_reports/course_wise_ranking_report'
 get 'exam_reports/school_wise_ranking_report'
 get 'exam_reports/attendance_wise_ranking_report'
 get 'exam_reports/students_transcripts_report'
+
 get 'calender/change' 
 get 'calender/event_view'
 get 'exam_setting/:course_id/setting',to: 'exam_setting#setting', as: 'course_class_designations'
@@ -1205,7 +1202,6 @@ patch 'bloodbanks/:id/update_hospital_type_master',to: 'bloodbanks#update_hospit
 delete 'bloodbanks/:id/delete_hospital_type_master',to: 'bloodbanks#delete_hospital_type_master',as: 'delete_hospital_type_master'
 
 root 'home#dashboard'
-
 
 resources :home
 resources :setting

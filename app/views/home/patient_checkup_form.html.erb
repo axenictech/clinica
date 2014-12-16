@@ -40,7 +40,7 @@
                         </a>
       </div>
     </div>
-    <%=form_for @patient,url:{action:'save_patient_checkup_information',id:@patient_info.id} do |c| %>
+    <%=form_for @patient,url:{action:'save_patient_checkup_information',patient_id:@patient_info.id,doctor_id:@doctor} do |c| %>
     <div class="box-content box-double-padding">
        <div class="row">
               <div class="form-group">
