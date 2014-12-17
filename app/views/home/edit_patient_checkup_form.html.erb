@@ -32,7 +32,7 @@
     <div class="box-header blue-background">
       <div class="title">
         <i class="icon-book"></i>
-                        Welcome Dr. Vijay Kulkarni
+                        Welcome Dr. <%=@doctor.name%>
       </div>
       <div class="actions">
                         
@@ -40,7 +40,7 @@
                         </a>
       </div>
     </div>
-    <%=form_for @patient,url:{action:'save_patient_checkup_information',patient_id:@patient_info.id,doctor_id:@doctor} do |c| %>
+    <%=form_for @patient,url:{action:'update_patient_checkup_information',id:@patient.id} do |c| %>
     <div class="box-content box-double-padding">
        <div class="row">
               <div class="form-group">
@@ -87,7 +87,7 @@
               <div class="row">
                 <div class="col-sm-3"></div>
                   <div class="col-sm-2" >                
-                    <%= c.submit 'Save', class: "btn btn-group btn-primary btn-lg"%>
+                    <%= c.submit 'Update', class: "btn btn-group btn-primary btn-lg"%>
                   </div>
                 <div class="col-sm-5"></div>
               </div> 

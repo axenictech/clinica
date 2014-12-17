@@ -34,7 +34,7 @@
               <%else%>
                 <tr class="<%= cycle('odd', 'even')%>">
                   <td><%= i+1  %></td>
-                  <td><%= op.patient_name %>-checked</td>
+                  <td><%= link_to op.patient_name,home_edit_patient_checkup_form_path(op.id) %>-checked</td>
                   <td><%= op.address  %></td>
                   <td><%= op.contact_no  %></td>
                 </tr>
